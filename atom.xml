@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-16T02:37:41.427Z</updated>
+  <updated>2021-08-16T16:10:22.640Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,31 +17,94 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>小白菜笔记--React（二）class 组件</title>
-    <link href="http://example.com/2021/08/16/xiao-bai-cai-bi-ji-react-er-class-zu-jian/"/>
-    <id>http://example.com/2021/08/16/xiao-bai-cai-bi-ji-react-er-class-zu-jian/</id>
-    <published>2021-08-16T02:37:41.000Z</published>
-    <updated>2021-08-16T02:37:41.427Z</updated>
+    <title>git 的配置和常用命令</title>
+    <link href="http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/"/>
+    <id>http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/</id>
+    <published>2021-08-16T15:32:12.000Z</published>
+    <updated>2021-08-16T16:10:22.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;本地仓库配置&quot;&gt;&lt;a href=&quot;#本地仓库配置&quot; class=&quot;headerlink&quot; title=&quot;本地仓库配置&quot;&gt;&lt;/a&gt;本地仓库配置&lt;/h1&gt;&lt;p&gt;打开 Cmder （任意目录均可，因为是全局安装），逐行执行以下命令&lt;/p&gt;
+&lt;pre</summary>
+        
+      
     
     
     
     
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
-    <title>小白菜笔记--React（一）</title>
+    <title>一些常用的命令行</title>
+    <link href="http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/"/>
+    <id>http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/</id>
+    <published>2021-08-16T08:32:45.000Z</published>
+    <updated>2021-08-16T15:17:23.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;程序员的宿命 —— 增删改查&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;查：查看文件或目录&quot;&gt;&lt;a href=&quot;#查：查看文件或目录&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新手前端的装机攻略，拿来吧你</title>
+    <link href="http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/"/>
+    <id>http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/</id>
+    <published>2021-08-16T02:52:11.000Z</published>
+    <updated>2021-08-16T15:17:09.431Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前端时间买了新电脑，装了很多学习用的软件，这里记下来方便后面查找 🔍&lt;/p&gt;
+&lt;h1 id=&quot;Chrome-浏览器&quot;&gt;&lt;a href=&quot;#Chrome-浏览器&quot; class=&quot;headerlink&quot; title=&quot;Chrome 浏览器&quot;&gt;&lt;/a&gt;Chrome</summary>
+        
+      
+    
+    
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小白菜笔记--React（一）基础篇</title>
     <link href="http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/"/>
     <id>http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/</id>
     <published>2021-08-14T08:51:30.000Z</published>
-    <updated>2021-08-15T16:23:24.110Z</updated>
+    <updated>2021-08-16T08:12:26.934Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;小白菜笔记–React（一）&quot;&gt;&lt;a href=&quot;#小白菜笔记–React（一）&quot; class=&quot;headerlink&quot; title=&quot;小白菜笔记–React（一）&quot;&gt;&lt;/a&gt;小白菜笔记–React（一）&lt;/h1&gt;&lt;h2 id=&quot;写在前面的碎碎念💬：&quot;&gt;&lt;a</summary>
+    <summary type="html">&lt;h2 id=&quot;写在前面的碎碎念💬：&quot;&gt;&lt;a href=&quot;#写在前面的碎碎念💬：&quot; class=&quot;headerlink&quot;</summary>
         
       
     
