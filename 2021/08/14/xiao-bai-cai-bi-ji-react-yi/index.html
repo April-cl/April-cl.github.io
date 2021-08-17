@@ -413,7 +413,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-08-17
                 </div>
                 
 
@@ -432,6 +432,11 @@
                 
 
                 
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -459,7 +464,7 @@
 <span class="token keyword">import</span> ReactDOM <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li><p>通入 Create React App 引入</p>
 <p> 前置条件：<code>Node.js</code> <code>Cmder</code></p>
-<p> 在预备创建项目的地方打开 <code>Cmder</code> 执行以下命令（关于 <code>Cmder</code> 等安装配置后面有空整理出来🙆‍♀）</p>
+<p> 在预备创建项目的地方打开 <code>Cmder</code> 执行以下命令（<del>关于 <code>Cmder</code> 等安装配置后面有空整理出来</del> 整理好了，在这：<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">新手前端的装机攻略，拿来吧你</a> 🙆‍♀）</p>
  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx create-react-app my-app<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p> 因为是自己做项目，所以一般用的第3种方式创建 React 应用，这种方式会配置好开发环境。成功后的目录是这样的</p>
@@ -924,6 +929,8 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
             
             
             
+            
+            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -940,7 +947,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1110,6 +1117,8 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
