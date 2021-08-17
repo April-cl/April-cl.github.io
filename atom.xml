@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-17T08:24:51.106Z</updated>
+  <updated>2021-08-17T16:13:04.748Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小白菜笔记--React（二）Class 组件</title>
+    <link href="http://example.com/2021/08/17/xiao-bai-cai-bi-ji-react-er-class-zu-jian/"/>
+    <id>http://example.com/2021/08/17/xiao-bai-cai-bi-ji-react-er-class-zu-jian/</id>
+    <published>2021-08-17T09:05:21.000Z</published>
+    <updated>2021-08-17T16:13:04.748Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;两种方式创建-Class-组件&quot;&gt;&lt;a href=&quot;#两种方式创建-Class-组件&quot; class=&quot;headerlink&quot; title=&quot;两种方式创建 Class 组件&quot;&gt;&lt;/a&gt;两种方式创建 Class 组件&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;ES5</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git 的配置和常用命令</title>
     <link href="http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/"/>
     <id>http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/</id>
     <published>2021-08-16T15:32:12.000Z</published>
-    <updated>2021-08-17T08:24:51.106Z</updated>
+    <updated>2021-08-17T09:24:00.422Z</updated>
     
     
       
@@ -35,6 +61,8 @@
     
     
     
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
@@ -45,7 +73,7 @@
     <link href="http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/"/>
     <id>http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/</id>
     <published>2021-08-16T08:32:45.000Z</published>
-    <updated>2021-08-16T15:17:23.816Z</updated>
+    <updated>2021-08-17T09:23:53.912Z</updated>
     
     
       
@@ -61,6 +89,8 @@
     
     
     
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
@@ -71,7 +101,7 @@
     <link href="http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/"/>
     <id>http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/</id>
     <published>2021-08-16T02:52:11.000Z</published>
-    <updated>2021-08-16T15:17:09.431Z</updated>
+    <updated>2021-08-17T09:23:33.257Z</updated>
     
     
       
@@ -85,6 +115,8 @@
     
     
     
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
@@ -97,7 +129,7 @@
     <link href="http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/"/>
     <id>http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/</id>
     <published>2021-08-14T08:51:30.000Z</published>
-    <updated>2021-08-17T08:44:29.270Z</updated>
+    <updated>2021-08-17T09:23:12.865Z</updated>
     
     
       
@@ -109,6 +141,8 @@
       
     
     
+    
+    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
