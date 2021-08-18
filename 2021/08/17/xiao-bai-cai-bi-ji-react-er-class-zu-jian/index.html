@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    374
+                    945
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -484,7 +484,7 @@
 <span class="token punctuation">}</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token constant">B</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>强行记忆点：<code>extends</code> 、<code>constructor</code>、<code>super</code>。<br>如果写了 <code>constructor</code> 没写 <code>super</code> 会报错，所以要么不写 <code>constructor</code> （即不初始化），要么就写全。</p>
+<p>强行记忆点：<code>extends</code> 、<code>constructor</code>、<code>super</code>。<br>如果写了 <code>constructor</code> 没写 <code>super</code> 会报错，所以要么不写 <code>constructor</code> （即不初始化），要么就写全。<code>super</code> 的作用：将父类的this对象继承给子类。</p>
 </blockquote>
 </li>
 </ol>
@@ -532,6 +532,77 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">export</span> <span class="token keyword">default</span> App<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>注意点</p>
+<ul>
+<li>setState 不会立即改变 this.state</li>
+<li>setState 的第一个参数可以接受两种形式的参数，推荐使用函数</li>
+</ul>
+</blockquote>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><h2 id="生命周期执行顺序"><a href="#生命周期执行顺序" class="headerlink" title="生命周期执行顺序"></a>生命周期执行顺序</h2><h3 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h3><ul>
+<li>constructor</li>
+<li>static getDerivedStateFromProps</li>
+<li>render</li>
+<li>componentDidMount</li>
+</ul>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
+<li>static getDerivedStateFromProps</li>
+<li>shouldComponentUpdate</li>
+<li>render</li>
+<li>getSnapshotBeforeUpdate</li>
+<li>componentDidUpdate</li>
+</ul>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><ul>
+<li>componentWillUnmount</li>
+</ul>
+<h2 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h2><h3 id="constructor-NaN"><a href="#constructor-NaN" class="headerlink" title="constructor"></a>constructor</h3><p>在 <code>React</code> 组件挂载之前被调用，在为 <code>React.Component</code> 子类实现构造函数时，应在其他语句之前调用 <code>super()</code></p>
+<p>用途：</p>
+<ul>
+<li><p>初始化 state，但不能调用 setState</p>
+</li>
+<li><p>为<a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/handling-events.html">事件处理函数</a>绑定实例</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* 其它代码略 */</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>onClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">onClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面也可以用新语法代替 👇</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">/* 其它代码略 */</span><span class="token punctuation">}</span>
+<span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#constructor">官方文档</a></p>
+<h3 id="static-getDerivedStateFromProp-（不常用）"><a href="#static-getDerivedStateFromProp-（不常用）" class="headerlink" title="static getDerivedStateFromProp （不常用）"></a>static getDerivedStateFromProp （不常用）</h3><p>在调用 <code>render</code> 方法之前调用，在初始化和后续更新都会被调用</p>
+<p>返回一个对象来更新 state，如果返回 null 则不更新任何内容</p>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromprops">官方文档</a></p>
+<h3 id="render"><a href="#render" class="headerlink" title="render"></a>render</h3><p>是 <code>Class 组件</code>中唯一必须实现的方法</p>
+<p>用于展现视图</p>
+<p>只能有一个根元素，如果有多个元素则需用 <code>&lt;&gt;&lt;/&gt;</code> 包裹起来</p>
+<p><code>render</code> 里面可以写</p>
+<ul>
+<li>if … else …</li>
+<li>? : 表达式</li>
+<li>array.map 循环</li>
+</ul>
+<blockquote>
+<p>如果 <code>shouldComponentUpdate()</code> 返回 <code>false</code>，则不会调用 <code>render()</code></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#render">官方文档</a></p>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><p>在组件挂载后（插入 DOM 树中）立即调用</p>
+<p>官方推荐在此处发起<strong>加载数据</strong>的 <code>AJAX</code> 请求</p>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#componentdidmount">官方文档</a></p>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><p>返回 true 时允许更新 UI，返回 false 时阻止更新 UI</p>
+<p>允许手动判断师傅要进行组件更新，我们可以根据应用场景灵活地设置返回值，以避免不必要的更新</p>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#shouldcomponentupdate">官方文档</a></p>
+<h3 id="getSnapshotBeforeUpdate-（不常用）"><a href="#getSnapshotBeforeUpdate-（不常用）" class="headerlink" title="getSnapshotBeforeUpdate （不常用）"></a>getSnapshotBeforeUpdate （不常用）</h3><p>在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。此生命周期方法的任何返回值将作为参数传递给 <code>componentDidUpdate</code></p>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#getsnapshotbeforeupdate">官方文档</a></p>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><p>在视图更新后执行代码，首次渲染不会执行</p>
+<p>在此处直接调用 <code>setState</code> 必须被包裹在一个条件语句里</p>
+<p>官方推荐在此处发起<strong>更新数据</strong>的 <code>AJAX</code> 请求</p>
+<blockquote>
+<p>如果 <code>shouldComponentUpdate()</code> 返回值为 <code>false</code>，则不会调用 <code>componentDidUpdate()</code></p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://zh-hans.reactjs.org/docs/react-component.html#componentdidupdate">官方文档</a></p>
 
                 
             </div>
