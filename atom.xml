@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-19T09:44:10.174Z</updated>
+  <updated>2021-08-19T18:03:39.453Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小白菜笔记--React（三）函数组件</title>
+    <link href="http://example.com/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/"/>
+    <id>http://example.com/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/</id>
+    <published>2021-08-19T09:56:06.000Z</published>
+    <updated>2021-08-19T18:03:39.453Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写在前面：学习 &lt;code&gt;React&lt;/code&gt; 要时刻告诉自己就是在写 &lt;code&gt;JavaScript&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&quot;函数组件的创建方式&quot;&gt;&lt;a href=&quot;#函数组件的创建方式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
     <title>那些年，被 this 折磨的前端小白</title>
     <link href="http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/"/>
     <id>http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/</id>
     <published>2021-08-18T15:59:41.000Z</published>
-    <updated>2021-08-19T09:44:10.174Z</updated>
+    <updated>2021-08-19T15:30:09.594Z</updated>
     
     
       
@@ -34,7 +60,7 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
     <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
@@ -46,7 +72,7 @@
     <link href="http://example.com/2021/08/17/xiao-bai-cai-bi-ji-react-er-class-zu-jian/"/>
     <id>http://example.com/2021/08/17/xiao-bai-cai-bi-ji-react-er-class-zu-jian/</id>
     <published>2021-08-17T09:05:21.000Z</published>
-    <updated>2021-08-18T15:39:53.012Z</updated>
+    <updated>2021-08-19T15:29:53.299Z</updated>
     
     
       
@@ -60,7 +86,7 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
@@ -154,7 +180,7 @@
     <link href="http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/"/>
     <id>http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/</id>
     <published>2021-08-14T08:51:30.000Z</published>
-    <updated>2021-08-17T09:23:12.865Z</updated>
+    <updated>2021-08-19T15:29:57.949Z</updated>
     
     
       
@@ -167,7 +193,7 @@
     
     
     
-    <category term="笔记" scheme="http://example.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
