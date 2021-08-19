@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="新手前端的装机攻略，拿来吧你, April-cl">
+    <meta name="keywords" content="那些年，被 this 折磨的前端小白, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>新手前端的装机攻略，拿来吧你 | April-cl</title>
+    <title>那些年，被 this 折磨的前端小白 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">新手前端的装机攻略，拿来吧你</h1>
+                    <h1 class="description center-align post-title">那些年，被 this 折磨的前端小白</h1>
                 </div>
             </div>
         </div>
@@ -390,12 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                <span class="chip bg-color">命令行</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                                <span class="chip bg-color">软件</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -406,8 +402,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                电脑
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -419,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2021-08-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2021-08-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    269
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -463,31 +459,114 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>前端时间买了新电脑，装了很多学习用的软件，这里记下来方便后面查找 🔍</p>
-<h1 id="Chrome-浏览器"><a href="#Chrome-浏览器" class="headerlink" title="Chrome 浏览器"></a>Chrome 浏览器</h1><h1 id="Cmder-控制台软件"><a href="#Cmder-控制台软件" class="headerlink" title="Cmder 控制台软件"></a>Cmder 控制台软件</h1><p>安装后配置：</p>
+                <p>在刚开始学 <code>JavaScript</code> 时，最深恶痛绝的三个 JS怪👹：<strong>this妖</strong>、<strong>原型精</strong>和 <strong>AJAX魔</strong></p>
+<p>最近在写总结回顾时竟意外发现这三大怪早已在不知不觉中被我消化吸收了，趁着热乎记下来✍~~~</p>
+<p>有请今天的出场嘉宾🎤：this妖</p>
+<h1 id="this妖-的前世今生"><a href="#this妖-的前世今生" class="headerlink" title="this妖 的前世今生"></a>this妖 的前世今生</h1><p>假设现在有一对象🐘🐘</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">'April-cl'</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 待补充</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我想要调用 person.sayHi(…)，打印出「你好，我是 April-cl，今年 18 岁」</p>
+<p>emmmmmmmmm 我要怎样写 <code>sayHi</code> 呢，这样吗？</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'你好，我是 ${name}，今年 ${age} 岁'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>调用方式：<code>person.sayHi(person.name, person.age)</code></p>
+<p>这似乎可以，但是…看起来傻傻的😳</p>
+<p>那要不，给 <code>sayHi</code> 传入一个对象？代码改成这样：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">self</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'你好，我是 ${self.name}，今年 ${self.age} 岁'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>调用方式：<code>person.sayHi(person)</code></p>
+<p>心里嘀嘀咕：可我就想把参数里的 <code>person</code> 省掉</p>
+<p>💡 有了，给参数里的 <code>person</code> 穿上隐身衣。可是没有了实参，<code>sayHi</code> 声明的形参怎么办？</p>
+<p>好办，给 <code>self</code> 也穿上隐身衣，用一个驻守的小妖精 <code>this</code> 来代替：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">sayHi</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// this 就是 self</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'你好，我是 ${this.name}，今年 ${this.age} 岁'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>调用方式：<code>person.sayHi()</code></p>
+<p>现在看着明了了，<code>this</code> 是 <code>sayHi</code> 隐藏的第一个形参。在调用 <code>person.sayHi()</code> 时，这个 <code>person</code> 会「变成」 <code>this</code></p>
+<h1 id="令小白闻风丧胆的-this妖-现身啦"><a href="#令小白闻风丧胆的-this妖-现身啦" class="headerlink" title="令小白闻风丧胆的 this妖 现身啦"></a>令小白闻风丧胆的 this妖 现身啦</h1><p>俗话说知彼知己方能百战百胜，那就先要了解 <code>this</code> 的5种绑定方式</p>
 <ul>
-<li>默认命令行改为 bash。设置 -&gt; 通用 -&gt; 选择你的启动任务或者带参数的shell -&gt; {bash::bash}</li>
+<li>默认绑定</li>
+<li>隐式绑定</li>
+<li>显示绑定</li>
+<li>new绑定</li>
+<li>箭头函数绑定</li>
 </ul>
-<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><p>安装后配置：</p>
+<h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><p>前置知识（系统丢给了你一本秘籍 📓 ）：</p>
+<p>在全局块级作用域</p>
 <ul>
-<li>使用淘宝源。 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i -g nrm
-nrm <span class="token function">ls</span>
-nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员</li>
+<li>非严格模式下 this 指向 window</li>
+<li>用 let 或 const 声明不会被绑定到 window 上</li>
 </ul>
-<h1 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h1><h1 id="7zip-解压软件"><a href="#7zip-解压软件" class="headerlink" title="7zip 解压软件"></a>7zip 解压软件</h1><h1 id="Everything-文件搜索"><a href="#Everything-文件搜索" class="headerlink" title="Everything 文件搜索"></a>Everything 文件搜索</h1><h1 id="微信-PC-版"><a href="#微信-PC-版" class="headerlink" title="微信 PC 版"></a>微信 PC 版</h1><h1 id="Snipaste-截图软件"><a href="#Snipaste-截图软件" class="headerlink" title="Snipaste 截图软件"></a>Snipaste 截图软件</h1><h1 id="VSCode-编辑器"><a href="#VSCode-编辑器" class="headerlink" title="VSCode 编辑器"></a>VSCode 编辑器</h1><p>安装后配置：</p>
-<ul>
-<li>自动保存。设置 -&gt; Auto Save: onFocusChange</li>
-<li>汉化。扩展 -&gt; 搜索 chinese</li>
-<li>检查拼写。扩展 -&gt; 搜索 Code Spell Checker</li>
-<li>git 操作。扩展 -&gt; Git Easy</li>
-<li><a target="_blank" rel="noopener" href="https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration">配合 Cmder</a>。</li>
-</ul>
-<p>快捷键：<br>找文件 ctrl + p<br>输命令 ctrl + shift + p<br>多位置输入 at + 单击</p>
-<h1 id="WebStorm-编辑器"><a href="#WebStorm-编辑器" class="headerlink" title="WebStorm 编辑器"></a>WebStorm 编辑器</h1><p>安装后配置：</p>
-<ul>
-<li>配合 Cmder。Setting -&gt; Tools -&gt; Terminal -&gt; Shell Path -&gt; 用 Everything 搜索 <code>git-for-windows</code> ，复制包含 <code>cmder\vendor\git-for-windows\bin\bash.exe</code> 的路径。</li>
-<li>配置 Git。Setting -&gt; Version Control -&gt; Git -&gt; Path to Git executable -&gt;  用 Everything 搜索 <code>git-for-windows</code> ，复制包含 <code>cmder\vendor\git-for-windows\bin\git.exe</code> 的路径。</li>
-</ul>
+<p>好了，接下来打怪升级 ⬆</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token number">2</span>
+<span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'foo a:'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'foo b:'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'this a:'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'this b:'</span> <span class="token operator">+</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">)</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>根据秘籍</p>
+<p><code>a</code> 和 <code>foo</code> 变量会被绑定在 <code>window</code> 上，而 <code>b</code> 则不会（即 <code>window.b</code> 是 <code>undefined</code>），而 <code>this</code> 指向 <code>window</code>，所以答案是</p>
+<pre class="line-numbers language-none"><code class="language-none">this a:1
+this b:undefined
+foo a:1
+foo b:undefined<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><p>回顾上文『this妖 的前世今生』，<code>this</code> 隐式绑定的对象其实就是穿了隐身衣的 <code>person</code></p>
+<p>✨ Get 新秘籍：当函数引用有上下文对象时, 如 obj.foo() 的调用方式, foo 内的 this 指向 obj </p>
+<p>但是江湖险恶，若是有人披着层「马甲」诓骗 this妖，就会造成 this妖 和穿着隐身衣的正主形同陌路，请看题：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> foo2 <span class="token operator">=</span> obj<span class="token punctuation">.</span>foo<span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">foo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>打开照妖镜（控制台），会发现此时结果</p>
+<pre class="line-numbers language-none"><code class="language-none">1
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>？？？</p>
+<p>不难理解 <code>obj.foo()</code> 的结果是 1，但 <code>foo2()</code> 居然打印出的是<code>window</code> 下的 <code>a</code> 😮</p>
+<p>这便是这层「马甲」的厉害之处了：使用另一个变量来给函数取别名造成丢失绑定对象（秘籍升级 ⬆︎ ）</p>
+<h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><p>嘿嘿 😏 你有张良计，我有过墙梯 ~</p>
+<p>拿出哆啦A梦的道具『非生物催眠喇叭📢』： <code>call</code> <code>apply</code> <code>bind</code></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">foo</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> foo <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> foo2 <span class="token operator">=</span> obj<span class="token punctuation">.</span>foo<span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">foo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">foo2</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>      <span class="token comment">// 上面代码与隐式绑定示例一致，新增此行代码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当当当，<code>foo2.call(obj)</code> 打印出的是 1。</p>
+<p>这就是利用 <code>call</code> 、 <code>apply</code> 或者 <code>bind</code> 方法改变函数内this的指向的显示绑定。</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call">MDN Function.prototype.call()</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">MDN Function.prototype.apply()</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">MDN Function.prototype.bind()</a></p>
+<h2 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h2><p>使用new来调用一个函数，会构造一个新对象并把这个新对象绑定到调用函数中的this</p>
+<p>这里留坑，等关于 <code>new</code> 的博客写好了再来填</p>
+<h2 id="箭头函数绑定"><a href="#箭头函数绑定" class="headerlink" title="箭头函数绑定"></a>箭头函数绑定</h2><p>实际上箭头函数里并没有 this，如果在箭头函数里看到 this，直接把它当作箭头函数外面的 this 即可。外面的 this 是什么，箭头函数里面的 this 就还是什么，因为箭头函数本身不支持 this。</p>
 
                 
             </div>
@@ -514,7 +593,7 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/</a>
+                    <a href="http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/">http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,12 +631,8 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                    <span class="chip bg-color">命令行</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                                    <span class="chip bg-color">软件</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -601,17 +676,18 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/">
+                <a href="/2021/08/18/js-de-san-zuo-da-shan-zhi-this/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="一些常用的命令行">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="那些年，被 this 折磨的前端小白">
                         
-                        <span class="card-title">一些常用的命令行</span>
+                        <span class="card-title">那些年，被 this 折磨的前端小白</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -621,26 +697,27 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -654,13 +731,13 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/14/xiao-bai-cai-bi-ji-react-yi/">
+                <a href="/2021/08/17/xiao-bai-cai-bi-ji-react-er-class-zu-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="小白菜笔记--React（一）基础篇">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="小白菜笔记--React（二）Class 组件">
                         
-                        <span class="card-title">小白菜笔记--React（一）基础篇</span>
+                        <span class="card-title">小白菜笔记--React（二）Class 组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -671,7 +748,7 @@ nrm use taobao<span aria-hidden="true" class="line-numbers-rows"><span></span><s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
                             </span>
                         <span class="publish-author">
                             
