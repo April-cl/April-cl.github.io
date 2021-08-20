@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-20T06:48:02.314Z</updated>
+  <updated>2021-08-20T08:40:28.346Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记--React（四） Class 组件事件绑定</title>
+    <link href="http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/"/>
+    <id>http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/</id>
+    <published>2021-08-20T07:02:44.000Z</published>
+    <updated>2021-08-20T08:40:28.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-jsx&quot; data-language=&quot;jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="React" scheme="http://example.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记--React（三）函数组件</title>
