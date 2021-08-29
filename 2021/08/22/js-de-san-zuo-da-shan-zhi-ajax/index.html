@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记--React（四） Class 组件事件绑定, April-cl">
+    <meta name="keywords" content="JS 的三座大山之 AJAX, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记--React（四） Class 组件事件绑定 | April-cl</title>
+    <title>JS 的三座大山之 AJAX | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记--React（四） Class 组件事件绑定</h1>
+                    <h1 class="description center-align post-title">JS 的三座大山之 AJAX</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/React/">
-                                <span class="chip bg-color">React</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -415,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    360
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -459,91 +459,151 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">"./styles.css"</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
+                <p>在刚开始学 <code>JavaScript</code> 时，最深恶痛绝的三个 JS怪👹：<strong>this妖</strong>、<strong>原型精</strong>和 <strong>AJAX魔</strong></p>
+<p>最近在写总结回顾时竟意外发现这三大怪早已在不知不觉中被我消化吸收了，趁着热乎记下来✍~~~</p>
+<p>有请今天的出场嘉宾🎤：AJAX魔</p>
+<h1 id="什么是-AJAX"><a href="#什么是-AJAX" class="headerlink" title="什么是 AJAX"></a>什么是 AJAX</h1><p>AJAX 是一种用于创建快速动态网页的技术，它使用 <code>XMLHttpRequest</code> 对象与服务器通信。 它可以使用JSON，XML，HTML和text文本等格式发送和接收数据。AJAX最吸引人的就是它的“<strong>异步</strong>”特性，它可以在不重新刷新页面的情况下与服务器通信，交换数据，或更新页面。</p>
+<h1 id="什么是异步"><a href="#什么是异步" class="headerlink" title="什么是异步"></a>什么是异步</h1><p>不等任务执行完，直接执行下一个任务</p>
+<p>举个例子 🌰</p>
+<p>周末我和闺蜜去逛gai，我们打算去吃海底捞，排队的人很多，于是我们手机扫码排号，然后继续逛gai，过一会收到叫号通知就可以进去吃火锅啦~</p>
+<p>「排号」这件事并没有立即得到结果（进去吃火锅），所以这是一个异步任务</p>
+<p>AJAX 请求数据流程与此类似。</p>
+<p>浏览器通过 <code>XMLHttpRequest</code> 对象向服务器发出HTTP请求与接收HTTP响应，浏览器接着做其他事情，等收到 <code>XMLHttpRequest</code> 对象返回来的数据再渲染页面。</p>
+<h1 id="AJAX-的使用"><a href="#AJAX-的使用" class="headerlink" title="AJAX 的使用"></a>AJAX 的使用</h1><h2 id="1-创建Ajax核心对象XMLHttpRequest"><a href="#1-创建Ajax核心对象XMLHttpRequest" class="headerlink" title="1. 创建Ajax核心对象XMLHttpRequest"></a>1. 创建Ajax核心对象XMLHttpRequest</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Mozilla, Safari, IE7+ ...</span>
+    httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>ActiveXObject<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// IE 6 and older</span>
+    httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2-发送HTTP请求"><a href="#2-发送HTTP请求" class="headerlink" title="2. 发送HTTP请求"></a>2. 发送HTTP请求</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> async<span class="token punctuation">)</span>
+httpRequest<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>method：HTTP请求方法 - 有GET，POST，HEAD以及服务器支持的其他方法</p>
+<p>url：文件在服务器上的位置。由于安全原因，默认不能调用第三方URL域名</p>
+<p>async：用于设置请求true（异步）或 false（同步） </p>
+<p>send() 方法的参数可以是任何你想发送给服务器的内容。</p>
+<p>如果是 POST 请求的话，需注意：</p>
+<ul>
+<li>在调用 send() 方法获取表单数据前要设置请求头的格式内容</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>发送表单数据时应该用服务器可以解析的格式，像查询语句，JSON，XML等</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 举例</span>
+httpRequest<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"name=xcl&amp;anothername=April"</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="3-处理服务器响应"><a href="#3-处理服务器响应" class="headerlink" title="3. 处理服务器响应"></a>3. 处理服务器响应</h2><p>有关的 API ：</p>
+<ul>
+<li><p>XMLHttpRequest.onreadystatechange：只要 readyState 属性发生变化，就会调用相应的处理函数 </p>
+</li>
+<li><p>XMLHttpRequest.response：返回响应的正文，返回的类型取决于 responseType 属性</p>
+</li>
+<li><p>XMLHttpRequest.responseText：服务器以文本字符的形式返回</p>
+</li>
+</ul>
+<p>-XMLHttpRequest.responseXML：以 XMLDocument 对象方式返回，之后就可以使用JavaScript来处理</p>
+<ul>
+<li><p>XMLHttpRequest.readyState：返回一个 XMLHttpRequest 代理当前所处的状态（请求的状态码），它的值含义：</p>
+<ul>
+<li><p>0 未初始化 – 尚未调用.open()方法</p>
+</li>
+<li><p>1 启动 – 已经调用.open()方法，但尚未调用.send()方法</p>
+</li>
+<li><p>2 发送 – 已经调用.send()方法，但尚未接收到响应</p>
+</li>
+<li><p>3 接收 – 已经接收到部分响应数据</p>
+</li>
+<li><p>4 完成 – 已经接收到全部响应数据，而且已经可以在客户端使用了</p>
+</li>
+</ul>
+</li>
+<li><p>XMLHttpRequest.status：返回了 XMLHttpRequest 响应中的数字状态（请求的响应状态码），它的值含义：</p>
+<ul>
+<li><p>1** 信息 – 服务器收到请求，需要请求者继续执行操作</p>
+</li>
+<li><p>2** 成功 – 操作被成功接收并处理</p>
+</li>
+<li><p>3** 重定向 – 需要进一步的操作以完成请求</p>
+</li>
+<li><p>4** 客户端错误 – 请求包含语法错误或无法完成请求</p>
+</li>
+<li><p>5** 服务器错误 – 服务器在处理请求的过程中发生了错误</p>
+</li>
+</ul>
+<p>  一般通过检查响应码 200 OK 判断 AJAX 有没有成功</p>
+</li>
+</ul>
+<p>一般我们会使用异步 AJAX（即 open() 的第三个参数未特别指定或设为 true），在发送请求时，提供一个回调函数负责处理响应，代码大概长这样：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>httpRequest<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> httpRequest<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token comment">/* 对 httpRequest.response 的一些操作 */</span> 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果是使用同步 AJAX（即 open() 的第三个参数设为 false），则直接在 send() 方法之后执行要进行的操作即可。但不建议这样做，它的用户体验很糟糕，可能会使页面在请求期间卡住</p>
+<p>AJAX 的用法大概就是如此，把所有代码整合到一块是这样的：</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Mozilla, Safari, IE7+ ...</span>
+    httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>ActiveXObject<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// IE 6 and older</span>
+    httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">A</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>依次点击4个按钮，控制台输出</p>
-<pre class="line-numbers language-none"><code class="language-none">undefined
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>第一种情况与 <a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">JavaScript 函数工作原理</a>有关，this 最终是指向 window 的。</p>
-<p>在 Class 组件中，事件绑定的正确姿势应该是这样 ⬇</p>
-<p>传一个匿名函数给 onClick</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用 bind 绑定 this</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用箭头函数定义</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// 下面这种写法和在 constructor 中写 this.click2 = () =&gt; {} 是等价的</span>
-<span class="token comment">// click2 = () =&gt; {}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
+httpRequest<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> async<span class="token punctuation">)</span>
+httpRequest<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+httpRequest<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>httpRequest<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> httpRequest<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        <span class="token comment">/* 对 httpRequest.response 的一些操作 */</span> 
+    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>在类中 <code>click() {}</code> 和 <code>click = () =&gt; {}</code> 两种写法的区别：</p>
+<h1 id="手动封装-AJAX"><a href="#手动封装-AJAX" class="headerlink" title="手动封装 AJAX"></a>手动封装 AJAX</h1><p>这里会用到 <code>Promise</code> 对象【<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN传送门</a>】</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">ajax</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> <span class="token punctuation">{</span>success<span class="token punctuation">,</span> fail<span class="token punctuation">}</span> <span class="token operator">=</span> options
+        <span class="token keyword">const</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        request<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">)</span>
+        request<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">&lt;</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token function">resolve</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> request<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>status <span class="token operator">&gt;=</span> <span class="token number">400</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token function">reject</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> request<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        request<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个封装只是为了熟悉 <code>Promise</code> 的用法，尚还存在许多问题（post 无法上传数据、不能设置请求头等）</p>
+<h1 id="jQuery-ajax"><a href="#jQuery-ajax" class="headerlink" title="jQuery.ajax"></a>jQuery.ajax</h1><p><a target="_blank" rel="noopener" href="https://www.jquery123.com/jQuery.ajax/">jQuery.ajax() 文档</a></p>
+<p>用法：</p>
 <ul>
-<li><code>click() {}</code> 是对象的共有属性（也就是原型上的属性）</li>
-<li><code>click = () =&gt; {}</code> 是对象本身的属性</li>
+<li><p>jQuery.ajax()</p>
+</li>
+<li><p>jQuery.ajax( url [, settings ] )</p>
+</li>
+<li><p>jQuery.ajax( [settings ] )</p>
+</li>
 </ul>
-<blockquote>
-<p>觉得 this 麻烦，那用函数组件就好啦 😊</p>
-</blockquote>
+<p>返回 jqXHR 对象，常用 API：</p>
+<ul>
+<li><p>jqXHR.done(function(data, textStatus, jqXHR) {})：一个可供选择的 success 回调选项的构造函数</p>
+</li>
+<li><p>jqXHR.fail(function(jqXHR, textStatus, errorThrown) {})：一种可供选择的 error 回调选项的构造函数</p>
+</li>
+<li><p>jqXHR.always(function(data|jqXHR, textStatus, jqXHR|errorThrown) { })：一种可供选择的 complete 回调选项的构造函数</p>
+</li>
+<li><p>jqXHR.then(function(data, textStatus, jqXHR) {}, function(jqXHR, textStatus, errorThrown) {})：包含了 .done() 和 .fail()方法的功能</p>
+</li>
+</ul>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><a target="_blank" rel="noopener" href="http://www.axios-js.com/zh-cn/docs/">axios 文档</a></p>
+<p>参考文章：</p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX/Getting_Started">Ajax 文档 MDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903618764603399">Ajax原理一篇就够了</a></p>
 
                 
             </div>
@@ -570,7 +630,7 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/">http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/</a>
+                    <a href="http://example.com/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/">http://example.com/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -608,8 +668,8 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/React/">
-                                    <span class="chip bg-color">React</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -657,13 +717,13 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/">
+                <a href="/2021/08/23/xiao-bai-cai-bi-ji-react-wu-shou-kong-zu-jian-yu-fei-shou-kong-zu-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="那些年，被原型折磨的前端小白">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小白菜笔记--React（五）受控组件与非受控组件">
                         
-                        <span class="card-title">那些年，被原型折磨的前端小白</span>
+                        <span class="card-title">小白菜笔记--React（五）受控组件与非受控组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -674,57 +734,8 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="小白菜笔记--React（三）函数组件">
-                        
-                        <span class="card-title">小白菜笔记--React（三）函数组件</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -742,6 +753,55 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     
                     <a href="/tags/React/">
                         <span class="chip bg-color">React</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="那些年，被原型折磨的前端小白">
+                        
+                        <span class="card-title">那些年，被原型折磨的前端小白</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
