@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记--React（四） Class 组件事件绑定, April-cl">
+    <meta name="keywords" content="小白菜笔记 Vue （五）生命周期, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记--React（四） Class 组件事件绑定 | April-cl</title>
+    <title>小白菜笔记 Vue （五）生命周期 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记--React（四） Class 组件事件绑定</h1>
+                    <h1 class="description center-align post-title">小白菜笔记 Vue （五）生命周期</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/React/">
-                                <span class="chip bg-color">React</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                     </div>
@@ -415,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-08-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    360
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -459,91 +459,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">"./styles.css"</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">A</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>依次点击4个按钮，控制台输出</p>
-<pre class="line-numbers language-none"><code class="language-none">undefined
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>第一种情况与 <a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">JavaScript 函数工作原理</a>有关，this 最终是指向 window 的。</p>
-<p>在 Class 组件中，事件绑定的正确姿势应该是这样 ⬇</p>
-<p>传一个匿名函数给 onClick</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用 bind 绑定 this</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用箭头函数定义</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// 下面这种写法和在 constructor 中写 this.click2 = () =&gt; {} 是等价的</span>
-<span class="token comment">// click2 = () =&gt; {}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在类中 <code>click() {}</code> 和 <code>click = () =&gt; {}</code> 两种写法的区别：</p>
+                <p><img src="https://cn.vuejs.org/images/lifecycle.png" alt="生命周期图示"></p>
+<h1 id="选项-生命周期钩子"><a href="#选项-生命周期钩子" class="headerlink" title="选项-生命周期钩子"></a>选项-生命周期钩子</h1><p>所有的生命周期钩子自动绑定 this 上下文到实例中，不能使用箭头函数来定义一个生命周期方法 </p>
+<h2 id="beforeCreate"><a href="#beforeCreate" class="headerlink" title="beforeCreate"></a>beforeCreate</h2><p>在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。</p>
+<h2 id="created"><a href="#created" class="headerlink" title="created"></a>created</h2><p>在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，property 和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el property 目前尚不可用。</p>
+<h2 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h2><p>在挂载开始之前被调用：相关的 render 函数首次被调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h2><p>实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了。如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。</p>
+<p>注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h2><p>数据更新时调用，发生在虚拟 DOM 打补丁之前。这里适合在更新之前访问现有的 DOM，比如手动移除已添加的事件监听器。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用，因为只有初次渲染会在服务端进行。</strong></p>
+<h2 id="updated"><a href="#updated" class="headerlink" title="updated"></a>updated</h2><p>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。</p>
+<p>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态。如果要相应状态改变，通常最好使用计算属性或 watcher 取而代之。</p>
+<p>注意 updated 不会保证所有的子组件也都一起被重绘。如果你希望等到整个视图都重绘完毕，可以在 updated 里使用 vm.$nextTick：</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="activated"><a href="#activated" class="headerlink" title="activated"></a>activated</h2><p>被 keep-alive 缓存的组件激活时调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="deactivated"><a href="#deactivated" class="headerlink" title="deactivated"></a>deactivated</h2><p>被 keep-alive 缓存的组件停用时调用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="beforeDestroy"><a href="#beforeDestroy" class="headerlink" title="beforeDestroy"></a>beforeDestroy</h2><p>实例销毁之前调用。在这一步，实例仍然完全可用。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed"></a>destroyed</h2><p>实例销毁后调用。该钩子被调用后，对应 Vue 实例的所有指令都被解绑，所有的事件监听器被移除，所有的子实例也都被销毁。</p>
+<p><strong>该钩子在服务器端渲染期间不被调用。</strong></p>
+<h2 id="errorCaptured"><a href="#errorCaptured" class="headerlink" title="errorCaptured"></a>errorCaptured</h2><p>当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。此钩子可以返回 false 以阻止该错误继续向上传播。</p>
+<h1 id="实例方法-生命周期"><a href="#实例方法-生命周期" class="headerlink" title="实例方法 / 生命周期"></a>实例方法 / 生命周期</h1><h2 id="vm-mount-elementOrSelector"><a href="#vm-mount-elementOrSelector" class="headerlink" title="vm.$mount( [elementOrSelector] )"></a>vm.$mount( [elementOrSelector] )</h2><ul>
+<li><p>参数：</p>
 <ul>
-<li><code>click() {}</code> 是对象的共有属性（也就是原型上的属性）</li>
-<li><code>click = () =&gt; {}</code> 是对象本身的属性</li>
+<li><p>{Element | string} [elementOrSelector]</p>
+</li>
+<li><p>{boolean} [hydrating]</p>
+</li>
 </ul>
-<blockquote>
-<p>觉得 this 麻烦，那用函数组件就好啦 😊</p>
-</blockquote>
+</li>
+<li><p>返回值：vm - 实例自身</p>
+</li>
+<li><p>用法：</p>
+<p>  如果 Vue 实例在实例化时没有收到 el 选项，则它处于“未挂载”状态，没有关联的 DOM 元素。可以使用 vm.$mount() 手动地挂载一个未挂载的实例。</p>
+<p>  如果没有提供 elementOrSelector 参数，模板将被渲染为文档之外的的元素，并且你必须使用原生 DOM API 把它插入文档中。</p>
+<p>  这个方法返回实例自身，因而可以链式调用其它实例方法。</p>
+</li>
+</ul>
+<h2 id="vm-forceUpdate"><a href="#vm-forceUpdate" class="headerlink" title="vm.$forceUpdate()"></a>vm.$forceUpdate()</h2><ul>
+<li><p>用法：</p>
+<p>  迫使 Vue 实例重新渲染。注意它仅仅影响实例本身和插入插槽内容的子组件，而不是所有子组件。</p>
+</li>
+</ul>
+<h2 id="vm-nextTick-callback"><a href="#vm-nextTick-callback" class="headerlink" title="vm.$nextTick( [callback] )"></a>vm.$nextTick( [callback] )</h2><ul>
+<li><p>参数：</p>
+<p>  {Function} [callback]</p>
+</li>
+<li><p>用法：</p>
+<p>  将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。</p>
+</li>
+</ul>
+<h2 id="vm-destroy"><a href="#vm-destroy" class="headerlink" title="vm.$destroy()"></a>vm.$destroy()</h2><ul>
+<li><p>用法：</p>
+<p>  完全销毁一个实例。清理它与其它实例的连接，解绑它的全部指令及事件监听器。</p>
+<p>  触发 beforeDestroy 和 destroyed 的钩子。</p>
+</li>
+</ul>
 
                 
             </div>
@@ -570,7 +545,7 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/">http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/</a>
+                    <a href="http://example.com/2021/08/30/xiao-bai-cai-bi-ji-vue-wu-sheng-ming-zhou-qi/">http://example.com/2021/08/30/xiao-bai-cai-bi-ji-vue-wu-sheng-ming-zhou-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -608,8 +583,8 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/React/">
-                                    <span class="chip bg-color">React</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
                         </div>
@@ -653,17 +628,18 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/">
+                <a href="/2021/08/30/xiao-bai-cai-bi-ji-vue-wu-sheng-ming-zhou-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="那些年，被原型折磨的前端小白">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="小白菜笔记 Vue （五）生命周期">
                         
-                        <span class="card-title">那些年，被原型折磨的前端小白</span>
+                        <span class="card-title">小白菜笔记 Vue （五）生命周期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -673,9 +649,9 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -688,11 +664,12 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -706,13 +683,13 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/">
+                <a href="/2021/08/29/xiao-bai-cai-bi-ji-vue-si-zu-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="小白菜笔记--React（三）函数组件">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="小白菜笔记 Vue （四）组件">
                         
-                        <span class="card-title">小白菜笔记--React（三）函数组件</span>
+                        <span class="card-title">小白菜笔记 Vue （四）组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -723,7 +700,7 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
                             </span>
                         <span class="publish-author">
                             
@@ -740,8 +717,8 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>

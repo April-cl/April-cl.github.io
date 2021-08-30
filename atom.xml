@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-08-29T12:06:47.308Z</updated>
+  <updated>2021-08-30T17:20:34.547Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记 Vue （五）生命周期</title>
+    <link href="http://example.com/2021/08/30/xiao-bai-cai-bi-ji-vue-wu-sheng-ming-zhou-qi/"/>
+    <id>http://example.com/2021/08/30/xiao-bai-cai-bi-ji-vue-wu-sheng-ming-zhou-qi/</id>
+    <published>2021-08-30T08:09:59.000Z</published>
+    <updated>2021-08-30T17:20:34.547Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cn.vuejs.org/images/lifecycle.png&quot; alt=&quot;生命周期图示&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;选项-生命周期钩子&quot;&gt;&lt;a href=&quot;#选项-生命周期钩子&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小白菜笔记 Vue （四）组件</title>
+    <link href="http://example.com/2021/08/29/xiao-bai-cai-bi-ji-vue-si-zu-jian/"/>
+    <id>http://example.com/2021/08/29/xiao-bai-cai-bi-ji-vue-si-zu-jian/</id>
+    <published>2021-08-29T15:39:57.000Z</published>
+    <updated>2021-08-29T15:40:40.980Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;组件系统是Vue的一个重要概念，它允许我们使用小型、独立和通常可复用的组件构建大型应用。&lt;/p&gt;
+&lt;h1 id=&quot;自定义组件&quot;&gt;&lt;a href=&quot;#自定义组件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记 Vue （三）修饰符</title>
@@ -98,7 +150,7 @@
     <link href="http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/"/>
     <id>http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/</id>
     <published>2021-08-25T15:30:07.000Z</published>
-    <updated>2021-08-27T07:29:16.888Z</updated>
+    <updated>2021-08-30T17:06:38.276Z</updated>
     
     
       
@@ -106,8 +158,8 @@
         
         
     <summary type="html">&lt;p&gt;写在前面：&lt;/p&gt;
-&lt;p&gt;本系列为 Vue 学习笔记，Vue 的文档很通俗易懂，学习细节移步&lt;a href=&quot;https://cn.vuejs.org/v2/guide/&quot;&gt;官网&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;关于Vue&quot;&gt;&lt;a href=&quot;#关于Vue&quot;</summary>
+&lt;p&gt;&lt;strong&gt;学习Vue要转化思想&lt;/strong&gt;：不要想着怎么操作 DOM，而是想着如何操作数据！&lt;/p&gt;
+&lt;p&gt;Vue 的文档很通俗易懂，学习细节移步&lt;a</summary>
         
       
     
@@ -146,11 +198,11 @@
   </entry>
   
   <entry>
-    <title>JS 的三座大山之 AJAX</title>
+    <title>那些年，被 AJAX 折磨的前端小白</title>
     <link href="http://example.com/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/"/>
     <id>http://example.com/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/</id>
     <published>2021-08-22T09:56:12.000Z</published>
-    <updated>2021-08-25T18:41:26.317Z</updated>
+    <updated>2021-08-29T15:53:25.611Z</updated>
     
     
       
@@ -175,7 +227,7 @@
     <link href="http://example.com/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/"/>
     <id>http://example.com/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/</id>
     <published>2021-08-20T10:09:53.000Z</published>
-    <updated>2021-08-26T06:19:59.600Z</updated>
+    <updated>2021-08-29T16:09:42.645Z</updated>
     
     
       
@@ -251,7 +303,7 @@
     <link href="http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/"/>
     <id>http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/</id>
     <published>2021-08-18T15:59:41.000Z</published>
-    <updated>2021-08-23T16:17:23.440Z</updated>
+    <updated>2021-08-29T15:55:41.285Z</updated>
     
     
       
@@ -384,7 +436,7 @@
     <link href="http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/"/>
     <id>http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/</id>
     <published>2021-08-14T08:51:30.000Z</published>
-    <updated>2021-08-19T15:29:57.949Z</updated>
+    <updated>2021-08-29T15:55:10.858Z</updated>
     
     
       
@@ -409,7 +461,7 @@
     <link href="http://example.com/2021/08/10/hello-world/"/>
     <id>http://example.com/2021/08/10/hello-world/</id>
     <published>2021-08-09T16:57:35.456Z</published>
-    <updated>2021-08-09T16:57:35.456Z</updated>
+    <updated>2021-08-29T15:48:09.957Z</updated>
     
     
       
@@ -421,6 +473,8 @@
       
     
     
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
     
     
   </entry>
