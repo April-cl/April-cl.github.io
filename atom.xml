@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-06T17:09:34.728Z</updated>
+  <updated>2021-09-09T17:32:31.361Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记 uni-app（一）初体验</title>
+    <link href="http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/"/>
+    <id>http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/</id>
+    <published>2021-09-09T16:56:39.000Z</published>
+    <updated>2021-09-09T17:32:31.361Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近又开始鼓捣学习小程序啦，虽然带娃基本没多少时间但我真的超爱学习新玩意带来的满足感的（读书时候要有这觉悟该多好哇😳）&lt;/p&gt;
+&lt;p&gt;按照以往的学习经验，首先要去官网看一遍教程，然后跟着示例撸一个 HelloWorld 出来。&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Cookie、Session、Token 到底是个啥</title>
@@ -404,7 +431,7 @@
     <link href="http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/"/>
     <id>http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/</id>
     <published>2021-08-16T15:32:12.000Z</published>
-    <updated>2021-08-17T09:24:00.422Z</updated>
+    <updated>2021-09-06T17:12:09.691Z</updated>
     
     
       
@@ -422,6 +449,8 @@
     
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
     
   </entry>
   
@@ -503,29 +532,6 @@
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2021/08/10/hello-world/"/>
-    <id>http://example.com/2021/08/10/hello-world/</id>
-    <published>2021-08-09T16:57:35.456Z</published>
-    <updated>2021-08-29T15:48:09.957Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
-    
     
   </entry>
   

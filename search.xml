@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>小白菜笔记 uni-app（一）初体验</title>
+      <link href="/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/"/>
+      <url>/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/</url>
+      
+        <content type="html"><![CDATA[<p>最近又开始鼓捣学习小程序啦，虽然带娃基本没多少时间但我真的超爱学习新玩意带来的满足感的（读书时候要有这觉悟该多好哇😳）</p><p>按照以往的学习经验，首先要去官网看一遍教程，然后跟着示例撸一个 HelloWorld 出来。</p><p><a href="https://uniapp.dcloud.io/README">什么是 uni-app</a></p><p><a href="https://ask.dcloud.net.cn/article/id-35657__page-2">白话uni-app 【也是html、vue、小程序的区别】</a></p><p><a href="https://segmentfault.com/a/1190000015684864">vue和微信小程序的区别、比较</a></p><p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/">微信官方文档 · 小程序</a></p><p>PS：这个系列佛性更新，尽量把笔记记录下来 🤦</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cookie、Session、Token 到底是个啥</title>
       <link href="/2021/09/04/sha-sha-fen-bu-qing-zhi-cookie-session-token/"/>
       <url>/2021/09/04/sha-sha-fen-bu-qing-zhi-cookie-session-token/</url>
@@ -396,6 +421,8 @@
         <tags>
             
             <tag> 命令行 </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
