@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-09T17:32:31.361Z</updated>
+  <updated>2021-09-23T08:53:56.537Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/"/>
     <id>http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/</id>
     <published>2021-09-09T16:56:39.000Z</published>
-    <updated>2021-09-09T17:32:31.361Z</updated>
+    <updated>2021-09-23T08:53:56.537Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;最近又开始鼓捣学习小程序啦，虽然带娃基本没多少时间但我真的超爱学习新玩意带来的满足感的（读书时候要有这觉悟该多好哇😳）&lt;/p&gt;
+    <summary type="html">&lt;p&gt;最近又开始鼓捣学习 uni-app 啦，虽然带娃基本没多少时间但我真的超爱学习新玩意带来的满足感的（读书时候要有这觉悟该多好哇😳）&lt;/p&gt;
 &lt;p&gt;按照以往的学习经验，首先要去官网看一遍教程，然后跟着示例撸一个 HelloWorld 出来。&lt;/p&gt;
 &lt;p&gt;&lt;a</summary>
         
@@ -40,6 +40,8 @@
     
     
     <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
   </entry>
   
