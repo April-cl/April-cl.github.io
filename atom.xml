@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-23T08:53:56.537Z</updated>
+  <updated>2021-09-24T15:49:37.301Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记 uni-app（二）基础篇</title>
+    <link href="http://example.com/2021/09/23/xiao-bai-cai-bi-ji-uni-app-er-ji-chu-pian/"/>
+    <id>http://example.com/2021/09/23/xiao-bai-cai-bi-ji-uni-app-er-ji-chu-pian/</id>
+    <published>2021-09-23T09:03:26.000Z</published>
+    <updated>2021-09-24T15:49:37.301Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;开发规范&quot;&gt;&lt;a href=&quot;#开发规范&quot; class=&quot;headerlink&quot; title=&quot;开发规范&quot;&gt;&lt;/a&gt;开发规范&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;页面文件遵循 Vue 单文件组件 (SFC) 规范，即含三种类型的顶级语言块</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记 uni-app（一）初体验</title>
@@ -509,31 +537,6 @@
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记--React（一）基础篇</title>
-    <link href="http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/"/>
-    <id>http://example.com/2021/08/14/xiao-bai-cai-bi-ji-react-yi/</id>
-    <published>2021-08-14T08:51:30.000Z</published>
-    <updated>2021-08-29T15:55:10.858Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;写在前面的碎碎念💬：&quot;&gt;&lt;a href=&quot;#写在前面的碎碎念💬：&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
     
   </entry>
   
