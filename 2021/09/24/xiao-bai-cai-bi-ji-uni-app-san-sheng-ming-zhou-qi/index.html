@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记 uni-app（二）基础篇, April-cl">
+    <meta name="keywords" content="小白菜笔记 uni-app（三）生命周期, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记 uni-app（二）基础篇 | April-cl</title>
+    <title>小白菜笔记 uni-app（三）生命周期 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记 uni-app（二）基础篇</h1>
+                    <h1 class="description center-align post-title">小白菜笔记 uni-app（三）生命周期</h1>
                 </div>
             </div>
         </div>
@@ -419,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-23
+                    2021-09-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-24
+                    2021-09-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    707
+                    764
                 </div>
                 
 
@@ -463,40 +463,193 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h1><ul>
-<li>页面文件遵循 Vue 单文件组件 (SFC) 规范，即含三种类型的顶级语言块 <code>&lt;template&gt;</code>、<code>&lt;script&gt;</code> 和 <code>&lt;style&gt;</code></li>
-<li>组件标签靠近小程序规范，详见 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/">uni-app 组件规范</a>。uni-app 的组件分为基础组件和扩展组件。基础组件在 uni-app 框架中已经内置，比如 <code>&lt;view&gt;</code> 组件。扩展组件需要将组件导入项目中才可以使用</li>
-<li>接口能力（JS API）靠近微信小程序规范，但需将前缀 wx 替换为 uni，详见 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/README">uni-app 接口规范</a></li>
-<li>生命周期：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%E5%BA%94%E7%94%A8%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">应用生命周期</a>、<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">页面生命周期</a>、<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/frame/lifecycle?id=%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">组件生命周期（同 Vue 规范）</a></li>
-<li>建议使用flex布局</li>
-</ul>
-<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><p>┌─uniCloud              云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb（详见uniCloud）<br>│─components            符合vue组件规范的uni-app组件目录<br>│  └─comp-a.vue         可复用的a组件<br>├─hybrid                App端存放本地html文件的目录，<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/web-view">详见</a><br>├─platforms             存放各平台专用页面的目录，<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/platform?id=%E6%95%B4%E4%BD%93%E7%9B%AE%E5%BD%95%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91">详见</a><br>├─pages                 业务页面文件存放的目录<br>│  ├─index<br>│  │  └─index.vue       index页面<br>│  └─list<br>│     └─list.vue        list页面<br>├─static                存放应用引用的本地静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此<br>├─uni_modules           存放<code>[uni_module](/uni_modules)</code>规范的插件。<br>├─wxcomponents          存放小程序组件的目录<br>├─main.js               Vue初始化入口文件<br>├─App.vue               应用配置，用来配置App全局样式以及监听应用生命周期<br>├─manifest.json         配置应用名称、appid、logo、版本等打包信息，<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/manifest">详见</a><br>└─pages.json            配置页面路由、导航条、选项卡等页面类信息，<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages">详见</a></p>
-<h2 id="关于编译"><a href="#关于编译" class="headerlink" title="关于编译"></a>关于编译</h2><ul>
-<li><p>static 目录下的文件均会被完整打包进去，且不会编译。该目录下的 js 文件不会被编译，如果里面有 es6 的代码，不经过转换直接运行，在手机设备上会报错。</p>
-</li>
-<li><p>非 static 目录下的文件（vue、js、css 等）只有被引用到才会被打包编译进去。</p>
-</li>
-</ul>
-<h1 id="引入静态资源"><a href="#引入静态资源" class="headerlink" title="引入静态资源"></a>引入静态资源</h1><h2 id="模板内"><a href="#模板内" class="headerlink" title="模板内"></a>模板内</h2><p>可以使用相对路径或者绝对路径</p>
-<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- 绝对路径，/static指根目录下的static目录，在cli项目中/static指src目录下的static目录 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/logo.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>@/static/logo.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">&gt;</span></span>
-<span class="token comment">&lt;!-- 相对路径 --&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>logo<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>../../static/logo.png<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="应用生命周期"><a href="#应用生命周期" class="headerlink" title="应用生命周期"></a>应用生命周期</h1><blockquote>
+<p>应用生命周期仅可在App.vue中监听，在其它页面监听无效</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onLaunch</td>
+<td align="left">当 <code>uni-app</code> 初始化完成时触发（全局只触发一次）</td>
+</tr>
+<tr>
+<td align="left">onShow</td>
+<td align="left">当 <code>uni-app</code> 启动，或从后台进入前台显示</td>
+</tr>
+<tr>
+<td align="left">onHide</td>
+<td align="left">当 <code>uni-app</code> 从前台进入后台</td>
+</tr>
+<tr>
+<td align="left">onError</td>
+<td align="left">当 <code>uni-app</code> 报错时触发</td>
+</tr>
+<tr>
+<td align="left">onUniNViewMessage</td>
+<td align="left">对 <code>nvue</code> 页面发送的数据进行监听</td>
+</tr>
+<tr>
+<td align="left">onUnhandledRejection</td>
+<td align="left">对未处理的 Promise 拒绝事件监听函数</td>
+</tr>
+<tr>
+<td align="left">onPageNotFound</td>
+<td align="left">页面不存在监听函数</td>
+</tr>
+<tr>
+<td align="left">onThemeChange</td>
+<td align="left">监听系统主题变化</td>
+</tr>
+</tbody></table>
+<h1 id="页面生命周期"><a href="#页面生命周期" class="headerlink" title="页面生命周期"></a>页面生命周期</h1><blockquote>
+<p>在每个页面中定义</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onInit</td>
+<td align="left">监听页面初始化，其参数同 onLoad 参数，为上个页面传递的数据，参数类型为 Object（用于页面传参），触发时机早于 onLoad</td>
+</tr>
+<tr>
+<td align="left">onLoad</td>
+<td align="left">监听页面加载，其参数为上个页面传递的数据，参数类型为 Object（用于页面传参）</td>
+</tr>
+<tr>
+<td align="left">onShow</td>
+<td align="left">监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面</td>
+</tr>
+<tr>
+<td align="left">onReady</td>
+<td align="left">监听页面初次渲染完成。注意如果渲染速度快，会在页面进入动画完成前触发</td>
+</tr>
+<tr>
+<td align="left">onHide</td>
+<td align="left">监听页面隐藏</td>
+</tr>
+<tr>
+<td align="left">onUnload</td>
+<td align="left">监听页面卸载</td>
+</tr>
+<tr>
+<td align="left">onResize</td>
+<td align="left">监听窗口尺寸变化</td>
+</tr>
+<tr>
+<td align="left">onPullDownRefresh</td>
+<td align="left">监听用户下拉动作，一般用于下拉刷新</td>
+</tr>
+<tr>
+<td align="left">onReachBottom</td>
+<td align="left">页面滚动到底部的事件（不是scroll-view滚到底），常用于下拉下一页数据</td>
+</tr>
+<tr>
+<td align="left">onTabItemTap</td>
+<td align="left">点击 tab 时触发，参数为Objec</td>
+</tr>
+<tr>
+<td align="left">onShareAppMessage</td>
+<td align="left">用户点击右上角分享</td>
+</tr>
+<tr>
+<td align="left">onPageScroll</td>
+<td align="left">监听页面滚动，参数为Object</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarButtonTap</td>
+<td align="left">监听原生标题栏按钮点击事件，参数为Object</td>
+</tr>
+<tr>
+<td align="left">onBackPress</td>
+<td align="left">监听页面返回</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputChanged</td>
+<td align="left">监听原生标题栏搜索输入框输入内容变化事件</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputConfirmed</td>
+<td align="left">监听原生标题栏搜索输入框搜索事件，用户点击软键盘上的“搜索”按钮时触发。</td>
+</tr>
+<tr>
+<td align="left">onNavigationBarSearchInputClicked</td>
+<td align="left">监听原生标题栏搜索输入框点击事件（pages.json 中的 searchInput 配置 disabled 为 true 时才会触发）</td>
+</tr>
+<tr>
+<td align="left">onShareTimeline</td>
+<td align="left">监听用户点击右上角转发到朋友圈</td>
+</tr>
+<tr>
+<td align="left">onAddToFavorites</td>
+<td align="left">监听用户点击右上角收藏</td>
+</tr>
+</tbody></table>
+<h1 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h1><blockquote>
+<p>和 vue 组件中的生命周期一致</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">函数名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">beforeCreate</td>
+<td align="left">在实例初始化之后被调用</td>
+</tr>
+<tr>
+<td align="left">created</td>
+<td align="left">在实例创建完成后被立即调用</td>
+</tr>
+<tr>
+<td align="left">beforeMount</td>
+<td align="left">在挂载开始之前被调用</td>
+</tr>
+<tr>
+<td align="left">mounted</td>
+<td align="left">挂载到实例上去之后调用</td>
+</tr>
+<tr>
+<td align="left">beforeUpdate</td>
+<td align="left">数据更新时调用，发生在虚拟 DOM 打补丁之前</td>
+</tr>
+<tr>
+<td align="left">updated</td>
+<td align="left">由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子</td>
+</tr>
+<tr>
+<td align="left">beforeDestroy</td>
+<td align="left">实例销毁之前调用</td>
+</tr>
+<tr>
+<td align="left">destroyed</td>
+<td align="left">Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁</td>
+</tr>
+</tbody></table>
+<h1 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h1><ol>
+<li>beforeCreate</li>
+<li>onLoad</li>
+<li>created</li>
+<li>onShow</li>
+<li>beforeMount</li>
+<li>onReady</li>
+<li>mounted</li>
+<li>beforeUpdate</li>
+<li>updated</li>
+<li>返回上一页时，会执行onUnLoad，并未执行destroyed，并未执行onHide</li>
+<li>进入下一页时，会执行onHide</li>
+</ol>
 
-<h2 id="js文件"><a href="#js文件" class="headerlink" title="js文件"></a>js文件</h2><p>可以使用相对路径或者绝对路径</p>
-<p>不支持使用 <code>/</code> 开头的方式引入</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 绝对路径，@指向项目根目录，在cli项目中@指向src目录</span>
-<span class="token keyword">import</span> add <span class="token keyword">from</span> <span class="token string">'@/common/add.js'</span>
-<span class="token comment">// 相对路径</span>
-<span class="token keyword">import</span> add <span class="token keyword">from</span> <span class="token string">'../../common/add.js'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="css引入"><a href="#css引入" class="headerlink" title="css引入"></a>css引入</h2><p>可以使用相对路径或者绝对路径</p>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 绝对路径 */</span>
-<span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'/common/uni.css'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
-<span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'@/common/uni.css'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span>
-<span class="token comment">/* 相对路径 */</span>
-<span class="token atrule"><span class="token rule">@import</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string url">'../../common/uni.css'</span><span class="token punctuation">)</span></span><span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -522,7 +675,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/09/23/xiao-bai-cai-bi-ji-uni-app-er-ji-chu-pian/">http://example.com/2021/09/23/xiao-bai-cai-bi-ji-uni-app-er-ji-chu-pian/</a>
+                    <a href="http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/">http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -609,9 +762,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/">
                     <div class="card-image">
@@ -629,9 +783,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -644,6 +798,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -666,13 +821,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/">
+                <a href="/2021/09/23/xiao-bai-cai-bi-ji-uni-app-er-ji-chu-pian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="小白菜笔记 uni-app（一）初体验">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="小白菜笔记 uni-app（二）基础篇">
                         
-                        <span class="card-title">小白菜笔记 uni-app（一）初体验</span>
+                        <span class="card-title">小白菜笔记 uni-app（二）基础篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -683,7 +838,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
                             </span>
                         <span class="publish-author">
                             

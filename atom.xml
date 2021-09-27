@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-24T15:49:37.301Z</updated>
+  <updated>2021-09-27T17:11:09.055Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记 uni-app（三）生命周期</title>
+    <link href="http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/"/>
+    <id>http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/</id>
+    <published>2021-09-24T15:52:07.000Z</published>
+    <updated>2021-09-27T17:11:09.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;应用生命周期&quot;&gt;&lt;a href=&quot;#应用生命周期&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记 uni-app（二）基础篇</title>
@@ -509,34 +536,6 @@
     
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新手前端的装机攻略，拿来吧你</title>
-    <link href="http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/"/>
-    <id>http://example.com/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/</id>
-    <published>2021-08-16T02:52:11.000Z</published>
-    <updated>2021-09-05T06:59:35.668Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前段时间买了新电脑，装了很多学习用的软件，这里记下来方便后面查找 🔍&lt;/p&gt;
-&lt;h1 id=&quot;Chrome-浏览器&quot;&gt;&lt;a href=&quot;#Chrome-浏览器&quot; class=&quot;headerlink&quot; title=&quot;Chrome 浏览器&quot;&gt;&lt;/a&gt;Chrome</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
