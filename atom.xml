@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-28T15:46:35.081Z</updated>
+  <updated>2021-09-28T17:17:12.174Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深夜吃糖，理解 async 和 await</title>
+    <link href="http://example.com/2021/09/29/shen-ye-chi-tang-li-jie-async-he-await/"/>
+    <id>http://example.com/2021/09/29/shen-ye-chi-tang-li-jie-async-he-await/</id>
+    <published>2021-09-28T16:53:17.000Z</published>
+    <updated>2021-09-28T17:17:12.174Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;async-关键字&quot;&gt;&lt;a href=&quot;#async-关键字&quot; class=&quot;headerlink&quot; title=&quot;async 关键字&quot;&gt;&lt;/a&gt;async 关键字&lt;/h1&gt;&lt;p&gt;放在函数声明之前，生成一个异步函数，保证函数的返回值为</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记 uni-app（四）路由</title>
@@ -508,34 +533,6 @@
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 的配置和常用命令</title>
-    <link href="http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/"/>
-    <id>http://example.com/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/</id>
-    <published>2021-08-16T15:32:12.000Z</published>
-    <updated>2021-09-06T17:12:09.691Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;本地仓库配置&quot;&gt;&lt;a href=&quot;#本地仓库配置&quot; class=&quot;headerlink&quot; title=&quot;本地仓库配置&quot;&gt;&lt;/a&gt;本地仓库配置&lt;/h1&gt;&lt;p&gt;打开 Cmder （任意目录均可，因为是全局安装），逐行执行以下命令&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="git" scheme="http://example.com/tags/git/"/>
     
   </entry>
   
