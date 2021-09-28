@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>小白菜笔记 uni-app（四）路由</title>
+      <link href="/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/"/>
+      <url>/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/</url>
+      
+        <content type="html"><![CDATA[<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>框架统一管理，需要在 pages.json 里配置每个路由页面的路径及页面样式。</p><h1 id="路由跳转"><a href="#路由跳转" class="headerlink" title="路由跳转"></a>路由跳转</h1><h2 id="使用-navigator-组件跳转"><a href="#使用-navigator-组件跳转" class="headerlink" title="使用 navigator 组件跳转"></a>使用 navigator 组件跳转</h2><p>类似 HTML 中的 <code>&lt;a&gt;</code> 组件，但只能跳转本地页面。目标页面必须在 pages.json 中注册。</p><table><thead><tr><th align="left">属性名</th><th align="left">类型</th><th align="left">默认值</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">url</td><td align="left">String</td><td align="left"></td><td align="left">应用内的跳转链接，值为相对路径或绝对路径，注意不能加 <code>.vue</code> 后缀</td></tr><tr><td align="left">open-type</td><td align="left">String</td><td align="left">navigate</td><td align="left">跳转方式，有效值：navigate、redirect、switchTab、reLaunch、navigateBack、exit</td></tr><tr><td align="left">delta</td><td align="left">Number</td><td align="left"></td><td align="left">当 open-type 为 ‘navigateBack’ 时有效，表示回退的层数</td></tr><tr><td align="left">animation-type</td><td align="left">String</td><td align="left">pop-in/out</td><td align="left">当 open-type 为 navigate、navigateBack 时有效，窗口的显示/关闭动画效果</td></tr><tr><td align="left">animation-duration</td><td align="left">Number</td><td align="left">300</td><td align="left">当 open-type 为 navigate、navigateBack 时有效，窗口显示/关闭动画的持续时间。</td></tr><tr><td align="left">hover-class</td><td align="left">String</td><td align="left">navigator-hover</td><td align="left">指定点击时的样式类，当hover-class=”none”时，没有点击态效果</td></tr><tr><td align="left">hover-stop-propagation</td><td align="left">Boolean</td><td align="left">false</td><td align="left">指定是否阻止本节点的祖先节点出现点击态</td></tr><tr><td align="left">hover-start-time</td><td align="left">Number</td><td align="left">50</td><td align="left">按住后多久出现点击态，单位毫秒</td></tr><tr><td align="left">hover-stay-time</td><td align="left">Number</td><td align="left">600</td><td align="left">手指松开后点击态保留时间，单位毫秒</td></tr><tr><td align="left">target</td><td align="left">String</td><td align="left">self</td><td align="left">在哪个小程序目标上发生跳转，默认当前小程序，值域self/miniProgram</td></tr></tbody></table><h2 id="调用-API-跳转"><a href="#调用-API-跳转" class="headerlink" title="调用 API 跳转"></a>调用 API 跳转</h2><table><thead><tr><th align="left">API</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><a href="https://uniapp.dcloud.io/api/router?id=navigateto">uni.navigateTo</a></td><td align="left">保留当前页面，跳转到应用内的某个页面，使用uni.navigateBack可以返回到原页面，相当于 open-type=”navigate”</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/api/router?id=redirectto">uni.redirectTo</a></td><td align="left">关闭当前页面，跳转到应用内的某个页面，相当于 open-type=”redirect”</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/api/router?id=relaunch">uni.reLaunch</a></td><td align="left">关闭所有页面，打开到应用内的某个页面，相当于 open-type=”reLaunch”</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/api/router?id=switchtab">uni.switchTab</a></td><td align="left">跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，相当于 open-type=”switchTab”</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/api/router?id=navigateback">uni.navigateBack</a></td><td align="left">关闭当前页面，返回上一页面或多级页面，相当于 open-type=”navigateBack”</td></tr></tbody></table><h1 id="页面栈"><a href="#页面栈" class="headerlink" title="页面栈"></a>页面栈</h1><p>框架以栈的形式管理当前所有页面， 当发生路由切换的时候，页面栈的表现如下：</p><table><thead><tr><th>由方式</th><th>页面栈表现</th><th>触发时机</th></tr></thead><tbody><tr><td>初始化</td><td>新页面入栈</td><td>uni-app 打开的第一个页面</td></tr><tr><td>打开新页面</td><td>新页面入栈</td><td>调用 API <code>uni.navigateTo</code>、使用组件 <code>&lt;navigator open-type="navigator"/&gt;</code></td></tr><tr><td>页面重定向</td><td>当前页面出栈，新页面入栈</td><td>调用 API <code>uni.redirectTo</code>、使用组件 <code>&lt;navigator open-type="redirect"/&gt;</code></td></tr><tr><td>页面返回</td><td>页面不断出栈，直到目标返回页</td><td>调用 API <code>uni.navigateBack</code>、使用组件 <code>&lt;navigator open-type="navigateBack"/&gt;</code>、用户按左上角返回按钮、安卓用户点击物理back按键</td></tr><tr><td>Tab 切换</td><td>页面全部出栈，只留下新的 Tab 页面</td><td>调用 API <code>uni.switchTab</code>、使用组件 <code>&lt;navigator open-type="switchTab"/&gt;</code>、用户切换 Tab</td></tr><tr><td>重加载</td><td>页面全部出栈，只留下新的页面</td><td>调用 API <code>uni.reLaunch</code>、使用组件 <code>&lt;navigator open-type="reLaunch"/&gt;</code></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+            <tag> uni-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>小白菜笔记 uni-app（三）生命周期</title>
       <link href="/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/"/>
       <url>/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/</url>

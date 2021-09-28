@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-09-27T17:11:09.055Z</updated>
+  <updated>2021-09-28T15:46:35.081Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小白菜笔记 uni-app（四）路由</title>
+    <link href="http://example.com/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/"/>
+    <id>http://example.com/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/</id>
+    <published>2021-09-28T08:38:03.000Z</published>
+    <updated>2021-09-28T15:46:35.081Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;路由&quot;&gt;&lt;a href=&quot;#路由&quot; class=&quot;headerlink&quot; title=&quot;路由&quot;&gt;&lt;/a&gt;路由&lt;/h1&gt;&lt;p&gt;框架统一管理，需要在 pages.json 里配置每个路由页面的路径及页面样式。&lt;/p&gt;
+&lt;h1 id=&quot;路由跳转&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>小白菜笔记 uni-app（三）生命周期</title>
@@ -508,34 +536,6 @@
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     <category term="git" scheme="http://example.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些常用的命令行</title>
-    <link href="http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/"/>
-    <id>http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/</id>
-    <published>2021-08-16T08:32:45.000Z</published>
-    <updated>2021-08-17T09:23:53.912Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;程序员的宿命 —— 增删改查&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;查：查看文件或目录&quot;&gt;&lt;a href=&quot;#查：查看文件或目录&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   
