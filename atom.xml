@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-06T18:13:40.842Z</updated>
+  <updated>2021-10-06T18:28:30.143Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅析 URL</title>
+    <link href="http://example.com/2021/10/07/qian-xi-url/"/>
+    <id>http://example.com/2021/10/07/qian-xi-url/</id>
+    <published>2021-10-06T18:16:50.000Z</published>
+    <updated>2021-10-06T18:28:30.143Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;URL（统一资源定位符）&quot;&gt;&lt;a href=&quot;#URL（统一资源定位符）&quot; class=&quot;headerlink&quot; title=&quot;URL（统一资源定位符）&quot;&gt;&lt;/a&gt;URL（统一资源定位符）&lt;/h1&gt;&lt;p&gt;通常是指用户在浏览器中输入的地址&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="HTTP" scheme="http://example.com/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>谈谈浏览器的 Event Loop</title>
@@ -508,31 +534,6 @@
     
     
     <category term="React" scheme="http://example.com/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>那些年，被 this 折磨的前端小白</title>
-    <link href="http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/"/>
-    <id>http://example.com/2021/08/18/js-de-san-zuo-da-shan-zhi-this/</id>
-    <published>2021-08-18T15:59:41.000Z</published>
-    <updated>2021-08-29T15:55:41.285Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在刚开始学 &lt;code&gt;JavaScript&lt;/code&gt; 时，最深恶痛绝的三个 JS怪👹：&lt;strong&gt;this妖&lt;/strong&gt;、&lt;strong&gt;原型精&lt;/strong&gt;和</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   

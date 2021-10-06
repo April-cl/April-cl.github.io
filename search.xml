@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>浅析 URL</title>
+      <link href="/2021/10/07/qian-xi-url/"/>
+      <url>/2021/10/07/qian-xi-url/</url>
+      
+        <content type="html"><![CDATA[<h1 id="URL（统一资源定位符）"><a href="#URL（统一资源定位符）" class="headerlink" title="URL（统一资源定位符）"></a>URL（统一资源定位符）</h1><p>通常是指用户在浏览器中输入的地址</p><pre class="line-numbers language-none"><code class="language-none">URL=协议://域名或IP:端口/路径?查询参数#锚点<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h1><p>服务器一般使用两种协议：<code>HTTP</code>和<code>HTTPS</code></p><h1 id="域名或IP"><a href="#域名或IP" class="headerlink" title="域名或IP"></a>域名或IP</h1><h2 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h2><p>IP 主要约定了两件事：</p><ol><li>如何定位一台设备，比如说我家在某市某区某村某门牌号，这就是我家的物理 IP</li><li>如何封装数据报文以跟其他设备交流</li></ol><p>IP 分为：</p><ol><li>内网 IP</li></ol><p>路由器在家中创建一个内网，家里通过路由器上网的设备会分配一个内网 IP</p><ol start="2"><li>外网 IP</li></ol><p>用户向网络服务商租用带宽所分配的 IP</p><p>外网 IP 和内网 IP 的互相访问需要经过路由器中转，但在同一网络的设备可以直接互相访问</p><p>特殊 IP</p><ol><li>127.0.0.1 表示自己</li><li>localhost 通过 host 指定为自己</li><li>0.0.0.0 不表示任何设备</li></ol><h2 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h2><p>域名可以说是一个 IP 地址的代称，目的是为了便于记忆后者</p><p>可以通过 <code>ping</code> 命令获取一个域名对应的 IP</p><p><img src="http://tva1.sinaimg.cn/large/004jr3A7gy1gv65e6xhasj60d205cq6i02.jpg" alt="ping截图.png"></p><p>域名和 IP 通过 <code>DNS</code> 对应起来，它们之间可以是一对多的关系</p><ul><li>一个域名对应多个 IP</li></ul><p>均衡负载，防止一台服务器崩溃，假想一下若是阿里域名只对应了一个 IP，双十一的访问量激增会导致怎样的后果</p><ul><li>一个 IP 对应多个域名</li></ul><p>共享主机。预算不足优选。</p><p>延伸：xxx.github.io 和 yyy.github.io 有同一个一级域名（github.io），但是是两个不同的网站</p><h1 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h1><p>一个端口提供一种服务，就像你无法在电影院的售票口买到爆米花</p><p><a href="https://zh.wikipedia.org/wiki/TCP/UDP%E7%AB%AF%E5%8F%A3%E5%88%97%E8%A1%A8">端口维基百科</a></p><p>端口和 IP 缺一不可</p><h1 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h1><p>可以用于请求不同页面</p><h1 id="查询参数"><a href="#查询参数" class="headerlink" title="查询参数"></a>查询参数</h1><p>可以在同一页面显示不同内容</p><p><img src="http://tva1.sinaimg.cn/large/004jr3A7gy1gv65j1b5b9j61bl0c0q8402.jpg" alt="查询参数.png"></p><h1 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h1><p>可以定位到页面位置，不会发送到服务器</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>谈谈浏览器的 Event Loop</title>
       <link href="/2021/10/02/tan-tan-event-loop/"/>
       <url>/2021/10/02/tan-tan-event-loop/</url>
