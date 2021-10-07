@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-06T18:28:30.143Z</updated>
+  <updated>2021-10-07T16:29:58.287Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>烟火集——鲍鱼鸡汤</title>
+    <link href="http://example.com/2021/10/07/yan-huo-ji-bao-yu-ji-tang/"/>
+    <id>http://example.com/2021/10/07/yan-huo-ji-bao-yu-ji-tang/</id>
+    <published>2021-10-07T15:49:38.000Z</published>
+    <updated>2021-10-07T16:29:58.287Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前言&lt;br&gt;    最近刚好想把日常菜谱记录下来，以往都是记在了下厨房，前两天写博客突然想到反正是记录，那就开个 Tag</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>浅析 URL</title>
@@ -499,32 +525,6 @@
         
         
     <summary type="html">&lt;pre class=&quot;line-numbers language-jsx&quot; data-language=&quot;jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记--React（三）函数组件</title>
-    <link href="http://example.com/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/"/>
-    <id>http://example.com/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/</id>
-    <published>2021-08-19T09:56:06.000Z</published>
-    <updated>2021-08-20T06:48:02.314Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;写在前面：学习 &lt;code&gt;React&lt;/code&gt; 要时刻告诉自己就是在写 &lt;code&gt;JavaScript&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;函数组件的创建方式&quot;&gt;&lt;a href=&quot;#函数组件的创建方式&quot; class=&quot;headerlink&quot;</summary>
         
       
     
