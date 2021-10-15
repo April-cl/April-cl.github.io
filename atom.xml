@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-07T16:29:58.287Z</updated>
+  <updated>2021-10-15T17:50:26.472Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（一）</title>
+    <link href="http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/"/>
+    <id>http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/</id>
+    <published>2021-10-14T18:07:04.000Z</published>
+    <updated>2021-10-15T17:50:26.472Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;依旧是写在前面的碎碎念：💭&lt;br&gt;    学习编程我觉得最好的方式就是动手写代码⌨️&lt;br&gt;    相对于阅读文档，在提出需求解决需求的过程中以主动探索为驱动对于我来说能够更快速掌握技巧并加深印象🧠&lt;br&gt;   </summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>烟火集——鲍鱼鸡汤</title>
@@ -509,31 +537,6 @@
     
     
     <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记--React（四） Class 组件事件绑定</title>
-    <link href="http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/"/>
-    <id>http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/</id>
-    <published>2021-08-20T07:02:44.000Z</published>
-    <updated>2021-08-20T08:40:28.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-jsx&quot; data-language=&quot;jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
     
   </entry>
   

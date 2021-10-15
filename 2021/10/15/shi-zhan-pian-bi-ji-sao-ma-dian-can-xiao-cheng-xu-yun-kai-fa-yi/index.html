@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="烟火集——鲍鱼鸡汤, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（一）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>烟火集——鲍鱼鸡汤 | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发（一） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">烟火集——鲍鱼鸡汤</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（一）</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%8F%9C%E8%B0%B1/">
-                                <span class="chip bg-color">菜谱</span>
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
+                            </a>
+                        
+                            <a href="/tags/uni-app/">
+                                <span class="chip bg-color">uni-app</span>
                             </a>
                         
                     </div>
@@ -402,8 +406,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                生活
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -415,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-07
+                    2021-10-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-08
+                    2021-10-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    397
+                    392
                 </div>
                 
 
@@ -460,79 +464,80 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p>前言<br>    最近刚好想把日常菜谱记录下来，以往都是记在了下厨房，前两天写博客突然想到反正是记录，那就开个 Tag 来写菜谱叭~</p>
+<p>依旧是写在前面的碎碎念：💭<br>    学习编程我觉得最好的方式就是动手写代码⌨️<br>    相对于阅读文档，在提出需求解决需求的过程中以主动探索为驱动对于我来说能够更快速掌握技巧并加深印象🧠<br>    之前做过的项目也都会在笔记本上作记录，但后来发现这种纸质记录优势查询起来有些困难也不太利于回顾，所以现在要慢慢养成用博客来记录的习惯☺️</p>
 </blockquote>
-<p>首次尝试炖鲍鱼鸡汤，本来我是对此类补汤无感的，但味道竟意外地好喝，所以记下来🤤</p>
-<h1 id="用料"><a href="#用料" class="headerlink" title="用料"></a>用料</h1><table>
-<thead>
-<tr>
-<th>食材</th>
-<th>用量</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>鲍鱼</td>
-<td>5个</td>
-</tr>
-<tr>
-<td>鸡架</td>
-<td>1只</td>
-</tr>
-<tr>
-<td>鱼胶</td>
-<td>一小把</td>
-</tr>
-<tr>
-<td>石斛</td>
-<td>一小把</td>
-</tr>
-<tr>
-<td>红枣</td>
-<td>一小把</td>
-</tr>
-<tr>
-<td>姜</td>
-<td>一片</td>
-</tr>
-<tr>
-<td>盐</td>
-<td>3小勺</td>
-</tr>
-<tr>
-<td>开水</td>
-<td>5碗</td>
-</tr>
-</tbody></table>
-<p>此菜谱用量不求精准，根据用餐人数调整用量🙆</p>
-<p>炖汤电器：隔水炖</p>
-<h1 id="泡发清洗准备"><a href="#泡发清洗准备" class="headerlink" title="泡发清洗准备"></a>泡发清洗准备</h1><ul>
-<li><p>鱼胶提前泡水，此次泡了约3个小时</p>
+<h1 id="服务器搭建"><a href="#服务器搭建" class="headerlink" title="服务器搭建"></a>服务器搭建</h1><ol>
+<li><p>使用 <code>npm init</code> 初始化项目</p>
 </li>
-<li><p>鲍鱼洗干净，可以用牙刷刷鲍鱼壳</p>
-</li>
-<li><p>鸡架洗干净，鸡架买的时候叫老板娘切成小块</p>
-</li>
-<li><p>红枣洗干净</p>
-</li>
-<li><p>石斛洗干净</p>
-</li>
-</ul>
-<h1 id="炖汤过程"><a href="#炖汤过程" class="headerlink" title="炖汤过程"></a>炖汤过程</h1><ol>
-<li><p>将洗净的鲍鱼带壳放入电饭锅中</p>
-</li>
-<li><p>先把鸡架焯水，即冷水下锅，同时放入姜片去腥，水沸腾后撇去浮沫至不再或仅有少量浮沫产生，将鸡架捞起放入凉水中洗净表面后放入电炖锅中</p>
-</li>
-<li><p>将洗净的红枣、石斛和鱼胶放入电炖锅中</p>
-</li>
-<li><p>倒入煮开的生命源泉</p>
-</li>
-<li><p>调整炖汤时间为3.5h，开始炖起✨</p>
-</li>
-<li><p>剩余0.1h时加入适量盐（这次实际上是加了4勺，喝着感觉咸了）</p>
+<li><p>安装所需要的框架模块</p>
 </li>
 </ol>
-<p>稍稍等待片刻，美味即将到来🍲</p>
-<p>哈哈哈这里应该放个成品图，但是今晚着急喝没拍好，下次补图📷</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install koa --save                  //koa框架
+npm install koa-json --save             //返回给前端的json对象
+npm install koa-bodyparser --save       //post提交的对象
+npm install koa-router --save           //路由
+npm install koa2-cors --sav             //解决跨区
+npm install nodemon --save              //启动服务器端<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li>创建 <code>.gitignore</code> 文件</li>
+</ol>
+<pre class="line-numbers language-none"><code class="language-none">/.idea
+/node_modules
+package-lock.json<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="4">
+<li>创建入口文件 <code>app.js</code></li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-json'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-bodyparser'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-router'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> cors <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa2-cors'</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">cors</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token function">bodyParser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>router<span class="token punctuation">.</span><span class="token function">allowedMethods</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">4000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="5">
+<li>在编辑器终端输入 <code>nodemon app.js</code></li>
+</ol>
+<p><img src="http://tva1.sinaimg.cn/large/004jr3A7gy1gvgigm0j4yj60ba0440u002.jpg"></p>
+<p>搭建完成🎉</p>
+<h1 id="访问登录页"><a href="#访问登录页" class="headerlink" title="访问登录页"></a>访问登录页</h1><ol>
+<li>创建登录页 <code>login.js</code></li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-router'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/register'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'login.js'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> router<span class="token punctuation">.</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>在 <code>app.js</code> 注入接口</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> login <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./router/login/login.js'</span><span class="token punctuation">)</span>
+
+router<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api'</span><span class="token punctuation">,</span> login<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><p>在编辑器终端输入 <code>nodemon app.js</code></p>
+</li>
+<li><p>在浏览器访问 <code>http://localhost:4000/api/register</code></p>
+</li>
+<li><p>回到编辑器终端可以看到</p>
+</li>
+</ol>
+<p><img src="http://tva1.sinaimg.cn/large/004jr3A7gy1gvgixcu0boj60ay04v3zy02.jpg"></p>
+<p>访问成功🎉</p>
 
                 
             </div>
@@ -559,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/07/yan-huo-ji-bao-yu-ji-tang/">http://example.com/2021/10/07/yan-huo-ji-bao-yu-ji-tang/</a>
+                    <a href="http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/">http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,8 +602,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%8F%9C%E8%B0%B1/">
-                                    <span class="chip bg-color">菜谱</span>
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
+                                </a>
+                            
+                                <a href="/tags/uni-app/">
+                                    <span class="chip bg-color">uni-app</span>
                                 </a>
                             
                         </div>
@@ -642,9 +651,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/">
                     <div class="card-image">
@@ -662,9 +672,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -677,6 +687,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -699,13 +710,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/07/qian-xi-url/">
+                <a href="/2021/10/07/yan-huo-ji-bao-yu-ji-tang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="浅析 URL">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="烟火集——鲍鱼鸡汤">
                         
-                        <span class="card-title">浅析 URL</span>
+                        <span class="card-title">烟火集——鲍鱼鸡汤</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -722,8 +733,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -733,8 +744,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTTP/">
-                        <span class="chip bg-color">HTTP</span>
+                    <a href="/tags/%E8%8F%9C%E8%B0%B1/">
+                        <span class="chip bg-color">菜谱</span>
                     </a>
                     
                 </div>
