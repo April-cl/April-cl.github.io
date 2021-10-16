@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-15T17:50:26.472Z</updated>
+  <updated>2021-10-16T08:01:06.362Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>烟火集——湿炒牛河</title>
+    <link href="http://example.com/2021/10/16/yan-huo-ji-shi-chao-niu-he/"/>
+    <id>http://example.com/2021/10/16/yan-huo-ji-shi-chao-niu-he/</id>
+    <published>2021-10-15T17:54:45.000Z</published>
+    <updated>2021-10-16T08:01:06.362Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;做为一个常年在外生活的潮汕人，肠粉和牛肉粿的味道始终在我的乡愁中萦绕。尝试自己动手做过，肠粉一直复刻不出那种味道，不正宗的湿炒牛河倒是做了几回挺得我意的（感觉灵魂还是在于沙茶酱😋）&lt;/p&gt;
+&lt;h1 id=&quot;用料&quot;&gt;&lt;a href=&quot;#用料&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（一）</title>
@@ -496,31 +522,6 @@
     <id>http://example.com/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/</id>
     <published>2021-08-22T09:56:12.000Z</published>
     <updated>2021-10-08T07:37:34.195Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在刚开始学 &lt;code&gt;JavaScript&lt;/code&gt; 时，最深恶痛绝的三个 JS怪👹：&lt;strong&gt;this妖&lt;/strong&gt;、&lt;strong&gt;原型精&lt;/strong&gt;和</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>那些年，被原型折磨的前端小白</title>
-    <link href="http://example.com/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/"/>
-    <id>http://example.com/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/</id>
-    <published>2021-08-20T10:09:53.000Z</published>
-    <updated>2021-08-29T16:09:42.645Z</updated>
     
     
       
