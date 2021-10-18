@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-16T17:54:42.822Z</updated>
+  <updated>2021-10-18T17:28:53.714Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（三）</title>
+    <link href="http://example.com/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/"/>
+    <id>http://example.com/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/</id>
+    <published>2021-10-17T08:45:57.000Z</published>
+    <updated>2021-10-18T17:28:53.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;获取云开发调用凭证&quot;&gt;&lt;a href=&quot;#获取云开发调用凭证&quot; class=&quot;headerlink&quot; title=&quot;获取云开发调用凭证&quot;&gt;&lt;/a&gt;获取云开发调用凭证&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（二）</title>
@@ -515,31 +542,6 @@
     
     
     <category term="Vue" scheme="http://example.com/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记--React（五）受控组件与非受控组件</title>
-    <link href="http://example.com/2021/08/23/xiao-bai-cai-bi-ji-react-wu-shou-kong-zu-jian-yu-fei-shou-kong-zu-jian/"/>
-    <id>http://example.com/2021/08/23/xiao-bai-cai-bi-ji-react-wu-shou-kong-zu-jian-yu-fei-shou-kong-zu-jian/</id>
-    <published>2021-08-23T15:53:33.000Z</published>
-    <updated>2021-08-27T07:29:03.681Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;受控组件&quot;&gt;&lt;a href=&quot;#受控组件&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="React" scheme="http://example.com/tags/React/"/>
     
   </entry>
   
