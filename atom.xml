@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-18T17:28:53.714Z</updated>
+  <updated>2021-10-19T02:29:31.843Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（四）</title>
+    <link href="http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/"/>
+    <id>http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/</id>
+    <published>2021-10-19T00:38:31.000Z</published>
+    <updated>2021-10-19T02:29:31.843Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;操作数据库记录&quot;&gt;&lt;a href=&quot;#操作数据库记录&quot; class=&quot;headerlink&quot; title=&quot;操作数据库记录&quot;&gt;&lt;/a&gt;操作数据库记录&lt;/h1&gt;&lt;p&gt;在 &lt;code&gt;databaseapi.js&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（三）</title>
@@ -506,33 +533,6 @@
         
     <summary type="html">&lt;h1 id=&quot;指令&quot;&gt;&lt;a href=&quot;#指令&quot; class=&quot;headerlink&quot; title=&quot;指令&quot;&gt;&lt;/a&gt;指令&lt;/h1&gt;&lt;p&gt;文档关于指令的解释：&lt;/p&gt;
 &lt;pre class=&quot;line-numbers language-none&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记 Vue （一）基础篇</title>
-    <link href="http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/"/>
-    <id>http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/</id>
-    <published>2021-08-25T15:30:07.000Z</published>
-    <updated>2021-08-30T17:06:38.276Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;写在前面：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;学习Vue要转化思想&lt;/strong&gt;：不要想着怎么操作 DOM，而是想着如何操作数据！&lt;/p&gt;
-&lt;p&gt;Vue 的文档很通俗易懂，学习细节移步&lt;a</summary>
         
       
     

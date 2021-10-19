@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（三）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（四）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发（三） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发（四） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（三）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（四）</h1>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-17
+                    2021-10-19
                 </div>
                 
 
@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    144
+                    253
                 </div>
                 
 
@@ -463,50 +463,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="获取云开发调用凭证"><a href="#获取云开发调用凭证" class="headerlink" title="获取云开发调用凭证"></a>获取云开发调用凭证</h1><p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/quickstart.html">微信官方文档</a></p>
-<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html">auth.getAccessToken</a></p>
+                <h1 id="操作数据库记录"><a href="#操作数据库记录" class="headerlink" title="操作数据库记录"></a>操作数据库记录</h1><p>在 <code>databaseapi.js</code> 文件中进行数据记录增删改查</p>
+<p>思路：</p>
 <ol>
-<li>安装 <code>axios</code></li>
+<li><p>定义一个变量存储云环境 ID</p>
+</li>
+<li><p>定义一个变量存储对应操作的请求 URL</p>
+</li>
+<li><p>通过 <code>axios.post()</code> 方法向指定 URL 发送请求，请求数据为 <code>env</code> （云环境 ID）和 <code>query</code> （数据库操作语句返回值），返回一个 JSON 数据包</p>
+</li>
 </ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">npm install axios <span class="token operator">--</span>save        <span class="token comment">// Ajax请求模块</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// databaseapi.js</span>
+<span class="token keyword">let</span> env <span class="token operator">=</span> cloudID
 
-<ol start="2">
-<li>创建数据库操作接口文件 <code>databaseapi.js</code></li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> axios <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'axios'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> qs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./handle.js'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">let</span> url <span class="token operator">=</span> <span class="token string">'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET'</span>   <span class="token comment">// APPID、APPSECRET 需自己传入</span>
+<span class="token keyword">let</span> AddUrl <span class="token operator">=</span> <span class="token string">'https://api.weixin.qq.com/tcb/databaseadd?access_token='</span>
 
 <span class="token keyword">class</span> <span class="token class-name">getToken</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">async</span> <span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">//调用云开发http api接口</span>
+  <span class="token keyword">async</span> <span class="token function">posteve</span><span class="token punctuation">(</span><span class="token parameter">dataUrl<span class="token punctuation">,</span> query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">try</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> token <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>token<span class="token punctuation">)</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>token<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">return</span> token<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access_token
+      <span class="token keyword">let</span> token <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">let</span> data <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>dataUrl <span class="token operator">+</span> token<span class="token punctuation">,</span> <span class="token punctuation">{</span>env<span class="token punctuation">,</span> query<span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>data<span class="token punctuation">.</span>errcode <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> data<span class="token punctuation">.</span>data
       <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        <span class="token keyword">throw</span> <span class="token string">'获取 token 错误'</span>
+        <span class="token keyword">throw</span> <span class="token string">'请求出错'</span>
       <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>getToken<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// app.js</span>
+<span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection("ceshi").add({data:{name:'name'}})</span><span class="token template-punctuation string">`</span></span>
+<span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>AddUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<ol start="3">
-<li>调用数据库操作api接口</li>
-</ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// login.js</span>
-<span class="token keyword">const</span> <span class="token punctuation">{</span>getToken<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../../config/databaseapi.js'</span><span class="token punctuation">)</span>
-<span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="插入记录"><a href="#插入记录" class="headerlink" title="插入记录"></a>插入记录</h2><p>请求地址</p>
+<pre class="line-numbers language-none"><code class="language-none">POST https://api.weixin.qq.com/tcb/databaseadd?access_token=ACCESS_TOKEN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="删除记录"><a href="#删除记录" class="headerlink" title="删除记录"></a>删除记录</h2><p>请求地址</p>
+<pre class="line-numbers language-none"><code class="language-none">POST https://api.weixin.qq.com/tcb/databasedelete?access_token=ACCESS_TOKEN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="更新记录"><a href="#更新记录" class="headerlink" title="更新记录"></a>更新记录</h2><p>请求地址</p>
+<pre class="line-numbers language-none"><code class="language-none">POST https://api.weixin.qq.com/tcb/databaseupdate?access_token=ACCESS_TOKEN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="查询记录"><a href="#查询记录" class="headerlink" title="查询记录"></a>查询记录</h2><p>请求地址</p>
+<pre class="line-numbers language-none"><code class="language-none">POST https://api.weixin.qq.com/tcb/databasequery?access_token=ACCESS_TOKEN<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -532,7 +536,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/">http://example.com/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/</a>
+                    <a href="http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/">http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -619,9 +623,10 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/">
                     <div class="card-image">
@@ -639,9 +644,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -654,6 +659,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -676,13 +682,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/16/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-er/">
+                <a href="/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（二）">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（三）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（二）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -693,7 +699,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-17
                             </span>
                         <span class="publish-author">
                             
