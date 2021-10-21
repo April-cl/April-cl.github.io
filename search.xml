@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>实战篇笔记 扫码点餐小程序云开发（六）</title>
+      <link href="/2021/10/21/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-liu/"/>
+      <url>/2021/10/21/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-liu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="实现登录功能"><a href="#实现登录功能" class="headerlink" title="实现登录功能"></a>实现登录功能</h1><p>思路：</p><ol><li><p>获取请求字段值</p></li><li><p>使用数据库查询语句 <code>db.collection("表名").where({查询条件键值对}).get()</code></p></li><li><p>判断查询结果，若没有返回数据则提示<code>账号或密码有误</code>，反之登录成功</p></li></ol><h1 id="验证-token-合法性"><a href="#验证-token-合法性" class="headerlink" title="验证 token 合法性"></a>验证 token 合法性</h1><p>使用 <code>basic-auth</code> 解析前端在 header 中传来的 token，使用 <a href="https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback"><code>jwt.verify(token, secretOrPublicKey, [options, callback])</code></a> 验证 token 合法性</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+            <tag> uni-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记 扫码点餐小程序云开发（五）</title>
       <link href="/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-wu/"/>
       <url>/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-wu/</url>
