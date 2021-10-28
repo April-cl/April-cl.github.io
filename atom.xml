@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-27T05:35:37.539Z</updated>
+  <updated>2021-10-28T17:17:54.223Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（八）</title>
+    <link href="http://example.com/2021/10/28/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-ba/"/>
+    <id>http://example.com/2021/10/28/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-ba/</id>
+    <published>2021-10-28T08:25:47.000Z</published>
+    <updated>2021-10-28T17:17:54.223Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;腾讯云对象存储&quot;&gt;&lt;a href=&quot;#腾讯云对象存储&quot; class=&quot;headerlink&quot; title=&quot;腾讯云对象存储&quot;&gt;&lt;/a&gt;腾讯云对象存储&lt;/h1&gt;&lt;p&gt;对象存储（Cloud Object</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（七）</title>
@@ -511,32 +538,6 @@
         
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://cn.vuejs.org/images/lifecycle.png&quot; alt=&quot;生命周期图示&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;选项-生命周期钩子&quot;&gt;&lt;a href=&quot;#选项-生命周期钩子&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记 Vue （四）组件</title>
-    <link href="http://example.com/2021/08/29/xiao-bai-cai-bi-ji-vue-si-zu-jian/"/>
-    <id>http://example.com/2021/08/29/xiao-bai-cai-bi-ji-vue-si-zu-jian/</id>
-    <published>2021-08-29T15:39:57.000Z</published>
-    <updated>2021-08-29T15:40:40.980Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;组件系统是Vue的一个重要概念，它允许我们使用小型、独立和通常可复用的组件构建大型应用。&lt;/p&gt;
-&lt;h1 id=&quot;自定义组件&quot;&gt;&lt;a href=&quot;#自定义组件&quot; class=&quot;headerlink&quot;</summary>
         
       
     
