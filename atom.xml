@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-31T08:22:17.690Z</updated>
+  <updated>2021-11-07T16:33:39.731Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（十）</title>
+    <link href="http://example.com/2021/11/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi/"/>
+    <id>http://example.com/2021/11/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi/</id>
+    <published>2021-11-07T08:56:11.000Z</published>
+    <updated>2021-11-07T16:33:39.731Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;菜品类目页&quot;&gt;&lt;a href=&quot;#菜品类目页&quot; class=&quot;headerlink&quot; title=&quot;菜品类目页&quot;&gt;&lt;/a&gt;菜品类目页&lt;/h1&gt;&lt;h2 id=&quot;前端接口&quot;&gt;&lt;a href=&quot;#前端接口&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（九）</title>
@@ -523,31 +550,6 @@
     
     
     <category term="HTTP" scheme="http://example.com/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript常用继承方案，看完不再emo</title>
-    <link href="http://example.com/2021/08/31/javascript-chang-yong-ji-cheng-fang-an-kan-wan-bu-zai-emo/"/>
-    <id>http://example.com/2021/08/31/javascript-chang-yong-ji-cheng-fang-an-kan-wan-bu-zai-emo/</id>
-    <published>2021-08-31T08:21:55.000Z</published>
-    <updated>2021-09-03T16:51:48.261Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前段时间写了一篇关于&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   
