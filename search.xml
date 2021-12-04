@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>实战篇笔记 扫码点餐小程序云开发小程序端（一）</title>
+      <link href="/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/"/>
+      <url>/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="页面设计"><a href="#页面设计" class="headerlink" title="页面设计"></a>页面设计</h1><ol><li><p>欢迎页</p></li><li><p>选桌页</p></li><li><p>点餐页</p></li><li><p>菜品详情页</p></li><li><p>订单详情页</p></li><li><p>我的订单页</p></li></ol><h1 id="创建步骤"><a href="#创建步骤" class="headerlink" title="创建步骤"></a>创建步骤</h1><ol><li><p>打开 <code>HBuilderX</code> 创建一个默认模板的 <code>uni-app</code> 项目</p></li><li><p>在 <code>manifest.json</code> 文件配置 <code>appid</code></p></li><li><p>在 <code>pages</code> 目录创建页面文件</p></li><li><p>在 <code>pages.json</code> 文件配置路由信息</p></li><li><p>工具栏 -&gt; 运行 -&gt; 运行到小程序模拟器 -&gt; 微信开发者工具</p></li></ol><blockquote><p>一些乱七八糟的碎碎念<br>    原本是边做项目边写笔记的，这样记的也要清晰一些，上个月因为小孩肠胃炎+全家食物中毒+一些柴米油盐的琐事，每天用于学习的时间就愈发少了，有点无奈🍂<br>    生活一地鸡毛，扫扫还是要继续的阿</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+            <tag> uni-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记 扫码点餐小程序云开发（十）</title>
       <link href="/2021/11/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi/"/>
       <url>/2021/11/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi/</url>
