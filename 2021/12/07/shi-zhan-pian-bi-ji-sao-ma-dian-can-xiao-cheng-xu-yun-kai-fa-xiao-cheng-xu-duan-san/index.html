@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（一）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（三）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（一） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（三） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（一）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（三）</h1>
                 </div>
             </div>
         </div>
@@ -419,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-03
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-04
+                    2021-12-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    191
+                    445
                 </div>
                 
 
@@ -463,35 +463,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="页面设计"><a href="#页面设计" class="headerlink" title="页面设计"></a>页面设计</h1><ol>
-<li><p>欢迎页</p>
-</li>
-<li><p>选桌页</p>
-</li>
-<li><p>点餐页</p>
-</li>
-<li><p>菜品详情页</p>
-</li>
-<li><p>订单详情页</p>
-</li>
-<li><p>我的订单页</p>
-</li>
-</ol>
-<h1 id="创建步骤"><a href="#创建步骤" class="headerlink" title="创建步骤"></a>创建步骤</h1><ol>
-<li><p>打开 <code>HBuilderX</code> 创建一个默认模板的 <code>uni-app</code> 项目</p>
-</li>
-<li><p>在 <code>manifest.json</code> 文件配置 <code>appid</code></p>
-</li>
-<li><p>在 <code>pages</code> 目录创建页面文件</p>
-</li>
-<li><p>在 <code>pages.json</code> 文件配置路由信息</p>
-</li>
-<li><p>工具栏 -&gt; 运行 -&gt; 运行到小程序模拟器 -&gt; 微信开发者工具</p>
-</li>
-</ol>
-<blockquote>
-<p>一些乱七八糟的碎碎念<br>    原本是边做项目边写笔记的，这样记的也要清晰一些，上个月因为小孩肠胃炎+全家食物中毒+一些柴米油盐的琐事，每天用于学习的时间就愈发少了，有点无奈🍂<br>    生活一地鸡毛，扫扫还是要继续的阿</p>
-</blockquote>
+                <p>创建uniapp项目时， 如果勾选了 <code>启用uniCloud</code> ，会创建一个uniCloud云开发环境，因为前面在创建项目的时候没有勾选 <code>启用uniCloud</code> 选项，所以这里需要自己创建云服务空间。</p>
+<p>在 <code>HBuilderX</code> 编辑器打开 <code>manifest.json</code> 源码视图，在 <code>mp-weixin</code> 选项新增 cloudfunctionRoot 字段，指定本地已存在的目录作为云开发的本地根目录</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"mp-weixin"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"appid"</span> <span class="token operator">:</span> <span class="token string">"APPID"</span><span class="token punctuation">,</span>
+    <span class="token string">"setting"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"urlCheck"</span> <span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"usingComponents"</span> <span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string">"cloudfunctionRoot"</span><span class="token operator">:</span> <span class="token string">"cloudfunctions/"</span>  <span class="token comment">// +</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 <code>HBuilderX</code> 运行微信开发者工具，在微信开发者工具编辑器中新建 <code>cloudfunctions</code> 目录，然后右键 <code>新建Node.js云函数</code></p>
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4lixk5hfj207m0a6myn.jpg"></p>
+<p>点击刚创建的云函数目录，右键 <code>在内建终端打开</code>，执行 <code>npm install --save wx-server-sdk@latest</code> 【文档：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/functions/wx-server-sdk.html">在云函数中使用 wx-server-sdk</a>】</p>
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4lrwwrqwj20ji0o6gzl.jpg"></p>
+<p>在 <code>cloudfunctions/Dish-manage/index.js</code> 文件中编写云函数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 云函数入口文件</span>
+<span class="token keyword">const</span> cloud <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'wx-server-sdk'</span><span class="token punctuation">)</span>
+
+cloud<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  env<span class="token operator">:</span> <span class="token string">'改为你自己的云环境id'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> db <span class="token operator">=</span> cloud<span class="token punctuation">.</span><span class="token function">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> _ <span class="token operator">=</span> db<span class="token punctuation">.</span>command
+<span class="token keyword">const</span> category <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'dishes-category'</span><span class="token punctuation">)</span><span class="token comment">//菜品类目数据库</span>
+<span class="token keyword">const</span> dishes <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'dishes-data'</span><span class="token punctuation">)</span><span class="token comment">//菜品所有数据</span>
+
+<span class="token comment">// 云函数入口函数event:可以接到前端传来的值</span>
+exports<span class="token punctuation">.</span><span class="token function-variable function">main</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">// 1.请求数据库的菜品类目的数据</span>
+<span class="token comment">// 2.请求所有菜品的数据</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> res_cate <span class="token operator">=</span> <span class="token keyword">await</span> category<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>count<span class="token operator">:</span>_<span class="token punctuation">.</span><span class="token function">gt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token comment">// console.log(res_cate.data)</span>
+      <span class="token keyword">const</span> res_dis <span class="token operator">=</span> <span class="token keyword">await</span> dishes<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>onsale<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      
+      <span class="token keyword">let</span> newdata <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      res_dis<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span>index</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">let</span> <span class="token punctuation">{</span>category<span class="token punctuation">,</span>cid<span class="token punctuation">,</span><span class="token operator">...</span>data<span class="token punctuation">}</span> <span class="token operator">=</span> item
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>newdata<span class="token punctuation">[</span>cid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          newdata<span class="token punctuation">[</span>cid<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token punctuation">{</span>
+            category<span class="token punctuation">,</span>
+            cid<span class="token punctuation">,</span>
+            good_query<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        newdata<span class="token punctuation">[</span>cid<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">let</span> list <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>newdata<span class="token punctuation">)</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+
+      <span class="token keyword">return</span><span class="token punctuation">{</span>
+        res_cate<span class="token operator">:</span>res_cate<span class="token punctuation">.</span>data<span class="token punctuation">,</span>
+        res_dis<span class="token operator">:</span>list
+      <span class="token punctuation">}</span>
+
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> error
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>右键 <code>启动云函数本地调试</code></p>
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4mgilkvrj217w0nzk0n.jpg"></p>
+<p>能正确返回结果即成功，再右键选择 <code>上传并部署：云端安装依赖（不上传node_modules）</code>，查看云开发控制台中云函数列表是否部署成功</p>
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4mkmbq6lj20x309fn0j.jpg"></p>
 
                 
             </div>
@@ -518,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/">http://example.com/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/</a>
+                    <a href="http://example.com/2021/12/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-san/">http://example.com/2021/12/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-san/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,17 +642,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/">
+                <a href="/2021/12/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（二）">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（三）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（二）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -625,9 +663,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -640,6 +678,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -662,13 +701,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi/">
+                <a href="/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（十）">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（二）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（十）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -679,7 +718,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                         <span class="publish-author">
                             
