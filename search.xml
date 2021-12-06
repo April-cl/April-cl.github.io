@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>实战篇笔记 扫码点餐小程序云开发小程序端（二）</title>
+      <link href="/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/"/>
+      <url>/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/</url>
+      
+        <content type="html"><![CDATA[<p>根据设计稿在 <code>pages\页面.vue</code> 文件中写好页面布局和样式，此处不述</p><h1 id="pages-json-文件"><a href="#pages-json-文件" class="headerlink" title="pages.json 文件"></a>pages.json 文件</h1><p><code>pages.json</code> 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。<a href="https://uniapp.dcloud.io/collocation/pages">官网</a></p><p>以下内容摘自文档</p><h2 id="配置项列表"><a href="#配置项列表" class="headerlink" title="配置项列表"></a>配置项列表</h2><table><thead><tr><th align="left">属性</th><th align="left">类型</th><th align="left">必填</th></tr></thead><tbody><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=globalstyle">globalStyle</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=pages">pages</a></td><td align="left">Object Array</td><td align="left">是</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=easycom">easycom</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=tabbar">tabBar</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=condition">condition</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=subpackages">subPackages</a></td><td align="left">Object Array</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=preloadrule">preloadRule</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/workers.html">workers</a></td><td align="left">String</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=leftwindow">leftWindow</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=topwindow">topWindow</a></td><td align="left">Object</td><td align="left">否</td></tr><tr><td align="left"><a href="https://uniapp.dcloud.io/collocation/pages?id=rightwindow">rightWindow</a></td><td align="left">Object</td><td align="left">否</td></tr></tbody></table><h2 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h2><p><code>uni-app</code> 通过 pages 节点配置应用由哪些页面组成，pages 节点接收一个数组，数组每个项都是一个对象，其属性值如下：</p><table><thead><tr><th align="left">属性</th><th align="left">类型</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">path</td><td align="left">String</td><td align="left">配置页面路径</td></tr><tr><td align="left">style</td><td align="left">Object</td><td align="left">配置页面窗口表现</td></tr></tbody></table><blockquote><p>注意</p><ul><li>pages节点的第一项为应用入口页（即首页）</li><li>应用中新增/减少页面，都需要对 pages 数组进行修改</li><li>文件名不需要写后缀，框架会自动寻找路径下的页面资源</li></ul></blockquote><p>代码示例：</p><p>开发目录为：</p><pre class="line-numbers language-none"><code class="language-none">┌─pages               │  ├─index│  │  └─index.vue    │  └─login│     └─login.vue    ├─static             ├─main.js       ├─App.vue          ├─manifest.json  └─pages.json         <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>则需要在 pages.json 中填写</p><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">{</span>    <span class="token string">"pages"</span><span class="token operator">:</span> <span class="token punctuation">[</span>        <span class="token punctuation">{</span>            <span class="token string">"path"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>             <span class="token string">"style"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>        <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>            <span class="token string">"path"</span><span class="token operator">:</span> <span class="token string">"pages/login/login"</span><span class="token punctuation">,</span>             <span class="token string">"style"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>        <span class="token punctuation">}</span>    <span class="token punctuation">]</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+            <tag> uni-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记 扫码点餐小程序云开发小程序端（一）</title>
       <link href="/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/"/>
       <url>/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/</url>

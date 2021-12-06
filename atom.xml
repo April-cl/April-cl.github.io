@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-04T15:51:27.649Z</updated>
+  <updated>2021-12-06T15:59:40.307Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（二）</title>
+    <link href="http://example.com/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/"/>
+    <id>http://example.com/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/</id>
+    <published>2021-12-06T15:27:00.000Z</published>
+    <updated>2021-12-06T15:59:40.307Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;根据设计稿在 &lt;code&gt;pages\页面.vue&lt;/code&gt; 文件中写好页面布局和样式，此处不述&lt;/p&gt;
+&lt;h1 id=&quot;pages-json-文件&quot;&gt;&lt;a href=&quot;#pages-json-文件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（一）</title>
@@ -512,35 +540,6 @@
         
     <summary type="html">&lt;h1 id=&quot;开发规范&quot;&gt;&lt;a href=&quot;#开发规范&quot; class=&quot;headerlink&quot; title=&quot;开发规范&quot;&gt;&lt;/a&gt;开发规范&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;页面文件遵循 Vue 单文件组件 (SFC) 规范，即含三种类型的顶级语言块</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记 uni-app（一）初体验</title>
-    <link href="http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/"/>
-    <id>http://example.com/2021/09/10/xiao-bai-cai-bi-ji-xiao-cheng-xu-yi-chu-ti-yan/</id>
-    <published>2021-09-09T16:56:39.000Z</published>
-    <updated>2021-09-23T08:53:56.537Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;最近又开始鼓捣学习 uni-app 啦，虽然带娃基本没多少时间但我真的超爱学习新玩意带来的满足感的（读书时候要有这觉悟该多好哇😳）&lt;/p&gt;
-&lt;p&gt;按照以往的学习经验，首先要去官网看一遍教程，然后跟着示例撸一个 HelloWorld 出来。&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
         
       
     
