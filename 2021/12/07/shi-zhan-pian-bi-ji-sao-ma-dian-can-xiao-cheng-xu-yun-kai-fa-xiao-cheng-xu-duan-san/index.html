@@ -426,21 +426,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-07
+                    2021-12-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    445
+                    632
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -463,7 +463,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>创建uniapp项目时， 如果勾选了 <code>启用uniCloud</code> ，会创建一个uniCloud云开发环境，因为前面在创建项目的时候没有勾选 <code>启用uniCloud</code> 选项，所以这里需要自己创建云服务空间。</p>
+                <h1 id="创建云函数"><a href="#创建云函数" class="headerlink" title="创建云函数"></a>创建云函数</h1><p>创建uniapp项目时， 如果勾选了 <code>启用uniCloud</code> ，会创建一个uniCloud云开发环境，因为前面在创建项目的时候没有勾选 <code>启用uniCloud</code> 选项，所以这里需要自己创建云服务空间。</p>
 <p>在 <code>HBuilderX</code> 编辑器打开 <code>manifest.json</code> 源码视图，在 <code>mp-weixin</code> 选项新增 cloudfunctionRoot 字段，指定本地已存在的目录作为云开发的本地根目录</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">"mp-weixin"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token string">"appid"</span> <span class="token operator">:</span> <span class="token string">"APPID"</span><span class="token punctuation">,</span>
@@ -529,7 +529,34 @@ exports<span class="token punctuation">.</span><span class="token function-varia
 <p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4mgilkvrj217w0nzk0n.jpg"></p>
 <p>能正确返回结果即成功，再右键选择 <code>上传并部署：云端安装依赖（不上传node_modules）</code>，查看云开发控制台中云函数列表是否部署成功</p>
 <p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx4mkmbq6lj20x309fn0j.jpg"></p>
+<h1 id="小程序端调用云函数"><a href="#小程序端调用云函数" class="headerlink" title="小程序端调用云函数"></a>小程序端调用云函数</h1><ol>
+<li>小程序端初始化</li>
+</ol>
+<p>调用云函数、数据库、存储、云托管等 API 时，都需要指定所需访问的云环境 ID，意即指定访问哪个环境下的云函数/数据库/存储/云托管/…资源。有两种方式进行指定：1.使用默认示例 <code>wx.cloud</code>；2.为各个环境使用单独的实例</p>
+<p>这里使用默认示例 <code>wx.cloud</code> 指定所需访问的云环境 ID</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// App.vue</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		<span class="token function-variable function">onLaunch</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+			  env<span class="token operator">:</span> 云环境 <span class="token constant">ID</span><span class="token punctuation">,</span>
+			  traceUser<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+			<span class="token punctuation">}</span><span class="token punctuation">)</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<ol start="2">
+<li>小程序端调用</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages\home-page\page.vue</span>
+methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">dishEs</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">callFunction</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token operator">:</span> <span class="token string">'要调用的云函数名称'</span><span class="token punctuation">,</span> 
+      data<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// 传递给云函数的参数</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
