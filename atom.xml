@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-10T18:07:15.840Z</updated>
+  <updated>2021-12-10T18:25:38.196Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>烟火集——火锅</title>
+    <link href="http://example.com/2021/12/11/yan-huo-ji-huo-guo/"/>
+    <id>http://example.com/2021/12/11/yan-huo-ji-huo-guo/</id>
+    <published>2021-12-10T18:15:30.000Z</published>
+    <updated>2021-12-10T18:25:38.196Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;广东的冬天冷热无常，天冷的时候计划好打火锅，隔天就升温了。But！对吃货来说，天气算什么呢😏&lt;/p&gt;
+&lt;p&gt;小夫妻忙碌了半天准备食材，邀上三五好友，虽然中间出现一些不愉快的插曲，但幸好最终大家吃得满足🍲&lt;/p&gt;
+&lt;p&gt;此处表扬本场黑马——『炸腐竹』，好吃到意外🏆&lt;/p</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（四）</title>
@@ -522,34 +549,6 @@
     
     
     <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记 uni-app（四）路由</title>
-    <link href="http://example.com/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/"/>
-    <id>http://example.com/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/</id>
-    <published>2021-09-28T08:38:03.000Z</published>
-    <updated>2021-09-28T15:46:35.081Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;路由&quot;&gt;&lt;a href=&quot;#路由&quot; class=&quot;headerlink&quot; title=&quot;路由&quot;&gt;&lt;/a&gt;路由&lt;/h1&gt;&lt;p&gt;框架统一管理，需要在 pages.json 里配置每个路由页面的路径及页面样式。&lt;/p&gt;
-&lt;h1 id=&quot;路由跳转&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
   </entry>
   
