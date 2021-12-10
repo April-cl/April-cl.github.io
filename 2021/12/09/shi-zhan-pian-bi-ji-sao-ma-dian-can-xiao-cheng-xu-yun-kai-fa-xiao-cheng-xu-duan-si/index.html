@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记--React（四） Class 组件事件绑定, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（四）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记--React（四） Class 组件事件绑定 | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（四） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记--React（四） Class 组件事件绑定</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（四）</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/React/">
-                                <span class="chip bg-color">React</span>
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
+                            </a>
+                        
+                            <a href="/tags/uni-app/">
+                                <span class="chip bg-color">uni-app</span>
                             </a>
                         
                     </div>
@@ -415,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-12-09
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-20
+                    2021-12-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    360
+                    480
                 </div>
                 
 
@@ -459,92 +463,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token string">"./styles.css"</span><span class="token punctuation">;</span>
-<span class="token keyword">class</span> <span class="token class-name">A</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">className</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>App<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">A</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>依次点击4个按钮，控制台输出</p>
-<pre class="line-numbers language-none"><code class="language-none">undefined
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}
-A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bound click()…}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>第一种情况与 <a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/">JavaScript 函数工作原理</a>有关，this 最终是指向 window 的。</p>
-<p>在 Class 组件中，事件绑定的正确姿势应该是这样 ⬇</p>
-<p>传一个匿名函数给 onClick</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用 bind 绑定 this</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>click1 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click1<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>用箭头函数定义</p>
-<pre class="line-numbers language-jsx" data-language="jsx"><code class="language-jsx"><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">click2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// 下面这种写法和在 constructor 中写 this.click2 = () =&gt; {} 是等价的</span>
-<span class="token comment">// click2 = () =&gt; {}</span>
-<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onClick</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>click2<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Click</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>在类中 <code>click() {}</code> 和 <code>click = () =&gt; {}</code> 两种写法的区别：</p>
+                <h1 id="菜单左右联动"><a href="#菜单左右联动" class="headerlink" title="菜单左右联动"></a>菜单左右联动</h1><p>需求：</p>
+<ol>
+<li><p>滚动右边菜品栏时，当该分类详情模块顶部接触到滚动区域的顶部，左边对应的分类栏高亮，并且显示在可视区域</p>
+</li>
+<li><p>点击左边分类栏高亮显示，右边菜品栏滚动到该分类顶部菜品所在位置（类似于 HTML 里的锚点功能）</p>
+</li>
+</ol>
+<h2 id="滚动右边菜品联动左边分类"><a href="#滚动右边菜品联动左边分类" class="headerlink" title="滚动右边菜品联动左边分类"></a>滚动右边菜品联动左边分类</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol>
+<li><p>使用微信小程序提供的API <code>wx.createSelectorQuery</code> 创建节点查询器，获取右边菜品栏每一个分类菜品的高度</p>
+</li>
+<li><p>用一个数组变量 <code>heightset</code> 存储右边每一个分类菜品的高度</p>
+</li>
+<li><p>用一个变量 <code>trigger</code> 记录当前左边所在类目选中的值</p>
+</li>
+<li><p>用一个变量 <code>tophei</code> 记录滚动时距离顶部的高度</p>
+</li>
+<li><p>右边菜品栏滚动时获取当前滚动的高度</p>
 <ul>
-<li><code>click() {}</code> 是对象的共有属性（也就是原型上的属性）</li>
-<li><code>click = () =&gt; {}</code> 是对象本身的属性</li>
+<li><p>若该高度大于 <code>tophei</code>，右边菜品栏向下滚动，若该高度大于 <code>heightset</code> 中 <code>trigger</code> 对应的高度时跳转下一个分类</p>
+</li>
+<li><p>若该高度小于 <code>tophei</code>，右边菜品栏向上滚动，若该高度小于 <code>heightset</code> 中 <code>trigger</code> 对应的高度时跳转上一个分类</p>
+</li>
 </ul>
-<blockquote>
-<p>觉得 this 麻烦，那用函数组件就好啦 😊</p>
-</blockquote>
+</li>
+</ol>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">goods_height</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>heightset <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> cate_height <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">const</span> query <span class="token operator">=</span> wx<span class="token punctuation">.</span><span class="token function">createSelectorQuery</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    query<span class="token punctuation">.</span><span class="token function">selectAll</span><span class="token punctuation">(</span><span class="token string">'.rig-height'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">boundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    query<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            cate_height <span class="token operator">+=</span> item<span class="token punctuation">.</span>height
+            <span class="token keyword">this</span><span class="token punctuation">.</span>heightset<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cate_height<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">scroll</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> scrollTop <span class="token operator">=</span> event<span class="token punctuation">.</span>detail<span class="token punctuation">.</span>scrollTop
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>scrollTop <span class="token operator">&gt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>tophei<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>scrollTop <span class="token operator">&gt;=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>heightset<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>trigger<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>trigger <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>scrollTop <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>heightset<span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>trigger <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>trigger <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>tophei <span class="token operator">=</span> scrollTop
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="点击左边分类联动右边菜品"><a href="#点击左边分类联动右边菜品" class="headerlink" title="点击左边分类联动右边菜品"></a>点击左边分类联动右边菜品</h2><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>利用<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html">文档</a>提供的 <code>scroll-into-view</code>实现类似于锚点的效果，用一个变量 <code>scroll_into</code> 记录当前视图元素 id 值（此前已设置为对应分类的 cid），点击左边分类时将该分类的 cid 赋值给 <code>scroll_into</code> </p>
+<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">itemIze</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> cid</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>trigger <span class="token operator">=</span> index
+    <span class="token keyword">this</span><span class="token punctuation">.</span>scroll_into <span class="token operator">=</span> cid
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>      <span class="token comment">// 防止因为已经点击过而不能二次触发</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>scroll_into <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -570,7 +547,7 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/">http://example.com/2021/08/20/xiao-bai-cai-bi-ji-react-si-shi-jian-bang-ding/</a>
+                    <a href="http://example.com/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/">http://example.com/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -608,8 +585,12 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/React/">
-                                    <span class="chip bg-color">React</span>
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
+                                </a>
+                            
+                                <a href="/tags/uni-app/">
+                                    <span class="chip bg-color">uni-app</span>
                                 </a>
                             
                         </div>
@@ -653,17 +634,18 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/">
+                <a href="/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="那些年，被原型折磨的前端小白">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（四）">
                         
-                        <span class="card-title">那些年，被原型折磨的前端小白</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（四）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -673,9 +655,9 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -688,11 +670,16 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                    <a href="/tags/uni-app/">
+                        <span class="chip bg-color">uni-app</span>
                     </a>
                     
                 </div>
@@ -706,13 +693,13 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/19/xiao-bai-cai-bi-ji-react-san-han-shu-zu-jian/">
+                <a href="/2021/12/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="小白菜笔记--React（三）函数组件">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（三）">
                         
-                        <span class="card-title">小白菜笔记--React（三）函数组件</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -723,7 +710,7 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                             </span>
                         <span class="publish-author">
                             
@@ -740,8 +727,12 @@ A {props: Object, context: Object, refs: Object, updater: Object, click1: ƒ bou
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                    <a href="/tags/uni-app/">
+                        <span class="chip bg-color">uni-app</span>
                     </a>
                     
                 </div>

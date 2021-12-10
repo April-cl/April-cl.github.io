@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-08T09:10:34.744Z</updated>
+  <updated>2021-12-10T18:07:15.840Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（四）</title>
+    <link href="http://example.com/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/"/>
+    <id>http://example.com/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/</id>
+    <published>2021-12-08T17:27:50.000Z</published>
+    <updated>2021-12-10T18:07:15.840Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;菜单左右联动&quot;&gt;&lt;a href=&quot;#菜单左右联动&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（三）</title>
@@ -512,33 +539,6 @@
         
     <summary type="html">&lt;h1 id=&quot;路由&quot;&gt;&lt;a href=&quot;#路由&quot; class=&quot;headerlink&quot; title=&quot;路由&quot;&gt;&lt;/a&gt;路由&lt;/h1&gt;&lt;p&gt;框架统一管理，需要在 pages.json 里配置每个路由页面的路径及页面样式。&lt;/p&gt;
 &lt;h1 id=&quot;路由跳转&quot;&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小白菜笔记 uni-app（三）生命周期</title>
-    <link href="http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/"/>
-    <id>http://example.com/2021/09/24/xiao-bai-cai-bi-ji-uni-app-san-sheng-ming-zhou-qi/</id>
-    <published>2021-09-24T15:52:07.000Z</published>
-    <updated>2021-09-27T17:11:09.055Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;应用生命周期&quot;&gt;&lt;a href=&quot;#应用生命周期&quot; class=&quot;headerlink&quot;</summary>
         
       
     
