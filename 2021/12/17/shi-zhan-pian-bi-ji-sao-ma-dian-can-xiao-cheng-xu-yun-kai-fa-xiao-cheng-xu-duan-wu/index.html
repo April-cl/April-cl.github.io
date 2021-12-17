@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="烟火集——火锅, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（五）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>烟火集——火锅 | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（五） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">烟火集——火锅</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（五）</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%8F%9C%E8%B0%B1/">
-                                <span class="chip bg-color">菜谱</span>
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
+                            </a>
+                        
+                            <a href="/tags/uni-app/">
+                                <span class="chip bg-color">uni-app</span>
                             </a>
                         
                     </div>
@@ -402,8 +406,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                生活
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -415,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-11
+                    2021-12-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-11
+                    2021-12-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    113
+                    320
                 </div>
                 
 
@@ -459,11 +463,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>广东的冬天冷热无常，天冷的时候计划好打火锅，隔天就升温了。But！对吃货来说，天气算什么呢😏</p>
-<p>小夫妻忙碌了半天准备食材，邀上三五好友，虽然中间出现一些不愉快的插曲，但幸好最终大家吃得满足🍲</p>
-<p>此处表扬本场黑马——『炸腐竹』，好吃到意外🏆</p>
-<p>另外，『牛肉丸』选手也发挥出优秀的水平👏</p>
-<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gx9aq74s11j235s2dc1kz.jpg" alt="火锅.jpg"></p>
+                <h1 id="菜品数量加减"><a href="#菜品数量加减" class="headerlink" title="菜品数量加减"></a>菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
+    <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
+    
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
+    <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">shopping_Cart_add_sub</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'total_price'</span><span class="token punctuation">,</span> <span class="token constant">QU</span> <span class="token operator">*</span> unitprice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><code>Vue.set(object, propertyName, value)</code> 向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 this.myObject.newProperty = ‘hi’)</p>
+</blockquote>
+<hr>
+<p>下面内容需结合购物车和菜品详情页一起看，可先略过</p>
+<h1 id="购物车菜品数量加减"><a href="#购物车菜品数量加减" class="headerlink" title="购物车菜品数量加减"></a>购物车菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> quantity<span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">shopping_Cart_add_sub</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> quantity<span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">shopping_Cart_add_sub</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="详情页菜品数量加减"><a href="#详情页菜品数量加减" class="headerlink" title="详情页菜品数量加减"></a>详情页菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">plus</span><span class="token punctuation">(</span><span class="token parameter">pro_details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token punctuation">{</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">}</span> <span class="token operator">=</span> pro_details
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>itemgood<span class="token punctuation">.</span>quantity<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">reduce</span><span class="token punctuation">(</span><span class="token parameter">pro_details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token punctuation">{</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">}</span> <span class="token operator">=</span> pro_details
+    <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>看了眼归档竟停了5天没写🤦🏻 一开始是因为拔牙疼了两天没有心思，后面突如其来的疫情和被困在家的神兽又搞得没点空闲🤦🏻</p>
+</blockquote>
 
                 
             </div>
@@ -490,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/11/yan-huo-ji-huo-guo/">http://example.com/2021/12/11/yan-huo-ji-huo-guo/</a>
+                    <a href="http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/">http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -528,8 +570,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%8F%9C%E8%B0%B1/">
-                                    <span class="chip bg-color">菜谱</span>
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
+                                </a>
+                            
+                                <a href="/tags/uni-app/">
+                                    <span class="chip bg-color">uni-app</span>
                                 </a>
                             
                         </div>
@@ -573,9 +619,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/">
                     <div class="card-image">
@@ -593,9 +640,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -608,6 +655,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -630,13 +678,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/">
+                <a href="/2021/12/11/yan-huo-ji-huo-guo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（四）">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="烟火集——火锅">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（四）</span>
+                        <span class="card-title">烟火集——火锅</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,14 +695,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -664,12 +712,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
-                    <a href="/tags/uni-app/">
-                        <span class="chip bg-color">uni-app</span>
+                    <a href="/tags/%E8%8F%9C%E8%B0%B1/">
+                        <span class="chip bg-color">菜谱</span>
                     </a>
                     
                 </div>
