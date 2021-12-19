@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（五）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（六）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（五） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（六） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（五）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（六）</h1>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-17
+                    2021-12-19
                 </div>
                 
 
@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    590
+                    736
                 </div>
                 
 
@@ -463,30 +463,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="菜品数量加减"><a href="#菜品数量加减" class="headerlink" title="菜品数量加减"></a>菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// page.vue</span>
-<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+                <h1 id="购物车组件"><a href="#购物车组件" class="headerlink" title="购物车组件"></a>购物车组件</h1><h2 id="封装组件"><a href="#封装组件" class="headerlink" title="封装组件"></a>封装组件</h2><p>在 <code>pages\home-page\components</code> 目录创建 <code>shopping-cart.vue</code>，布局样式代码略</p>
+<h2 id="调用组件"><a href="#调用组件" class="headerlink" title="调用组件"></a>调用组件</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span>block v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, index) in goods"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span>block v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(itemgood, good_index) in item.good_query"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"good_index"</span><span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-                    <span class="token operator">&lt;</span>view @click<span class="token punctuation">.</span>stop<span class="token operator">=</span><span class="token string">"reduce(index, good_index, item.cid, itemgood)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-                    <span class="token operator">&lt;</span>view @click<span class="token punctuation">.</span>stop<span class="token operator">=</span><span class="token string">"plus(index, good_index, item.cid, itemgood)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>block<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>block<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span>Cart<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Cart<span class="token operator">&gt;</span>
-		<span class="token operator">&lt;</span>Details<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Details<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">import</span> Cart <span class="token keyword">from</span> <span class="token string">'./components/shopping-cart.vue'</span>
-    <span class="token keyword">import</span> Details <span class="token keyword">from</span> <span class="token string">'./components/goods-details.vue'</span>
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		components<span class="token operator">:</span><span class="token punctuation">{</span>
+			Cart
+		<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="切换显示关闭购物车"><a href="#切换显示关闭购物车" class="headerlink" title="切换显示关闭购物车"></a>切换显示关闭购物车</h2><h3 id="点击父组件"><a href="#点击父组件" class="headerlink" title="点击父组件"></a>点击父组件</h3><p>实现思路：用一个布尔值标记购物车显隐状态，当值为 <code>true</code> 时，购物车显示，此时若点击父组件控制购物车显隐状态开关，值切换为 <code>false</code>，购物车关闭</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// page.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"pop_Shopping(!card)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Cart v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"card"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Cart<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+	<span class="token keyword">import</span> Cart <span class="token keyword">from</span> <span class="token string">'./components/shopping-cart.vue'</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
 		components<span class="token operator">:</span> <span class="token punctuation">{</span>
-			Cart<span class="token punctuation">,</span>
-			Details
+			Cart
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token punctuation">{</span>
@@ -494,92 +498,132 @@
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
-                <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
-                
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
-                <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token function">shopping_Cart_add_sub</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'total_price'</span><span class="token punctuation">,</span> <span class="token constant">QU</span> <span class="token operator">*</span> unitprice<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span>
+            <span class="token function">pop_Shopping</span> <span class="token punctuation">(</span><span class="token parameter">value <span class="token operator">=</span> <span class="token boolean">true</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>card <span class="token operator">=</span> value
+			<span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p><code>Vue.set(object, propertyName, value)</code> 向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 this.myObject.newProperty = ‘hi’)</p>
-</blockquote>
-<hr>
-<p>下面内容需结合购物车和菜品详情页一起看，可先略过</p>
-<h1 id="购物车菜品数量加减"><a href="#购物车菜品数量加减" class="headerlink" title="购物车菜品数量加减"></a>购物车菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// shopping-cart.vue</span>
+<h3 id="点击子组件（即购物车组件）"><a href="#点击子组件（即购物车组件）" class="headerlink" title="点击子组件（即购物车组件）"></a>点击子组件（即购物车组件）</h3><p>实现思路：点击时调用父组件<code>pop_Shopping</code> 函数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// shopping-cart.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"close()"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">close</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">pop_Shopping</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="添加菜品进购物车"><a href="#添加菜品进购物车" class="headerlink" title="添加菜品进购物车"></a>添加菜品进购物车</h2><p>实现思路：通过 <code>v-bind</code> 将父组件向购物车组件动态赋值，用一个数组 <code>shopping_card</code> 存储父组件中要加入购物车的菜品，购物车组件通过 <code>props</code> 接收菜品数据</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// page.vue</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Cart v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"card"</span> <span class="token operator">:</span>shopping_card<span class="token operator">=</span><span class="token string">"shopping_card"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>Cart<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+	<span class="token keyword">import</span> Cart <span class="token keyword">from</span> <span class="token string">'./components/shopping-cart.vue'</span>
+	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		components<span class="token operator">:</span> <span class="token punctuation">{</span>
+			Cart
+		<span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                shopping_card<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
+				<span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
+				<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span>image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token constant">QU</span><span class="token punctuation">,</span> unit<span class="token punctuation">,</span> total_price<span class="token operator">:</span> unitprice <span class="token operator">*</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">}</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">shopping_Cart</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+				
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+			<span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
+				<span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>good_query<span class="token punctuation">[</span>good_index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'quantity'</span><span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">)</span>
+				<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span>image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> quantity<span class="token operator">:</span> <span class="token constant">QU</span><span class="token punctuation">,</span> unit<span class="token punctuation">,</span> total_price<span class="token operator">:</span> unitprice <span class="token operator">*</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">}</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">shopping_Cart</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token function">shopping_Cart</span> <span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// shopping-cart.vue</span>
 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span>block v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, index) in shopping_card"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"reduce(index, item.quantity, item._id, item.cid, item.good_index, item.unitprice)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-                <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"plus(index, item.quantity, item._id, item.cid, item.good_index, item.unitprice)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"goods-list"</span> v<span class="token operator">-</span><span class="token keyword">if</span><span class="token operator">=</span><span class="token string">"item.quantity &gt; 0"</span><span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"goods-list-image"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>image <span class="token operator">:</span>src<span class="token operator">=</span><span class="token string">"item.image[0].url"</span> mode<span class="token operator">=</span><span class="token string">"aspectFill"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>image<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"goods-list-name"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"list-text"</span><span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>text<span class="token operator">&gt;</span>￥<span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">&gt;</span>
+                        <span class="token operator">&lt;</span>text<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>total_price<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>text<span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span>view <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"goods-quantity"</span><span class="token operator">&gt;</span>
+                    <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>item<span class="token punctuation">.</span>quantity<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
             <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>block<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        props<span class="token operator">:</span> <span class="token punctuation">{</span>
+			shopping_card<span class="token operator">:</span> Array
+		<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里 <code>plus</code> 和 <code>reduce</code> 为加减菜品函数，见 <a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/">实战篇笔记 扫码点餐小程序云开发小程序端（五）</a></p>
+<h2 id="清空购物车所有菜品"><a href="#清空购物车所有菜品" class="headerlink" title="清空购物车所有菜品"></a>清空购物车所有菜品</h2><p>实现思路：父组件封装好清空数据的接口，子组件进行调用</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// page.vue</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
         methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> quantity<span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">shopping_Cart_add_sub</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> quantity<span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">shopping_Cart_add_sub</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span>
+            <span class="token function">empty_data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>itemize<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>sale_quantity <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>goods<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+					item<span class="token punctuation">.</span>good_query<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">T</span></span> <span class="token operator">=&gt;</span> <span class="token constant">T</span><span class="token punctuation">.</span>quantity <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+				<span class="token punctuation">}</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="详情页菜品数量加减"><a href="#详情页菜品数量加减" class="headerlink" title="详情页菜品数量加减"></a>详情页菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// goods-details.vue</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// shopping-cart.vue</span>
 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"reduce(pro_details)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
-            <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"plus(pro_details)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>view @click<span class="token operator">=</span><span class="token string">"empTy()"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span><span class="token operator">/</span>view<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-        props<span class="token operator">:</span> <span class="token punctuation">{</span>
-			pro_details<span class="token operator">:</span> Object
-		<span class="token punctuation">}</span><span class="token punctuation">,</span>
         methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-            <span class="token function">plus</span><span class="token punctuation">(</span><span class="token parameter">pro_details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> <span class="token punctuation">{</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">}</span> <span class="token operator">=</span> pro_details
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">)</span>
-                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>itemgood<span class="token punctuation">.</span>quantity<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">,</span>
-            <span class="token function">reduce</span><span class="token punctuation">(</span><span class="token parameter">pro_details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">let</span> <span class="token punctuation">{</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">}</span> <span class="token operator">=</span> pro_details
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">)</span>
-            <span class="token punctuation">}</span>
+            <span class="token function">empTy</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">empty_data</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+			<span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p>看了眼归档竟停了5天没写🤦🏻 一开始是因为拔牙疼了两天没有心思，后面突如其来的疫情和被困在家的神兽又搞得没点空闲🤦🏻</p>
-</blockquote>
-
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -605,7 +649,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/">http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/</a>
+                    <a href="http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/">http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,9 +736,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/">
                     <div class="card-image">
@@ -712,9 +757,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -727,6 +772,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -749,13 +795,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/11/yan-huo-ji-huo-guo/">
+                <a href="/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="烟火集——火锅">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（五）">
                         
-                        <span class="card-title">烟火集——火锅</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（五）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -766,14 +812,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
-                                    生活
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -783,8 +829,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%8F%9C%E8%B0%B1/">
-                        <span class="chip bg-color">菜谱</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
+                    </a>
+                    
+                    <a href="/tags/uni-app/">
+                        <span class="chip bg-color">uni-app</span>
                     </a>
                     
                 </div>

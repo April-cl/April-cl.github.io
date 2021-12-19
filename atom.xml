@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-17T17:44:54.541Z</updated>
+  <updated>2021-12-19T17:01:04.624Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（六）</title>
+    <link href="http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/"/>
+    <id>http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/</id>
+    <published>2021-12-19T15:09:53.000Z</published>
+    <updated>2021-12-19T17:01:04.624Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;购物车组件&quot;&gt;&lt;a href=&quot;#购物车组件&quot; class=&quot;headerlink&quot; title=&quot;购物车组件&quot;&gt;&lt;/a&gt;购物车组件&lt;/h1&gt;&lt;h2 id=&quot;封装组件&quot;&gt;&lt;a href=&quot;#封装组件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（五）</title>
     <link href="http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/"/>
     <id>http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/</id>
     <published>2021-12-17T09:30:41.000Z</published>
-    <updated>2021-12-17T17:44:54.541Z</updated>
+    <updated>2021-12-19T16:57:02.726Z</updated>
     
     
       
@@ -525,32 +552,6 @@
     
     
     <category term="HTTP" scheme="http://example.com/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>谈谈浏览器的 Event Loop</title>
-    <link href="http://example.com/2021/10/02/tan-tan-event-loop/"/>
-    <id>http://example.com/2021/10/02/tan-tan-event-loop/</id>
-    <published>2021-10-01T17:02:26.000Z</published>
-    <updated>2021-10-06T18:13:40.842Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;关于 Event Loop 网络上的文章写得很详尽，多看几篇反复思考勤动笔记录大致就能明白些了，这也是我一贯的学习方法。&lt;/p&gt;
-&lt;p&gt;在了解 Event Loop 之前先理解什么是&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   
