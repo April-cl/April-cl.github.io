@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-19T17:01:04.624Z</updated>
+  <updated>2021-12-20T16:45:20.346Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（七）</title>
+    <link href="http://example.com/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/"/>
+    <id>http://example.com/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/</id>
+    <published>2021-12-20T15:56:16.000Z</published>
+    <updated>2021-12-20T16:45:20.346Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;详情页组件&quot;&gt;&lt;a href=&quot;#详情页组件&quot; class=&quot;headerlink&quot; title=&quot;详情页组件&quot;&gt;&lt;/a&gt;详情页组件&lt;/h1&gt;&lt;h2 id=&quot;封装组件&quot;&gt;&lt;a href=&quot;#封装组件&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（六）</title>
@@ -48,7 +75,7 @@
     <link href="http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/"/>
     <id>http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/</id>
     <published>2021-12-17T09:30:41.000Z</published>
-    <updated>2021-12-19T16:57:02.726Z</updated>
+    <updated>2021-12-20T16:35:08.839Z</updated>
     
     
       
@@ -526,32 +553,6 @@
     
     
     <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅析 URL</title>
-    <link href="http://example.com/2021/10/07/qian-xi-url/"/>
-    <id>http://example.com/2021/10/07/qian-xi-url/</id>
-    <published>2021-10-06T18:16:50.000Z</published>
-    <updated>2021-10-06T18:28:30.143Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;URL（统一资源定位符）&quot;&gt;&lt;a href=&quot;#URL（统一资源定位符）&quot; class=&quot;headerlink&quot; title=&quot;URL（统一资源定位符）&quot;&gt;&lt;/a&gt;URL（统一资源定位符）&lt;/h1&gt;&lt;p&gt;通常是指用户在浏览器中输入的地址&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="HTTP" scheme="http://example.com/tags/HTTP/"/>
     
   </entry>
   
