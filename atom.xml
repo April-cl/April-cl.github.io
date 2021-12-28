@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-26T17:25:54.632Z</updated>
+  <updated>2021-12-28T18:22:42.840Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（八）</title>
+    <link href="http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/"/>
+    <id>http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/</id>
+    <published>2021-12-28T17:12:03.000Z</published>
+    <updated>2021-12-28T18:22:42.840Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;生成订单编号&quot;&gt;&lt;a href=&quot;#生成订单编号&quot; class=&quot;headerlink&quot; title=&quot;生成订单编号&quot;&gt;&lt;/a&gt;生成订单编号&lt;/h1&gt;&lt;p&gt;实现思路：当前时间戳 + 10位整数随机数&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（十一）</title>
@@ -526,34 +554,6 @@
     
     
     <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（一）</title>
-    <link href="http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/"/>
-    <id>http://example.com/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/</id>
-    <published>2021-10-14T18:07:04.000Z</published>
-    <updated>2021-10-15T17:50:26.472Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;依旧是写在前面的碎碎念：💭&lt;br&gt;    学习编程我觉得最好的方式就是动手写代码⌨️&lt;br&gt;    相对于阅读文档，在提出需求解决需求的过程中以主动探索为驱动对于我来说能够更快速掌握技巧并加深印象🧠&lt;br&gt;   </summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
   </entry>
   

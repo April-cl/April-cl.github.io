@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（十一）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（八）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发（十一） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（八） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（十一）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（八）</h1>
                 </div>
             </div>
         </div>
@@ -419,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-26
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-27
+                    2021-12-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    478
+                    530
                 </div>
                 
 
@@ -463,99 +463,100 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="订单管理页"><a href="#订单管理页" class="headerlink" title="订单管理页"></a>订单管理页</h1><h2 id="前端接口"><a href="#前端接口" class="headerlink" title="前端接口"></a>前端接口</h2><p>获取订单：obtainorder</p>
-<p>获取菜单详情：vieworder</p>
-<p>接单：receiving</p>
-<p>结账：checkout</p>
-<h2 id="获取订单信息"><a href="#获取订单信息" class="headerlink" title="获取订单信息"></a>获取订单信息</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtainorder'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>page<span class="token punctuation">,</span> transac_status<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">let</span> sk <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span>
-  <span class="token keyword">let</span> param <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>transac_status <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    param<span class="token punctuation">[</span><span class="token string">'transac_status'</span><span class="token punctuation">]</span> <span class="token operator">=</span> transac_status
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">delete</span> param<span class="token punctuation">.</span>transac_status
-  <span class="token punctuation">}</span>
-  <span class="token keyword">let</span> <span class="token constant">OBJ</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span>
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').where(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">OBJ</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).orderBy('order_time', 'desc').field({menu: false}).limit(10).skip(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sk<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).get()</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span>total<span class="token operator">:</span> res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
-    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>result<span class="token operator">:</span> data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200.</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="生成订单编号"><a href="#生成订单编号" class="headerlink" title="生成订单编号"></a>生成订单编号</h1><p>实现思路：当前时间戳 + 10位整数随机数</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// config\order.js</span>
+<span class="token keyword">let</span> <span class="token function-variable function">Code</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> orderCode <span class="token operator">=</span> <span class="token number">0</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		orderCode <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	orderCode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> orderCode
+	<span class="token keyword">return</span> orderCode
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>Code<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="获取菜单详情"><a href="#获取菜单详情" class="headerlink" title="获取菜单详情"></a>获取菜单详情</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/vieworder'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').field({menu: true}).get()</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>menu<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="调用订阅消息接口"><a href="#调用订阅消息接口" class="headerlink" title="调用订阅消息接口"></a>调用订阅消息接口</h1><p>以下使用说明摘自<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/subscribe-message.html">文档</a></p>
+<p>步骤一：获取模板 ID</p>
+<p>登录小程序 -&gt; 功能 -&gt; 订阅消息 -&gt; 公共模板库 -&gt; 搜索’商家确认订单通知’并选用 -&gt; 复制模板ID</p>
+<p>步骤二：获取下发权限</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">requestSubscribeMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  tmplIds<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'模板ID'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token function">success</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="实现接单"><a href="#实现接单" class="headerlink" title="实现接单"></a>实现接单</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/receiving'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span>  <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').update({data:{order_receiving:'rec_order'}})</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>UpdateUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'已接单，快上菜吧'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p>步骤三：调用接口下发订阅消息</p>
+<p>服务端调用，见 <a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/#toc-heading-7">微信订阅消息</a></p>
+<h1 id="提交订单"><a href="#提交订单" class="headerlink" title="提交订单"></a>提交订单</h1><h2 id="订单数据库设计"><a href="#订单数据库设计" class="headerlink" title="订单数据库设计"></a>订单数据库设计</h2><pre class="line-numbers language-none"><code class="language-none">[
+	{
+		table_number:桌号
+		number_of_diners:用餐人数
+		order_time:下单时间
+		sett_amount:交易金额
+		order_no:订单编号
+		transac_status:结账状态=&gt;未结账:'unsettled'|已结账:'success'
+		order_receiving:接单状态=&gt;未接单:'mis_orders'|已接单:'rec_order'
+		menu:[
+			{
+				goods_list:[购物车里的菜单]
+			}//第一次下单
+			{
+				goods_list:[购物车里的菜单]
+			}//第二次下单
+			{}n次
+		]下单的菜品：第一次下单;{二次,三次,n次}=&gt;加菜
+	}
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="实现结账"><a href="#实现结账" class="headerlink" title="实现结账"></a>实现结账</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/checkout'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> openid<span class="token punctuation">,</span> sett_amount<span class="token punctuation">,</span> order_no<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">let</span> newmoney <span class="token operator">=</span> <span class="token function">Price</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>sett_amount<span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
-  <span class="token keyword">let</span> subscribe <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'amount1'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> newmoney<span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'time2'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> time<span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'character_string3'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> order_no<span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').update({data:{transac_status:'success'}})</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>openid<span class="token punctuation">,</span> subscribe<span class="token punctuation">)</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>UpdateUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'结账成功'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="微信订阅消息"><a href="#微信订阅消息" class="headerlink" title="微信订阅消息"></a>微信订阅消息</h2><p>登录小程序 -&gt; 功能 -&gt; 订阅消息 -&gt; 公共模板库 -&gt; 搜索’商家确认订单通知’并选用 -&gt; 复制模板ID</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// databaseapi.js</span>
-<span class="token keyword">let</span> Subscribe <span class="token operator">=</span> <span class="token string">'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token='</span>
-
-<span class="token keyword">class</span> <span class="token class-name">getToken</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 一些代码</span>
-
-  <span class="token keyword">async</span> <span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token parameter">touser<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">try</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> token <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-      <span class="token keyword">let</span> <span class="token constant">OBJ</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-        touser<span class="token punctuation">,</span>
-        data<span class="token punctuation">,</span>
-        template_id<span class="token operator">:</span> <span class="token string">'上面复制的模板ID'</span><span class="token punctuation">,</span>
-        page<span class="token operator">:</span> <span class="token string">'pages/my-order/my-order'</span><span class="token punctuation">,</span>
-        miniprogram_state<span class="token operator">:</span> <span class="token string">'developer'</span>
-      <span class="token punctuation">}</span>
-      <span class="token keyword">let</span> colldata <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>Subscribe <span class="token operator">+</span> token<span class="token punctuation">,</span> <span class="token constant">OBJ</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token string">'success'</span>
-    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+<h2 id="考虑需求"><a href="#考虑需求" class="headerlink" title="考虑需求"></a>考虑需求</h2><ol>
+<li>客户初次提交订单</li>
+<li>客户加单</li>
+</ol>
+<p>依据 <code>transac_status</code> 结账状态和 <code>table_number</code> 当前桌号判断。</p>
+<p>向数据查询当前桌号并且未结账记录</p>
+<ul>
+<li>无记录则表示之前的订单已结，此单为初次点单，向数据库创建新纪录</li>
+<li>有记录则表示该桌号此单为加单，向数据库修改记录</li>
+</ul>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">sub_database</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>total_price <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> sett_amount <span class="token operator">=</span> <span class="token number">0</span>
+    res<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>sett_amount <span class="token operator">+=</span> item<span class="token punctuation">.</span>total_price<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> order <span class="token operator">=</span> <span class="token punctuation">{</span>
+        table_number<span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span>
+        number_of_diners<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+        order_time<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$Time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        sett_amount<span class="token punctuation">,</span>
+        order_no<span class="token operator">:</span> <span class="token function">Code</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">,</span>
+        order_receiving<span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
+        menu<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>backup_data<span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> goods_list<span class="token operator">:</span> res<span class="token punctuation">}</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">let</span> add_goods <span class="token operator">=</span> <span class="token punctuation">{</span>backup_data<span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> goods_list<span class="token operator">:</span> res<span class="token punctuation">}</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>table_number<span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span><span class="token punctuation">{</span>id<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> sett_amount<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token operator">:</span> order<span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> total_amount <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sett_amount<span class="token punctuation">)</span> <span class="token operator">+</span> sett_amount
+            <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                data<span class="token operator">:</span> <span class="token punctuation">{</span>
+                    sett_amount<span class="token operator">:</span> total_amount<span class="token punctuation">,</span>
+                    order_receiving<span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
+                    menu<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>add_goods<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        res<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token keyword">await</span> dishes_data<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token operator">:</span> <span class="token punctuation">{</span>
+                monthlysale<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">inc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>quantity<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">const</span> time_data <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$Time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
+        <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">analysis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sameday</span><span class="token punctuation">(</span>time_data<span class="token punctuation">,</span> sett_amount<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -581,7 +582,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/">http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/</a>
+                    <a href="http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/">http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -668,9 +669,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/">
                     <div class="card-image">
@@ -688,9 +690,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -703,6 +705,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -725,13 +728,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/">
+                <a href="/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（七）">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（十一）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（七）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（十一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -742,7 +745,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-26
                             </span>
                         <span class="publish-author">
                             
