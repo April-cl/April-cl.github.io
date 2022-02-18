@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-28T18:22:42.840Z</updated>
+  <updated>2022-02-18T07:50:44.611Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记 扫码点餐小程序云开发（十二）</title>
+    <link href="http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/"/>
+    <id>http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/</id>
+    <published>2022-01-17T08:56:22.000Z</published>
+    <updated>2022-02-18T07:50:44.611Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;生成小程序码&quot;&gt;&lt;a href=&quot;#生成小程序码&quot; class=&quot;headerlink&quot; title=&quot;生成小程序码&quot;&gt;&lt;/a&gt;生成小程序码&lt;/h1&gt;&lt;p&gt;接口：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发小程序端（八）</title>
@@ -528,32 +555,6 @@
     <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>烟火集——湿炒牛河</title>
-    <link href="http://example.com/2021/10/16/yan-huo-ji-shi-chao-niu-he/"/>
-    <id>http://example.com/2021/10/16/yan-huo-ji-shi-chao-niu-he/</id>
-    <published>2021-10-15T17:54:45.000Z</published>
-    <updated>2021-10-16T08:01:06.362Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;做为一个常年在外生活的潮汕人，肠粉和牛肉粿的味道始终在我的乡愁中萦绕。尝试自己动手做过，肠粉一直复刻不出那种味道，不正宗的湿炒牛河倒是做了几回挺得我意的（感觉灵魂还是在于沙茶酱😋）&lt;/p&gt;
-&lt;h1 id=&quot;用料&quot;&gt;&lt;a href=&quot;#用料&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
     
   </entry>
   

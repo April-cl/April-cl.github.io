@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（十一）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（十二）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发（十一） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发（十二） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（十一）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（十二）</h1>
                 </div>
             </div>
         </div>
@@ -419,28 +419,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-26
+                    2022-01-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-27
+                    2022-02-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    478
+                    708
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -463,99 +463,162 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="订单管理页"><a href="#订单管理页" class="headerlink" title="订单管理页"></a>订单管理页</h1><h2 id="前端接口"><a href="#前端接口" class="headerlink" title="前端接口"></a>前端接口</h2><p>获取订单：obtainorder</p>
-<p>获取菜单详情：vieworder</p>
-<p>接单：receiving</p>
-<p>结账：checkout</p>
-<h2 id="获取订单信息"><a href="#获取订单信息" class="headerlink" title="获取订单信息"></a>获取订单信息</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtainorder'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>page<span class="token punctuation">,</span> transac_status<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">let</span> sk <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span>
-  <span class="token keyword">let</span> param <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>transac_status <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    param<span class="token punctuation">[</span><span class="token string">'transac_status'</span><span class="token punctuation">]</span> <span class="token operator">=</span> transac_status
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">delete</span> param<span class="token punctuation">.</span>transac_status
+                <h1 id="生成小程序码"><a href="#生成小程序码" class="headerlink" title="生成小程序码"></a>生成小程序码</h1><p>接口：<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.get.html">wxacode.get</a></p>
+<p>通过该接口生成的小程序码，永久有效，有数量限制</p>
+<p>HTTPS 调用：<code>POST https://api.weixin.qq.com/wxa/getwxacode?access_token=ACCESS_TOKEN</code></p>
+<h1 id="提交桌号到数据库"><a href="#提交桌号到数据库" class="headerlink" title="提交桌号到数据库"></a>提交桌号到数据库</h1><p>实现思路：</p>
+<ol>
+<li><p>获取请求内容（桌号）</p>
+</li>
+<li><p>验证桌号是否已经存在</p>
+</li>
+<li><p>通过 HTTPS 调用接口生成该桌号的小程序码 </p>
+</li>
+</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// router/qr-code/code.js</span>
+<span class="token comment">// 添加桌号</span>
+<span class="token comment">// 省略部分代码</span>
+router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/qrcode'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>table<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
+  <span class="token keyword">new</span> <span class="token class-name">postcode</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> table<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('table_qr_code').where({table:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>table<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'}).get()</span><span class="token template-punctuation string">`</span></span>
+    <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'该桌号已存在'</span><span class="token punctuation">,</span> <span class="token number">202</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> res_code <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">qrcode</span><span class="token punctuation">(</span>table<span class="token punctuation">)</span>
+      <span class="token keyword">const</span> res_img <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">buffer</span><span class="token punctuation">(</span><span class="token function">Code</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> res_code<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+      <span class="token keyword">let</span> code_image <span class="token operator">=</span> <span class="token string">'https://'</span> <span class="token operator">+</span> res_img
+      <span class="token keyword">let</span> table_data <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('table_qr_code').add({data:{time:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>time<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">',table:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>table<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">',code:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code_image<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'}})</span><span class="token template-punctuation string">`</span></span>
+      <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>AddUrl<span class="token punctuation">,</span> table_data<span class="token punctuation">)</span>
+      <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'添加成功'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-  <span class="token keyword">let</span> <span class="token constant">OBJ</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>param<span class="token punctuation">)</span>
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').where(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">OBJ</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).orderBy('order_time', 'desc').field({menu: false}).limit(10).skip(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sk<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).get()</span><span class="token template-punctuation string">`</span></span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// config/code-img.js</span>
+<span class="token comment">// 给二进制图片重新命名</span>
+<span class="token keyword">let</span> <span class="token function-variable function">Code</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> orderCode <span class="token operator">=</span> <span class="token string">''</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    orderCode <span class="token operator">+=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  orderCode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> orderCode
+  <span class="token keyword">return</span> orderCode <span class="token operator">+</span> <span class="token string">'.jpg'</span>
+<span class="token punctuation">}</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>Code<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// config/checking.js</span>
+<span class="token comment">// 桌号为空校验</span>
+<span class="token comment">// 省略部分代码</span>
+<span class="token keyword">class</span> <span class="token class-name">postcode</span> <span class="token keyword">extends</span> <span class="token class-name">checking</span> <span class="token punctuation">{</span>
+  <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'桌号不能为空'</span><span class="token punctuation">]</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">Errunder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">Parameter</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">Blank</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// config/databaseapi.js</span>
+<span class="token comment">// 生成小程序码</span>
+<span class="token keyword">class</span> <span class="token class-name">getToken</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 省略部分代码</span>
+  <span class="token keyword">async</span> <span class="token function">qrcode</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> token <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> <span class="token constant">OBJ</span> <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span>path<span class="token operator">:</span> <span class="token string">'pages/index/index?number='</span> <span class="token operator">+</span> number<span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> colldata <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>Qrcode <span class="token operator">+</span> token<span class="token punctuation">,</span> <span class="token constant">OBJ</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>responseType<span class="token operator">:</span> <span class="token string">'arraybuffer'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> colldata
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// cos/cos.js</span>
+<span class="token comment">// 二进制上传</span>
+<span class="token comment">// 省略部分代码</span>
+<span class="token keyword">let</span> <span class="token function-variable function">buffer</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">filename<span class="token punctuation">,</span> path</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    cos<span class="token punctuation">.</span><span class="token function">putObject</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      Bucket<span class="token punctuation">,</span>
+      Region<span class="token punctuation">,</span>
+      Key<span class="token operator">:</span> filename<span class="token punctuation">,</span>
+      Body<span class="token operator">:</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>Location<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="请求桌号数据"><a href="#请求桌号数据" class="headerlink" title="请求桌号数据"></a>请求桌号数据</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// router/qr-code/code.js</span>
+<span class="token comment">// 获取桌号</span>
+<span class="token comment">// 省略部分代码</span>
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/getqrcode'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> <span class="token punctuation">{</span>page<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
+  <span class="token keyword">let</span> sk <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>page<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">10</span>
+  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('table_qr_code').orderBy('time', 'desc').limit(10).skip(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sk<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).get()</span><span class="token template-punctuation string">`</span></span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
     <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
     <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span>total<span class="token operator">:</span> res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
     <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>result<span class="token operator">:</span> data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200.</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="获取菜单详情"><a href="#获取菜单详情" class="headerlink" title="获取菜单详情"></a>获取菜单详情</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/vieworder'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').field({menu: true}).get()</span><span class="token template-punctuation string">`</span></span>
+<h1 id="查询前7天数据"><a href="#查询前7天数据" class="headerlink" title="查询前7天数据"></a>查询前7天数据</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// router/qr-code/code.js</span>
+<span class="token comment">// 获取前7天数据</span>
+<span class="token comment">// 省略部分代码</span>
+router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/salesvolume'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token keyword">let</span> catedays <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span><span class="token string">'days'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> str <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>catedays<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('seven_day_sales').where({time:db.command.in(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>str<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)}).orderBy('time','asc').field({time:true,sales_value:true}).get()</span><span class="token template-punctuation string">`</span></span>
     <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>menu<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="实现接单"><a href="#实现接单" class="headerlink" title="实现接单"></a>实现接单</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/receiving'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span>  <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').update({data:{order_receiving:'rec_order'}})</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>UpdateUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'已接单，快上菜吧'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="实现结账"><a href="#实现结账" class="headerlink" title="实现结账"></a>实现结账</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/checkout'</span><span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">let</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> openid<span class="token punctuation">,</span> sett_amount<span class="token punctuation">,</span> order_no<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
-  <span class="token keyword">let</span> newmoney <span class="token operator">=</span> <span class="token function">Price</span><span class="token punctuation">(</span><span class="token function">Number</span><span class="token punctuation">(</span>sett_amount<span class="token punctuation">)</span><span class="token punctuation">)</span>
-  <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
-  <span class="token keyword">let</span> subscribe <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'amount1'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> newmoney<span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'time2'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> time<span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token string">'character_string3'</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token string">'value'</span><span class="token operator">:</span> order_no<span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('order-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').update({data:{transac_status:'success'}})</span><span class="token template-punctuation string">`</span></span>
-  <span class="token keyword">try</span> <span class="token punctuation">{</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span>openid<span class="token punctuation">,</span> subscribe<span class="token punctuation">)</span>
-    <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>UpdateUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'结账成功'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="微信订阅消息"><a href="#微信订阅消息" class="headerlink" title="微信订阅消息"></a>微信订阅消息</h2><p>登录小程序 -&gt; 功能 -&gt; 订阅消息 -&gt; 公共模板库 -&gt; 搜索’商家确认订单通知’并选用 -&gt; 复制模板ID</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// databaseapi.js</span>
-<span class="token keyword">let</span> Subscribe <span class="token operator">=</span> <span class="token string">'https://api.weixin.qq.com/cgi-bin/message/subscribe/send?access_token='</span>
-
-<span class="token keyword">class</span> <span class="token class-name">getToken</span> <span class="token punctuation">{</span>
-  <span class="token comment">// 一些代码</span>
-
-  <span class="token keyword">async</span> <span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token parameter">touser<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">try</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> token <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">gettoken</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-      <span class="token keyword">let</span> <span class="token constant">OBJ</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-        touser<span class="token punctuation">,</span>
-        data<span class="token punctuation">,</span>
-        template_id<span class="token operator">:</span> <span class="token string">'上面复制的模板ID'</span><span class="token punctuation">,</span>
-        page<span class="token operator">:</span> <span class="token string">'pages/my-order/my-order'</span><span class="token punctuation">,</span>
-        miniprogram_state<span class="token operator">:</span> <span class="token string">'developer'</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        sales_value<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">.</span>sales_value<span class="token punctuation">,</span>
+        time<span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">.</span>time<span class="token punctuation">,</span>
+        unix<span class="token operator">:</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">.</span>item<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unix</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
       <span class="token punctuation">}</span>
-      <span class="token keyword">let</span> colldata <span class="token operator">=</span> <span class="token keyword">await</span> axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>Subscribe <span class="token operator">+</span> token<span class="token punctuation">,</span> <span class="token constant">OBJ</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token string">'success'</span>
-    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>e<span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> days <span class="token operator">=</span> catedays<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        sales_value<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        time<span class="token operator">:</span> item<span class="token punctuation">,</span>
+        unix<span class="token operator">:</span> <span class="token function">moment</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">unix</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> ab <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">let</span> obj <span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">let</span> removal <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>data<span class="token punctuation">,</span> <span class="token operator">...</span>days<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">prev<span class="token punctuation">,</span> item</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>time<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        prev<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        obj<span class="token punctuation">[</span>item<span class="token punctuation">.</span>time<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> prev
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> res_sort <span class="token operator">=</span> removal<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token constant">B</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span>unix <span class="token operator">-</span> <span class="token constant">B</span><span class="token punctuation">.</span>unix<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> res_sort<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -581,7 +644,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/">http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/</a>
+                    <a href="http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/">http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -668,17 +731,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/">
+                <a href="/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（八）">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（十二）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（八）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（十二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -688,9 +752,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -703,6 +767,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -725,13 +790,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/">
+                <a href="/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（七）">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（八）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（七）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（八）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -742,7 +807,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
                             </span>
                         <span class="publish-author">
                             
