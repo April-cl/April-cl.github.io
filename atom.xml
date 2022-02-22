@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-02-18T07:50:44.611Z</updated>
+  <updated>2022-02-22T16:31:57.751Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>reduce的一点小理解</title>
+    <link href="http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/"/>
+    <id>http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/</id>
+    <published>2022-02-18T08:01:16.000Z</published>
+    <updated>2022-02-22T16:31:57.751Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前阵子在项目中有用到 &lt;code&gt;reduce()&lt;/code&gt; 方法，当时不是很理解，后来空了学习了一下，有了一点小收获，记之~&lt;/p&gt;
+&lt;h1 id=&quot;用法&quot;&gt;&lt;a href=&quot;#用法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记 扫码点餐小程序云开发（十二）</title>
@@ -517,33 +543,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;获取云开发调用凭证&quot;&gt;&lt;a href=&quot;#获取云开发调用凭证&quot; class=&quot;headerlink&quot; title=&quot;获取云开发调用凭证&quot;&gt;&lt;/a&gt;获取云开发调用凭证&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（二）</title>
-    <link href="http://example.com/2021/10/16/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-er/"/>
-    <id>http://example.com/2021/10/16/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-er/</id>
-    <published>2021-10-16T08:56:08.000Z</published>
-    <updated>2021-10-16T17:54:42.822Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;设置全局异常处理中间件&quot;&gt;&lt;a href=&quot;#设置全局异常处理中间件&quot; class=&quot;headerlink&quot;</summary>
         
       
     

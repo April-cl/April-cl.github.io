@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一些常用的命令行, April-cl">
+    <meta name="keywords" content="reduce的一点小理解, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>一些常用的命令行 | April-cl</title>
+    <title>reduce的一点小理解 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">一些常用的命令行</h1>
+                    <h1 class="description center-align post-title">reduce的一点小理解</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                <span class="chip bg-color">命令行</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -402,8 +402,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -415,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2022-02-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2022-02-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    583
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -459,69 +459,161 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>程序员的宿命 —— 增删改查</p>
-</blockquote>
-<h1 id="查：查看文件或目录"><a href="#查：查看文件或目录" class="headerlink" title="查：查看文件或目录"></a>查：查看文件或目录</h1><ul>
-<li>查看当前目录绝对路径：pwd</li>
-<li>查看当前目录内容：ls</li>
-<li>查看指定目录内容：ls 路径</li>
-<li>查看文件内容<ul>
-<li>查看全部内容：cat 路径</li>
-<li>查看前 xx 行内容：head -n xx 路径</li>
-<li>查看后 xx 行内容：tail -n xx 路径</li>
-<li>分屏查看内容：less 路径</li>
-</ul>
+                <p>前阵子在项目中有用到 <code>reduce()</code> 方法，当时不是很理解，后来空了学习了一下，有了一点小收获，记之~</p>
+<h1 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h1><p><code>Array.prototype.reduce()</code>  方法对数组中的每个元素执行指定回调函数，将其结果汇总为单个返回值。这个方法接收两个参数：</p>
+<ul>
+<li><p>回调函数（必选），执行数组中每个值 (如果没有提供初始值则第一个值除外)的函数，包含四个参数：</p>
+<ul>
+<li><p>accumulator（累计器），累计回调的返回值，值为上一次调用回调时返回的累积值或者初始值</p>
+</li>
+<li><p>currentValue，数组中正在处理的元素</p>
+</li>
+<li><p>index，数组中正在处理的当前元素的索引。如果提供了初始值，则起始索引号为0，否则从索引1起始</p>
+</li>
+<li><p>array，调用reduce()的数组，即源数组</p>
 </li>
 </ul>
-<h1 id="增：创建文件或目录"><a href="#增：创建文件或目录" class="headerlink" title="增：创建文件或目录"></a>增：创建文件或目录</h1><ul>
-<li>创建文件<ul>
-<li>生成空文件：touch 文件名</li>
-<li>生成有内容的文件（文件名重复会替换旧内容）：echo 内容 &gt; 文件名</li>
-<li>将内容追加在文件中（不会替换旧内容）：echo 内容 &gt;&gt; 文件名</li>
-<li>不编译内容中的转义字符：echo -e “内容” &gt; 文件名</li>
-<li>同时生成多个文件：touch 文件名11 文件名22</li>
-<li>复制文件：cp 文件名1 文件名2</li>
-</ul>
 </li>
-<li>创建目录<ul>
-<li>生成空目录：mkdir 目录名</li>
-<li>生成多级目录： mkdir -p 目录名1/目录名2/目录名3</li>
-<li>同时生成多个目录：mkdir -p 目录名1 目录名2/目录名3</li>
-<li>复制目录：cp -r 目录名1 目录名2</li>
-</ul>
+<li><p>初始值（可选），作为第一次调用回调函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的<strong>空数组</strong>上调用 <code>reduce()</code> 将报错</p>
 </li>
 </ul>
-<h1 id="删：删除文件或目录"><a href="#删：删除文件或目录" class="headerlink" title="删：删除文件或目录"></a>删：删除文件或目录</h1><ul>
-<li>删除文件：rm 文件名</li>
-<li>删除目录<ul>
-<li>删除目录： rm -r 目录名</li>
-<li>强制删除目录：rm -rf 目录名</li>
-</ul>
-</li>
-</ul>
-<p><strong>不要手贱把系统文件删了~~~</strong></p>
-<p>为避免误删系统文件，进入命令行第一件事执行 <code>cd ~</code> 进入到用户目录。</p>
-<h1 id="改：修改文件或目录"><a href="#改：修改文件或目录" class="headerlink" title="改：修改文件或目录"></a>改：修改文件或目录</h1><ul>
-<li>重命名文件：mv 文件名1 文件名2</li>
-<li>移动文件到别的目录：mv 文件名 目录名</li>
-<li>更新文件最后的修改时间（和生成空文件一样）：生成空文件：touch 文件名</li>
-<li>使用默认程序打开文件：start 文件名</li>
-<li>使用VSCode打开文件：code 文件名</li>
-</ul>
-<h1 id="命令组合"><a href="#命令组合" class="headerlink" title="命令组合"></a>命令组合</h1><ul>
-<li>命令1成功后执行命令2：命令1 &amp;&amp; 命令2</li>
-<li>不管命令1运行结果如何都执行命令2：命令1 ; 命令2</li>
-</ul>
-<h1 id="脚本文件"><a href="#脚本文件" class="headerlink" title="脚本文件"></a>脚本文件</h1><ol>
-<li>创建一个文件，后缀可有可无。</li>
-<li>执行 <code>chmod +x 文件</code>，添加可执行权限。</li>
-<li>把要执行的命令写到文件里（下面代码举例说明，这里的 <code>$1</code> 后面通过参数传入）。<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token variable">$1</span>
-<span class="token builtin class-name">cd</span> <span class="token variable">$1</span>
-<span class="token function">touch</span> new.txt
-<span class="token builtin class-name">echo</span> Hello <span class="token operator">&gt;</span> new.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>执行 <code>sh 文件 参数</code> 或 <code>./文件</code></li>
-</ol>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> accumulator <span class="token operator">+</span> currentValue
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 1 + 2 + 3</span>
+<span class="token comment">// 6</span>
+
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> accumulator <span class="token operator">+</span> currentValue
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">// 1 + 1 + 2 + 3</span>
+<span class="token comment">// 7</span>
+
+<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">accumulator<span class="token punctuation">,</span> currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> accumulator <span class="token operator">+</span> currentValue
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 报错</span>
+<span class="token comment">// Uncaught TypeError: Reduce of empty array with no initial value</span>
+<span class="token comment">// at Array.reduce (&lt;anonymous&gt;)</span>
+<span class="token comment">// at &lt;anonymous&gt;:1:4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="filter-find-forEach-map-reduce-的对比"><a href="#filter-find-forEach-map-reduce-的对比" class="headerlink" title="filter/find/forEach/map/reduce 的对比"></a>filter/find/forEach/map/reduce 的对比</h1><p>这几个方法我总是会混淆，列了个表格方便对比</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>描述</th>
+<th>语法</th>
+<th>参数1</th>
+<th>参数2</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>filter</td>
+<td>返回满足所提供回调函数筛选条件的所有元素或空数组</td>
+<td>var newArray = arr.filter(callback(element[, index[, array]])[, thisArg])</td>
+<td>用来测试数组的每个元素的函数。返回 <code>true</code> 表示该元素通过测试，保留该元素，<code>false</code> 则不保留。它接受以下三个参数：<br><strong>element</strong> 当前遍历到的元素<br><code>index</code><strong>可选</strong> 当前遍历到的索引<br><code>array</code><strong>可选</strong> 数组本身</td>
+<td>执行回调时用作<code>this</code> 的对象</td>
+<td>一个新的、由通过测试的元素组成的数组，如果没有任何数组元素通过测试，则返回空数组</td>
+</tr>
+<tr>
+<td>find</td>
+<td>返回满足所提供回调函数筛选条件的第一个元素的值或 <code>undefined</code></td>
+<td>arr.find(callback(element[, index[, array]])[, thisArg])</td>
+<td>在数组每一项上执行的函数，它接受以下三个参数：<br><strong>element</strong> 当前遍历到的元素<br><code>index</code><strong>可选</strong> 当前遍历到的索引<br><code>array</code><strong>可选</strong> 数组本身</td>
+<td>执行回调时用作<code>this</code> 的对象</td>
+<td>数组中第一个满足所提供测试函数的元素的值，否则返回 <code>undefined</code></td>
+</tr>
+<tr>
+<td>forEach</td>
+<td>对数组的每个元素执行一次提供的回调函数</td>
+<td>arr.forEach(callback(currentValue [, index [, array]])[, thisArg])</td>
+<td>为数组中每个元素执行的函数，它接受以下三个参数：<br><strong>element</strong> 当前遍历到的元素<br><code>index</code><strong>可选</strong> 当前遍历到的索引<br><code>array</code><strong>可选</strong> 数组本身</td>
+<td>执行回调时用作<code>this</code> 的对象</td>
+<td><code>undefined</code></td>
+</tr>
+<tr>
+<td>map</td>
+<td>返回数组中的每个元素调用一次提供的函数后组合形成的新数组</td>
+<td>var new_array = arr.map(function callback(currentValue[, index[, array]]) {  <br>// Return element for new_array  <br>}[, thisArg])</td>
+<td>生成新数组元素的函数，它接受以下三个参数：<br><strong>element</strong> 当前遍历到的元素<br><code>index</code><strong>可选</strong> 当前遍历到的索引<br><code>array</code><strong>可选</strong> 数组本身</td>
+<td>执行回调时用作<code>this</code> 的对象</td>
+<td>一个由原数组每个元素执行回调函数的结果组成的新数组</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>返回数组中的每个元素升序调用一次提供的函数后汇总而成的值</td>
+<td>arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])</td>
+<td>执行数组中每个值 (如果没有提供 <code>initialValue则第一个值除外</code>)的函数，它接受以下四个参数：<br><strong><code>accumulator</code></strong>  累计器累计回调的返回值; 它是上一次调用回调时返回的累积值，或<code>initialValue</code><br><strong>element</strong> 当前遍历到的元素<br><code>index</code><strong>可选</strong> 当前遍历到的索引<br><code>array</code><strong>可选</strong> 数组本身</td>
+<td>作为第一次调用 <code>callback</code>函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素</td>
+<td>函数累计处理的结果</td>
+</tr>
+</tbody></table>
+<h2 id="使用-reduce-实现-filter"><a href="#使用-reduce-实现-filter" class="headerlink" title="使用 reduce 实现 filter"></a>使用 reduce 实现 filter</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>filterUsingReduce<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">filterUsingReduce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback<span class="token punctuation">,</span> thisArg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">filterArray<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        filterArray<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>currentValue<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> filterArray
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filterUsingReduce</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> currentValue <span class="token operator">&gt;</span> <span class="token number">10</span>
+<span class="token punctuation">)</span> <span class="token comment">// [16]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用-reduce-实现-find"><a href="#使用-reduce-实现-find" class="headerlink" title="使用 reduce 实现 find"></a>使用 reduce 实现 find</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>findUsingReduce<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">findUsingReduce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback<span class="token punctuation">,</span> thisArg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">findArray<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>findArray <span class="token keyword">instanceof</span> <span class="token class-name">Array</span> <span class="token operator">&amp;&amp;</span> findArray<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        findArray <span class="token operator">=</span> currentValue
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>index <span class="token operator">===</span> array<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> findArray <span class="token keyword">instanceof</span> <span class="token class-name">Array</span> <span class="token operator">&amp;&amp;</span> findArray<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        findArray <span class="token operator">=</span> <span class="token keyword">undefined</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> findArray
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">findUsingReduce</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">currentValue</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> currentValue <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span>
+<span class="token punctuation">)</span> <span class="token comment">// [4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用-reduce-实现-forEach"><a href="#使用-reduce-实现-forEach" class="headerlink" title="使用 reduce 实现 forEach"></a>使用 reduce 实现 forEach</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>forEachUsingReduce<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">forEachUsingReduce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback<span class="token punctuation">,</span> thisArg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">forEachArray<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> array1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">,</span> <span class="token string">'c'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+array1<span class="token punctuation">.</span><span class="token function">forEachUsingReduce</span><span class="token punctuation">(</span><span class="token parameter">element</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>element<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>element<span class="token operator">+</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// a: a1</span>
+<span class="token comment">// b: b1</span>
+<span class="token comment">// c: c1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="使用-reduce-实现-map"><a href="#使用-reduce-实现-map" class="headerlink" title="使用 reduce 实现 map"></a>使用 reduce 实现 map</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>mapUsingReduce<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">mapUsingReduce</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback<span class="token punctuation">,</span> thisArg</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mappedArray<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      mappedArray<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">callback</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>thisArg<span class="token punctuation">,</span> currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array<span class="token punctuation">)</span>
+      <span class="token keyword">return</span> mappedArray
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">mapUsingReduce</span><span class="token punctuation">(</span>
+  <span class="token punctuation">(</span><span class="token parameter">currentValue<span class="token punctuation">,</span> index<span class="token punctuation">,</span> array</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> currentValue <span class="token operator">+</span> index <span class="token operator">+</span> array<span class="token punctuation">.</span>length
+<span class="token punctuation">)</span> <span class="token comment">// [5, 9, 15, 23]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904025310117901">自从学会了 Array.reduce() ，再也离不开它</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6916087983808626701">以前我没得选，现在我只想用 Array.prototype.reduce</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903870154588168#heading-6">生动形象解释forEach、filter、map、some、every、find、findIndex、reduce间的区别</a></p>
 
                 
             </div>
@@ -548,7 +640,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/">http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/</a>
+                    <a href="http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/">http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,8 +678,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                    <span class="chip bg-color">命令行</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -631,17 +723,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/">
+                <a href="/2022/02/18/reduce-de-yi-dian-xiao-li-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="git 的配置和常用命令">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="reduce的一点小理解">
                         
-                        <span class="card-title">git 的配置和常用命令</span>
+                        <span class="card-title">reduce的一点小理解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -651,30 +744,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
@@ -688,13 +778,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">
+                <a href="/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="新手前端的装机攻略，拿来吧你">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（十二）">
                         
-                        <span class="card-title">新手前端的装机攻略，拿来吧你</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（十二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -705,14 +795,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-17
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -722,12 +812,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">软件</span>
+                    <a href="/tags/uni-app/">
+                        <span class="chip bg-color">uni-app</span>
                     </a>
                     
                 </div>
