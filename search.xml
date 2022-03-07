@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</title>
+      <link href="/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/"/>
+      <url>/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>接口</th><th>用法</th><th>参数(标*为必填参数)</th><th>路由方式</th><th>使用场景</th></tr></thead><tbody><tr><td>wx.navigateTo(Object object)</td><td>用于保留当前页面、跳转到应用内的某个页面，但不能跳到 tabbar 页面</td><td>{<br>*url: string,<br><br>events: Object,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td><td>打开新页面</td><td>页面不多的小程序推荐使用</td></tr><tr><td>wx.redirectTo(Object object)</td><td>用于关闭当前页面，跳转到应用内的某个页面，但不能跳到 tabbar 页面</td><td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td><td>页面重定向</td><td>页面过多时，被保留页面会挤占微信分配给小程序的内存，或是达到微信所限制的5层页面栈</td></tr><tr><td>wx.navigateBack(Object object)</td><td>用于关闭当前页面，并返回上一页面或多级页面</td><td>{<br>delta: number,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td><td>页面返回</td><td>返回历史页面</td></tr><tr><td>wx.switchTab(Object object)</td><td>用于跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面</td><td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td><td>Tab 切换</td><td>tabBar 页面跳转</td></tr><tr><td>wx.reLaunch(Object object)</td><td>用于关闭内存中所有保留的页面，再跳转到目标页面</td><td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td><td>重启动</td><td>同 wx.redirectTo</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 微信小程序 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记 扫码点餐小程序云开发小程序端（十一）</title>
       <link href="/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/"/>
       <url>/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/</url>
