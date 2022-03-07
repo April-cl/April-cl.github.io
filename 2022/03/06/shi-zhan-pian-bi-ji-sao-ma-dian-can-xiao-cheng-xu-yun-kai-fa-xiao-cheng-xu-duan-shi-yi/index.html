@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（十）, April-cl">
+    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发小程序端（十一）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（十） | April-cl</title>
+    <title>实战篇笔记 扫码点餐小程序云开发小程序端（十一） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（十）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发小程序端（十一）</h1>
                 </div>
             </div>
         </div>
@@ -419,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-05
+                    2022-03-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-06
+                    2022-03-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    418
+                    275
                 </div>
                 
 
@@ -463,79 +463,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="订单详情页"><a href="#订单详情页" class="headerlink" title="订单详情页"></a>订单详情页</h1><p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gzz93xhbd9j20ao0ii41w.jpg" alt="订单详情页.png"></p>
-<h2 id="获取订单数据"><a href="#获取订单数据" class="headerlink" title="获取订单数据"></a>获取订单数据</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/order-details/details.vue</span>
+                <h1 id="我的订单"><a href="#我的订单" class="headerlink" title="我的订单"></a>我的订单</h1><p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0093p0kdyj20ak0imn0r.jpg" alt="我的订单.png"></p>
+<h2 id="获取历史订单数据"><a href="#获取历史订单数据" class="headerlink" title="获取历史订单数据"></a>获取历史订单数据</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/my-order/my-order.vue</span>
 <span class="token comment">// 省略部分代码</span>
-<span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        Price<span class="token punctuation">,</span>
-        overall<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-        other_data<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        comp_data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        goods_data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token keyword">async</span> <span class="token function">get_menu</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> field_obj <span class="token operator">=</span> <span class="token punctuation">{</span>number_of_diners<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> order_receiving<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> openid<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
-            <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>table_number<span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span>field_obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">let</span> res_data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>menu
-            res_data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>overall <span class="token operator">+=</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>other_data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>comp_data <span class="token operator">=</span> res_data
-            <span class="token keyword">this</span><span class="token punctuation">.</span>goods_data <span class="token operator">=</span> res_data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token punctuation">{</span>
-                    backup_data<span class="token operator">:</span> item<span class="token punctuation">.</span>backup_data<span class="token punctuation">,</span>
-                    goods_list<span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                    max<span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span>length
+<span class="token keyword">const</span> db <span class="token operator">=</span> wx<span class="token punctuation">.</span>cloud<span class="token punctuation">.</span><span class="token function">database</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> _ <span class="token operator">=</span> db<span class="token punctuation">.</span>command
+<span class="token keyword">const</span> good_collect <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">collection</span><span class="token punctuation">(</span><span class="token string">'order-data'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> Price <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'e-commerce_price'</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">return</span> <span class="token punctuation">{</span>
+        Price<span class="token punctuation">,</span> 
+        res_data<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token keyword">async</span> <span class="token function">get_menu</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword">let</span> field_obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+                    transac_status<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    table_number<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    order_time<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    sett_amount<span class="token operator">:</span> <span class="token boolean">true</span>
                 <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+                <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token string">'order_time'</span><span class="token punctuation">,</span> <span class="token string">'desc'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span>field_obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>res_data <span class="token operator">=</span> res<span class="token punctuation">.</span>data
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">onLoad</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">get_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="选择人数页面"><a href="#选择人数页面" class="headerlink" title="选择人数页面"></a>选择人数页面</h1><p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h009ekvbdsj20af0in0wd.jpg" alt="选择人数.png"></p>
+<h2 id="扫描二维码获取桌号"><a href="#扫描二维码获取桌号" class="headerlink" title="扫描二维码获取桌号"></a>扫描二维码获取桌号</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/index/index.vue</span>
+<span class="token comment">// 省略部分代码</span>
+<span class="token function">onLoad</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>table_number <span class="token operator">=</span> e<span class="token punctuation">.</span>number
+    wx<span class="token punctuation">.</span><span class="token function">setStorageSync</span><span class="token punctuation">(</span><span class="token string">'table_num'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>number<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h009w45uflj20iv0rgn5m.jpg" alt="e.png"></p>
+<h2 id="查询当前桌号结账状态"><a href="#查询当前桌号结账状态" class="headerlink" title="查询当前桌号结账状态"></a>查询当前桌号结账状态</h2><ul>
+<li><p>当前桌号历史订单已结束，即开始新订单</p>
+</li>
+<li><p>当前桌号存在历史订单未结账，则跳转到订单详情页</p>
+</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/index/index.vue</span>
+<span class="token comment">// 省略部分代码</span>
+methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token keyword">async</span> <span class="token function">query_order</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            <span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>table_number<span class="token operator">:</span><span class="token keyword">this</span><span class="token punctuation">.</span>table_number<span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                wx<span class="token punctuation">.</span><span class="token function">reLaunch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    url<span class="token operator">:</span> <span class="token string">'/pages/order-details/details'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//TODO handle the exception</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token function">onLoad</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">get_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">onLoad</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>table_number <span class="token operator">=</span> e<span class="token punctuation">.</span>number
+    wx<span class="token punctuation">.</span><span class="token function">setStorageSync</span><span class="token punctuation">(</span><span class="token string">'table_num'</span><span class="token punctuation">,</span> e<span class="token punctuation">.</span>number<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">query_order</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ul>
-<li><p><code>Collection.where(condition: Object)</code> 指定查询条件，返回带新查询条件的新的集合引用</p>
-</li>
-<li><p><code>Collection.field(projection: Object)</code> 指定返回结果中记录需返回的字段。方法接受一个必填对象用于指定需返回的字段，对象的各个 key 表示要返回或不要返回的字段，value 传入 true|false（或 1|-1）表示要返回还是不要返回</p>
-</li>
-</ul>
-<h2 id="点击展开全部"><a href="#点击展开全部" class="headerlink" title="点击展开全部"></a>点击展开全部</h2><p>实现思路：</p>
-<p>通过 <code>max</code> 值来判断是否已经展示全部</p>
-<ul>
-<li><p>大于3，折叠多余数据</p>
-</li>
-<li><p>小于3，展示全部</p>
-</li>
-</ul>
-<p><code>comp_data</code> 存放完整数据</p>
-<p><code>goods_data</code> 存放前三项数据，<code>goods_data[0]</code> 表示第一次下单的前三项数据</p>
-<p>点击 <code>index</code> 对应的展开全部按钮，更新该次 <code>goods_data[index]</code> 下单的所有数据，并将对应的 <code>max</code> 值标记为0表示已展示全部隐藏展开全部按钮。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// psges/order-details/details.vue</span>
-<span class="token comment">// 省略部分代码</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token function">opEn</span> <span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'goods_list'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>comp_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>goods_list<span class="token punctuation">)</span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'max'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="加菜"><a href="#加菜" class="headerlink" title="加菜"></a>加菜</h2><p>点击加菜按钮跳转到点单页面，用到 <code>wx.reLaunch(Object object)</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// psges/order-details/details.vue</span>
-<span class="token comment">// 省略部分代码</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token function">add_Dish</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        wx<span class="token punctuation">.</span><span class="token function">reLaunch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-            url<span class="token operator">:</span> <span class="token string">'/pages/home-page/page'</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别（留坑）</p>
+<h2 id="选择人数"><a href="#选择人数" class="headerlink" title="选择人数"></a>选择人数</h2><p>通过 <code>wx.setStorageSync('number_of_diners', item)</code> 接口保存选择人数</p>
+<h2 id="点击开始跳转点单页面"><a href="#点击开始跳转点单页面" class="headerlink" title="点击开始跳转点单页面"></a>点击开始跳转点单页面</h2><p>通过 <code>x.getStorageSync('number_of_diners')</code> 和 <code>wx.getStorageSync('table_num')</code> 接口获取桌号和人数</p>
 
                 
             </div>
@@ -562,7 +560,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi/">http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi/</a>
+                    <a href="http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/">http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,9 +647,10 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/">
                     <div class="card-image">
@@ -669,9 +668,9 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -684,6 +683,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -706,13 +706,13 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-jiu/">
+                <a href="/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（九）">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（十）">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（九）</span>
+                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（十）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
