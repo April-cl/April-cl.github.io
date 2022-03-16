@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-07T17:45:59.323Z</updated>
+  <updated>2022-03-16T16:14:04.856Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>弄懂 BFC 奖励一顿 KFC</title>
+    <link href="http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/"/>
+    <id>http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/</id>
+    <published>2022-03-14T07:51:56.000Z</published>
+    <updated>2022-03-16T16:14:04.856Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前言&lt;/p&gt;
+&lt;p&gt;对于 BFC 的概念和应用场景一直很模糊，趁着疫情在家有闲着重了解一下，做个总结。&lt;/p&gt;
+&lt;h1 id=&quot;BFC-是什么&quot;&gt;&lt;a href=&quot;#BFC-是什么&quot; class=&quot;headerlink&quot; title=&quot;BFC 是什么&quot;&gt;&lt;/a&gt;BFC</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</title>
@@ -525,33 +552,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;腾讯云对象存储&quot;&gt;&lt;a href=&quot;#腾讯云对象存储&quot; class=&quot;headerlink&quot; title=&quot;腾讯云对象存储&quot;&gt;&lt;/a&gt;腾讯云对象存储&lt;/h1&gt;&lt;p&gt;对象存储（Cloud Object</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（七）</title>
-    <link href="http://example.com/2021/10/27/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-qi/"/>
-    <id>http://example.com/2021/10/27/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-qi/</id>
-    <published>2021-10-27T04:49:19.000Z</published>
-    <updated>2021-10-27T05:35:37.539Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;上传文件&quot;&gt;&lt;a href=&quot;#上传文件&quot; class=&quot;headerlink&quot; title=&quot;上传文件&quot;&gt;&lt;/a&gt;上传文件&lt;/h1&gt;&lt;p&gt;Multer 是一个 node.js 中间件，用于处理 multipart/form-data</summary>
         
       
     

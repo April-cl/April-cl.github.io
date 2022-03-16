@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别, April-cl">
+    <meta name="keywords" content="弄懂 BFC 奖励一顿 KFC, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别 | April-cl</title>
+    <title>弄懂 BFC 奖励一顿 KFC | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</h1>
+                    <h1 class="description center-align post-title">弄懂 BFC 奖励一顿 KFC</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">微信小程序</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -415,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-08
+                    2022-03-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    282
+                    768
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -459,52 +459,148 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <table>
-<thead>
-<tr>
-<th>接口</th>
-<th>用法</th>
-<th>参数(标*为必填参数)</th>
-<th>路由方式</th>
-<th>使用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>wx.navigateTo(Object object)</td>
-<td>用于保留当前页面、跳转到应用内的某个页面，但不能跳到 tabbar 页面</td>
-<td>{<br>*url: string,<br><br>events: Object,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td>
-<td>打开新页面</td>
-<td>页面不多的小程序推荐使用</td>
-</tr>
-<tr>
-<td>wx.redirectTo(Object object)</td>
-<td>用于关闭当前页面，跳转到应用内的某个页面，但不能跳到 tabbar 页面</td>
-<td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td>
-<td>页面重定向</td>
-<td>页面过多时，被保留页面会挤占微信分配给小程序的内存，或是达到微信所限制的5层页面栈</td>
-</tr>
-<tr>
-<td>wx.navigateBack(Object object)</td>
-<td>用于关闭当前页面，并返回上一页面或多级页面</td>
-<td>{<br>delta: number,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td>
-<td>页面返回</td>
-<td>返回历史页面</td>
-</tr>
-<tr>
-<td>wx.switchTab(Object object)</td>
-<td>用于跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面</td>
-<td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td>
-<td>Tab 切换</td>
-<td>tabBar 页面跳转</td>
-</tr>
-<tr>
-<td>wx.reLaunch(Object object)</td>
-<td>用于关闭内存中所有保留的页面，再跳转到目标页面</td>
-<td>{<br>*url: string,<br><br>success: function,<br><br>fail: function,<br><br>complete: function<br>}</td>
-<td>重启动</td>
-<td>同 wx.redirectTo</td>
-</tr>
-</tbody></table>
+                <p>前言</p>
+<p>对于 BFC 的概念和应用场景一直很模糊，趁着疫情在家有闲着重了解一下，做个总结。</p>
+<h1 id="BFC-是什么"><a href="#BFC-是什么" class="headerlink" title="BFC 是什么"></a>BFC 是什么</h1><p>BFC 全称：Block Formatting Context， 名为『块级格式化上下文』</p>
+<h1 id="BFC-触发条件"><a href="#BFC-触发条件" class="headerlink" title="BFC 触发条件"></a>BFC 触发条件</h1><ul>
+<li>根元素（<code>&lt;html&gt;</code>）</li>
+<li>浮动元素（元素的 float 不是 none）</li>
+<li>绝对定位元素（元素的 position 为 absolute 或 fixed）</li>
+<li>行内块 inline block 元素</li>
+<li>overflow 值不为 visible 的块元素</li>
+<li>弹性元素（display为 flex 或 inline-flex元素的直接子元素）</li>
+</ul>
+<h1 id="BFC-的约束规则"><a href="#BFC-的约束规则" class="headerlink" title="BFC 的约束规则"></a>BFC 的约束规则</h1><ul>
+<li>内部的Box会在垂直方向上一个接一个的放置</li>
+<li>垂直方向上的距离由margin决定</li>
+<li>每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此</li>
+<li>BFC的区域不会与float的元素区域重叠</li>
+<li>计算BFC的高度时，浮动子元素也参与计算</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然</li>
+</ul>
+<h1 id="解决了什么问题"><a href="#解决了什么问题" class="headerlink" title="解决了什么问题"></a>解决了什么问题</h1><h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>JS Bin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.aside</span> <span class="token punctuation">{</span>
+      <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> 150px<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span>lightpink<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.container</span><span class="token punctuation">{</span>
+      <span class="token property">width</span><span class="token punctuation">:</span>150px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span>220px<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span>mediumturquoise<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.outer_box1, .outer_box2</span><span class="token punctuation">{</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.outer_box2 .container</span> <span class="token punctuation">{</span>
+      <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>outer_box1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aside<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HaHa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HeHe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>outer_box2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>aside<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HaHa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HeHe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0c6244z08j20q40irn2q.jpg"></p>
+<h2 id="防止-margin-合并"><a href="#防止-margin-合并" class="headerlink" title="防止 margin 合并"></a>防止 margin 合并</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>JS Bin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+      <span class="token selector">p</span> <span class="token punctuation">{</span>
+          <span class="token property">color</span><span class="token punctuation">:</span> #f55<span class="token punctuation">;</span>
+          <span class="token property">background</span><span class="token punctuation">:</span> #fcc<span class="token punctuation">;</span>
+          <span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
+          <span class="token property">line-height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+          <span class="token property">text-align</span><span class="token punctuation">:</span>center<span class="token punctuation">;</span>
+          <span class="token property">margin</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+          <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #000<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token selector">.wrap</span> <span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> flow-root
+    <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    两个相邻Box垂直方向margin重叠
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Haha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hehe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+    在p外面包裹一层容器，并触发该容器生成一个新BFC
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Haha<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrap<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>Hehe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0c5edk7skj20qb0i0afh.jpg"></p>
+<h2 id="解决高度塌陷"><a href="#解决高度塌陷" class="headerlink" title="解决高度塌陷"></a>解决高度塌陷</h2><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>JS Bin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.box</span><span class="token punctuation">{</span>
+      <span class="token property">float</span><span class="token punctuation">:</span>left<span class="token punctuation">;</span>
+      <span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span>
+      <span class="token property">background</span><span class="token punctuation">:</span>rosybrown<span class="token punctuation">;</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>#fff<span class="token punctuation">;</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> 60px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token selector">.outer_box1, .outer_box2</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>lightblue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token selector">.outer_box2</span><span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span>inline-block<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>outer_box1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HaHa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HeHe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>outer_box2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HaHa<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>HeHe<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0c5rll4f6j20q80hc79f.jpg"></p>
+<h1 id="BFC-的副作用"><a href="#BFC-的副作用" class="headerlink" title="BFC 的副作用"></a>BFC 的副作用</h1><ul>
+<li>display: table 可能引发响应性问题</li>
+<li>overflow: scroll 可能产生多余的滚动条</li>
+<li>float: left 将把元素移至左侧，并被其他元素环绕</li>
+<li>overflow: hidden 将裁切溢出元素</li>
+</ul>
+<p>可以使用的 <code>display: flow-root</code> 来触发 BFC 消除副作用</p>
+<hr>
+<p>阿不知不觉因为疫情宅在家已经有20来天了，我的记忆还停留在2月份 🍂 </p>
 
                 
             </div>
@@ -531,7 +627,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/">http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/</a>
+                    <a href="http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/">http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +665,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">微信小程序</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
                         </div>
@@ -614,9 +710,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/">
                     <div class="card-image">
@@ -634,9 +731,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -649,6 +746,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -667,13 +765,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/">
+                <a href="/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（十一）">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（十一）</span>
+                        <span class="card-title">关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,7 +782,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
                             </span>
                         <span class="publish-author">
                             
@@ -701,12 +799,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
-                    <a href="/tags/uni-app/">
-                        <span class="chip bg-color">uni-app</span>
+                    <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">微信小程序</span>
                     </a>
                     
                 </div>
