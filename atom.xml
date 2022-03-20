@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-16T16:14:04.856Z</updated>
+  <updated>2022-03-20T03:00:57.868Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS 的伪类和伪元素</title>
+    <link href="http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/"/>
+    <id>http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/</id>
+    <published>2022-03-17T07:25:20.000Z</published>
+    <updated>2022-03-20T03:00:57.868Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨天在写文章的时候发现对伪类和伪元素的概念有些混淆，查阅一番有所收获，记一下~&lt;/p&gt;
+&lt;h1 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>弄懂 BFC 奖励一顿 KFC</title>
@@ -525,33 +551,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;商家信息校验&quot;&gt;&lt;a href=&quot;#商家信息校验&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（八）</title>
-    <link href="http://example.com/2021/10/28/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-ba/"/>
-    <id>http://example.com/2021/10/28/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-ba/</id>
-    <published>2021-10-28T08:25:47.000Z</published>
-    <updated>2021-10-28T17:17:54.223Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;腾讯云对象存储&quot;&gt;&lt;a href=&quot;#腾讯云对象存储&quot; class=&quot;headerlink&quot; title=&quot;腾讯云对象存储&quot;&gt;&lt;/a&gt;腾讯云对象存储&lt;/h1&gt;&lt;p&gt;对象存储（Cloud Object</summary>
         
       
     
