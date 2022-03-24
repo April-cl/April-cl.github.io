@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-03-20T03:00:57.868Z</updated>
+  <updated>2022-03-24T08:38:27.006Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue 对 data 做了什么</title>
+    <link href="http://example.com/2022/03/23/vue-de-data-shu-xing/"/>
+    <id>http://example.com/2022/03/23/vue-de-data-shu-xing/</id>
+    <published>2022-03-23T06:58:45.000Z</published>
+    <updated>2022-03-24T08:38:27.006Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在 Vue 项目中，通过 &lt;code&gt;let vm = new Vue({data: myData})&lt;/code&gt; 就可以在当数据发生变化后，使用到该数据的视图也会相应进行自动更新，这是为什么呢？&lt;/p&gt;
+&lt;p&gt;本文不从源码分析 Vue 对 data</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS 的伪类和伪元素</title>
@@ -524,33 +550,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;菜品类目页&quot;&gt;&lt;a href=&quot;#菜品类目页&quot; class=&quot;headerlink&quot; title=&quot;菜品类目页&quot;&gt;&lt;/a&gt;菜品类目页&lt;/h1&gt;&lt;h2 id=&quot;前端接口&quot;&gt;&lt;a href=&quot;#前端接口&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（九）</title>
-    <link href="http://example.com/2021/10/31/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-jiu/"/>
-    <id>http://example.com/2021/10/31/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-jiu/</id>
-    <published>2021-10-31T07:20:53.000Z</published>
-    <updated>2021-10-31T08:22:17.690Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;商家信息校验&quot;&gt;&lt;a href=&quot;#商家信息校验&quot; class=&quot;headerlink&quot;</summary>
         
       
     
