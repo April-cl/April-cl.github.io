@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一些常用的命令行, April-cl">
+    <meta name="keywords" content="Vue 自定义指令, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>一些常用的命令行 | April-cl</title>
+    <title>Vue 自定义指令 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">一些常用的命令行</h1>
+                    <h1 class="description center-align post-title">Vue 自定义指令</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                <span class="chip bg-color">命令行</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                     </div>
@@ -402,8 +402,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -415,28 +415,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-16
+                    2022-03-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2022-03-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    583
+                    857
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -459,69 +459,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>程序员的宿命 —— 增删改查</p>
+                <p>在之前 Vue 学习中有篇<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/08/26/xiao-bai-cai-bi-ji-vue-er-zhi-ling/">笔记</a>记录了项目中常用的内置指令，此外 Vue 也允许注册自定义指令。</p>
+<h1 id="全局自定义指令"><a href="#全局自定义指令" class="headerlink" title="全局自定义指令"></a>全局自定义指令</h1><p>在全局作用域下自定义指令，同时这个指令也能够用于全局，即任何组件都能够使用这个全局指令。如要声明多个全局指令，多次调用 <code>Vue.directive</code>。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明全局指令，注意在全局作用域下</span>
+<span class="token comment">// 注册</span>
+Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'my-directive'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">bind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">inserted</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">componentUpdated</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">unbind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 注册 (指令函数)</span>
+Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'my-directive-fun'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 这里将会被 `bind` 和 `update` 调用</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// getter，返回已注册的指令</span>
+<span class="token keyword">var</span> myDirective <span class="token operator">=</span> Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'my-directive'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 使用全局指令，在任何组件中都可以使用 v-my-directive</span>
+<span class="token operator">&lt;</span>myComponent v<span class="token operator">-</span>my<span class="token operator">-</span>directive <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>myComponent<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="局部自定义指令"><a href="#局部自定义指令" class="headerlink" title="局部自定义指令"></a>局部自定义指令</h1><p>在某个组件 Vue 组件下进行声明，只能在该 Vue 组件的实例中使用。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 声明局部指令</span>
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token operator">...</span>
+        directives<span class="token operator">:</span> <span class="token punctuation">{</span>
+        	<span class="token string">"my-directive"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token function-variable function">bind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">inserted</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">update</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">componentUpdated</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token function-variable function">unbind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+    	<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+
+<span class="token comment">// 只能在该组件中使用局部指令</span>
+<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+	<span class="token operator">&lt;</span>div v<span class="token operator">-</span>my<span class="token operator">-</span>directive <span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>注意区分：全局是 <code>Vue.directive</code>，局部是 <code>directives</code></p>
 </blockquote>
-<h1 id="查：查看文件或目录"><a href="#查：查看文件或目录" class="headerlink" title="查：查看文件或目录"></a>查：查看文件或目录</h1><ul>
-<li>查看当前目录绝对路径：pwd</li>
-<li>查看当前目录内容：ls</li>
-<li>查看指定目录内容：ls 路径</li>
-<li>查看文件内容<ul>
-<li>查看全部内容：cat 路径</li>
-<li>查看前 xx 行内容：head -n xx 路径</li>
-<li>查看后 xx 行内容：tail -n xx 路径</li>
-<li>分屏查看内容：less 路径</li>
-</ul>
+<h1 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h1><p>摘抄自<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/custom-directive.html#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0">文档</a></p>
+<ul>
+<li><p>bind：只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置。</p>
+</li>
+<li><p>inserted：被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)。</p>
+</li>
+<li><p>update：所在组件的 VNode 更新时调用，但是可能发生在其子 VNode 更新之前。指令的值可能发生了改变，也可能没有。可以通过比较更新前后的值来忽略不必要的模板更新。</p>
+</li>
+<li><p>componentUpdated：指令所在组件的 VNode 及其子 VNode 全部更新后调用。</p>
+</li>
+<li><p>unbind：只调用一次，指令与元素解绑时调用。</p>
 </li>
 </ul>
-<h1 id="增：创建文件或目录"><a href="#增：创建文件或目录" class="headerlink" title="增：创建文件或目录"></a>增：创建文件或目录</h1><ul>
-<li>创建文件<ul>
-<li>生成空文件：touch 文件名</li>
-<li>生成有内容的文件（文件名重复会替换旧内容）：echo 内容 &gt; 文件名</li>
-<li>将内容追加在文件中（不会替换旧内容）：echo 内容 &gt;&gt; 文件名</li>
-<li>不编译内容中的转义字符：echo -e “内容” &gt; 文件名</li>
-<li>同时生成多个文件：touch 文件名11 文件名22</li>
-<li>复制文件：cp 文件名1 文件名2</li>
+<h1 id="钩子函数参数"><a href="#钩子函数参数" class="headerlink" title="钩子函数参数"></a>钩子函数参数</h1><ul>
+<li>el：指令所绑定的元素，可以用来直接操作 DOM。</li>
+<li>binding：一个对象，包含以下 property：<ul>
+<li>name：指令名，不包括 v- 前缀。</li>
+<li>value：指令的绑定值，例如：v-my-directive=”1 + 1” 中，绑定值为 2。</li>
+<li>oldValue：指令绑定的前一个值，仅在 update 和 componentUpdated 钩子中可用。无论值是否改变都可用。</li>
+<li>expression：字符串形式的指令表达式。例如 v-my-directive=”1 + 1” 中，表达式为 “1 + 1”。</li>
+<li>arg：传给指令的参数，可选。例如 v-my-directive:foo 中，参数为 “foo”。</li>
+<li>modifiers：一个包含修饰符的对象。例如：v-my-directive.foo.bar 中，修饰符对象为 { foo: true, bar: true }。</li>
 </ul>
 </li>
-<li>创建目录<ul>
-<li>生成空目录：mkdir 目录名</li>
-<li>生成多级目录： mkdir -p 目录名1/目录名2/目录名3</li>
-<li>同时生成多个目录：mkdir -p 目录名1 目录名2/目录名3</li>
-<li>复制目录：cp -r 目录名1 目录名2</li>
+<li>vnode：Vue 编译生成的虚拟节点。</li>
+<li>oldVnode：上一个虚拟节点，仅在 update 和 componentUpdated 钩子中可用。</li>
 </ul>
-</li>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">Vue<span class="token punctuation">.</span><span class="token function">directive</span><span class="token punctuation">(</span><span class="token string">'demo'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">bind</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">el<span class="token punctuation">,</span> binding<span class="token punctuation">,</span> vnode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span>stringify
+    el<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span>
+      <span class="token string">'name: '</span>       <span class="token operator">+</span> <span class="token function">s</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;br&gt;'</span> <span class="token operator">+</span>
+      <span class="token string">'value: '</span>      <span class="token operator">+</span> <span class="token function">s</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>value<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;br&gt;'</span> <span class="token operator">+</span>
+      <span class="token string">'expression: '</span> <span class="token operator">+</span> <span class="token function">s</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>expression<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;br&gt;'</span> <span class="token operator">+</span>
+      <span class="token string">'argument: '</span>   <span class="token operator">+</span> <span class="token function">s</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>arg<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;br&gt;'</span> <span class="token operator">+</span>
+      <span class="token string">'modifiers: '</span>  <span class="token operator">+</span> <span class="token function">s</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>modifiers<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'&lt;br&gt;'</span> <span class="token operator">+</span>
+      <span class="token string">'vnode keys: '</span> <span class="token operator">+</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>vnode<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">', '</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token operator">:</span> <span class="token string">'#hook-arguments-example'</span><span class="token punctuation">,</span>
+  data<span class="token operator">:</span> <span class="token punctuation">{</span>
+    message<span class="token operator">:</span> <span class="token string">'hello!'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hook-arguments-example<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">v-demo:</span>foo.a.b</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>message<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0onjhp1u8j20ci06imz8.jpg"></p>
+<h1 id="指令的作用以及使用场景"><a href="#指令的作用以及使用场景" class="headerlink" title="指令的作用以及使用场景"></a>指令的作用以及使用场景</h1><ul>
+<li>用于 DOM 操作</li>
 </ul>
-<h1 id="删：删除文件或目录"><a href="#删：删除文件或目录" class="headerlink" title="删：删除文件或目录"></a>删：删除文件或目录</h1><ul>
-<li>删除文件：rm 文件名</li>
-<li>删除目录<ul>
-<li>删除目录： rm -r 目录名</li>
-<li>强制删除目录：rm -rf 目录名</li>
+<p>Vue 组件/实例的主要用于数据绑定、事件监听、DOM 更新，而指令的作用主要是完成原生DOM操作。</p>
+<ul>
+<li>减少重复</li>
 </ul>
-</li>
-</ul>
-<p><strong>不要手贱把系统文件删了~~~</strong></p>
-<p>为避免误删系统文件，进入命令行第一件事执行 <code>cd ~</code> 进入到用户目录。</p>
-<h1 id="改：修改文件或目录"><a href="#改：修改文件或目录" class="headerlink" title="改：修改文件或目录"></a>改：修改文件或目录</h1><ul>
-<li>重命名文件：mv 文件名1 文件名2</li>
-<li>移动文件到别的目录：mv 文件名 目录名</li>
-<li>更新文件最后的修改时间（和生成空文件一样）：生成空文件：touch 文件名</li>
-<li>使用默认程序打开文件：start 文件名</li>
-<li>使用VSCode打开文件：code 文件名</li>
-</ul>
-<h1 id="命令组合"><a href="#命令组合" class="headerlink" title="命令组合"></a>命令组合</h1><ul>
-<li>命令1成功后执行命令2：命令1 &amp;&amp; 命令2</li>
-<li>不管命令1运行结果如何都执行命令2：命令1 ; 命令2</li>
-</ul>
-<h1 id="脚本文件"><a href="#脚本文件" class="headerlink" title="脚本文件"></a>脚本文件</h1><ol>
-<li>创建一个文件，后缀可有可无。</li>
-<li>执行 <code>chmod +x 文件</code>，添加可执行权限。</li>
-<li>把要执行的命令写到文件里（下面代码举例说明，这里的 <code>$1</code> 后面通过参数传入）。<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> <span class="token variable">$1</span>
-<span class="token builtin class-name">cd</span> <span class="token variable">$1</span>
-<span class="token function">touch</span> new.txt
-<span class="token builtin class-name">echo</span> Hello <span class="token operator">&gt;</span> new.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li>执行 <code>sh 文件 参数</code> 或 <code>./文件</code></li>
-</ol>
+<p>当我们需要重复多次相同的原生 DOM 操作，或者是进行一些比较复杂的原生 DOM 操作时，可以借助指令来完成。</p>
 
                 
             </div>
@@ -548,7 +592,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/">http://example.com/2021/08/16/yi-xie-chang-yong-de-ming-ling-xing/</a>
+                    <a href="http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/">http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,8 +630,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                                    <span class="chip bg-color">命令行</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
                         </div>
@@ -631,17 +675,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/16/git-de-pei-zhi-he-chang-yong-ming-ling/">
+                <a href="/2022/03/27/vue-zi-ding-yi-zhi-ling/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="git 的配置和常用命令">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Vue 自定义指令">
                         
-                        <span class="card-title">git 的配置和常用命令</span>
+                        <span class="card-title">Vue 自定义指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -651,30 +696,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -688,13 +730,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">
+                <a href="/2022/03/23/vue-de-data-shu-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="新手前端的装机攻略，拿来吧你">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Vue 对 data 做了什么">
                         
-                        <span class="card-title">新手前端的装机攻略，拿来吧你</span>
+                        <span class="card-title">Vue 对 data 做了什么</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -705,14 +747,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -722,12 +764,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6/">
-                        <span class="chip bg-color">软件</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
