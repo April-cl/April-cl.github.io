@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-01T15:18:36.152Z</updated>
+  <updated>2022-04-02T05:31:17.793Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>slice、substr、substring、splice、split的用法</title>
+    <link href="http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/"/>
+    <id>http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/</id>
+    <published>2022-04-02T04:54:52.000Z</published>
+    <updated>2022-04-02T05:31:17.793Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;slice&quot;&gt;&lt;a href=&quot;#slice&quot; class=&quot;headerlink&quot; title=&quot;slice&quot;&gt;&lt;/a&gt;slice&lt;/h1&gt;&lt;p&gt;截取字符串或数组，并返回一个新的字符串或数组（不改变原字符串或数组）&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>从一道深拷贝面试题中学到的知识记录</title>
@@ -518,34 +544,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;创建云函数&quot;&gt;&lt;a href=&quot;#创建云函数&quot; class=&quot;headerlink&quot; title=&quot;创建云函数&quot;&gt;&lt;/a&gt;创建云函数&lt;/h1&gt;&lt;p&gt;创建uniapp项目时， 如果勾选了 &lt;code&gt;启用uniCloud&lt;/code&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（二）</title>
-    <link href="http://example.com/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/"/>
-    <id>http://example.com/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/</id>
-    <published>2021-12-06T15:27:00.000Z</published>
-    <updated>2021-12-06T15:59:40.307Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;根据设计稿在 &lt;code&gt;pages\页面.vue&lt;/code&gt; 文件中写好页面布局和样式，此处不述&lt;/p&gt;
-&lt;h1 id=&quot;pages-json-文件&quot;&gt;&lt;a href=&quot;#pages-json-文件&quot; class=&quot;headerlink&quot;</summary>
         
       
     
