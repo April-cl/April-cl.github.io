@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Docker配置git账号</title>
+      <link href="/2023/02/25/docker-pei-zhi-git-zhang-hao/"/>
+      <url>/2023/02/25/docker-pei-zhi-git-zhang-hao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>在 Docker 里面创建的项目，上传 Github 失败</p><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">~/r/mangosteen-1 # ❯❯❯ git push -u origin maingit@github.com: Permission denied (publickey).fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>机翻一下就是：权限被拒绝（公钥）</p><h1 id="怎样做"><a href="#怎样做" class="headerlink" title="怎样做"></a>怎样做</h1><p>在 Docker 环境里面的终端输入以下命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-agent<span class="token builtin class-name">eval</span> <span class="token variable"><span class="token variable">$(</span>ssh-agent -s<span class="token variable">)</span></span>ssh-keygen -o -t rsa -b <span class="token number">4096</span> -C <span class="token string">"用户名"</span>ssh-add ~/.ssh/id_rsa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>一直回车，好了之后可以在 Docker 客户端看到 ssh 目录里面有3个文件</p><pre class="line-numbers language-none"><code class="language-none">id_rsaid_rsa.pub // 复制这个文件夹里面的内容known_hosts<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>登录 Github<br>Settings<br>=》 SSH and GPG keys<br>=》 New SSH key</p><ul><li>Title（标识名）</li><li>Key（id_rsa.pub 文件里面的内容）</li></ul><p>回到 Docker 环境里面的终端输入 <code>ssh -T git@github.com</code> 出现以下语句表示配置成功</p><pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">~/repos # ❯❯❯ ssh -T git@github.com   Hi April-cl! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://blog.csdn.net/qq_38537503/article/details/119571562">Docker中配置Git环境</a></p><p>快一年没写啦~~~，可真懒啊 🫥</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> git </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>slice、substr、substring、splice、split的用法</title>
       <link href="/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/"/>
       <url>/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/</url>
