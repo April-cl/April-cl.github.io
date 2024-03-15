@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -390,12 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">小程序</span>
-                            </a>
-                        
                             <a href="/tags/uni-app/">
                                 <span class="chip bg-color">uni-app</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
                             </a>
                         
                     </div>
@@ -424,32 +424,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-08
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    416
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -464,31 +444,31 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="订单详情页"><a href="#订单详情页" class="headerlink" title="订单详情页"></a>订单详情页</h1><p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1gzz93xhbd9j20ao0ii41w.jpg" alt="订单详情页.png"></p>
-<h2 id="获取订单数据"><a href="#获取订单数据" class="headerlink" title="获取订单数据"></a>获取订单数据</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// pages/order-details/details.vue</span>
+<h2 id="获取订单数据"><a href="#获取订单数据" class="headerlink" title="获取订单数据"></a>获取订单数据</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// pages/order-details/details.vue</span>
 <span class="token comment">// 省略部分代码</span>
 <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token punctuation">{</span>
         Price<span class="token punctuation">,</span>
-        overall<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-        other_data<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        comp_data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-        goods_data<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token literal-property property">overall</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">other_data</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">comp_data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">goods_data</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token keyword">async</span> <span class="token function">get_menu</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token keyword">let</span> field_obj <span class="token operator">=</span> <span class="token punctuation">{</span>number_of_diners<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> order_receiving<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> openid<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
-            <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>table_number<span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span>field_obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">let</span> field_obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">number_of_diners</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">transac_status</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">order_receiving</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token literal-property property">openid</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">}</span>
+            <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">table_number</span><span class="token operator">:</span> <span class="token string">'002'</span><span class="token punctuation">,</span> <span class="token literal-property property">transac_status</span><span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span>field_obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
             <span class="token keyword">let</span> res_data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>menu
             res_data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>overall <span class="token operator">+=</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>other_data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>comp_data <span class="token operator">=</span> res_data
             <span class="token keyword">this</span><span class="token punctuation">.</span>goods_data <span class="token operator">=</span> res_data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
                 <span class="token keyword">return</span> <span class="token punctuation">{</span>
-                    backup_data<span class="token operator">:</span> item<span class="token punctuation">.</span>backup_data<span class="token punctuation">,</span>
-                    goods_list<span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-                    max<span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span>length
+                    <span class="token literal-property property">backup_data</span><span class="token operator">:</span> item<span class="token punctuation">.</span>backup_data<span class="token punctuation">,</span>
+                    <span class="token literal-property property">goods_list</span><span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">max</span><span class="token operator">:</span> item<span class="token punctuation">.</span>goods_list<span class="token punctuation">.</span>length
                 <span class="token punctuation">}</span>
             <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
@@ -515,9 +495,9 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 <p><code>comp_data</code> 存放完整数据</p>
 <p><code>goods_data</code> 存放前三项数据，<code>goods_data[0]</code> 表示第一次下单的前三项数据</p>
 <p>点击 <code>index</code> 对应的展开全部按钮，更新该次 <code>goods_data[index]</code> 下单的所有数据，并将对应的 <code>max</code> 值标记为0表示已展示全部隐藏展开全部按钮。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// psges/order-details/details.vue</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// psges/order-details/details.vue</span>
 <span class="token comment">// 省略部分代码</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token function">opEn</span> <span class="token punctuation">(</span><span class="token parameter">index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'goods_list'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>comp_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">.</span>goods_list<span class="token punctuation">)</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$set</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>goods_data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'max'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
@@ -525,12 +505,12 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="加菜"><a href="#加菜" class="headerlink" title="加菜"></a>加菜</h2><p>点击加菜按钮跳转到点单页面，用到 <code>wx.reLaunch(Object object)</code></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// psges/order-details/details.vue</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// psges/order-details/details.vue</span>
 <span class="token comment">// 省略部分代码</span>
-methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token function">add_Dish</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         wx<span class="token punctuation">.</span><span class="token function">reLaunch</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-            url<span class="token operator">:</span> <span class="token string">'/pages/home-page/page'</span>
+            <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'/pages/home-page/page'</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -600,12 +580,12 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">小程序</span>
-                                </a>
-                            
                                 <a href="/tags/uni-app/">
                                     <span class="chip bg-color">uni-app</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
                                 </a>
                             
                         </div>
@@ -687,12 +667,12 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -740,12 +720,12 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -803,8 +783,8 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -816,7 +796,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -880,7 +860,7 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -934,55 +914,39 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1005,11 +969,12 @@ methods<span class="token operator">:</span> <span class="token punctuation">{</
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1151,8 +1116,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -420,32 +420,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-01
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -462,11 +442,11 @@
                 <p>以前心里一直很抵触刷题，不过最近看了不少面试题才发现通过这些题反倒是有不少收获，有空看看就当是夯实基础吧 ~</p>
 <p>在理解深/浅拷贝之前先弄明白对象赋值。</p>
 <p>当我们把一个对象赋值给一个新的变量时，赋的其实<strong>是该对象的在栈中的地址，而不是堆中的数据</strong>。也就是两个对象指向的是同一个存储空间，无论哪个对象发生改变，其实都是改变的存储空间的内容，因此，两个对象是联动的。</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    b<span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
-    c<span class="token operator">:</span> <span class="token punctuation">{</span>
-        d<span class="token operator">:</span> <span class="token boolean">true</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">d</span><span class="token operator">:</span> <span class="token boolean">true</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">let</span> obj0 <span class="token operator">=</span> obj
@@ -484,7 +464,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象，且<strong>修改新对象不会影响原对象</strong>。</p>
 <p>对于上面的例子</p>
 <p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0uh48ofijj20w10b40uc.jpg" alt="深拷贝.png"></p>
-<h1 id="实现浅拷贝"><a href="#实现浅拷贝" class="headerlink" title="实现浅拷贝"></a>实现浅拷贝</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">shallowClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h1 id="实现浅拷贝"><a href="#实现浅拷贝" class="headerlink" title="实现浅拷贝"></a>实现浅拷贝</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">shallowClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -494,10 +474,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token keyword">return</span> result
 <span class="token punctuation">}</span>
 <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    b<span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
-    c<span class="token operator">:</span> <span class="token punctuation">{</span>
-        d<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">d</span><span class="token operator">:</span> <span class="token boolean">true</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token function">shallowClone</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
@@ -510,7 +490,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// obj {a: 1, b: 'ha', c: {d: false, e: 2}}</span>
 <span class="token comment">// obj1 {a: 1, b: 'haha', c: {d: false, e: 2}}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h1><h2 id="用JSON"><a href="#用JSON" class="headerlink" title="用JSON"></a>用JSON</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> obj3 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="实现深拷贝"><a href="#实现深拷贝" class="headerlink" title="实现深拷贝"></a>实现深拷贝</h1><h2 id="用JSON"><a href="#用JSON" class="headerlink" title="用JSON"></a>用JSON</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj3 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>缺点：</p>
 <ul>
@@ -520,7 +500,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <h2 id="用递归"><a href="#用递归" class="headerlink" title="用递归"></a>用递归</h2><p>关于实现深拷贝代码随便一搜就有了，但一大串代码本小白看得云里雾里，下面一步一步解释，虽繁琐，但有助于理解。</p>
-<h3 id="1-判断基本类型-引用类型"><a href="#1-判断基本类型-引用类型" class="headerlink" title="1. 判断基本类型 | 引用类型"></a>1. 判断基本类型 | 引用类型</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="1-判断基本类型-引用类型"><a href="#1-判断基本类型-引用类型" class="headerlink" title="1. 判断基本类型 | 引用类型"></a>1. 判断基本类型 | 引用类型</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment">// 这里先空着，接下来要针对类做判断</span>
     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -528,7 +508,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-判断类（函数-数组-正则-日期-普通对象）"><a href="#2-判断类（函数-数组-正则-日期-普通对象）" class="headerlink" title="2. 判断类（函数 | 数组 | 正则 | 日期 | 普通对象）"></a>2. 判断类（函数 | 数组 | 正则 | 日期 | 普通对象）</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="2-判断类（函数-数组-正则-日期-普通对象）"><a href="#2-判断类（函数-数组-正则-日期-普通对象）" class="headerlink" title="2. 判断类（函数 | 数组 | 正则 | 日期 | 普通对象）"></a>2. 判断类（函数 | 数组 | 正则 | 日期 | 普通对象）</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">let</span> result  <span class="token comment">// 深拷贝结果</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -551,7 +531,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="3-判断普通函数-箭头函数"><a href="#3-判断普通函数-箭头函数" class="headerlink" title="3. 判断普通函数 | 箭头函数"></a>3. 判断普通函数 | 箭头函数</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="3-判断普通函数-箭头函数"><a href="#3-判断普通函数-箭头函数" class="headerlink" title="3. 判断普通函数 | 箭头函数"></a>3. 判断普通函数 | 箭头函数</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">let</span> result  <span class="token comment">// 深拷贝结果</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -580,7 +560,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-考虑更深层属性（递归）"><a href="#4-考虑更深层属性（递归）" class="headerlink" title="4. 考虑更深层属性（递归）"></a>4. 考虑更深层属性（递归）</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="4-考虑更深层属性（递归）"><a href="#4-考虑更深层属性（递归）" class="headerlink" title="4. 考虑更深层属性（递归）"></a>4. 考虑更深层属性（递归）</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">let</span> result  <span class="token comment">// 深拷贝结果</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>obj <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -609,7 +589,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="5-考虑环状引用（obj-self-obj）"><a href="#5-考虑环状引用（obj-self-obj）" class="headerlink" title="5. 考虑环状引用（obj.self=obj）"></a>5. 考虑环状引用（<code>obj.self=obj</code>）</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 后面回答为什么要用 Map</span>
+<h3 id="5-考虑环状引用（obj-self-obj）"><a href="#5-考虑环状引用（obj-self-obj）" class="headerlink" title="5. 考虑环状引用（obj.self=obj）"></a>5. 考虑环状引用（<code>obj.self=obj</code>）</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 后面回答为什么要用 Map</span>
 <span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
@@ -644,11 +624,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>环状引用即对象的属性间接或直接的引用了自身导致递归进入死循环导致栈内存溢出，所以需要另外开辟一个存储空间，来存储当前对象和拷贝对象的对应关系，当需要拷贝当前对象时，先去存储空间中找，有没有拷贝过这个对象，如果有的话直接返回，如果没有的话继续拷贝。那么这个存储空间的数据格式应该为 <code>key-value</code> 形式，并且 <code>key</code> 可能是引用类型，所以选择 <code>Map</code> 这种数据结构。</p>
-<h3 id="6-考虑-map-应该在哪声明"><a href="#6-考虑-map-应该在哪声明" class="headerlink" title="6. 考虑 map 应该在哪声明"></a>6. 考虑 map 应该在哪声明</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-    a<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    b<span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
-    c<span class="token operator">:</span> <span class="token punctuation">{</span>
-        d<span class="token operator">:</span> <span class="token boolean">true</span>
+<h3 id="6-考虑-map-应该在哪声明"><a href="#6-考虑-map-应该在哪声明" class="headerlink" title="6. 考虑 map 应该在哪声明"></a>6. 考虑 map 应该在哪声明</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">a</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">b</span><span class="token operator">:</span> <span class="token string">'ha'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">c</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">d</span><span class="token operator">:</span> <span class="token boolean">true</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
@@ -658,7 +638,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'obj2'</span><span class="token punctuation">,</span>obj2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>运行后会发现 <code>obj2</code> 也有 <code>self</code> 属性，所以 <code>map</code> 不该声明为全局变量</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span>obj<span class="token punctuation">,</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span>obj<span class="token punctuation">,</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
@@ -691,7 +671,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="7-考虑拷贝应该是拷贝自身属性"><a href="#7-考虑拷贝应该是拷贝自身属性" class="headerlink" title="7. 考虑拷贝应该是拷贝自身属性"></a>7. 考虑拷贝应该是拷贝自身属性</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span>obj<span class="token punctuation">,</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h3 id="7-考虑拷贝应该是拷贝自身属性"><a href="#7-考虑拷贝应该是拷贝自身属性" class="headerlink" title="7. 考虑拷贝应该是拷贝自身属性"></a>7. 考虑拷贝应该是拷贝自身属性</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">deepClone</span> <span class="token punctuation">(</span>obj<span class="token punctuation">,</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> map<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
@@ -741,13 +721,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>考虑问题应当严谨，既要向前多走一步，还要往后多看一眼</p>
 </li>
 </ul>
-<h1 id="使用-lodash-库"><a href="#使用-lodash-库" class="headerlink" title="使用 lodash 库"></a>使用 lodash 库</h1><h2 id="clone-方法"><a href="#clone-方法" class="headerlink" title="_.clone 方法"></a>_.clone 方法</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string">'a'</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">'b'</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h1 id="使用-lodash-库"><a href="#使用-lodash-库" class="headerlink" title="使用 lodash 库"></a>使用 lodash 库</h1><h2 id="clone-方法"><a href="#clone-方法" class="headerlink" title="_.clone 方法"></a>_.clone 方法</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string-property property">'a'</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string-property property">'b'</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
  
 <span class="token keyword">var</span> shallow <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">clone</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>shallow<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> objects<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// =&gt; true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="cloneDeep-方法"><a href="#cloneDeep-方法" class="headerlink" title="_.cloneDeep 方法"></a>_.cloneDeep 方法</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string">'a'</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string">'b'</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h2 id="cloneDeep-方法"><a href="#cloneDeep-方法" class="headerlink" title="_.cloneDeep 方法"></a>_.cloneDeep 方法</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> objects <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token string-property property">'a'</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string-property property">'b'</span><span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
  
 <span class="token keyword">var</span> deep <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>objects<span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>deep<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> objects<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1006,8 +986,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -1019,7 +999,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1083,7 +1063,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -1137,55 +1117,39 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1208,11 +1172,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1354,8 +1319,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

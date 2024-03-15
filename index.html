@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -505,6 +505,262 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2024/03/15/guan-yu-hbuilderx-de-yi-xie-yi-nan-za-zheng/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="关于HBuilderX的一些疑难杂症">
+                            
+                            <span class="card-title">关于HBuilderX的一些疑难杂症</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                以下大部分为非官方来源，属于瞎猫碰上死耗子解法，如果网上找不着就试试吧~~~可能会持续更新，取决于遇到的坑多不多（逃~
+真机/模拟器调试
+检测到当前使用的ADB不支持反向代理，如果出现连接不上的问题，请更换HBuilder自带的ADB进行真
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
+                                    电脑
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                            <span class="chip bg-color">软件</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/15/guan-yu-web-view-zu-jian-ceng-ji-guo-gao-dao-zhi-qi-ta-shi-tu-zu-jian-bu-ke-shi-de-jie-jue-ban-fa/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="关于web-view组件层级过高导致其它视图组件不可视的解决办法">
+                            
+                            <span class="card-title">关于web-view组件层级过高导致其它视图组件不可视的解决办法</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                需求当点击左边红色框内的单号时，右边黄色框展示区域显示对应的信息（视频或者PDF）。如果该单号同时存在视频或者PDF，则绿色框单选按钮组显示视频和PDF单选框，如果只存在一种则只显示一种单选框。
+实现布局如下
+&lt;template&gt
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
+                        </a>
+                        
+                        <a href="/tags/APP/">
+                            <span class="chip bg-color">APP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/15/ji-lu-app-sao-miao-yi-wei-ma-bu-zhun-que-de-yuan-yin/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="记录 APP 扫描一维码不准确的原因">
+                            
+                            <span class="card-title">记录 APP 扫描一维码不准确的原因</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                plus.barcode.Barcode(domId, filters, styles, autoDecodeCharset)
+参数：
+
+domId: ( String ) 必选 关联DOM标签的标识系统将查找到此id的DOM标签节点，设置
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
+                        </a>
+                        
+                        <a href="/tags/APP/">
+                            <span class="chip bg-color">APP</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/14/zb-table-dong-tai-xian-shi-cao-zuo-an-niu/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="zb-table 动态显示操作按钮">
+                            
+                            <span class="card-title">zb-table 动态显示操作按钮</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                在uni-app开发时遇到一个需求，需要用表格显示内容，有一列操作列要求根据某列内容显示对应操作
+例子：有完成时间的行操作列不能显示【删除】、【完成】按钮
+在 DCLOUD 插件市场下载安装 zb-table 插件，查看文档，没找到可以动态
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/03/08/hello-world/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                            
+                            <span class="card-title">Hello World</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                            <span class="chip bg-color">命令行</span>
+                        </a>
+                        
+                        <a href="/tags/Hexo/">
+                            <span class="chip bg-color">Hexo</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2023/02/28/less-zhong-shi-yong-url-she-zhi-wen-ti/">
                         <div class="card-image">
                             
@@ -760,270 +1016,6 @@ substr（不建议使用）截取字符串，并返回一个新的字符串（�
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/23/vue-de-data-shu-xing/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Vue 对 data 做了什么">
-                            
-                            <span class="card-title">Vue 对 data 做了什么</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                在 Vue 项目中，通过 let vm = new Vue({data: myData}) 就可以在当数据发生变化后，使用到该数据的视图也会相应进行自动更新，这是为什么呢？
-本文不从源码分析 Vue 对 data 做了什么（毕竟我也读不懂源
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Vue/">
-                            <span class="chip bg-color">Vue</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/17/css-de-wei-lei-he-wei-yuan-su/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="CSS 的伪类和伪元素">
-                            
-                            <span class="card-title">CSS 的伪类和伪元素</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                昨天在写文章的时候发现对伪类和伪元素的概念有些混淆，查阅一番有所收获，记一下~
-区别定义伪类即假的类，表示被选择元素的某种状态，通常可以添加类来达到效果，如 :hover。
-伪元素即假元素，表示被选择元素的某个部分，这个部分看起来像一个独立
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-17
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CSS/">
-                            <span class="chip bg-color">CSS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="弄懂 BFC 奖励一顿 KFC">
-                            
-                            <span class="card-title">弄懂 BFC 奖励一顿 KFC</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                前言
-对于 BFC 的概念和应用场景一直很模糊，趁着疫情在家有闲着重了解一下，做个总结。
-BFC 是什么BFC 全称：Block Formatting Context， 名为『块级格式化上下文』
-BFC 触发条件
-根元素（&lt;html&
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/CSS/">
-                            <span class="chip bg-color">CSS</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别">
-                            
-                            <span class="card-title">关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-
-
-接口
-用法
-参数(标*为必填参数)
-路由方式
-使用场景
-
-
-
-wx.navigateTo(Object object)
-用于保留当前页面、跳转到应用内的某个页面，但不能跳到 tabbar 页面
-{*url: string,events
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                            <span class="chip bg-color">微信小程序</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（十一）">
-                            
-                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（十一）</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                我的订单
-获取历史订单数据// pages/my-order/my-order.vue
-// 省略部分代码
-const db = wx.cloud.database()
-const _ = db.command
-const good_col
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                            <span class="chip bg-color">小程序</span>
-                        </a>
-                        
-                        <a href="/tags/uni-app/">
-                            <span class="chip bg-color">uni-app</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1057,7 +1049,7 @@ const good_col
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -1111,55 +1103,39 @@ const good_col
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1182,11 +1158,12 @@ const good_col
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1328,8 +1305,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

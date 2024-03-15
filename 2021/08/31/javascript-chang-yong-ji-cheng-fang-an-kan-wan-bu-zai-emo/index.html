@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -420,32 +420,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-09-04
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -462,12 +442,12 @@
                 <p>前段时间写了一篇关于<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/08/20/js-de-san-zuo-da-shan-zhi-yuan-xing/">原型</a>的博客，好似打通了任督二脉，以前斩不断理还乱的各种继承方式突然看得明白了，赶紧记下来✍~~~</p>
 <p>—— 以下是正文 ——</p>
 <h1 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h1><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><p>将父类的实例作为子类的原型</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 创建SuperType的实例，并将该实例赋值给SubType.prototype</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 创建SuperType的实例，并将该实例赋值给SubType.prototype</span>
 <span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token comment">// 所有涉及到原型链继承的继承方式都要修改子类构造函数的指向，否则子类实例的构造函数会指向SuperType。</span>
 <span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> SubType<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类</span>
+<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 父类</span>
 <span class="token keyword">function</span> <span class="token function">Person</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name <span class="token operator">||</span> <span class="token string">'Person'</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age <span class="token operator">||</span> <span class="token number">0</span>
@@ -502,16 +482,16 @@ student<span class="token punctuation">.</span><span class="token function">say<
 student<span class="token punctuation">.</span><span class="token function">study</span><span class="token punctuation">(</span><span class="token punctuation">)</span>                     <span class="token comment">// I am studing     --子类自己的方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="存在的缺点"><a href="#存在的缺点" class="headerlink" title="存在的缺点"></a>存在的缺点</h2><p>多个实例对引用类型的操作会被篡改</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> stu1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> stu1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">var</span> stu2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 stu1<span class="token punctuation">.</span>hobbies<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'basketball'</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stu1<span class="token punctuation">.</span>hobbies<span class="token punctuation">)</span>   <span class="token comment">// music,reading,basketball</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>stu2<span class="token punctuation">.</span>hobbies<span class="token punctuation">)</span>   <span class="token comment">// music,reading,basketball</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="构造函数继承"><a href="#构造函数继承" class="headerlink" title="构造函数继承"></a>构造函数继承</h1><h2 id="核心-1"><a href="#核心-1" class="headerlink" title="核心"></a>核心</h2><p>将父类构造函数的内容复制给了子类的构造函数</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>SubType<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>SubType<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类</span>
+<h2 id="举个例子-1"><a href="#举个例子-1" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 父类</span>
 <span class="token keyword">function</span> <span class="token function">Person</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>hobbies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music'</span><span class="token punctuation">,</span> <span class="token string">'reading'</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
@@ -532,13 +512,13 @@ stu1<span class="token punctuation">.</span><span class="token function">say</sp
 <li>无法实现复用，每个子类都有父类实例函数的副本，影响性能</li>
 </ul>
 <h1 id="组合继承"><a href="#组合继承" class="headerlink" title="组合继承"></a>组合继承</h1><h2 id="核心-2"><a href="#核心-2" class="headerlink" title="核心"></a>核心</h2><p>用原型链实现对原型属性和方法的继承，用借用构造函数技术来实现实例属性的继承</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">SubType</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token function">SuperType</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SuperType</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token class-name">SubType</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> SubType<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="举个例子-2"><a href="#举个例子-2" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 父类</span>
+<h2 id="举个例子-2"><a href="#举个例子-2" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 父类</span>
 <span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>hobbies <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'music'</span><span class="token punctuation">,</span><span class="token string">'reading'</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
@@ -565,21 +545,21 @@ stu1<span class="token punctuation">.</span><span class="token function">say</sp
 
 <h2 id="存在的缺点-2"><a href="#存在的缺点-2" class="headerlink" title="存在的缺点"></a>存在的缺点</h2><p>在使用子类创建实例对象时，其原型中会存在两份相同的属性/方法</p>
 <h1 id="原型式继承"><a href="#原型式继承" class="headerlink" title="原型式继承"></a>原型式继承</h1><h2 id="核心-3"><a href="#核心-3" class="headerlink" title="核心"></a>核心</h2><p>利用一个空对象作为中介，将某个对象直接赋值给空对象构造函数的原型</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">object</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">object</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">function</span> <span class="token constant">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
   <span class="token class-name">F</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> obj
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>或者用 <code>ES 5</code> 的 <code>Object.create()</code> 代替上面的 object 方法</p>
-<h2 id="举个例子-3"><a href="#举个例子-3" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">object</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<h2 id="举个例子-3"><a href="#举个例子-3" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">object</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">function</span> <span class="token constant">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
   <span class="token class-name">F</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> obj
   <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">"Nicholas"</span><span class="token punctuation">,</span>
-  friends<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Shelby"</span><span class="token punctuation">,</span> <span class="token string">"Court"</span><span class="token punctuation">,</span> <span class="token string">"Van"</span><span class="token punctuation">]</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Nicholas"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">friends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Shelby"</span><span class="token punctuation">,</span> <span class="token string">"Court"</span><span class="token punctuation">,</span> <span class="token string">"Van"</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">var</span> anotherPerson <span class="token operator">=</span> <span class="token function">object</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>
@@ -599,7 +579,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <h1 id="寄生式继承"><a href="#寄生式继承" class="headerlink" title="寄生式继承"></a>寄生式继承</h1><h2 id="核心-4"><a href="#核心-4" class="headerlink" title="核心"></a>核心</h2><p>寄生式继承其实就是在原型式继承的基础上，做了一些增强</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">createAnother</span><span class="token punctuation">(</span><span class="token parameter">original</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createAnother</span><span class="token punctuation">(</span><span class="token parameter">original</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">// 通过调用 object() 函数创建一个新对象</span>
   <span class="token keyword">var</span> clone <span class="token operator">=</span> <span class="token function">object</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span> 
   <span class="token comment">// 以某种方式来增强对象</span>
@@ -610,7 +590,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> clone <span class="token comment">// 返回这个对象</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="举个例子-4"><a href="#举个例子-4" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">createAnother</span><span class="token punctuation">(</span><span class="token parameter">original</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<h2 id="举个例子-4"><a href="#举个例子-4" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createAnother</span><span class="token punctuation">(</span><span class="token parameter">original</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">var</span> clone <span class="token operator">=</span> <span class="token function">object</span><span class="token punctuation">(</span>original<span class="token punctuation">)</span>
   clone<span class="token punctuation">.</span><span class="token function-variable function">sayHi</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"hi"</span><span class="token punctuation">)</span>
@@ -618,8 +598,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> clone
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">"Nicholas"</span><span class="token punctuation">,</span>
-  friends<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Shelby"</span><span class="token punctuation">,</span> <span class="token string">"Court"</span><span class="token punctuation">,</span> <span class="token string">"Van"</span><span class="token punctuation">]</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"Nicholas"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">friends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Shelby"</span><span class="token punctuation">,</span> <span class="token string">"Court"</span><span class="token punctuation">,</span> <span class="token string">"Van"</span><span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> anotherPerson <span class="token operator">=</span> <span class="token function">createAnother</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span>
 anotherPerson<span class="token punctuation">.</span><span class="token function">sayHi</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// hi</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -631,13 +611,13 @@ anotherPerson<span class="token punctuation">.</span><span class="token function
 </li>
 </ul>
 <h1 id="寄生组合式继承"><a href="#寄生组合式继承" class="headerlink" title="寄生组合式继承"></a>寄生组合式继承</h1><h2 id="核心-5"><a href="#核心-5" class="headerlink" title="核心"></a>核心</h2><p>结合借用构造函数传递参数和寄生模式实现继承</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">inheritPrototype</span><span class="token punctuation">(</span><span class="token parameter">subType<span class="token punctuation">,</span> superType</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">inheritPrototype</span><span class="token punctuation">(</span><span class="token parameter">subType<span class="token punctuation">,</span> superType</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">var</span> prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>superType<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// 创建对象，创建父类原型的一个副本</span>
   prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> subType                    <span class="token comment">// 增强对象，弥补因重写原型而失去的默认的constructor 属性</span>
   subType<span class="token punctuation">.</span>prototype <span class="token operator">=</span> prototype                      <span class="token comment">// 指定对象，将新创建的对象赋值给子类的原型</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="举个例子-5"><a href="#举个例子-5" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">inheritPrototype</span><span class="token punctuation">(</span><span class="token parameter">subType<span class="token punctuation">,</span> superType</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<h2 id="举个例子-5"><a href="#举个例子-5" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">inheritPrototype</span><span class="token punctuation">(</span><span class="token parameter">subType<span class="token punctuation">,</span> superType</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">var</span> prototype <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>superType<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
   prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> subType 
   subType<span class="token punctuation">.</span>prototype <span class="token operator">=</span> prototype
@@ -674,13 +654,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p><strong>这个继承方案是目前最成熟的方案</strong></p>
 <h1 id="ES6类继承extends"><a href="#ES6类继承extends" class="headerlink" title="ES6类继承extends"></a>ES6类继承extends</h1><h2 id="核心-6"><a href="#核心-6" class="headerlink" title="核心"></a>核心</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes">ES6 类的定义</a></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">SubType</span> <span class="token keyword">extends</span> <span class="token class-name">SuperType</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">SubType</span> <span class="token keyword">extends</span> <span class="token class-name">SuperType</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="举个例子-6"><a href="#举个例子-6" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+<h2 id="举个例子-6"><a href="#举个例子-6" class="headerlink" title="举个例子"></a>举个例子</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name <span class="token operator">||</span> <span class="token string">'Person'</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age <span class="token operator">||</span> <span class="token number">0</span>
@@ -967,8 +947,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -980,7 +960,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -1044,7 +1024,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -1098,55 +1078,39 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1169,11 +1133,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1315,8 +1280,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

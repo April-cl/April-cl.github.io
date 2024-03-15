@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-28T02:01:17.922Z</updated>
+  <updated>2024-03-15T08:21:34.887Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,148 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于HBuilderX的一些疑难杂症</title>
+    <link href="http://example.com/2024/03/15/guan-yu-hbuilderx-de-yi-xie-yi-nan-za-zheng/"/>
+    <id>http://example.com/2024/03/15/guan-yu-hbuilderx-de-yi-xie-yi-nan-za-zheng/</id>
+    <published>2024-03-15T07:49:50.000Z</published>
+    <updated>2024-03-15T08:21:34.887Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;以下大部分为非官方来源，属于瞎猫碰上死耗子解法，如果网上找不着就试试吧~~~&lt;br&gt;可能会持续更新，取决于遇到的坑多不多（逃~&lt;/p&gt;
+&lt;h2 id=&quot;真机-模拟器调试&quot;&gt;&lt;a href=&quot;#真机-模拟器调试&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于web-view组件层级过高导致其它视图组件不可视的解决办法</title>
+    <link href="http://example.com/2024/03/15/guan-yu-web-view-zu-jian-ceng-ji-guo-gao-dao-zhi-qi-ta-shi-tu-zu-jian-bu-ke-shi-de-jie-jue-ban-fa/"/>
+    <id>http://example.com/2024/03/15/guan-yu-web-view-zu-jian-ceng-ji-guo-gao-dao-zhi-qi-ta-shi-tu-zu-jian-bu-ke-shi-de-jie-jue-ban-fa/</id>
+    <published>2024-03-15T05:47:42.000Z</published>
+    <updated>2024-03-15T08:01:46.850Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="APP" scheme="http://example.com/tags/APP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录 APP 扫描一维码不准确的原因</title>
+    <link href="http://example.com/2024/03/15/ji-lu-app-sao-miao-yi-wei-ma-bu-zhun-que-de-yuan-yin/"/>
+    <id>http://example.com/2024/03/15/ji-lu-app-sao-miao-yi-wei-ma-bu-zhun-que-de-yuan-yin/</id>
+    <published>2024-03-15T05:30:33.000Z</published>
+    <updated>2024-03-15T08:22:33.200Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;plus.barcode.Barcode(domId, filters, styles, autoDecodeCharset)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;domId: (</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="APP" scheme="http://example.com/tags/APP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>zb-table 动态显示操作按钮</title>
+    <link href="http://example.com/2024/03/14/zb-table-dong-tai-xian-shi-cao-zuo-an-niu/"/>
+    <id>http://example.com/2024/03/14/zb-table-dong-tai-xian-shi-cao-zuo-an-niu/</id>
+    <published>2024-03-14T02:55:00.000Z</published>
+    <updated>2024-03-14T08:03:34.490Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在uni-app开发时遇到一个需求，需要用表格显示内容，有一列操作列要求根据某列内容显示对应操作&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;例子：有完成时间的行操作列不能显示【删除】、【完成】按钮&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在 DCLOUD 插件市场下载安装 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2024/03/08/hello-world/"/>
+    <id>http://example.com/2024/03/08/hello-world/</id>
+    <published>2024-03-08T05:05:45.140Z</published>
+    <updated>2024-03-14T08:35:41.309Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>less 中使用 url 设置问题</title>
     <link href="http://example.com/2023/02/28/less-zhong-shi-yong-url-she-zhi-wen-ti/"/>
     <id>http://example.com/2023/02/28/less-zhong-shi-yong-url-she-zhi-wen-ti/</id>
     <published>2023-02-28T01:45:31.000Z</published>
-    <updated>2023-02-28T02:01:17.922Z</updated>
+    <updated>2023-02-28T02:01:18.000Z</updated>
     
     
       
@@ -46,7 +183,7 @@
     <link href="http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/"/>
     <id>http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/</id>
     <published>2023-02-25T08:57:22.000Z</published>
-    <updated>2023-02-25T09:27:08.820Z</updated>
+    <updated>2023-02-25T09:27:10.000Z</updated>
     
     
       
@@ -76,7 +213,7 @@
     <link href="http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/"/>
     <id>http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/</id>
     <published>2022-04-02T04:54:52.000Z</published>
-    <updated>2022-04-02T05:31:17.793Z</updated>
+    <updated>2022-04-02T05:31:18.000Z</updated>
     
     
       
@@ -102,7 +239,7 @@
     <link href="http://example.com/2022/04/01/cong-yi-dao-shen-kao-bei-mian-shi-ti-zhong-xue-dao-de-zhi-shi-ji-lu/"/>
     <id>http://example.com/2022/04/01/cong-yi-dao-shen-kao-bei-mian-shi-ti-zhong-xue-dao-de-zhi-shi-ji-lu/</id>
     <published>2022-04-01T08:29:21.000Z</published>
-    <updated>2022-04-01T15:18:36.152Z</updated>
+    <updated>2022-04-01T15:18:38.000Z</updated>
     
     
       
@@ -127,7 +264,7 @@
     <link href="http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/"/>
     <id>http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/</id>
     <published>2022-03-27T08:52:13.000Z</published>
-    <updated>2022-03-27T15:52:21.008Z</updated>
+    <updated>2022-03-27T15:52:22.000Z</updated>
     
     
       
@@ -152,7 +289,7 @@
     <link href="http://example.com/2022/03/23/vue-de-data-shu-xing/"/>
     <id>http://example.com/2022/03/23/vue-de-data-shu-xing/</id>
     <published>2022-03-23T06:58:45.000Z</published>
-    <updated>2022-03-24T08:38:27.006Z</updated>
+    <updated>2022-03-24T08:38:28.000Z</updated>
     
     
       
@@ -178,7 +315,7 @@
     <link href="http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/"/>
     <id>http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/</id>
     <published>2022-03-17T07:25:20.000Z</published>
-    <updated>2022-03-20T03:00:57.868Z</updated>
+    <updated>2022-03-20T03:00:58.000Z</updated>
     
     
       
@@ -204,7 +341,7 @@
     <link href="http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/"/>
     <id>http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/</id>
     <published>2022-03-14T07:51:56.000Z</published>
-    <updated>2022-03-16T16:14:04.856Z</updated>
+    <updated>2022-03-16T16:14:06.000Z</updated>
     
     
       
@@ -231,7 +368,7 @@
     <link href="http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/"/>
     <id>http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/</id>
     <published>2022-03-07T08:02:46.000Z</published>
-    <updated>2022-03-07T17:45:59.323Z</updated>
+    <updated>2022-03-07T17:46:00.000Z</updated>
     
     
       
@@ -267,7 +404,7 @@
     <link href="http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/"/>
     <id>http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/</id>
     <published>2022-03-06T08:36:06.000Z</published>
-    <updated>2022-03-07T08:01:17.721Z</updated>
+    <updated>2022-03-07T08:01:18.000Z</updated>
     
     
       
@@ -283,9 +420,9 @@
     <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -294,7 +431,7 @@
     <link href="http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi/"/>
     <id>http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi/</id>
     <published>2022-03-05T11:41:58.000Z</published>
-    <updated>2022-03-07T17:50:06.119Z</updated>
+    <updated>2022-03-07T17:50:08.000Z</updated>
     
     
       
@@ -310,9 +447,9 @@
     <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -321,7 +458,7 @@
     <link href="http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-jiu/"/>
     <id>http://example.com/2022/03/05/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-jiu/</id>
     <published>2022-03-05T06:49:57.000Z</published>
-    <updated>2022-03-05T08:46:05.124Z</updated>
+    <updated>2022-03-05T08:46:06.000Z</updated>
     
     
       
@@ -337,9 +474,9 @@
     <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -348,7 +485,7 @@
     <link href="http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/"/>
     <id>http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/</id>
     <published>2022-02-18T08:01:16.000Z</published>
-    <updated>2022-02-22T16:31:57.751Z</updated>
+    <updated>2022-02-22T16:31:58.000Z</updated>
     
     
       
@@ -374,7 +511,7 @@
     <link href="http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/"/>
     <id>http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/</id>
     <published>2022-01-17T08:56:22.000Z</published>
-    <updated>2022-02-18T07:50:44.611Z</updated>
+    <updated>2022-02-18T07:50:46.000Z</updated>
     
     
       
@@ -390,9 +527,9 @@
     <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
+    
+    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
@@ -401,7 +538,7 @@
     <link href="http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/"/>
     <id>http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/</id>
     <published>2021-12-28T17:12:03.000Z</published>
-    <updated>2021-12-28T18:22:42.840Z</updated>
+    <updated>2021-12-28T18:22:44.000Z</updated>
     
     
       
@@ -418,144 +555,9 @@
     <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（十一）</title>
-    <link href="http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/"/>
-    <id>http://example.com/2021/12/26/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-yi/</id>
-    <published>2021-12-26T07:40:11.000Z</published>
-    <updated>2021-12-26T17:25:54.632Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;订单管理页&quot;&gt;&lt;a href=&quot;#订单管理页&quot; class=&quot;headerlink&quot; title=&quot;订单管理页&quot;&gt;&lt;/a&gt;订单管理页&lt;/h1&gt;&lt;h2 id=&quot;前端接口&quot;&gt;&lt;a href=&quot;#前端接口&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
     <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（七）</title>
-    <link href="http://example.com/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/"/>
-    <id>http://example.com/2021/12/20/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-qi/</id>
-    <published>2021-12-20T15:56:16.000Z</published>
-    <updated>2021-12-20T16:45:20.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;详情页组件&quot;&gt;&lt;a href=&quot;#详情页组件&quot; class=&quot;headerlink&quot; title=&quot;详情页组件&quot;&gt;&lt;/a&gt;详情页组件&lt;/h1&gt;&lt;h2 id=&quot;封装组件&quot;&gt;&lt;a href=&quot;#封装组件&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（六）</title>
-    <link href="http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/"/>
-    <id>http://example.com/2021/12/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-liu/</id>
-    <published>2021-12-19T15:09:53.000Z</published>
-    <updated>2021-12-19T17:01:04.624Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;购物车组件&quot;&gt;&lt;a href=&quot;#购物车组件&quot; class=&quot;headerlink&quot; title=&quot;购物车组件&quot;&gt;&lt;/a&gt;购物车组件&lt;/h1&gt;&lt;h2 id=&quot;封装组件&quot;&gt;&lt;a href=&quot;#封装组件&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（五）</title>
-    <link href="http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/"/>
-    <id>http://example.com/2021/12/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-wu/</id>
-    <published>2021-12-17T09:30:41.000Z</published>
-    <updated>2021-12-20T16:35:08.839Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;菜品数量加减&quot;&gt;&lt;a href=&quot;#菜品数量加减&quot; class=&quot;headerlink&quot; title=&quot;菜品数量加减&quot;&gt;&lt;/a&gt;菜品数量加减&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>烟火集——火锅</title>
-    <link href="http://example.com/2021/12/11/yan-huo-ji-huo-guo/"/>
-    <id>http://example.com/2021/12/11/yan-huo-ji-huo-guo/</id>
-    <published>2021-12-10T18:15:30.000Z</published>
-    <updated>2021-12-10T18:25:38.196Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;广东的冬天冷热无常，天冷的时候计划好打火锅，隔天就升温了。But！对吃货来说，天气算什么呢😏&lt;/p&gt;
-&lt;p&gt;小夫妻忙碌了半天准备食材，邀上三五好友，虽然中间出现一些不愉快的插曲，但幸好最终大家吃得满足🍲&lt;/p&gt;
-&lt;p&gt;此处表扬本场黑马——『炸腐竹』，好吃到意外🏆&lt;/p</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="菜谱" scheme="http://example.com/tags/%E8%8F%9C%E8%B0%B1/"/>
     
   </entry>
   

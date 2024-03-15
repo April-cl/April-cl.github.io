@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -420,32 +420,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-08
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -469,14 +449,14 @@
 <p>「排号」这件事并没有立即得到结果（进去吃火锅），所以这是一个异步任务</p>
 <p>AJAX 请求数据流程与此类似。</p>
 <p>浏览器通过 <code>XMLHttpRequest</code> 对象向服务器发出HTTP请求与接收HTTP响应，浏览器接着做其他事情，等收到 <code>XMLHttpRequest</code> 对象返回来的数据再渲染页面。</p>
-<h1 id="AJAX-的使用"><a href="#AJAX-的使用" class="headerlink" title="AJAX 的使用"></a>AJAX 的使用</h1><h2 id="1-创建Ajax核心对象XMLHttpRequest"><a href="#1-创建Ajax核心对象XMLHttpRequest" class="headerlink" title="1. 创建Ajax核心对象XMLHttpRequest"></a>1. 创建Ajax核心对象XMLHttpRequest</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<h1 id="AJAX-的使用"><a href="#AJAX-的使用" class="headerlink" title="AJAX 的使用"></a>AJAX 的使用</h1><h2 id="1-创建Ajax核心对象XMLHttpRequest"><a href="#1-创建Ajax核心对象XMLHttpRequest" class="headerlink" title="1. 创建Ajax核心对象XMLHttpRequest"></a>1. 创建Ajax核心对象XMLHttpRequest</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Mozilla, Safari, IE7+ ...</span>
     httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>ActiveXObject<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// IE 6 and older</span>
     httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="2-发送HTTP请求"><a href="#2-发送HTTP请求" class="headerlink" title="2. 发送HTTP请求"></a>2. 发送HTTP请求</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> async<span class="token punctuation">)</span>
+<h2 id="2-发送HTTP请求"><a href="#2-发送HTTP请求" class="headerlink" title="2. 发送HTTP请求"></a>2. 发送HTTP请求</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">httpRequest<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> async<span class="token punctuation">)</span>
 httpRequest<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>method：HTTP请求方法 - 有GET，POST，HEAD以及服务器支持的其他方法</p>
@@ -487,12 +467,12 @@ httpRequest<span class="token punctuation">.</span><span class="token function">
 <ul>
 <li>在调用 send() 方法获取表单数据前要设置请求头的格式内容</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">httpRequest<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">'Content-Type'</span><span class="token punctuation">,</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li>发送表单数据时应该用服务器可以解析的格式，像查询语句，JSON，XML等</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 举例</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 举例</span>
 httpRequest<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"name=xcl&amp;anothername=April"</span><span class="token punctuation">)</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="3-处理服务器响应"><a href="#3-处理服务器响应" class="headerlink" title="3. 处理服务器响应"></a>3. 处理服务器响应</h2><p>有关的 API ：</p>
@@ -536,7 +516,7 @@ httpRequest<span class="token punctuation">.</span><span class="token function">
 </li>
 </ul>
 <p>一般我们会使用异步 AJAX（即 open() 的第三个参数未特别指定或设为 true），在发送请求时，提供一个回调函数负责处理响应，代码大概长这样：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">httpRequest<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">httpRequest<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
     <span class="token keyword">if</span> <span class="token punctuation">(</span>httpRequest<span class="token punctuation">.</span>readyState <span class="token operator">===</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> httpRequest<span class="token punctuation">.</span>status <span class="token operator">===</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
         <span class="token comment">/* 对 httpRequest.response 的一些操作 */</span> 
     <span class="token punctuation">}</span>
@@ -544,7 +524,7 @@ httpRequest<span class="token punctuation">.</span><span class="token function">
 
 <p>如果是使用同步 AJAX（即 open() 的第三个参数设为 false），则直接在 send() 方法之后执行要进行的操作即可。但不建议这样做，它的用户体验很糟糕，可能会使页面在请求期间卡住</p>
 <p>AJAX 的用法大概就是如此，把所有代码整合到一块是这样的：</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> httpRequest <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>XMLHttpRequest<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// Mozilla, Safari, IE7+ ...</span>
     httpRequest <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>window<span class="token punctuation">.</span>ActiveXObject<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// IE 6 and older</span>
@@ -559,7 +539,7 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="手动封装-AJAX"><a href="#手动封装-AJAX" class="headerlink" title="手动封装 AJAX"></a>手动封装 AJAX</h1><p>这里会用到 <code>Promise</code> 对象【<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN传送门</a>】</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">ajax</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function-variable function">ajax</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">method<span class="token punctuation">,</span> url<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         <span class="token keyword">const</span> <span class="token punctuation">{</span>success<span class="token punctuation">,</span> fail<span class="token punctuation">}</span> <span class="token operator">=</span> options
         <span class="token keyword">const</span> request <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -858,8 +838,8 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -871,7 +851,7 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -935,7 +915,7 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -989,55 +969,39 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1060,11 +1024,12 @@ httpRequest<span class="token punctuation">.</span><span class="token function-v
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1206,8 +1171,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

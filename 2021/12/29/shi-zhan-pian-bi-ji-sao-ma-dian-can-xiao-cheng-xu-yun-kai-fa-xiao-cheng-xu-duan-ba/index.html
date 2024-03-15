@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -390,12 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">小程序</span>
-                            </a>
-                        
                             <a href="/tags/uni-app/">
                                 <span class="chip bg-color">uni-app</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
                             </a>
                         
                     </div>
@@ -424,32 +424,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-29
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    530
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -464,7 +444,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="生成订单编号"><a href="#生成订单编号" class="headerlink" title="生成订单编号"></a>生成订单编号</h1><p>实现思路：当前时间戳 + 10位整数随机数</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// config\order.js</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// config\order.js</span>
 <span class="token keyword">let</span> <span class="token function-variable function">Code</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">var</span> orderCode <span class="token operator">=</span> <span class="token number">0</span>
 	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -479,8 +459,8 @@
 <p>步骤一：获取模板 ID</p>
 <p>登录小程序 -&gt; 功能 -&gt; 订阅消息 -&gt; 公共模板库 -&gt; 搜索’商家确认订单通知’并选用 -&gt; 复制模板ID</p>
 <p>步骤二：获取下发权限</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">requestSubscribeMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  tmplIds<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'模板ID'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">wx<span class="token punctuation">.</span><span class="token function">requestSubscribeMessage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">tmplIds</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'模板ID'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token function">success</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -517,38 +497,38 @@
 <li>无记录则表示之前的订单已结，此单为初次点单，向数据库创建新纪录</li>
 <li>有记录则表示该桌号此单为加单，向数据库修改记录</li>
 </ul>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">sub_database</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">async</span> <span class="token function">sub_database</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>shopping_card<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> item<span class="token punctuation">.</span>total_price <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span>
     <span class="token keyword">let</span> sett_amount <span class="token operator">=</span> <span class="token number">0</span>
     res<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>sett_amount <span class="token operator">+=</span> item<span class="token punctuation">.</span>total_price<span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token keyword">let</span> order <span class="token operator">=</span> <span class="token punctuation">{</span>
-        table_number<span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span>
-        number_of_diners<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-        order_time<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$Time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">table_number</span><span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">number_of_diners</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">order_time</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$Time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         sett_amount<span class="token punctuation">,</span>
-        order_no<span class="token operator">:</span> <span class="token function">Code</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-        transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">,</span>
-        order_receiving<span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
-        menu<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>backup_data<span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> goods_list<span class="token operator">:</span> res<span class="token punctuation">}</span><span class="token punctuation">]</span>
+        <span class="token literal-property property">order_no</span><span class="token operator">:</span> <span class="token function">Code</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">transac_status</span><span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">order_receiving</span><span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">menu</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token literal-property property">backup_data</span><span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> <span class="token literal-property property">goods_list</span><span class="token operator">:</span> res<span class="token punctuation">}</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
-    <span class="token keyword">let</span> add_goods <span class="token operator">=</span> <span class="token punctuation">{</span>backup_data<span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> goods_list<span class="token operator">:</span> res<span class="token punctuation">}</span>
+    <span class="token keyword">let</span> add_goods <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">backup_data</span><span class="token operator">:</span> <span class="token string">'备用字段'</span><span class="token punctuation">,</span> <span class="token literal-property property">goods_list</span><span class="token operator">:</span> res<span class="token punctuation">}</span>
     <span class="token keyword">try</span> <span class="token punctuation">{</span>
-        <span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span>table_number<span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span> transac_status<span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span><span class="token punctuation">{</span>id<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> sett_amount<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">table_number</span><span class="token operator">:</span> <span class="token string">'004'</span><span class="token punctuation">,</span> <span class="token literal-property property">transac_status</span><span class="token operator">:</span> <span class="token string">'unsettled'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">field</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">sett_amount</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token operator">:</span> order<span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">data</span><span class="token operator">:</span> order<span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
             <span class="token keyword">let</span> total_amount <span class="token operator">=</span> <span class="token function">Number</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sett_amount<span class="token punctuation">)</span> <span class="token operator">+</span> sett_amount
             <span class="token keyword">await</span> good_collect<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>query<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                data<span class="token operator">:</span> <span class="token punctuation">{</span>
-                    sett_amount<span class="token operator">:</span> total_amount<span class="token punctuation">,</span>
-                    order_receiving<span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
-                    menu<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>add_goods<span class="token punctuation">)</span>
+                <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">sett_amount</span><span class="token operator">:</span> total_amount<span class="token punctuation">,</span>
+                    <span class="token literal-property property">order_receiving</span><span class="token operator">:</span> <span class="token string">'mis_orders'</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">menu</span><span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span>add_goods<span class="token punctuation">)</span>
                 <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span>
         res<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-            <span class="token keyword">await</span> dishes_data<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>data<span class="token operator">:</span> <span class="token punctuation">{</span>
-                monthlysale<span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">inc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>quantity<span class="token punctuation">)</span>
+            <span class="token keyword">await</span> dishes_data<span class="token punctuation">.</span><span class="token function">doc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>_id<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">monthlysale</span><span class="token operator">:</span> _<span class="token punctuation">.</span><span class="token function">inc</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>quantity<span class="token punctuation">)</span>
             <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token punctuation">}</span><span class="token punctuation">)</span>
         <span class="token keyword">const</span> time_data <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$Time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
@@ -620,12 +600,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">小程序</span>
-                                </a>
-                            
                                 <a href="/tags/uni-app/">
                                     <span class="chip bg-color">uni-app</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
                                 </a>
                             
                         </div>
@@ -707,12 +687,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -760,12 +740,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -823,8 +803,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -836,7 +816,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -900,7 +880,7 @@
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -954,55 +934,39 @@
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1025,11 +989,12 @@
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1171,8 +1136,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

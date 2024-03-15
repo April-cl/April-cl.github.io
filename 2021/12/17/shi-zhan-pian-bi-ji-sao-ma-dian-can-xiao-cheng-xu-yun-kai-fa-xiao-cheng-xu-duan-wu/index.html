@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -390,12 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">小程序</span>
-                            </a>
-                        
                             <a href="/tags/uni-app/">
                                 <span class="chip bg-color">uni-app</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
                             </a>
                         
                     </div>
@@ -424,32 +424,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-21
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    599
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -463,7 +443,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="菜品数量加减"><a href="#菜品数量加减" class="headerlink" title="菜品数量加减"></a>菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// page.vue</span>
+                <h1 id="菜品数量加减"><a href="#菜品数量加减" class="headerlink" title="菜品数量加减"></a>菜品数量加减</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// page.vue</span>
 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span>block v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, index) in goods"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">&gt;</span>
@@ -484,16 +464,16 @@
 	<span class="token keyword">import</span> Cart <span class="token keyword">from</span> <span class="token string">'./components/shopping-cart.vue'</span>
     <span class="token keyword">import</span> Details <span class="token keyword">from</span> <span class="token string">'./components/goods-details.vue'</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-		components<span class="token operator">:</span> <span class="token punctuation">{</span>
+		<span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
 			Cart<span class="token punctuation">,</span>
 			Details
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> <span class="token punctuation">{</span>
-                card<span class="token operator">:</span> <span class="token boolean">false</span>
+                <span class="token literal-property property">card</span><span class="token operator">:</span> <span class="token boolean">false</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
             <span class="token function">plus</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token keyword">const</span> <span class="token punctuation">{</span>quantity<span class="token punctuation">,</span> image<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> _id<span class="token punctuation">}</span> <span class="token operator">=</span> itemgood
                 <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">+</span> <span class="token number">1</span>
@@ -521,7 +501,7 @@
 </blockquote>
 <hr>
 <p>下面内容需结合购物车和菜品详情页一起看，可先略过</p>
-<h1 id="购物车菜品数量加减"><a href="#购物车菜品数量加减" class="headerlink" title="购物车菜品数量加减"></a>购物车菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// shopping-cart.vue</span>
+<h1 id="购物车菜品数量加减"><a href="#购物车菜品数量加减" class="headerlink" title="购物车菜品数量加减"></a>购物车菜品数量加减</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// shopping-cart.vue</span>
 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span>block v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item, index) in shopping_card"</span> <span class="token operator">:</span>key<span class="token operator">=</span><span class="token string">"index"</span><span class="token operator">&gt;</span>
@@ -536,7 +516,7 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
             <span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">index<span class="token punctuation">,</span> quantity<span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token keyword">const</span> <span class="token constant">QU</span> <span class="token operator">=</span> quantity <span class="token operator">-</span> <span class="token number">1</span>
                 <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">shopping_Cart_add_sub</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token constant">QU</span><span class="token punctuation">,</span> _id<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> unitprice<span class="token punctuation">)</span>
@@ -549,7 +529,7 @@
     <span class="token punctuation">}</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="详情页菜品数量加减"><a href="#详情页菜品数量加减" class="headerlink" title="详情页菜品数量加减"></a>详情页菜品数量加减</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// goods-details.vue</span>
+<h1 id="详情页菜品数量加减"><a href="#详情页菜品数量加减" class="headerlink" title="详情页菜品数量加减"></a>详情页菜品数量加减</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// goods-details.vue</span>
 <span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
     <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
         <span class="token operator">&lt;</span>view<span class="token operator">&gt;</span>
@@ -562,10 +542,10 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
 <span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
 	<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-        props<span class="token operator">:</span> <span class="token punctuation">{</span>
-			pro_details<span class="token operator">:</span> Object
+        <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+			<span class="token literal-property property">pro_details</span><span class="token operator">:</span> Object
 		<span class="token punctuation">}</span><span class="token punctuation">,</span>
-        methods<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
             <span class="token function">plus</span><span class="token punctuation">(</span><span class="token parameter">pro_details</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 <span class="token keyword">let</span> <span class="token punctuation">{</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">}</span> <span class="token operator">=</span> pro_details
                 <span class="token keyword">this</span><span class="token punctuation">.</span>$parent<span class="token punctuation">.</span><span class="token function">plus</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> good_index<span class="token punctuation">,</span> cid<span class="token punctuation">,</span> itemgood<span class="token punctuation">)</span>
@@ -646,12 +626,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">小程序</span>
-                                </a>
-                            
                                 <a href="/tags/uni-app/">
                                     <span class="chip bg-color">uni-app</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
                                 </a>
                             
                         </div>
@@ -733,12 +713,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -845,8 +825,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -858,7 +838,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -922,7 +902,7 @@
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -976,55 +956,39 @@
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1047,11 +1011,12 @@
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1193,8 +1158,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

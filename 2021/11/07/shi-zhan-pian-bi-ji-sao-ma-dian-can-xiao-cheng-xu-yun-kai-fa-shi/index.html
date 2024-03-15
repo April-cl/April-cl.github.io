@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -390,12 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">小程序</span>
-                            </a>
-                        
                             <a href="/tags/uni-app/">
                                 <span class="chip bg-color">uni-app</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                <span class="chip bg-color">小程序</span>
                             </a>
                         
                     </div>
@@ -424,32 +424,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-08
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -468,7 +448,7 @@
 <h2 id="添加菜品类目"><a href="#添加菜品类目" class="headerlink" title="添加菜品类目"></a>添加菜品类目</h2><ol>
 <li>校验函数校验是否为空</li>
 </ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">catecheck</span> <span class="token keyword">extends</span> <span class="token class-name">checking</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">catecheck</span> <span class="token keyword">extends</span> <span class="token class-name">checking</span> <span class="token punctuation">{</span>
   <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'请输入菜品类目'</span><span class="token punctuation">]</span>
     <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">Errunder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -489,13 +469,13 @@
 }]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>3.数据库操作语句</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-category').where({label:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>category<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'}).get()</span><span class="token template-punctuation string">`</span></span><span class="token comment">// 获取数据库指定类目的记录，若有记录则该类目已存在</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-category').where({label:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>category<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'}).get()</span><span class="token template-punctuation string">`</span></span><span class="token comment">// 获取数据库指定类目的记录，若有记录则该类目已存在</span>
 <span class="token keyword">const</span> cate <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-category').add({data:{value:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>category<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">',label:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>category<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">',cid:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>cid<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">',count:0,sele_quantity:0}})</span><span class="token template-punctuation string">`</span></span><span class="token comment">// 向数据库添加菜品类目记录</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <ol start="4">
 <li>使用前面封装过的 <code>getToken().posteve(dataUrl, query)</code> 接口查询是否已存在，若不存在则向数据库添加记录，反之返回客户端已存在响应</li>
 </ol>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">try</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -508,15 +488,15 @@
   <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'添加失败，服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="获取菜品类目"><a href="#获取菜品类目" class="headerlink" title="获取菜品类目"></a>获取菜品类目</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtaincate'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="获取菜品类目"><a href="#获取菜品类目" class="headerlink" title="获取菜品类目"></a>获取菜品类目</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtaincate'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> <span class="token punctuation">{</span>page<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
   <span class="token keyword">let</span> sk <span class="token operator">=</span> page <span class="token operator">*</span> <span class="token number">10</span>
   <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-category').orderBy('cid','desc').limit(10).skip('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sk<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').get()</span><span class="token template-punctuation string">`</span></span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
     <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span>total<span class="token operator">:</span>res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
-    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>result<span class="token operator">:</span>data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
+    <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">total</span><span class="token operator">:</span>res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
+    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span><span class="token literal-property property">result</span><span class="token operator">:</span>data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
     <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -535,7 +515,7 @@
 <p>上架菜品：uploaddishes</p>
 <p>下架菜品：fromsale</p>
 <p>修改上架的菜品：modifydishes</p>
-<h2 id="获取菜品单位"><a href="#获取菜品单位" class="headerlink" title="获取菜品单位"></a>获取菜品单位</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtainunit'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="获取菜品单位"><a href="#获取菜品单位" class="headerlink" title="获取菜品单位"></a>获取菜品单位</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtainunit'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishunit').get()</span><span class="token template-punctuation string">`</span></span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
@@ -546,7 +526,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="添加菜品单位"><a href="#添加菜品单位" class="headerlink" title="添加菜品单位"></a>添加菜品单位</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/dishunit'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="添加菜品单位"><a href="#添加菜品单位" class="headerlink" title="添加菜品单位"></a>添加菜品单位</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/dishunit'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> unid <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span>unit<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
   <span class="token keyword">new</span> <span class="token class-name">unitcheck</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> unit<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -565,22 +545,22 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="获取菜品"><a href="#获取菜品" class="headerlink" title="获取菜品"></a>获取菜品</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtaindishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="获取菜品"><a href="#获取菜品" class="headerlink" title="获取菜品"></a>获取菜品</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/obtaindishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> <span class="token punctuation">{</span>page<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
   <span class="token keyword">let</span> sk <span class="token operator">=</span> page <span class="token operator">*</span> <span class="token number">10</span>
   <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-data').orderBy('time', 'desc').limit(10).skip(</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>sk<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">).get()</span><span class="token template-punctuation string">`</span></span>
   <span class="token keyword">try</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">new</span> <span class="token class-name">getToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">posteve</span><span class="token punctuation">(</span>TripUrl<span class="token punctuation">,</span> query<span class="token punctuation">)</span>
     <span class="token keyword">const</span> data <span class="token operator">=</span> res<span class="token punctuation">.</span>data<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span>total<span class="token operator">:</span>res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
-    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span>result<span class="token operator">:</span>data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
+    <span class="token keyword">const</span> total <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">total</span><span class="token operator">:</span>res<span class="token punctuation">.</span>pager<span class="token punctuation">.</span>Total<span class="token punctuation">}</span>
+    <span class="token keyword">const</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">{</span><span class="token literal-property property">result</span><span class="token operator">:</span>data<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token operator">...</span>total<span class="token punctuation">}</span>
     <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'SUCCESS'</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">answer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> <span class="token string">'服务器发生错误'</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="上架菜品"><a href="#上架菜品" class="headerlink" title="上架菜品"></a>上架菜品</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/uploaddishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="上架菜品"><a href="#上架菜品" class="headerlink" title="上架菜品"></a>上架菜品</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/uploaddishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> category<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> image<span class="token punctuation">,</span> value<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
   <span class="token keyword">new</span> <span class="token class-name">putoncheck</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> category<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> image<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
@@ -597,7 +577,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="下架菜品"><a href="#下架菜品" class="headerlink" title="下架菜品"></a>下架菜品</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/fromsale'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="下架菜品"><a href="#下架菜品" class="headerlink" title="下架菜品"></a>下架菜品</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'/fromsale'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> value<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query
   <span class="token keyword">const</span> query <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-data').doc('</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">').update({data:{onsale:false}})</span><span class="token template-punctuation string">`</span></span>
   <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">db.collection('dishes-category').where({cid:'</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>value<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">'}).update({data:{count:db.command.inc(-1)}})</span><span class="token template-punctuation string">`</span></span>
@@ -610,7 +590,7 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="修改上架的菜品"><a href="#修改上架的菜品" class="headerlink" title="修改上架的菜品"></a>修改上架的菜品</h2><pre class="line-numbers language-js" data-language="js"><code class="language-js">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/modifydishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<h2 id="修改上架的菜品"><a href="#修改上架的菜品" class="headerlink" title="修改上架的菜品"></a>修改上架的菜品</h2><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string">'/modifydishes'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Auth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>m<span class="token punctuation">,</span> <span class="token keyword">async</span> <span class="token parameter">ctx</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token punctuation">{</span>id<span class="token punctuation">,</span> category<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> image<span class="token punctuation">,</span> value<span class="token punctuation">,</span> valueBefore<span class="token punctuation">}</span> <span class="token operator">=</span> ctx<span class="token punctuation">.</span>request<span class="token punctuation">.</span>body
   <span class="token keyword">new</span> <span class="token class-name">putoncheck</span><span class="token punctuation">(</span>ctx<span class="token punctuation">,</span> category<span class="token punctuation">,</span> name<span class="token punctuation">,</span> unitprice<span class="token punctuation">,</span> unit<span class="token punctuation">,</span> image<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token keyword">let</span> time <span class="token operator">=</span> <span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">utcOffset</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
@@ -691,12 +671,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">小程序</span>
-                                </a>
-                            
                                 <a href="/tags/uni-app/">
                                     <span class="chip bg-color">uni-app</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                                    <span class="chip bg-color">小程序</span>
                                 </a>
                             
                         </div>
@@ -778,12 +758,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -831,12 +811,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
-                    </a>
-                    
                     <a href="/tags/uni-app/">
                         <span class="chip bg-color">uni-app</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                        <span class="chip bg-color">小程序</span>
                     </a>
                     
                 </div>
@@ -894,8 +874,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -907,7 +887,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -971,7 +951,7 @@
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -1025,55 +1005,39 @@
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1096,11 +1060,12 @@
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1242,8 +1207,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

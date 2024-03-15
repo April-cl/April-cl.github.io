@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -420,32 +420,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-30
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -468,24 +448,24 @@
 <p>以 <code>window</code> 对象为例，属性名保存属性值地址，例如，属性 <code>Object</code> 保存 <code>Object 对象</code>的地址，即 <code>window</code> 对象的属性 <code>Object</code> 指向内存中的<code>Object 对象</code></p>
 <p>【这里要明白 <code>Object </code>和 <code>Object 对象</code>是两个东西，<code>Object </code>是存放 <code>Object 对象</code>的地址，而 <code>Object 对象</code>是 Heap 中的一坨内存数据，同理，<code>console</code> 和 <code>console 对象</code>、<code>Array</code> 和 <code>Array 对象</code>不是同一个东西 🔑 】</p>
 <h1 id="你有我有全都有"><a href="#你有我有全都有" class="headerlink" title="你有我有全都有"></a>你有我有全都有</h1><p>假设现在要声明一个士兵，士兵要包含的属性：[编号，生命值，攻击（动作），防御（动作）]</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> 士兵 <span class="token operator">=</span> <span class="token punctuation">{</span>
-    编号<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    生命力<span class="token operator">:</span> <span class="token number">59</span><span class="token punctuation">,</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> 士兵 <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">编号</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">生命力</span><span class="token operator">:</span> <span class="token number">59</span><span class="token punctuation">,</span>
     <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+    <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>画个内存图看看</p>
 <p><img src="http://ww1.sinaimg.cn/large/004jr3A7gy1gtq52cd045j60dg07fwfn02.jpg" alt="一个士兵内存图.png"></p>
 <p>好啦，那现在如果要制造一百个士兵呢？</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> 士兵
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> 士兵 <span class="token operator">=</span> <span class="token punctuation">{</span>
-        编号<span class="token operator">:</span> i<span class="token punctuation">,</span>
-        生命力<span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">编号</span><span class="token operator">:</span> i<span class="token punctuation">,</span>
+        <span class="token literal-property property">生命力</span><span class="token operator">:</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
         <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-        防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+        <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
     士兵们<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>士兵<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
@@ -503,9 +483,9 @@
 </li>
 </ul>
 <p>这个原型对象不就可以用来充当那个整合相同代码的地方，然后让「士兵」的 <code>__proto__</code> 指向「士兵原型」</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> 士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> 士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+    <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> 士兵
@@ -518,9 +498,9 @@
 
 <p><img src="http://ww1.sinaimg.cn/large/004jr3A7gy1gtswk5jlv2j60od0d8dir02.jpg" alt="士兵原型图第1版.png"></p>
 <p>现在假若兵营要再制造50名士兵，那么制造士兵（for循环内）的代码就要再重新写一遍。既然如此，那就把制造士兵抽离成一个函数，后面有需要就调用这个函数好了</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> 士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> 士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+    <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> 士兵数 <span class="token operator">=</span> 士兵们<span class="token punctuation">.</span>length
@@ -543,7 +523,7 @@
 <p><img src="http://ww1.sinaimg.cn/large/004jr3A7gy1gtswkp12bkj60wr0ge45o02.jpg" alt="士兵原型图第2版.png"></p>
 <p>注：内存图中蓝色区域是 JS 内置的，只是前面的图没有补全</p>
 <p>从内存图不难看出，虽然制造士兵函数制造出来的士兵的 <code>__proto__</code> 是指向士兵原型的，但制造士兵函数本身和士兵原型却没有联系，这样显得代码分散。那么试着把制造士兵函数和士兵原型结合一起</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> 士兵们 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
 <span class="token keyword">var</span> 士兵数 <span class="token operator">=</span> 士兵们<span class="token punctuation">.</span>length
 <span class="token keyword">function</span> <span class="token function">制造士兵</span><span class="token punctuation">(</span><span class="token parameter">编号i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> 士兵 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>制造士兵<span class="token punctuation">.</span>士兵原型<span class="token punctuation">)</span>
@@ -553,8 +533,8 @@
 <span class="token punctuation">}</span>
 制造士兵<span class="token punctuation">.</span>士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>       <span class="token comment">// 这步把制造士兵和士兵原型绑定</span>
     <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
-    constructor<span class="token operator">:</span> 制造士兵   <span class="token comment">// 这步把士兵原型和制造士兵绑定</span>
+    <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+    <span class="token literal-property property">constructor</span><span class="token operator">:</span> 制造士兵   <span class="token comment">// 这步把士兵原型和制造士兵绑定</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     士兵们<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">制造士兵</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
@@ -601,17 +581,17 @@
 </li>
 </ol>
 <p>下面来一个无奖问答 🎮</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token keyword">null</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>true，根据知识2</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>true，根据知识2</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 f<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>true，根据知识3</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">Function<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Function<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>true，根据知识1</p>
 <h1 id="new-运算符"><a href="#new-运算符" class="headerlink" title="new 运算符"></a>new 运算符</h1><p>new 关键字会进行如下的操作：</p>
@@ -622,7 +602,7 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <li>如果该函数没有返回对象，则返回this</li>
 </ol>
 <p>回到制造士兵最后那段代码</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 省略部分代码</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 省略部分代码</span>
 <span class="token keyword">function</span> <span class="token function">制造士兵</span><span class="token punctuation">(</span><span class="token parameter">编号i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> 士兵 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>制造士兵<span class="token punctuation">.</span>士兵原型<span class="token punctuation">)</span>
     士兵<span class="token punctuation">.</span>编号 <span class="token operator">=</span> 编号i
@@ -631,8 +611,8 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <span class="token punctuation">}</span>
 制造士兵<span class="token punctuation">.</span>士兵原型 <span class="token operator">=</span> <span class="token punctuation">{</span>       <span class="token comment">// 这步把制造士兵和士兵原型绑定</span>
     <span class="token function-variable function">攻击</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 呼一巴掌 */</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-    防御<span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
-    constructor<span class="token operator">:</span> 制造士兵   <span class="token comment">// 这步把士兵原型和制造士兵绑定</span>
+    <span class="token literal-property property">防御</span><span class="token operator">:</span> <span class="token function">funcrion</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">/* 闪 */</span><span class="token punctuation">}</span>
+    <span class="token literal-property property">constructor</span><span class="token operator">:</span> 制造士兵   <span class="token comment">// 这步把士兵原型和制造士兵绑定</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token operator">&gt;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     士兵们<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">制造士兵</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
@@ -640,7 +620,7 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <span class="token comment">// 省略部分代码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>换成 new 写法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 省略部分代码</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 省略部分代码</span>
 <span class="token keyword">function</span> <span class="token function">制造士兵</span><span class="token punctuation">(</span><span class="token parameter">编号i</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span>编号 <span class="token operator">=</span> 编号i
     <span class="token keyword">this</span><span class="token punctuation">.</span>生命力 <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span>
@@ -912,8 +892,8 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -925,7 +905,7 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -989,7 +969,7 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -1043,55 +1023,39 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1114,11 +1078,12 @@ f<span class="token punctuation">.</span>__proto__ <span class="token operator">
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1260,8 +1225,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

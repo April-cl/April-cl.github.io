@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -420,32 +420,12 @@
                 
 
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-24
-                </div>
+
                 
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
-                </div>
-                
 
                 
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -464,8 +444,8 @@
 <p>首先，这里卖个关子，撇开 Vue，学几个 ES6 的新语法</p>
 <h1 id="getter-setter"><a href="#getter-setter" class="headerlink" title="getter / setter"></a>getter / setter</h1><p>get 语法将对象属性绑定到查询该属性时将被调用的函数</p>
 <p>当尝试设置属性时，set 语法将对象属性绑定到要调用的函数</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
-  _num<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">_num</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
   <span class="token keyword">get</span> <span class="token function">num</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_num <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token keyword">set</span> <span class="token function">num</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">this</span><span class="token punctuation">.</span>_num <span class="token operator">=</span> n <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
@@ -477,11 +457,11 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>大白话讲它们的用法就是 getter 调用时不加括号的函数，setter 用 <code>= xxx</code> 对属性赋值</p>
 <h1 id="Object-defineProperty"><a href="#Object-defineProperty" class="headerlink" title="Object.defineProperty()"></a>Object.defineProperty()</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty()</a> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象</p>
 <p>它的语法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> descriptor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> descriptor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>现在有一个需求，data 对象的 n 属性值不能小于0</p>
 <p>结合 getter / setter 的用法</p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> data1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> data1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 data1<span class="token punctuation">.</span>_n <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">// _n 用来偷偷存储 n 的值</span>
 Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data1<span class="token punctuation">,</span> <span class="token string">'n'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
   <span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -501,7 +481,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>倘若这里直接修改 <code>data1._n</code> 呢？</p>
 <p>可以发现 <code>data1.n</code> 也被修改了</p>
 <p>考虑将 <code>_n</code> 包装为一个匿名对象的属性，通过代理函数访问</p>
-<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> data2 <span class="token operator">=</span> <span class="token function">proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data<span class="token operator">:</span><span class="token punctuation">{</span>n<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 括号里是匿名对象，无法访问</span>
+<h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> data2 <span class="token operator">=</span> <span class="token function">proxy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">data</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token literal-property property">n</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 括号里是匿名对象，无法访问</span>
 <span class="token keyword">function</span> <span class="token function">proxy</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
   Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'n'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> 
@@ -523,8 +503,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1h0l0bqv7oqj20cy097gob.jpg" alt="需求二.png"></p>
 <p>假如先定义 <code>myData = {n:0}</code>，再将 <code>myData</code> 对象传递给匿名对象（<code>data2 = proxy({ data:myData })</code>），则仍可以通过 <code>myData.n</code> 来修改 <code>data2.n</code> 的值，所以需要对代理接收的数据进行监听</p>
-<h1 id="数据监听"><a href="#数据监听" class="headerlink" title="数据监听"></a>数据监听</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> myData <span class="token operator">=</span> <span class="token punctuation">{</span>n<span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span>
-<span class="token keyword">let</span> data3 <span class="token operator">=</span> <span class="token function">proxy2</span><span class="token punctuation">(</span><span class="token punctuation">{</span> data<span class="token operator">:</span>myData <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<h1 id="数据监听"><a href="#数据监听" class="headerlink" title="数据监听"></a>数据监听</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> myData <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token literal-property property">n</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span>
+<span class="token keyword">let</span> data3 <span class="token operator">=</span> <span class="token function">proxy2</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">data</span><span class="token operator">:</span>myData <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span class="token keyword">function</span> <span class="token function">proxy2</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span>data<span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">let</span> value <span class="token operator">=</span> data<span class="token punctuation">.</span>n
   Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'n'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
@@ -831,8 +811,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('2'),
-            headingSelector: 'h1, h2, h3, h4'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -844,7 +824,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -908,7 +888,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
     <footer class="page-footer bg-color">
-    <!-- 
+    
         <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
@@ -962,55 +942,39 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
 
-             -->
-    <div class="container row center-align"
-        style="margin-bottom: 0px !important;">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">
-                    2021-2023
-                </span>
-                
-                        <span id="year">
-                            2021
-                        </span>
-                        <a href="/about" target="_blank">
-                            April-cl
-                        </a>
-                        <!-- |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-                                    |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery"
-                                        target="_blank">Matery</a>
-                                    <br>
-                                     -->
-                        <!-- 
-                                                
-                                                    
-                                                        
-                                                            
-                                                                <span id="busuanzi_container_site_pv">
-                                                                    |&nbsp;<i
-                                                                        class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span
-                                                                        id="busuanzi_value_site_pv"
-                                                                        class="white-color"></span>&nbsp;次
-                                                                </span>
-                                                                
-                                                                    
-                                                                        <span id="busuanzi_container_site_uv">
-                                                                            |&nbsp;<i
-                                                                                class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span
-                                                                                id="busuanzi_value_site_uv"
-                                                                                class="white-color"></span>&nbsp;人
-                                                                        </span>
-                                                                        
-                                                                            <br>
-                                                                            
-                                                                                    <br>
-                                                                                    
-                    </div> -->
-        </div>
-        <div class="s12 m4 l4 social-link social-statis">
+                <span id="year">2021-2024</span>
             
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">April-cl</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/April-cl" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1033,11 +997,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-
-        </div>
+</div>
+    </div>
 </footer>
 
 <div class="progress-bar"></div>
+
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1179,8 +1144,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
