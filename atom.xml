@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-15T08:21:34.887Z</updated>
+  <updated>2024-03-18T01:56:06.178Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10 找不到Hyper-V的解决办法</title>
+    <link href="http://example.com/2024/03/18/win10-zhao-bu-dao-hyper-v-de-jie-jue-ban-fa/"/>
+    <id>http://example.com/2024/03/18/win10-zhao-bu-dao-hyper-v-de-jie-jue-ban-fa/</id>
+    <published>2024-03-18T01:18:02.000Z</published>
+    <updated>2024-03-18T01:56:06.178Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;打算安装 Docker 时发现电脑没有启动 Hyper-V 选项（控制面板-&amp;gt;程序-&amp;gt;启用或关闭 windows 功能）&lt;br&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>关于HBuilderX的一些疑难杂症</title>
@@ -183,14 +208,14 @@
     <link href="http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/"/>
     <id>http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/</id>
     <published>2023-02-25T08:57:22.000Z</published>
-    <updated>2023-02-25T09:27:10.000Z</updated>
+    <updated>2024-03-17T09:34:54.395Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;遇到的问题&quot;&gt;&lt;a href=&quot;#遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题&quot;&gt;&lt;/a&gt;遇到的问题&lt;/h1&gt;&lt;p&gt;在 Docker 里面创建的项目，上传 Github 失败&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;遇到的问题&quot;&gt;&lt;a href=&quot;#遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题&quot;&gt;&lt;/a&gt;遇到的问题&lt;/h2&gt;&lt;p&gt;在 Docker 里面创建的项目，上传 Github 失败&lt;/p&gt;
 &lt;pre</summary>
         
       
@@ -519,34 +544,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;生成小程序码&quot;&gt;&lt;a href=&quot;#生成小程序码&quot; class=&quot;headerlink&quot; title=&quot;生成小程序码&quot;&gt;&lt;/a&gt;生成小程序码&lt;/h1&gt;&lt;p&gt;接口：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（八）</title>
-    <link href="http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/"/>
-    <id>http://example.com/2021/12/29/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-ba/</id>
-    <published>2021-12-28T17:12:03.000Z</published>
-    <updated>2021-12-28T18:22:44.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;生成订单编号&quot;&gt;&lt;a href=&quot;#生成订单编号&quot; class=&quot;headerlink&quot; title=&quot;生成订单编号&quot;&gt;&lt;/a&gt;生成订单编号&lt;/h1&gt;&lt;p&gt;实现思路：当前时间戳 + 10位整数随机数&lt;/p&gt;
-&lt;pre class=&quot;line-numbers</summary>
         
       
     

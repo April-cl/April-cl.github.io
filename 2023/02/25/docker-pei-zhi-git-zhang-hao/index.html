@@ -447,7 +447,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>在 Docker 里面创建的项目，上传 Github 失败</p>
+                <h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>在 Docker 里面创建的项目，上传 Github 失败</p>
 <pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">~/r/mangosteen-1 # ❯❯❯ git push -u origin main
 git@github.com: Permission denied (publickey).
 fatal: Could not read from remote repository.
@@ -456,7 +456,7 @@ Please make sure you have the correct access rights
 and the repository exists.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>机翻一下就是：权限被拒绝（公钥）</p>
-<h1 id="怎样做"><a href="#怎样做" class="headerlink" title="怎样做"></a>怎样做</h1><p>在 Docker 环境里面的终端输入以下命令</p>
+<h2 id="怎样做"><a href="#怎样做" class="headerlink" title="怎样做"></a>怎样做</h2><p>在 Docker 环境里面的终端输入以下命令</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-agent
 <span class="token builtin class-name">eval</span> <span class="token variable"><span class="token variable">$(</span>ssh-agent <span class="token parameter variable">-s</span><span class="token variable">)</span></span>
 ssh-keygen <span class="token parameter variable">-o</span> <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-b</span> <span class="token number">4096</span> <span class="token parameter variable">-C</span> <span class="token string">"用户名"</span>
@@ -475,7 +475,7 @@ known_hosts<span aria-hidden="true" class="line-numbers-rows"><span></span><span
 <pre class="line-numbers language-zsh" data-language="zsh"><code class="language-zsh">~/repos # ❯❯❯ ssh -T git@github.com   
 Hi April-cl! You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38537503/article/details/119571562">Docker中配置Git环境</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38537503/article/details/119571562">Docker中配置Git环境</a></p>
 <p>快一年没写啦~~~，可真懒啊 🫥</p>
 
                 
