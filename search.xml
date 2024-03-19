@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决npm设置registry.npmmirror.com仍报错registry.npm.taobao.org的问题</title>
+      <link href="/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/"/>
+      <url>/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<p>早上打算运行电脑里面一个许久没动过的项目，在输入 <code>npm install</code> 时报了一个错</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> code CERT_HAS_EXPIRED<span class="token function">npm</span> ERR<span class="token operator">!</span> request to https://registry.npm.taobao.org/yorkie/download/yorkie-2.0.0.tgz failed, reason: certificate has expired<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>嗯 <code>https://registry.npm.taobao.org</code> 过期了</p><p>But</p><p>🤔 我记着我设置的是 <code>https://registry.npmmirror.com/</code> 啊</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> <span class="token function">npm</span> config get registryhttps://registry.npmmirror.com/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>尝试 <code>npm config set strict-ssl false</code></p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> strict-ssl <span class="token boolean">false</span><span class="token operator">&gt;</span> <span class="token function">npm</span> cache <span class="token function">clear</span> <span class="token parameter variable">--force</span><span class="token operator">&gt;</span> <span class="token function">npm</span> <span class="token function">install</span><span class="token punctuation">..</span>. // 省略过程added <span class="token number">1560</span> packages <span class="token keyword">in</span> 5m<span class="token number">17</span> packages are looking <span class="token keyword">for</span> funding<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>😀 嘿嘿成了</p><p>不过 <code>npm config set strict-ssl false</code> 是什么意思呢</p><p>查了一下，<code>strict-ssl</code> 是 <code>npm</code> 中用于控制 <code>SSL</code> 证书校验的选项，当其为 <code>true</code> 时，<code>npm</code> 会对连接的服务器的 <code>SSL</code> 证书进行严格的校验，并要求它是由可信的认证机构颁发的。如果校验失败，<code>npm</code> 将无法连接到服务器并会报错；当其为 <code>false</code> 时，则 <code>npm</code> 将不会对服务器的 <code>SSL</code> 证书进行校验，并且即使证书是由不可信的认证机构颁发的也不会报错，这就存在一定的安全风险，所以问题解决完了还是赶紧设置回去吧</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> strict-ssl <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>win10 找不到Hyper-V的解决办法</title>
       <link href="/2024/03/18/win10-zhao-bu-dao-hyper-v-de-jie-jue-ban-fa/"/>
       <url>/2024/03/18/win10-zhao-bu-dao-hyper-v-de-jie-jue-ban-fa/</url>

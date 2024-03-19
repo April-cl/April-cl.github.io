@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-18T01:56:06.178Z</updated>
+  <updated>2024-03-19T02:40:14.886Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决npm设置registry.npmmirror.com仍报错registry.npm.taobao.org的问题</title>
+    <link href="http://example.com/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/"/>
+    <id>http://example.com/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/</id>
+    <published>2024-03-19T02:04:31.000Z</published>
+    <updated>2024-03-19T02:40:14.886Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;早上打算运行电脑里面一个许久没动过的项目，在输入 &lt;code&gt;npm install&lt;/code&gt; 时报了一个错&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>win10 找不到Hyper-V的解决办法</title>
@@ -528,33 +554,6 @@
     
     
     <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发（十二）</title>
-    <link href="http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/"/>
-    <id>http://example.com/2022/01/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-shi-er/</id>
-    <published>2022-01-17T08:56:22.000Z</published>
-    <updated>2022-02-18T07:50:46.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;生成小程序码&quot;&gt;&lt;a href=&quot;#生成小程序码&quot; class=&quot;headerlink&quot; title=&quot;生成小程序码&quot;&gt;&lt;/a&gt;生成小程序码&lt;/h1&gt;&lt;p&gt;接口：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
