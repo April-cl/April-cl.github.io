@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>git 命令之 git branch -f</title>
+      <link href="/2024/03/20/git-ming-ling-zhi-git-branch-f/"/>
+      <url>/2024/03/20/git-ming-ling-zhi-git-branch-f/</url>
+      
+        <content type="html"><![CDATA[<h2 id="git-branch-f-参数1-参数2"><a href="#git-branch-f-参数1-参数2" class="headerlink" title="git branch -f 参数1 参数2"></a>git branch -f 参数1 参数2</h2><p>改变分支指向提交节点，注意，并不会改变当前HEAD指向<br>参数1：是要移动的分支<br>参数2：如果没写就是将参数1指向 HEAD 所在的节点，如果写了就是将参数1指向该参数的节点</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> foo$ <span class="token function">git</span> commit$ <span class="token function">git</span> checkout main$ <span class="token function">git</span> commit$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> bar$ <span class="token function">git</span> commit$ <span class="token function">git</span> checkout main$ <span class="token function">git</span> commit// 参数2未指定，当前 HEAD 指向 main，所以会把 foo 移动到 main 所在的节点$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> foo// 参数2指定了 bar，所以会把 foo 移动到 bar 所在的节点$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> foo bar// 参数2未指定，当前 HEAD 指向 main，所以会把 main 移动到 main 所在的节点，即没有变化$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>懒得做动图了，把代码复制到 <a href="https://learngitbranching.js.org/?locale=zh_CN&amp;NODEMO=">learngitbranching沙箱</a> 看看效果吧</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决npm设置registry.npmmirror.com仍报错registry.npm.taobao.org的问题</title>
       <link href="/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/"/>
       <url>/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/</url>

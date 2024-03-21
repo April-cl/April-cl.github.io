@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-19T02:40:14.886Z</updated>
+  <updated>2024-03-21T01:07:17.808Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 命令之 git branch -f</title>
+    <link href="http://example.com/2024/03/20/git-ming-ling-zhi-git-branch-f/"/>
+    <id>http://example.com/2024/03/20/git-ming-ling-zhi-git-branch-f/</id>
+    <published>2024-03-20T09:48:47.000Z</published>
+    <updated>2024-03-21T01:07:17.808Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;git-branch-f-参数1-参数2&quot;&gt;&lt;a href=&quot;#git-branch-f-参数1-参数2&quot; class=&quot;headerlink&quot; title=&quot;git branch -f 参数1 参数2&quot;&gt;&lt;/a&gt;git branch -f 参数1</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>解决npm设置registry.npmmirror.com仍报错registry.npm.taobao.org的问题</title>
@@ -529,32 +556,6 @@
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
     <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>reduce的一点小理解</title>
-    <link href="http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/"/>
-    <id>http://example.com/2022/02/18/reduce-de-yi-dian-xiao-li-jie/</id>
-    <published>2022-02-18T08:01:16.000Z</published>
-    <updated>2022-02-22T16:31:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前阵子在项目中有用到 &lt;code&gt;reduce()&lt;/code&gt; 方法，当时不是很理解，后来空了学习了一下，有了一点小收获，记之~&lt;/p&gt;
-&lt;h1 id=&quot;用法&quot;&gt;&lt;a href=&quot;#用法&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   
