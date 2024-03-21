@@ -452,11 +452,11 @@ $ <span class="token function">git</span> checkout <span class="token parameter 
 $ <span class="token function">git</span> commit
 $ <span class="token function">git</span> checkout main
 $ <span class="token function">git</span> commit
-// 参数2未指定，当前 HEAD 指向 main，所以会把 foo 移动到 main 所在的节点
+<span class="token comment"># 参数2未指定，当前 HEAD 指向 main，所以会把 foo 移动到 main 所在的节点</span>
 $ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> foo
-// 参数2指定了 bar，所以会把 foo 移动到 bar 所在的节点
+<span class="token comment"># 参数2指定了 bar，所以会把 foo 移动到 bar 所在的节点</span>
 $ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> foo bar
-// 参数2未指定，当前 HEAD 指向 main，所以会把 main 移动到 main 所在的节点，即没有变化
+<span class="token comment"># 参数2未指定，当前 HEAD 指向 main，所以会把 main 移动到 main 所在的节点，即没有变化</span>
 $ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> main
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -574,18 +574,17 @@ $ <span class="token function">git</span> branch <span class="token parameter va
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/03/20/git-ming-ling-zhi-git-branch-f/">
+                <a href="/2024/03/21/git-ming-ling-zhi-git-rebase/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="git 命令之 git branch -f">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="git 命令之 git rebase">
                         
-                        <span class="card-title">git 命令之 git branch -f</span>
+                        <span class="card-title">git 命令之 git rebase</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -595,9 +594,9 @@ $ <span class="token function">git</span> branch <span class="token parameter va
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-20
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -610,7 +609,6 @@ $ <span class="token function">git</span> branch <span class="token parameter va
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
