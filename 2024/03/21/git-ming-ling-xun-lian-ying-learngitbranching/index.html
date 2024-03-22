@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git 命令之 git rebase, April-cl">
+    <meta name="keywords" content="git 命令训练营 learngitbranching, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git 命令之 git rebase | April-cl</title>
+    <title>git 命令训练营 learngitbranching | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git 命令之 git rebase</h1>
+                    <h1 class="description center-align post-title">git 命令训练营 learngitbranching</h1>
                 </div>
             </div>
         </div>
@@ -443,23 +443,191 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="git-rebase-参数1-参数2"><a href="#git-rebase-参数1-参数2" class="headerlink" title="git rebase 参数1 参数2"></a>git rebase 参数1 参数2</h2><p>复制一系列提交记录放在另一个地方，注意：并不会改变被接下去的分支指向，但是把HEAD节点指向被复制的节点<br>参数1：要被接下去的节点/分支<br>参数2：如果没写就是从当前的HEAD节点与参数1的交叉点开始到当前的HEAD节点的提交记录复制到参数1后面，如果写了就是参数2与参数1的交叉点开始到参数2的提交记录复制到参数1后面</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> foo
-$ <span class="token function">git</span> commit
-$ <span class="token function">git</span> commit
-$ <span class="token function">git</span> checkout main
-$ <span class="token function">git</span> commit
-$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> bar
-$ <span class="token function">git</span> commit
-$ <span class="token function">git</span> commit
-$ <span class="token function">git</span> checkout main
-$ <span class="token function">git</span> commit
-<span class="token comment"># 参数2未指定，从 main 分支与 foo 分支的交叉点到 main 分支所在的节点的提交记录会复制到 foo 分支所在的节点后面，注意 foo 分支所在的节点并没有变化</span>
-$ <span class="token function">git</span> rebase foo
-<span class="token comment"># 参数2指定为 bar，从 bar 分支与 foo 分支的交叉点到 bar 分支所在的节点的提交记录会复制到 foo 分支所在的节点后面，注意 HEAD 由指向 main 变成指向 bar</span>
-$ <span class="token function">git</span> rebase foo bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p>目前公司用的代码管理工具是 <code>SVN</code>，用久了倒是有点记不清 <code>git</code> 的用法了，趁着这几日空了回顾回顾，果真发现了个好玩的网站 <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">learngitbranching</a>，还补上了以前钻研不会的知识盲区，记录下答案~</p>
+<p>下面代码块为 <code>learngitbranching</code> 提供的答案（使用 <code>show solution</code> 命令就可以看到），视频是我自己写的答案，有些对不上，不过倒是殊途同归</p>
+<h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="Git-Commit"><a href="#Git-Commit" class="headerlink" title="Git Commit"></a>Git Commit</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> commit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>懒得做动图了，把代码复制到 <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN&amp;NODEMO=">learngitbranching沙箱</a> 看看效果吧</p>
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1302227299&amp;bvid=BV1eu4m1T75F&amp;cid=1477053279&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="Git-Branch"><a href="#Git-Branch" class="headerlink" title="Git Branch"></a>Git Branch</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> branch bugFix
+$ <span class="token function">git</span> checkout bugFix<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1952193285&amp;bvid=BV1uC411t7T1&amp;cid=1477087242&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="Git-Merge"><a href="#Git-Merge" class="headerlink" title="Git Merge"></a>Git Merge</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> bugFix
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> checkout main
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> merge bugFix<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1602242343&amp;bvid=BV1rm421J74F&amp;cid=1477087887&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="Git-Rebase"><a href="#Git-Rebase" class="headerlink" title="Git Rebase"></a>Git Rebase</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> bugFix
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> checkout main
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> checkout bugFix
+$ <span class="token function">git</span> rebase main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1352115494&amp;bvid=BV1N6421c7uT&amp;cid=1477088762&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h1 id="高级篇"><a href="#高级篇" class="headerlink" title="高级篇"></a>高级篇</h1><h2 id="分离的-HEAD"><a href="#分离的-HEAD" class="headerlink" title="分离的 HEAD"></a>分离的 HEAD</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout C4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1202094945&amp;bvid=BV1xF4m1F7VP&amp;cid=1477116376&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="相对引用（-）"><a href="#相对引用（-）" class="headerlink" title="相对引用（^）"></a>相对引用（^）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout bugFix^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1702129143&amp;bvid=BV1SK421Y7Bg&amp;cid=1477118549&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="相对引用2（-）"><a href="#相对引用2（-）" class="headerlink" title="相对引用2（~）"></a>相对引用2（~）</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> main C6
+$ <span class="token function">git</span> checkout HEAD~1
+$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> bugFix HEAD~1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1802150423&amp;bvid=BV1Xt421G7YS&amp;cid=1477120547&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+<h2 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> reset HEAD~1
+$ <span class="token function">git</span> checkout pushed
+$ <span class="token function">git</span> revert HEAD<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1802038862&amp;bvid=BV1Kt421G7me&amp;cid=1477121604&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+
+<h1 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h1><h2 id="Git-Cherry-pick"><a href="#Git-Cherry-pick" class="headerlink" title="Git Cherry-pick"></a>Git Cherry-pick</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> cherry-pick C3 C4 C7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="交互式-rebase"><a href="#交互式-rebase" class="headerlink" title="交互式 rebase"></a>交互式 rebase</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> overHere
+<span class="token comment"># 选择 C3 C4 C5，然后调换 C4 C5 的位置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><h2 id="只取一个提交记录"><a href="#只取一个提交记录" class="headerlink" title="只取一个提交记录"></a>只取一个提交记录</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> main 
+<span class="token comment"># 只选择 C4</span>
+$ <span class="token function">git</span> rebase bugFix main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="提交的技巧-1"><a href="#提交的技巧-1" class="headerlink" title="提交的技巧 #1"></a>提交的技巧 #1</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> HEAD~2
+<span class="token comment"># 调换 C2 C3 的位置</span>
+$ <span class="token function">git</span> commit <span class="token parameter variable">--amend</span>
+$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> HEAD~2
+<span class="token comment"># 调换 C3' C2'' 的位置</span>
+$ <span class="token function">git</span> rebase caption main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="提交的技巧-2"><a href="#提交的技巧-2" class="headerlink" title="提交的技巧 #2"></a>提交的技巧 #2</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout main
+$ <span class="token function">git</span> cherry-pick C2
+$ <span class="token function">git</span> commit <span class="token parameter variable">--amend</span>
+$ <span class="token function">git</span> cherry-pick C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-Tag"><a href="#Git-Tag" class="headerlink" title="Git Tag"></a>Git Tag</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> tag v1 side~1
+$ <span class="token function">git</span> tag v0 main~2
+$ <span class="token function">git</span> checkout v1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-Describe"><a href="#Git-Describe" class="headerlink" title="Git Describe"></a>Git Describe</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<h1 id="高级话题"><a href="#高级话题" class="headerlink" title="高级话题"></a>高级话题</h1><h2 id="多次-Rebase"><a href="#多次-Rebase" class="headerlink" title="多次 Rebase"></a>多次 Rebase</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase main bugFix
+$ <span class="token function">git</span> rebase bugFix side
+$ <span class="token function">git</span> rebase side another
+$ <span class="token function">git</span> rebase another main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="两个-parent-节点"><a href="#两个-parent-节点" class="headerlink" title="两个 parent 节点"></a>两个 parent 节点</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> branch bugWork main^^2^<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="纠缠不清的分支"><a href="#纠缠不清的分支" class="headerlink" title="纠缠不清的分支"></a>纠缠不清的分支</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout one
+$ <span class="token function">git</span> cherry-pick C4 C3 C2
+$ <span class="token function">git</span> checkout two
+$ <span class="token function">git</span> cherry-pick C5 C4 C3 C2
+$ <span class="token function">git</span> branch <span class="token parameter variable">-f</span> three C2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="Push-amp-Pull-——-Git-远程仓库！"><a href="#Push-amp-Pull-——-Git-远程仓库！" class="headerlink" title="Push &amp; Pull —— Git 远程仓库！"></a>Push &amp; Pull —— Git 远程仓库！</h1><h2 id="Git-Clone"><a href="#Git-Clone" class="headerlink" title="Git Clone"></a>Git Clone</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> checkout o/main
+$ <span class="token function">git</span> commit<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-Fetch"><a href="#Git-Fetch" class="headerlink" title="Git Fetch"></a>Git Fetch</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> fetch<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="Git-Pull"><a href="#Git-Pull" class="headerlink" title="Git Pull"></a>Git Pull</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="模拟团队合作"><a href="#模拟团队合作" class="headerlink" title="模拟团队合作"></a>模拟团队合作</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone
+$ <span class="token function">git</span> fakeTeamwork <span class="token number">2</span>
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-Push"><a href="#Git-Push" class="headerlink" title="Git Push"></a>Git Push</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="偏离的历史提交"><a href="#偏离的历史提交" class="headerlink" title="偏离的历史提交"></a>偏离的历史提交</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone
+$ <span class="token function">git</span> fakeTeamwork
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> pull <span class="token parameter variable">--rebase</span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="锁定的-Main"><a href="#锁定的-Main" class="headerlink" title="锁定的 Main"></a>锁定的 Main</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> reset <span class="token parameter variable">--hard</span> o/main
+$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature C2
+$ <span class="token function">git</span> push origin feature<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<h1 id="关于-origin-和它的周边-——-Git-远程仓库高级操作"><a href="#关于-origin-和它的周边-——-Git-远程仓库高级操作" class="headerlink" title="关于 origin 和它的周边 —— Git 远程仓库高级操作"></a>关于 origin 和它的周边 —— Git 远程仓库高级操作</h1><h2 id="推送主分支"><a href="#推送主分支" class="headerlink" title="推送主分支"></a>推送主分支</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> fetch
+$ <span class="token function">git</span> rebase o/main side1
+$ <span class="token function">git</span> rebase side1 side2
+$ <span class="token function">git</span> rebase side2 side3
+$ <span class="token function">git</span> rebase side3 main
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="合并远程仓库"><a href="#合并远程仓库" class="headerlink" title="合并远程仓库"></a>合并远程仓库</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout main
+$ <span class="token function">git</span> pull
+$ <span class="token function">git</span> merge side1
+$ <span class="token function">git</span> merge side2
+$ <span class="token function">git</span> merge side3
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="远程追踪"><a href="#远程追踪" class="headerlink" title="远程追踪"></a>远程追踪</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout <span class="token parameter variable">-b</span> side o/main
+$ <span class="token function">git</span> commit
+$ <span class="token function">git</span> pull <span class="token parameter variable">--rebase</span>
+$ <span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Git-push-的参数"><a href="#Git-push-的参数" class="headerlink" title="Git push 的参数"></a>Git push 的参数</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> push origin main
+$ <span class="token function">git</span> push origin foo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Git-push-的参数2"><a href="#Git-push-的参数2" class="headerlink" title="Git push 的参数2"></a>Git push 的参数2</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> push origin main^:foo
+$ <span class="token function">git</span> push origin foo:main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Git-fetch-的参数"><a href="#Git-fetch-的参数" class="headerlink" title="Git fetch 的参数"></a>Git fetch 的参数</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> fetch origin main~1:foo
+$ <span class="token function">git</span> fetch origin foo:main
+$ <span class="token function">git</span> checkout foo
+$ <span class="token function">git</span> merge main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="没有-source-的-source"><a href="#没有-source-的-source" class="headerlink" title="没有 source 的 source"></a>没有 source 的 source</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> push origin :foo
+$ <span class="token function">git</span> fetch origin :bar<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="Git-pull-的参数"><a href="#Git-pull-的参数" class="headerlink" title="Git pull 的参数"></a>Git pull 的参数</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> pull origin bar:foo
+$ <span class="token function">git</span> pull origin main:side<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
 
                 
             </div>
@@ -486,7 +654,7 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/03/21/git-ming-ling-zhi-git-rebase/">http://example.com/2024/03/21/git-ming-ling-zhi-git-rebase/</a>
+                    <a href="http://example.com/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/">http://example.com/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -573,9 +741,10 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/">
                     <div class="card-image">
@@ -593,9 +762,9 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -608,6 +777,7 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -630,13 +800,13 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/03/20/git-ming-ling-zhi-git-branch-f/">
+                <a href="/2024/03/21/git-ming-ling-zhi-git-rebase/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="git 命令之 git branch -f">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="git 命令之 git rebase">
                         
-                        <span class="card-title">git 命令之 git branch -f</span>
+                        <span class="card-title">git 命令之 git rebase</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -647,7 +817,7 @@ $ <span class="token function">git</span> rebase foo bar<span aria-hidden="true"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-21
                             </span>
                         <span class="publish-author">
                             
