@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-22T00:52:19.078Z</updated>
+  <updated>2024-03-22T07:01:58.262Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>自定义ECharts图表-设备运行状态图</title>
+    <link href="http://example.com/2024/03/22/zi-ding-yi-echarts-tu-biao-she-bei-yun-xing-zhuang-tai-tu/"/>
+    <id>http://example.com/2024/03/22/zi-ding-yi-echarts-tu-biao-she-bei-yun-xing-zhuang-tai-tu/</id>
+    <published>2024-03-22T01:25:18.000Z</published>
+    <updated>2024-03-22T07:01:58.262Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;翻笔记看到两年前一个当时耗费挺长时间的看板页面，现在看来写的有些弱智，不过也侧面说明相较于之前有所成长吧（至少我觉得🤭）&lt;/p&gt;
+&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="ECharts" scheme="http://example.com/tags/ECharts/"/>
+    
+  </entry>
   
   <entry>
     <title>git 命令训练营 learngitbranching</title>
@@ -529,33 +555,6 @@
     
     
     <category term="微信小程序" scheme="http://example.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实战篇笔记 扫码点餐小程序云开发小程序端（十一）</title>
-    <link href="http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/"/>
-    <id>http://example.com/2022/03/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-shi-yi/</id>
-    <published>2022-03-06T08:36:06.000Z</published>
-    <updated>2022-03-07T08:01:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;我的订单&quot;&gt;&lt;a href=&quot;#我的订单&quot; class=&quot;headerlink&quot; title=&quot;我的订单&quot;&gt;&lt;/a&gt;我的订单&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-    <category term="小程序" scheme="http://example.com/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
