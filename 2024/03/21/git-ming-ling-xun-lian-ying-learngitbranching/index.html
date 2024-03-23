@@ -519,13 +519,29 @@ $ <span class="token function">git</span> revert HEAD<span aria-hidden="true" cl
 
 <h1 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h1><h2 id="Git-Cherry-pick"><a href="#Git-Cherry-pick" class="headerlink" title="Git Cherry-pick"></a>Git Cherry-pick</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> cherry-pick C3 C4 C7<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1402222007&amp;bvid=BV1Rr421t7sS&amp;cid=1478082826&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+
 <h2 id="交互式-rebase"><a href="#交互式-rebase" class="headerlink" title="交互式 rebase"></a>交互式 rebase</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> overHere
 <span class="token comment"># 选择 C3 C4 C5，然后调换 C4 C5 的位置</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1252014124&amp;bvid=BV1UJ4m1j7dU&amp;cid=1478085862&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
 
 
 <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><h2 id="只取一个提交记录"><a href="#只取一个提交记录" class="headerlink" title="只取一个提交记录"></a>只取一个提交记录</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> main 
 <span class="token comment"># 只选择 C4</span>
 $ <span class="token function">git</span> rebase bugFix main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1502003248&amp;bvid=BV1uD42177DR&amp;cid=1478086568&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
 
 <h2 id="提交的技巧-1"><a href="#提交的技巧-1" class="headerlink" title="提交的技巧 #1"></a>提交的技巧 #1</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> rebase <span class="token parameter variable">-i</span> HEAD~2
 <span class="token comment"># 调换 C2 C3 的位置</span>
@@ -534,10 +550,22 @@ $ <span class="token function">git</span> rebase <span class="token parameter va
 <span class="token comment"># 调换 C3' C2'' 的位置</span>
 $ <span class="token function">git</span> rebase caption main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1102175836&amp;bvid=BV1kA4m1P7jJ&amp;cid=1478087275&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
+
 <h2 id="提交的技巧-2"><a href="#提交的技巧-2" class="headerlink" title="提交的技巧 #2"></a>提交的技巧 #2</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> checkout main
 $ <span class="token function">git</span> cherry-pick C2
 $ <span class="token function">git</span> commit <span class="token parameter variable">--amend</span>
 $ <span class="token function">git</span> cherry-pick C3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+<iframe src="//player.bilibili.com/player.html?aid=1952211230&amp;bvid=BV1NC411t7Ro&amp;cid=1478087767&amp;p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div>
+
+
 
 <h2 id="Git-Tag"><a href="#Git-Tag" class="headerlink" title="Git Tag"></a>Git Tag</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> tag v1 side~1
 $ <span class="token function">git</span> tag v0 main~2
@@ -628,6 +656,9 @@ $ <span class="token function">git</span> fetch origin :bar<span aria-hidden="tr
 $ <span class="token function">git</span> pull origin main:side<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
+<blockquote>
+<p>一点碎碎念——弄视频真是要了老命<br>    视频是用远程控制软件录屏做的，直接上传到B站报 <code>P1-该视频数据有误，请检查并修复视频数据后重新上传</code>，网上查到导入视频编辑软件再导出就可以了，试了下果然行~<br>    把三十几个视频重新生成好，因为是尊贵的非正式会员所以一天只能上传五个视频，so ~~</p>
+</blockquote>
 
                 
             </div>
