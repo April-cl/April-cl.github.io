@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-03-22T07:01:58.262Z</updated>
+  <updated>2024-04-03T10:38:06.651Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode 配置备忘录</title>
+    <link href="http://example.com/2024/04/03/vscode-pei-zhi-bei-wang-lu/"/>
+    <id>http://example.com/2024/04/03/vscode-pei-zhi-bei-wang-lu/</id>
+    <published>2024-04-03T09:33:16.000Z</published>
+    <updated>2024-04-03T10:38:06.651Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;配合-Cmder&quot;&gt;&lt;a href=&quot;#配合-Cmder&quot; class=&quot;headerlink&quot; title=&quot;配合 Cmder&quot;&gt;&lt;/a&gt;配合 Cmder&lt;/h2&gt;&lt;p&gt;在之前的一篇文章【&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>自定义ECharts图表-设备运行状态图</title>
@@ -519,42 +546,6 @@
     
     
     <category term="CSS" scheme="http://example.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于 wx.navigateTo、wx.redirectTo、wx.reLaunch、wx.switchTab 和 wx.navigateBack 的区别</title>
-    <link href="http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/"/>
-    <id>http://example.com/2022/03/07/guan-yu-wx-navigateto-wx-redirectto-wx-relaunch-wx-switchtab-he-wx-navigateback-de-qu-bie/</id>
-    <published>2022-03-07T08:02:46.000Z</published>
-    <updated>2022-03-07T17:46:00.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;接口&lt;/th&gt;
-&lt;th&gt;用法&lt;/th&gt;
-&lt;th&gt;参数(标*为必填参数)&lt;/th&gt;
-&lt;th&gt;路由方式&lt;/th&gt;
-&lt;th&gt;使用场景&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;wx.navigateTo(O</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="微信小程序" scheme="http://example.com/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   

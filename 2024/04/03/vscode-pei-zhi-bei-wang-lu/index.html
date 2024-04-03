@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记 扫码点餐小程序云开发（五）, April-cl">
+    <meta name="keywords" content="VSCode 配置备忘录, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记 扫码点餐小程序云开发（五） | April-cl</title>
+    <title>VSCode 配置备忘录 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记 扫码点餐小程序云开发（五）</h1>
+                    <h1 class="description center-align post-title">VSCode 配置备忘录</h1>
                 </div>
             </div>
         </div>
@@ -390,12 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/uni-app/">
-                                <span class="chip bg-color">uni-app</span>
+                            <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                                <span class="chip bg-color">命令行</span>
                             </a>
                         
-                            <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                <span class="chip bg-color">小程序</span>
+                            <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                                <span class="chip bg-color">软件</span>
                             </a>
                         
                     </div>
@@ -406,8 +406,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
+                                电脑
                             </a>
                         
                     </div>
@@ -419,14 +419,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2024-04-03
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-19
+                    2024-04-03
                 </div>
                 
 
@@ -448,63 +448,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前端字段参数校验"><a href="#前端字段参数校验" class="headerlink" title="前端字段参数校验"></a>前端字段参数校验</h1><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">checking</span> <span class="token punctuation">{</span>
-  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">ctx<span class="token punctuation">,</span> <span class="token operator">...</span>obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">this</span><span class="token punctuation">.</span>ctx <span class="token operator">=</span> ctx
-    <span class="token keyword">this</span><span class="token punctuation">.</span>obj <span class="token operator">=</span> obj
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-  <span class="token comment">// 校验前端传来的值为undefined</span>
-  <span class="token function">Errunder</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> bvc <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>obj<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token keyword">undefined</span><span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>bvc <span class="token operator">!==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span><span class="token string">'参数填写错误'</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token comment">// 校验前端传来的值</span>
-  <span class="token comment">// field：要校验的字段</span>
-  <span class="token comment">// msg：报错信息</span>
-  <span class="token comment">// num：下标</span>
-  <span class="token function">ValidField</span> <span class="token punctuation">(</span><span class="token parameter">field<span class="token punctuation">,</span> msg<span class="token punctuation">,</span> num</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> reg <span class="token operator">=</span> <span class="token punctuation">{</span>
-      <span class="token comment">// 校验手机号码格式</span>
-      <span class="token string-property property">'phone'</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^1[3456789]\d{9}$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-      <span class="token comment">// 密码校验：6-20位数字和字母结合</span>
-      <span class="token string-property property">'password'</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$</span><span class="token regex-delimiter">/</span></span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>reg<span class="token punctuation">[</span>field<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>obj<span class="token punctuation">[</span>num<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">result</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span><span class="token number">202</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="注册商家账号"><a href="#注册商家账号" class="headerlink" title="注册商家账号"></a>注册商家账号</h1><p>思路：</p>
+                <h2 id="配合-Cmder"><a href="#配合-Cmder" class="headerlink" title="配合 Cmder"></a>配合 Cmder</h2><p>在之前的一篇文章【<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">新手前端的装机攻略，拿来吧你</a>】里面其实已经写过了，不过引用的文档是英文的，这里就挂一下翻译吧</p>
 <ol>
-<li><p>使用查询语句向数据库查询手机号码之前是否已经注册过</p>
+<li><p><code>Ctrl</code> + <code>,</code> 或者 <code>Ctrl</code> + <code>Shift</code> + <code>P</code> 打开命令面板，输入 <code>settings.json</code> 回车，会打开一个配置文件</p>
 </li>
-<li><p>已经注册过：返回响应结果“已经注册过了”</p>
-</li>
-<li><p>还没有注册过：根据注册时间生成 <code>uid</code>，使用 <code>JSON.stringify()</code> 格式化生成新纪录，向数据库执行增加记录操作</p>
+<li><p>修改以下地方</p>
 </li>
 </ol>
-<h1 id="生成-token-令牌"><a href="#生成-token-令牌" class="headerlink" title="生成 token 令牌"></a>生成 token 令牌</h1><p>1.什么是Token？<br>在计算机身份认证中是令牌（临时）的意思，在词法分析中是标记的意思。一般我们所说的的token大多是指用于身份验证的token</p>
-<p>2.为什么使用token?<br>我们需要每次都知道当前请求的人是谁，但是又不想每次都让他提交用户名和密码，这时就需要有一个等同于用户名密码也能够标识用户身份的东西，即—token.</p>
-<p>3.基于Token的身份验证方法<br>客户端使用用户名和密码请求登录<br>服务端收到请求，验证登录是否成功<br>验证成功后，服务端会返回一个Token给客户端，反之，返回身份验证失败的信息<br>客户端收到Token后把Token用一种方式存储起来,如( cookie / localstorage / sessionstorage / 其他 )<br>客户端每次发起请求时都会将Token发给服务端<br>服务端收到请求后，验证Token的合法性，合法就返回客户端所需数据，反之，返回验证失败的信息</p>
-<p><a target="_blank" rel="noopener" href="https://www.npmjs.com/package/jsonwebtoken">jsonwebtoken</a></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> jwt <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'jsonwebtoken'</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"terminal.integrated.defaultProfile.windows"</span><span class="token operator">:</span> <span class="token string">"Cmder"</span><span class="token punctuation">,</span>  <span class="token comment">// 这里原来是 bash，改成 Cmder</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<span class="token keyword">const</span> security <span class="token operator">=</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">secretKey</span><span class="token operator">:</span> <span class="token string">'abcdefg'</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">expiresIn</span><span class="token operator">:</span> <span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">24</span><span class="token operator">*</span><span class="token number">3</span>
-<span class="token punctuation">}</span>
+<ol start="3">
+<li>粘贴以下代码</li>
+</ol>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"terminal.integrated.profiles.windows"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 添加这段 start---</span>
+    <span class="token property">"Cmder"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Cmder"</span><span class="token punctuation">,</span>
+        <span class="token property">"path"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"${env:windir}\\Sysnative\\cmd.exe"</span><span class="token punctuation">,</span>
+            <span class="token string">"${env:windir}\\System32\\cmd.exe"</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"/k"</span><span class="token punctuation">,</span>
+            <span class="token string">"D:\\cmder\\vendor\\bin\\vscode_init.cmd"</span>   <span class="token comment">// 这里地址要设置成自己的安装路径，用搜索神器 everything 输入 vscode_init.cmd</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"terminal-cmd"</span><span class="token punctuation">,</span>
+        <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"terminal.ansiGreen"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// ---end</span>
+    <span class="token property">"bash"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"E:\\cmder\\vendor\\git-for-windows\\bin\\bash.exe"</span><span class="token punctuation">,</span>
+        <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">function</span> <span class="token function">gentoken</span> <span class="token punctuation">(</span><span class="token parameter">uid<span class="token punctuation">,</span> scope <span class="token operator">=</span> <span class="token number">2</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> <span class="token punctuation">{</span>secretKey<span class="token punctuation">,</span> expiresIn<span class="token punctuation">}</span> <span class="token operator">=</span> security
-  <span class="token keyword">const</span> token <span class="token operator">=</span> jwt<span class="token punctuation">.</span><span class="token function">sign</span><span class="token punctuation">(</span><span class="token punctuation">{</span>uid<span class="token punctuation">,</span> scope<span class="token punctuation">}</span><span class="token punctuation">,</span> secretKey<span class="token punctuation">,</span> <span class="token punctuation">{</span>expiresIn<span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token keyword">return</span> token
-<span class="token punctuation">}</span>
+<ol start="4">
+<li>重启下 VSCode ，新建终端可以看到 <code>Applying Cmder VSCode settings is complete!</code> 就欧拉</li>
+</ol>
+<h2 id="配置-git-path"><a href="#配置-git-path" class="headerlink" title="配置 git path"></a>配置 git path</h2><p>打开源代码管理（编辑器侧边栏那个长得像分支的图标），显示 <code>安装 Git (一种流行的源代码管理系统)，以跟踪代码更改并与他人协作。在我们的 Git 指南中了解详细信息。</code>，但其实是有安装 Git 的，只是 VSCode 没检测到</p>
+<p>依旧是<code>Ctrl</code> + <code>,</code> 或者 <code>Ctrl</code> + <code>Shift</code> + <code>P</code> 打开命令面板，输入 <code>settings.json</code> 回车，打开配置文件，添加</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"git.path"</span><span class="token operator">:</span> <span class="token string">"D:/cmder/vendor/git-for-windows/cmd/git.exe"</span><span class="token punctuation">,</span>  <span class="token comment">// 这里地址要设置成自己的安装路径，用搜索神器 everything 输入 git.exe</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>gentoken<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>一点碎碎念<br>    托’大姨妈’的福，病了一个星期，床上躺了两天，今天勉强能起来码码字了，不过这几天倒是得了空看完一本《金粉世家》，嘿嘿~~~</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -530,7 +519,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-wu/">http://example.com/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-wu/</a>
+                    <a href="http://example.com/2024/04/03/vscode-pei-zhi-bei-wang-lu/">http://example.com/2024/04/03/vscode-pei-zhi-bei-wang-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -568,12 +557,12 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/uni-app/">
-                                    <span class="chip bg-color">uni-app</span>
+                                <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                                    <span class="chip bg-color">命令行</span>
                                 </a>
                             
-                                <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                                    <span class="chip bg-color">小程序</span>
+                                <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                                    <span class="chip bg-color">软件</span>
                                 </a>
                             
                         </div>
@@ -617,17 +606,18 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/21/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-liu/">
+                <a href="/2024/04/03/vscode-pei-zhi-bei-wang-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（六）">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="VSCode 配置备忘录">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（六）</span>
+                        <span class="card-title">VSCode 配置备忘录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -637,30 +627,31 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
+                                    电脑
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/uni-app/">
-                        <span class="chip bg-color">uni-app</span>
+                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                        <span class="chip bg-color">命令行</span>
                     </a>
                     
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
+                    <a href="/tags/%E8%BD%AF%E4%BB%B6/">
+                        <span class="chip bg-color">软件</span>
                     </a>
                     
                 </div>
@@ -674,13 +665,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/">
+                <a href="/2024/03/22/zi-ding-yi-echarts-tu-biao-she-bei-yun-xing-zhuang-tai-tu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（四）">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="自定义ECharts图表-设备运行状态图">
                         
-                        <span class="card-title">实战篇笔记 扫码点餐小程序云开发（四）</span>
+                        <span class="card-title">自定义ECharts图表-设备运行状态图</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -691,7 +682,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-03-22
                             </span>
                         <span class="publish-author">
                             
@@ -708,12 +699,8 @@ module<span class="token punctuation">.</span>exports <span class="token operato
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/uni-app/">
-                        <span class="chip bg-color">uni-app</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">小程序</span>
+                    <a href="/tags/ECharts/">
+                        <span class="chip bg-color">ECharts</span>
                     </a>
                     
                 </div>
