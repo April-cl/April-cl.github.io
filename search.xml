@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>解决 git push 报错超时</title>
+      <link href="/2024/04/05/jie-jue-git-push-bao-cuo-chao-shi/"/>
+      <url>/2024/04/05/jie-jue-git-push-bao-cuo-chao-shi/</url>
+      
+        <content type="html"><![CDATA[<p>问题：<code>git push</code> 一直失败</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Failed to connect to github.com port <span class="token number">443</span> after <span class="token number">21079</span> ms: Couldn't connect to server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决：去掉全局 git 代理</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> http.proxy<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> https.proxy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> 软件 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VSCode 配置备忘录</title>
       <link href="/2024/04/03/vscode-pei-zhi-bei-wang-lu/"/>
       <url>/2024/04/03/vscode-pei-zhi-bei-wang-lu/</url>

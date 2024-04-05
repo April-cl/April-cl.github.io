@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-03T10:38:06.651Z</updated>
+  <updated>2024-04-05T08:23:39.009Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决 git push 报错超时</title>
+    <link href="http://example.com/2024/04/05/jie-jue-git-push-bao-cuo-chao-shi/"/>
+    <id>http://example.com/2024/04/05/jie-jue-git-push-bao-cuo-chao-shi/</id>
+    <published>2024-04-05T08:20:19.000Z</published>
+    <updated>2024-04-05T08:23:39.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;问题：&lt;code&gt;git push&lt;/code&gt; 一直失败&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Failed to</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>VSCode 配置备忘录</title>
@@ -510,33 +538,6 @@
         
     <summary type="html">&lt;p&gt;昨天在写文章的时候发现对伪类和伪元素的概念有些混淆，查阅一番有所收获，记一下~&lt;/p&gt;
 &lt;h1 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>弄懂 BFC 奖励一顿 KFC</title>
-    <link href="http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/"/>
-    <id>http://example.com/2022/03/14/nong-dong-bfc-jiang-li-yi-dun-kfc/</id>
-    <published>2022-03-14T07:51:56.000Z</published>
-    <updated>2022-03-16T16:14:06.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;前言&lt;/p&gt;
-&lt;p&gt;对于 BFC 的概念和应用场景一直很模糊，趁着疫情在家有闲着重了解一下，做个总结。&lt;/p&gt;
-&lt;h1 id=&quot;BFC-是什么&quot;&gt;&lt;a href=&quot;#BFC-是什么&quot; class=&quot;headerlink&quot; title=&quot;BFC 是什么&quot;&gt;&lt;/a&gt;BFC</summary>
         
       
     
