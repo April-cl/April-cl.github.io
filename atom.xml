@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-05T08:23:39.009Z</updated>
+  <updated>2024-04-17T03:45:00.070Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>人生是旷野，不是轨道</title>
+    <link href="http://example.com/2024/04/16/ren-sheng-shi-kuang-ye-bu-shi-gui-dao/"/>
+    <id>http://example.com/2024/04/16/ren-sheng-shi-kuang-ye-bu-shi-gui-dao/</id>
+    <published>2024-04-16T02:42:40.000Z</published>
+    <updated>2024-04-17T03:45:00.070Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;上星期一口气读了《ES6的标准入门</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="随想" scheme="http://example.com/tags/%E9%9A%8F%E6%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>解决 git push 报错超时</title>
@@ -521,32 +546,6 @@
     
     
     <category term="Vue" scheme="http://example.com/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS 的伪类和伪元素</title>
-    <link href="http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/"/>
-    <id>http://example.com/2022/03/17/css-de-wei-lei-he-wei-yuan-su/</id>
-    <published>2022-03-17T07:25:20.000Z</published>
-    <updated>2022-03-20T03:00:58.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;昨天在写文章的时候发现对伪类和伪元素的概念有些混淆，查阅一番有所收获，记一下~&lt;/p&gt;
-&lt;h1 id=&quot;区别&quot;&gt;&lt;a href=&quot;#区别&quot; class=&quot;headerlink&quot; title=&quot;区别&quot;&gt;&lt;/a&gt;区别&lt;/h1&gt;&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="CSS" scheme="http://example.com/tags/CSS/"/>
     
   </entry>
   
