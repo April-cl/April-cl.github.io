@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-18T08:34:04.726Z</updated>
+  <updated>2024-04-30T06:57:04.473Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账（一）</title>
+    <link href="http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/"/>
+    <id>http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/</id>
+    <published>2024-04-29T09:04:56.000Z</published>
+    <updated>2024-04-30T06:57:04.473Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;开发环境介绍&quot;&gt;&lt;a href=&quot;#开发环境介绍&quot; class=&quot;headerlink&quot; title=&quot;开发环境介绍&quot;&gt;&lt;/a&gt;开发环境介绍&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+    <category term="Docker" scheme="http://example.com/tags/Docker/"/>
+    
+  </entry>
   
   <entry>
     <title>人生是旷野，不是轨道</title>
@@ -511,32 +541,6 @@
         
         
     <summary type="html">&lt;p&gt;在之前 Vue 学习中有篇&lt;a href=&quot;https://april-cl.github.io/2021/08/26/xiao-bai-cai-bi-ji-vue-er-zhi-ling/&quot;&gt;笔记&lt;/a&gt;记录了项目中常用的内置指令，此外 Vue</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 对 data 做了什么</title>
-    <link href="http://example.com/2022/03/23/vue-de-data-shu-xing/"/>
-    <id>http://example.com/2022/03/23/vue-de-data-shu-xing/</id>
-    <published>2022-03-23T06:58:45.000Z</published>
-    <updated>2022-03-24T08:38:28.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在 Vue 项目中，通过 &lt;code&gt;let vm = new Vue({data: myData})&lt;/code&gt; 就可以在当数据发生变化后，使用到该数据的视图也会相应进行自动更新，这是为什么呢？&lt;/p&gt;
-&lt;p&gt;本文不从源码分析 Vue 对 data</summary>
         
       
     

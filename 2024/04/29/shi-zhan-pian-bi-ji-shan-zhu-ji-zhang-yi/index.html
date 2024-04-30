@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记 Vue （一）基础篇, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账（一）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记 Vue （一）基础篇 | April-cl</title>
+    <title>实战篇笔记-山竹记账（一） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记 Vue （一）基础篇</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账（一）</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                                <span class="chip bg-color">命令行</span>
+                            </a>
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
                             </a>
                         
                     </div>
@@ -402,8 +410,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                前端
+                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
+                                电脑
                             </a>
                         
                     </div>
@@ -415,21 +423,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-25
+                    2024-04-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-31
+                    2024-04-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    474
+                    345
                 </div>
                 
 
@@ -449,62 +457,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>写在前面：</p>
-<p><strong>学习Vue要转化思想</strong>：不要想着怎么操作 DOM，而是想着如何操作数据！</p>
-<p>Vue 的文档很通俗易懂，学习细节移步<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">官网</a></p>
-<h1 id="关于-Vue"><a href="#关于-Vue" class="headerlink" title="关于 Vue"></a>关于 Vue</h1><p>Vue 是一套用于构建用户界面的渐进式（由浅入深）框架。</p>
-<p>使用方式</p>
-<ul>
-<li>使用 <code>&lt;script&gt;</code> 引入，可以到 <a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a> 搜索 <code>Vue</code></li>
-<li>使用 NPM 安装</li>
-<li>使用 <a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/"><code>vue-cli</code></a> 创建 Vue 应用</li>
-</ul>
-<h1 id="Vue-的两个构建版本"><a href="#Vue-的两个构建版本" class="headerlink" title="Vue 的两个构建版本"></a>Vue 的两个构建版本</h1><ul>
-<li><p>完整版：同时包含编译器和运行时的版本。</p>
-<p>对应文件名：vue.js/vue.min.js</p>
+                <h1 id="开发环境介绍"><a href="#开发环境介绍" class="headerlink" title="开发环境介绍"></a>开发环境介绍</h1><ol>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://www.docker.com/products/docker-desktop/">Docker</a> 客户端【一个小插曲，安装完重启后笔记本居然出现“失联”（始终连不上网络，WLAN适配器失踪了）、陷入“开端”循环（无法关机一直在重启）奇葩现象，当时是在 BISO 把 Hyper-V 关了，设备管理器-&gt;网络适配器，更新驱动解决了“失联”，设置-&gt;电源和睡眠-&gt;其他电源设置-&gt;关机设置，取消掉启用快速启动前面的√解决了“开端”循环】</p>
 </li>
-<li><p>运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。</p>
-<p>对应文件名：vue.runtime.js/vue.runtime.min.js</p>
+<li><p>开启 WSL2 功能（<code>wsl --list --verbose</code> 查看是否开启），<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000041078669">Win10 安装 Docker Desktop ( 基于WSL2，WSL vs Hyper-V)</a></p>
 </li>
-</ul>
-<p>PS：.min.js 文件为无注释无格式被压缩的 js 文件</p>
-<p>两个版本的区别：</p>
-<p>完整版能够编译 <code>template</code>，比如传入一个字符串给 template 选项（<code>.vue</code>文件/单文件组件），或挂载到一个元素上并以其 DOM 内部的 HTML 作为模板。</p>
-<p>使用 webpack 或 @vue/cli 引入时需额外设置</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 单文件组件</span>
-<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
-  <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>greeting<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
-  module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token function-variable function">data</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        <span class="token literal-property property">greeting</span><span class="token operator">:</span> <span class="token string">"Hello World!"</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
-<span class="token comment">/* 一些样式 */</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>给 Docker 加速</p>
+</li>
+</ol>
+<p>Docker 客户端设置-&gt;Docker Engine</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://ustc-edu-cn.mirror.aliyuncs.com"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://hub-mirror.c.163.com"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://mirror.baidubce.com"</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行时版本不能编译 <code>template</code> ，它通过 <code>render(createElement)</code> 渲染节点。</p>
-<p>使用 webpack 或 @vue/cli 引入时默认使用此版</p>
-<p>上面的例子用 <code>render</code> 渲染</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">createElement</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> <span class="token string">'Hello World!'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
+<li><p>VSCode 安装插件 <a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a></p>
+</li>
+<li><p>在 VSCode 中打开 <a target="_blank" rel="noopener" href="https://github.com/FrankFang/oh-my-env-1">oh-my-env</a>，按下 <code>Ctrl + Shift + P</code>，输入 <code>reopen in container</code>，回车等待片刻进入开发环境（资源管理器目录名旁边会显示<code>[开发容器:OHMYENV]</code>或者<code>[Dev Container:OHMYENV]</code>）</p>
+</li>
+<li><p>命令行运行 <code>docker network create network1</code></p>
+</li>
+<li><p>使用 ruby3 和自带的 node</p>
+</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rvm use <span class="token number">3</span>
+nvm use system<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>最佳实践：总是使用运行时版本，配合使用 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/#vue-loader-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><code>vue-loader</code></a> 在构建时把 <code>.vue</code> 文件内部的模板预编译成 JavaScript </p>
-<h1 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h1><p>每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token comment">// 选项</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/vue">开始使用 Vue 吧 🌝</a></p>
-<p>🤫 可以康康 public/index.html、src/main.js 和 src/App.vue 先熟悉下 Vue 是怎么用的</p>
+<h1 id="关于-oh-my-env"><a href="#关于-oh-my-env" class="headerlink" title="关于 oh-my-env"></a>关于 oh-my-env</h1><pre class="line-numbers language-none"><code class="language-none">.
+├─.devcontainer
+├─.vscode
+├─mangosteen_deploy
+└─temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个目录是内外共享的, windows 和 Linux 都可以访问，性能一般，temp 用作中转站</p>
+<p>这里提供了 ~/roepos 目录，这是 Linux 专享的，性能较好，默认在这个目录工作</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /root/repos
+<span class="token comment"># or</span>
+<span class="token comment"># cd ~/repos</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -531,7 +521,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/">http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/</a>
+                    <a href="http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/">http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +559,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                                    <span class="chip bg-color">命令行</span>
+                                </a>
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
                                 </a>
                             
                         </div>
@@ -614,17 +612,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/26/xiao-bai-cai-bi-ji-vue-er-zhi-ling/">
+                <a href="/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="小白菜笔记 Vue （二）指令">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="实战篇笔记-山竹记账（一）">
                         
-                        <span class="card-title">小白菜笔记 Vue （二）指令</span>
+                        <span class="card-title">实战篇笔记-山竹记账（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -634,26 +633,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
+                                    电脑
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                        <span class="chip bg-color">命令行</span>
+                    </a>
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
@@ -667,13 +675,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/23/xiao-bai-cai-bi-ji-react-wu-shou-kong-zu-jian-yu-fei-shou-kong-zu-jian/">
+                <a href="/2024/04/16/ren-sheng-shi-kuang-ye-bu-shi-gui-dao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小白菜笔记--React（五）受控组件与非受控组件">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="人生是旷野，不是轨道">
                         
-                        <span class="card-title">小白菜笔记--React（五）受控组件与非受控组件</span>
+                        <span class="card-title">人生是旷野，不是轨道</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,14 +692,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category">
+                                    生活
                                 </a>
                             
                             
@@ -701,8 +709,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/%E9%9A%8F%E6%83%B3/">
+                        <span class="chip bg-color">随想</span>
                     </a>
                     
                 </div>

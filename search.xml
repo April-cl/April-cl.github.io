@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>实战篇笔记-山竹记账（一）</title>
+      <link href="/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/"/>
+      <url>/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="开发环境介绍"><a href="#开发环境介绍" class="headerlink" title="开发环境介绍"></a>开发环境介绍</h1><ol><li><p>安装 <a href="https://www.docker.com/products/docker-desktop/">Docker</a> 客户端【一个小插曲，安装完重启后笔记本居然出现“失联”（始终连不上网络，WLAN适配器失踪了）、陷入“开端”循环（无法关机一直在重启）奇葩现象，当时是在 BISO 把 Hyper-V 关了，设备管理器-&gt;网络适配器，更新驱动解决了“失联”，设置-&gt;电源和睡眠-&gt;其他电源设置-&gt;关机设置，取消掉启用快速启动前面的√解决了“开端”循环】</p></li><li><p>开启 WSL2 功能（<code>wsl --list --verbose</code> 查看是否开启），<a href="https://segmentfault.com/a/1190000041078669">Win10 安装 Docker Desktop ( 基于WSL2，WSL vs Hyper-V)</a></p></li><li><p>给 Docker 加速</p></li></ol><p>Docker 客户端设置-&gt;Docker Engine</p><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"registry-mirrors"</span><span class="token operator">:</span> <span class="token punctuation">[</span>    <span class="token string">"https://ustc-edu-cn.mirror.aliyuncs.com"</span><span class="token punctuation">,</span>    <span class="token string">"https://hub-mirror.c.163.com"</span><span class="token punctuation">,</span>    <span class="token string">"https://mirror.baidubce.com"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><ol start="4"><li><p>VSCode 安装插件 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a></p></li><li><p>在 VSCode 中打开 <a href="https://github.com/FrankFang/oh-my-env-1">oh-my-env</a>，按下 <code>Ctrl + Shift + P</code>，输入 <code>reopen in container</code>，回车等待片刻进入开发环境（资源管理器目录名旁边会显示<code>[开发容器:OHMYENV]</code>或者<code>[Dev Container:OHMYENV]</code>）</p></li><li><p>命令行运行 <code>docker network create network1</code></p></li><li><p>使用 ruby3 和自带的 node</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">rvm use <span class="token number">3</span>nvm use system<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h1 id="关于-oh-my-env"><a href="#关于-oh-my-env" class="headerlink" title="关于 oh-my-env"></a>关于 oh-my-env</h1><pre class="line-numbers language-none"><code class="language-none">.├─.devcontainer├─.vscode├─mangosteen_deploy└─temp<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>这个目录是内外共享的, windows 和 Linux 都可以访问，性能一般，temp 用作中转站</p><p>这里提供了 ~/roepos 目录，这是 Linux 专享的，性能较好，默认在这个目录工作</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> /root/repos<span class="token comment"># or</span><span class="token comment"># cd ~/repos</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> git </tag>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>人生是旷野，不是轨道</title>
       <link href="/2024/04/16/ren-sheng-shi-kuang-ye-bu-shi-gui-dao/"/>
       <url>/2024/04/16/ren-sheng-shi-kuang-ye-bu-shi-gui-dao/</url>
