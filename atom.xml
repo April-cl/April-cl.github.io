@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-30T06:57:04.473Z</updated>
+  <updated>2024-04-30T09:16:23.303Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>实战篇笔记-山竹记账（一）</title>
-    <link href="http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/"/>
-    <id>http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-yi/</id>
+    <title>实战篇笔记-山竹记账后端（一）</title>
+    <link href="http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/"/>
+    <id>http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/</id>
+    <published>2024-04-30T07:41:14.000Z</published>
+    <updated>2024-04-30T09:16:23.303Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建后端项目&quot;&gt;&lt;a href=&quot;#创建后端项目&quot; class=&quot;headerlink&quot; title=&quot;创建后端项目&quot;&gt;&lt;/a&gt;创建后端项目&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账</title>
+    <link href="http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang/"/>
+    <id>http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang/</id>
     <published>2024-04-29T09:04:56.000Z</published>
-    <updated>2024-04-30T06:57:04.473Z</updated>
+    <updated>2024-04-30T08:31:53.993Z</updated>
     
     
       
@@ -35,7 +60,7 @@
     
     
     
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    <category term="编程" scheme="http://example.com/categories/%E7%BC%96%E7%A8%8B/"/>
     
     
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
@@ -525,31 +550,6 @@
     
     
     <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue 自定义指令</title>
-    <link href="http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/"/>
-    <id>http://example.com/2022/03/27/vue-zi-ding-yi-zhi-ling/</id>
-    <published>2022-03-27T08:52:13.000Z</published>
-    <updated>2022-03-27T15:52:22.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在之前 Vue 学习中有篇&lt;a href=&quot;https://april-cl.github.io/2021/08/26/xiao-bai-cai-bi-ji-vue-er-zhi-ling/&quot;&gt;笔记&lt;/a&gt;记录了项目中常用的内置指令，此外 Vue</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
     
   </entry>
   
