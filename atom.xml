@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-06T08:38:36.704Z</updated>
+  <updated>2024-05-06T09:44:22.963Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 拉取指定版本</title>
+    <link href="http://example.com/2024/05/06/git-la-qu-zhi-ding-ban-ben/"/>
+    <id>http://example.com/2024/05/06/git-la-qu-zhi-ding-ban-ben/</id>
+    <published>2024-05-06T09:38:20.000Z</published>
+    <updated>2024-05-06T09:44:22.963Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账后端（二）</title>
@@ -526,32 +553,6 @@
     <category term="git" scheme="http://example.com/tags/git/"/>
     
     <category term="Docker" scheme="http://example.com/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>slice、substr、substring、splice、split的用法</title>
-    <link href="http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/"/>
-    <id>http://example.com/2022/04/02/slice-substr-substring-splice-split-de-yong-fa/</id>
-    <published>2022-04-02T04:54:52.000Z</published>
-    <updated>2022-04-02T05:31:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;slice&quot;&gt;&lt;a href=&quot;#slice&quot; class=&quot;headerlink&quot; title=&quot;slice&quot;&gt;&lt;/a&gt;slice&lt;/h1&gt;&lt;p&gt;截取字符串或数组，并返回一个新的字符串或数组（不改变原字符串或数组）&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
     
   </entry>
   

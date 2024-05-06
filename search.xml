@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>git 拉取指定版本</title>
+      <link href="/2024/05/06/git-la-qu-zhi-ding-ban-ben/"/>
+      <url>/2024/05/06/git-la-qu-zhi-ding-ban-ben/</url>
+      
+        <content type="html"><![CDATA[<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout <span class="token operator">&lt;</span>commit-hash<span class="token operator">&gt;</span><span class="token comment"># commit-hash 版本号</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>相当于 SVN 的 <code>update to revision</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记-山竹记账后端（二）</title>
       <link href="/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/"/>
       <url>/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/</url>
