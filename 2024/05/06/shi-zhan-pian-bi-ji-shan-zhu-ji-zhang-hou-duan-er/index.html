@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账后端（一）, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账后端（二）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账后端（一） | April-cl</title>
+    <title>实战篇笔记-山竹记账后端（二） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（一）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（二）</h1>
                 </div>
             </div>
         </div>
@@ -390,6 +390,10 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/Docker/">
+                                <span class="chip bg-color">Docker</span>
+                            </a>
+                        
                             <a href="/tags/Rails/">
                                 <span class="chip bg-color">Rails</span>
                             </a>
@@ -415,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-30
+                    2024-05-06
                 </div>
                 
 
@@ -429,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    559
+                    686
                 </div>
                 
 
@@ -449,99 +453,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="创建后端项目"><a href="#创建后端项目" class="headerlink" title="创建后端项目"></a>创建后端项目</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 把国外地址换成国内地址</span>
-gem sources <span class="token parameter variable">--add</span> https://gems.ruby-china.com/ <span class="token parameter variable">--remove</span> https://rubygems.org/
-<span class="token comment"># 设置国内镜像</span>
-bundle config mirror.https://rubygems.org https://gems.ruby-china.com
-<span class="token comment"># 安装 Rails</span>
-gem <span class="token function">install</span> rails <span class="token parameter variable">-v</span> <span class="token number">7.0</span>.2.3
-<span class="token comment"># 安装 postresql 驱动</span>
-pacman <span class="token parameter variable">-S</span> postgresql-libs
-<span class="token comment"># 进入工作目录</span>
-<span class="token builtin class-name">cd</span> ~/repos
-<span class="token comment"># 创建 Rails 项目，--api 只使用 api 模式，数据库使用 postgresql，跳过测试，项目名</span>
-rails new <span class="token parameter variable">--api</span> <span class="token parameter variable">--database</span><span class="token operator">=</span>postgresql --skip-test mangosteen-1
-<span class="token comment"># 用 VSCode打开，这个时候可以把原来的窗口关掉了</span>
-code mangosteen-1
-<span class="token comment"># 新建终端</span>
-bundle exe rails server
-<span class="token comment"># 或者 bin/rails s</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="解决-Docker-依赖持久化问题"><a href="#解决-Docker-依赖持久化问题" class="headerlink" title="解决 Docker 依赖持久化问题"></a>解决 Docker 依赖持久化问题</h1><ul>
+<li><p>哪些依赖没有持久化？<br>ruby 的 gems 没有持久化<br>archlinux 的 postgresql-libs 没有持久化</p>
+</li>
+<li><p>如何解决<br>使用 mount 参数和 Dockerfile 的 RUN 指令来解决</p>
+<ul>
+<li>使用 mount 参数<br>.devcontainer/devcontainer.json<br>添加 “source=gems,target=/usr/local/rvm/gems,type=volume”,<br>注意句尾逗号也要写</li>
+<li>使用 RUN 指令<br>.devcontainer/Dockerfile<br>文末添加 RUN yes | pacman -S postgresql-libs</li>
+</ul>
+</li>
+</ul>
+<p>rebuild 后要重新设置国内镜像 <code>bundle config mirror.https://rubygems.org https://gems.ruby-china.com</code></p>
+<h1 id="REST-风格是什么"><a href="#REST-风格是什么" class="headerlink" title="REST 风格是什么"></a>REST 风格是什么</h1><ul>
+<li><p>看见路径就知道请求什么东西<br>  items - 数据<br>  tags - 标签<br>  validation_codes - 验证码</p>
+</li>
+<li><p>看见动词就知道是什么操作<br>  get - 获取<br>  post - 创建<br>  patch - 更新<br>  delete - 删除</p>
+</li>
+<li><p>看见状态码就知道结果是什么<br>  200 - 成功<br>  201 - 创建成功<br>  401 - 未登录<br>  402 - 需付费<br>  403 - 没有权限<br>  404 - 未找到<br>  412 - 不满足前提条件<br>  422 - 无法处理，参数有问题<br>  429 - 请求太频繁<br>  400 - 其他所有错误，详细原因可以放在 body 里</p>
+</li>
+</ul>
+<h1 id="API概要设计"><a href="#API概要设计" class="headerlink" title="API概要设计"></a>API概要设计</h1><p>见课件</p>
+<h1 id="路由与分页"><a href="#路由与分页" class="headerlink" title="路由与分页"></a>路由与分页</h1><h2 id="生成路由"><a href="#生成路由" class="headerlink" title="生成路由"></a>生成路由</h2><p><a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-4">回顾一下</a>，前面是手写创建路由，现在来使用 Rails 提供的<a target="_blank" rel="noopener" href="https://ruby-china.github.io/rails-guides/v4.1/routing.html">路由</a>功能，Rails 路由能识别 URL，将其分发给控制器的动作进行处理，还能生成路径和 URL，无需直接在视图中硬编码字符串。</p>
+<p><a target="_blank" rel="noopener" href="https://ruby-china.github.io/rails-guides/v4.1/routing.html#%E6%8E%A7%E5%88%B6%E5%99%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E8%B7%AF%E7%94%B1">控制器命名空间和路由</a></p>
+<pre class="line-numbers language-none"><code class="language-none"># config/routes.rb
+Rails.application.routes.draw do
 
-<p>等待端口启动</p>
-<pre class="line-numbers language-none"><code class="language-none">=&gt; Booting Puma
-=&gt; Rails 7.0.4.2 application starting in development 
-=&gt; Run `bin/rails server --help` for more startup options
-Puma starting in single mode...
-* Puma version: 5.6.5 (ruby 3.0.0-p0) ("Birdie's Version")
-*  Min threads: 5
-*  Max threads: 5
-*  Environment: development
-*          PID: 8005
-* Listening on http://127.0.0.1:3000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>浏览器访问 <code>http://127.0.0.1:3000</code>，发现</p>
-<pre class="line-numbers language-none"><code class="language-none">ActiveRecord::ConnectionNotEstablished<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>数据库连接失败，因为没有数据库，终端运行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span>      <span class="token parameter variable">--name</span> db-for-mangosteen      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_USER</span><span class="token operator">=</span>mangosteen      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span>      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_DB</span><span class="token operator">=</span>mangosteen_dev      <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGDATA</span><span class="token operator">=</span>/var/lib/postgresql/data/pgdata      <span class="token parameter variable">-v</span> mangosteen-data:/var/lib/postgresql/data      <span class="token parameter variable">--network</span><span class="token operator">=</span>network1      postgres:14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>修改 database.yml</p>
-<pre class="line-numbers language-none"><code class="language-none">development:
-  &lt;&lt;: *default
-  database: mangosteen_dev
-  username: mangosteen
-  password: 123456
-  host: db-for-mangosteen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>再次运行 <code>bin/rails s</code> 看到下面就成功啦</p>
-<p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1hp8ypnov4zj211y0gv774.jpg" alt="Rails启动成功.png"></p>
-<h1 id="原来-Rails-这么爽"><a href="#原来-Rails-这么爽" class="headerlink" title="原来 Rails 这么爽"></a>原来 Rails 这么爽</h1><h2 id="数据库建模"><a href="#数据库建模" class="headerlink" title="数据库建模"></a>数据库建模</h2><p>建模工具：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># bin/rails generate model NAME [field[:type][:index] field[:type][:index]] [options]</span>
-bin/rails g model user email:string name:string<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>会创建两个文件</p>
-<pre class="line-numbers language-none"><code class="language-none">app/models/user.rb
-class User &lt; ApplicationRecord
-end
-
-db/migrate/20230413060421_create_users.rb
-class CreateUsers &lt; ActiveRecord::Migration[7.0]
-  // 修改数据库
-  def change
-    // 创建一个 users 表
-    create_table :users do |t|
-      // t.type :XXX 添加类型为 type 的 XXX 字段 
-      t.string :email
-      t.string :name
-      // t.timestamps 会生成 created_at（创建时间）和 updated_at（更新时间） 两个字段
-      t.timestamps
+  namespace :api do
+    namespace :v1 do
+      # /api/v1/xxx
+      resources :validation_codes, only: [:create]
+      # only: [:create] 只生成 create 接口
+      resources :session, only: [:create, :destory]
+      # 啊啊啊做笔记才发现这里 destroy 拼写错了所以没生成 🤦🏻‍♀
+      resources :me, only: [:show]
+      resources :items
+      resources :tags
+      end
     end
-  end
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Toml_/article/details/130881482#:~:text=Rails%20%E7%9A%84%E6%A0%87%E5%87%86%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%A6%82%E4%B8%8B%EF%BC%9A%20app%2F%20%23%20%E6%A0%B8%E5%BF%83%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%20%E2%94%9C%E2%94%80%E2%94%80%20assets%2F%20%23,%E2%94%9C%E2%94%80%E2%94%80%20channels%2F%20%23%20ActionCable%20websockets%20%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%20channel%20%E6%96%87%E4%BB%B6">Rails 目录结构说明</a></p>
-<p>执行下面命令，同步到数据库</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/rails db:migrate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行命令 <code>bin/rails routes</code></p>
+<p>会生成</p>
+<pre class="line-numbers language-none"><code class="language-none">POST   /api/v1/validation_codes(.:format)   api/v1/validation_codes#create
+POST   /api/v1/session(.:format)            api/v1/session#create
+GET    /api/v1/me/:id(.:format)             api/v1/me#show
+GET    /api/v1/items(.:format)              api/v1/items#index
+POST   /api/v1/items(.:format)              api/v1/items#create
+GET    /api/v1/items/:id(.:format)          api/v1/items#show
+PATCH  /api/v1/items/:id(.:format)          api/v1/items#update
+PUT    /api/v1/items/:id(.:format)          api/v1/items#update
+DELETE /api/v1/items/:id(.:format)          api/v1/items#destroy
+GET    /api/v1/tags(.:format)               api/v1/tags#index
+POST   /api/v1/tags(.:format)               api/v1/tags#create
+GET    /api/v1/tags/:id(.:format)           api/v1/tags#show
+PATCH  /api/v1/tags/:id(.:format)           api/v1/tags#update
+PUT    /api/v1/tags/:id(.:format)           api/v1/tags#update
+DELETE /api/v1/tags/:id(.:format)           api/v1/tags#destroy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="创建路由"><a href="#创建路由" class="headerlink" title="创建路由"></a>创建路由</h2><pre class="line-numbers language-none"><code class="language-none">config/routes.rb
-// curl http://127.0.0.1:3000/users/1，会调用 users 的 show 方法
-get '/users/:id', to: 'users#show'
-// curl -X POST http://127.0.0.1:3000/users，会调用 users 的 create 方法
-post '/users', to: 'users#create'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h2><p>参照前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-3">数据库建模</a></p>
+<pre class="line-numbers language-none"><code class="language-none"># 创建 ValidationCode 数据表
+bin/rails g model ValidationCode email:string kind:string used_at:datetime
+# 创建 item 数据表
+bin/rails g model item iser_id:integer amount:integer notes:text tags_id:integer happen_at:datetime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="创建-controller"><a href="#创建-controller" class="headerlink" title="创建 controller"></a>创建 controller</h2><p>控制器生成器：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># bin/rails generate controller NAME [action action] [options]</span>
-bin/rails g controller <span class="token function">users</span> create show<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>同步到数据库 <code>bin/rails db:migrate</code></p>
+<h2 id="创建-controller"><a href="#创建-controller" class="headerlink" title="创建 controller"></a>创建 controller</h2><p>参照前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-5">创建 controller</a></p>
+<pre class="line-numbers language-none"><code class="language-none">bin/rails g controller Api::V1::Validation_codes create
+bin/rails g controller Api::V1::Items<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>会创建一个实现方法的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">app/controllers/users_controller.rb
-class UsersController &lt; ApplicationController
-  def create
-  end
+<h2 id="安装-kaminari"><a href="#安装-kaminari" class="headerlink" title="安装 kaminari"></a>安装 kaminari</h2><p><a target="_blank" rel="noopener" href="https://github.com/kaminari/kaminari">kaminari github</a></p>
+<p>在 Gemfile 里面添加 <code>gem 'kaminari'</code></p>
+<p>终端执行 <code>bundle</code> </p>
+<p>然后重启 <code>bin/rails s</code></p>
+<p>修改配置 config/initializers/kaminari_config.rb</p>
 
-  def show
-  end
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -567,7 +552,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/">http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/</a>
+                    <a href="http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/">http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -604,6 +589,10 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
+                            
+                                <a href="/tags/Docker/">
+                                    <span class="chip bg-color">Docker</span>
+                                </a>
                             
                                 <a href="/tags/Rails/">
                                     <span class="chip bg-color">Rails</span>
@@ -650,9 +639,10 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/">
                     <div class="card-image">
@@ -670,9 +660,9 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -685,6 +675,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -707,13 +698,13 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang/">
+                <a href="/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="实战篇笔记-山竹记账">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="实战篇笔记-山竹记账后端（一）">
                         
-                        <span class="card-title">实战篇笔记-山竹记账</span>
+                        <span class="card-title">实战篇笔记-山竹记账后端（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -724,14 +715,14 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
-                                    编程
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -741,16 +732,8 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
+                    <a href="/tags/Rails/">
+                        <span class="chip bg-color">Rails</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-01T10:26:55.111Z</updated>
+  <updated>2024-05-06T08:38:36.704Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实战篇笔记-山竹记账后端（二）</title>
+    <link href="http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/"/>
+    <id>http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/</id>
+    <published>2024-05-06T03:24:06.000Z</published>
+    <updated>2024-05-06T08:38:36.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;解决-Docker-依赖持久化问题&quot;&gt;&lt;a href=&quot;#解决-Docker-依赖持久化问题&quot; class=&quot;headerlink&quot; title=&quot;解决 Docker 依赖持久化问题&quot;&gt;&lt;/a&gt;解决 Docker</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Docker" scheme="http://example.com/tags/Docker/"/>
+    
+    <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实战篇笔记-山竹记账后端（一）</title>
     <link href="http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/"/>
     <id>http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/</id>
     <published>2024-04-30T07:41:14.000Z</published>
-    <updated>2024-05-01T10:26:55.111Z</updated>
+    <updated>2024-05-06T08:02:16.113Z</updated>
     
     
       
@@ -516,31 +543,6 @@
         
     <summary type="html">&lt;h1 id=&quot;slice&quot;&gt;&lt;a href=&quot;#slice&quot; class=&quot;headerlink&quot; title=&quot;slice&quot;&gt;&lt;/a&gt;slice&lt;/h1&gt;&lt;p&gt;截取字符串或数组，并返回一个新的字符串或数组（不改变原字符串或数组）&lt;/p&gt;
 &lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从一道深拷贝面试题中学到的知识记录</title>
-    <link href="http://example.com/2022/04/01/cong-yi-dao-shen-kao-bei-mian-shi-ti-zhong-xue-dao-de-zhi-shi-ji-lu/"/>
-    <id>http://example.com/2022/04/01/cong-yi-dao-shen-kao-bei-mian-shi-ti-zhong-xue-dao-de-zhi-shi-ji-lu/</id>
-    <published>2022-04-01T08:29:21.000Z</published>
-    <updated>2022-04-01T15:18:38.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;以前心里一直很抵触刷题，不过最近看了不少面试题才发现通过这些题反倒是有不少收获，有空看看就当是夯实基础吧</summary>
         
       
     
