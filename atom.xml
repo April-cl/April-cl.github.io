@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-06T09:44:22.963Z</updated>
+  <updated>2024-05-07T04:33:15.085Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账后端（三）</title>
+    <link href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/"/>
+    <id>http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/</id>
+    <published>2024-05-07T02:22:08.000Z</published>
+    <updated>2024-05-07T04:33:15.085Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;安装-RSpec&quot;&gt;&lt;a href=&quot;#安装-RSpec&quot; class=&quot;headerlink&quot; title=&quot;安装 RSpec&quot;&gt;&lt;/a&gt;安装 RSpec&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+  </entry>
   
   <entry>
     <title>git 拉取指定版本</title>
@@ -48,7 +73,7 @@
     <link href="http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/"/>
     <id>http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/</id>
     <published>2024-05-06T03:24:06.000Z</published>
-    <updated>2024-05-06T08:38:36.704Z</updated>
+    <updated>2024-05-07T02:57:06.554Z</updated>
     
     
       
@@ -75,7 +100,7 @@
     <link href="http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/"/>
     <id>http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/</id>
     <published>2024-04-30T07:41:14.000Z</published>
-    <updated>2024-05-06T08:02:16.113Z</updated>
+    <updated>2024-05-07T02:55:15.697Z</updated>
     
     
       
@@ -523,36 +548,6 @@
     
     
     <category term="LESS" scheme="http://example.com/tags/LESS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker配置git账号</title>
-    <link href="http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/"/>
-    <id>http://example.com/2023/02/25/docker-pei-zhi-git-zhang-hao/</id>
-    <published>2023-02-25T08:57:22.000Z</published>
-    <updated>2024-03-17T09:34:54.395Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;遇到的问题&quot;&gt;&lt;a href=&quot;#遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;遇到的问题&quot;&gt;&lt;/a&gt;遇到的问题&lt;/h2&gt;&lt;p&gt;在 Docker 里面创建的项目，上传 Github 失败&lt;/p&gt;
-&lt;pre</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="git" scheme="http://example.com/tags/git/"/>
-    
-    <category term="Docker" scheme="http://example.com/tags/Docker/"/>
     
   </entry>
   

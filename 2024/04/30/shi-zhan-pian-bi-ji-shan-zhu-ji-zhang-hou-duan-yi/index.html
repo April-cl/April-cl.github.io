@@ -422,7 +422,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-06
+                    2024-05-07
                 </div>
                 
 
@@ -468,30 +468,29 @@ bundle exe rails server
 <span class="token comment"># 或者 bin/rails s</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>等待端口启动</p>
-<pre class="line-numbers language-none"><code class="language-none">=&gt; Booting Puma
-=&gt; Rails 7.0.4.2 application starting in development 
-=&gt; Run `bin/rails server --help` for more startup options
-Puma starting in single mode...
-* Puma version: 5.6.5 (ruby 3.0.0-p0) ("Birdie's Version")
-*  Min threads: 5
-*  Max threads: 5
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">=</span><span class="token operator">&gt;</span> Booting Puma
+<span class="token operator">=</span><span class="token operator">&gt;</span> Rails <span class="token number">7.0</span>.4.2 application starting <span class="token keyword">in</span> development 
+<span class="token operator">=</span><span class="token operator">&gt;</span> Run <span class="token variable"><span class="token variable">`</span>bin/rails server <span class="token parameter variable">--help</span><span class="token variable">`</span></span> <span class="token keyword">for</span> <span class="token function">more</span> startup options
+Puma starting <span class="token keyword">in</span> single mode<span class="token punctuation">..</span>.
+* Puma version: <span class="token number">5.6</span>.5 <span class="token punctuation">(</span>ruby <span class="token number">3.0</span>.0-p0<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token string">"Birdie's Version"</span><span class="token punctuation">)</span>
+*  Min threads: <span class="token number">5</span>
+*  Max threads: <span class="token number">5</span>
 *  Environment: development
-*          PID: 8005
+*          PID: <span class="token number">8005</span>
 * Listening on http://127.0.0.1:3000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>浏览器访问 <code>http://127.0.0.1:3000</code>，发现</p>
-<pre class="line-numbers language-none"><code class="language-none">ActiveRecord::ConnectionNotEstablished<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<p><code>ActiveRecord::ConnectionNotEstablished</code></p>
 <p>数据库连接失败，因为没有数据库，终端运行</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span>      <span class="token parameter variable">--name</span> db-for-mangosteen      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_USER</span><span class="token operator">=</span>mangosteen      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span>      <span class="token parameter variable">-e</span> <span class="token assign-left variable">POSTGRES_DB</span><span class="token operator">=</span>mangosteen_dev      <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGDATA</span><span class="token operator">=</span>/var/lib/postgresql/data/pgdata      <span class="token parameter variable">-v</span> mangosteen-data:/var/lib/postgresql/data      <span class="token parameter variable">--network</span><span class="token operator">=</span>network1      postgres:14<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>修改 database.yml</p>
-<pre class="line-numbers language-none"><code class="language-none">development:
-  &lt;&lt;: *default
-  database: mangosteen_dev
-  username: mangosteen
-  password: 123456
-  host: db-for-mangosteen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">development</span><span class="token punctuation">:</span>
+  <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*default</span>
+  <span class="token key atrule">database</span><span class="token punctuation">:</span> mangosteen_dev
+  <span class="token key atrule">username</span><span class="token punctuation">:</span> mangosteen
+  <span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token number">123456</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> db<span class="token punctuation">-</span>for<span class="token punctuation">-</span>mangosteen<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>再次运行 <code>bin/rails s</code> 看到下面就成功啦</p>
 <p><img src="http://tva1.sinaimg.cn/large/eb8a9ea3gy1hp8ypnov4zj211y0gv774.jpg" alt="Rails启动成功.png"></p>
@@ -500,48 +499,48 @@ Puma starting in single mode...
 bin/rails g model user email:string name:string<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>会创建两个文件</p>
-<pre class="line-numbers language-none"><code class="language-none">app/models/user.rb
-class User &lt; ApplicationRecord
-end
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># app/models/user.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token operator">&lt;</span> ApplicationRecord
+<span class="token keyword">end</span>
 
-db/migrate/20230413060421_create_users.rb
-class CreateUsers &lt; ActiveRecord::Migration[7.0]
-  // 修改数据库
-  def change
-    // 创建一个 users 表
-    create_table :users do |t|
-      // t.type :XXX 添加类型为 type 的 XXX 字段 
-      t.string :email
-      t.string :name
-      // t.timestamps 会生成 created_at（创建时间）和 updated_at（更新时间） 两个字段
-      t.timestamps
-    end
-  end
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># db/migrate/20230413060421_create_users.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">CreateUsers</span> <span class="token operator">&lt;</span> ActiveRecord<span class="token double-colon punctuation">::</span>Migration<span class="token punctuation">[</span><span class="token number">7.0</span><span class="token punctuation">]</span>
+  <span class="token operator">/</span><span class="token operator">/</span> 修改数据库
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">change</span></span>
+    <span class="token operator">/</span><span class="token operator">/</span> 创建一个 users 表
+    create_table <span class="token symbol">:users</span> <span class="token keyword">do</span> <span class="token operator">|</span>t<span class="token operator">|</span>
+      <span class="token operator">/</span><span class="token operator">/</span> t<span class="token punctuation">.</span>type <span class="token symbol">:XXX</span> 添加类型为 type 的 <span class="token constant">XXX</span> 字段 
+      t<span class="token punctuation">.</span>string <span class="token symbol">:email</span>
+      t<span class="token punctuation">.</span>string <span class="token symbol">:name</span>
+      <span class="token operator">/</span><span class="token operator">/</span> t<span class="token punctuation">.</span>timestamps 会生成 created_at（创建时间）和 updated_at（更新时间） 两个字段
+      t<span class="token punctuation">.</span>timestamps
+    <span class="token keyword">end</span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Toml_/article/details/130881482#:~:text=Rails%20%E7%9A%84%E6%A0%87%E5%87%86%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%A6%82%E4%B8%8B%EF%BC%9A%20app%2F%20%23%20%E6%A0%B8%E5%BF%83%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%20%E2%94%9C%E2%94%80%E2%94%80%20assets%2F%20%23,%E2%94%9C%E2%94%80%E2%94%80%20channels%2F%20%23%20ActionCable%20websockets%20%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%20channel%20%E6%96%87%E4%BB%B6">Rails 目录结构说明</a></p>
 <p>执行下面命令，同步到数据库</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/rails db:migrate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="创建路由"><a href="#创建路由" class="headerlink" title="创建路由"></a>创建路由</h2><pre class="line-numbers language-none"><code class="language-none">config/routes.rb
-// curl http://127.0.0.1:3000/users/1，会调用 users 的 show 方法
-get '/users/:id', to: 'users#show'
-// curl -X POST http://127.0.0.1:3000/users，会调用 users 的 create 方法
-post '/users', to: 'users#create'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="创建路由"><a href="#创建路由" class="headerlink" title="创建路由"></a>创建路由</h2><pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># config/routes.rb</span>
+<span class="token operator">/</span><span class="token operator">/</span> curl http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">3000</span><span class="token operator">/</span>users<span class="token operator">/</span><span class="token number">1</span>，会调用 users 的 show 方法
+get <span class="token string-literal"><span class="token string">'/users/:id'</span></span><span class="token punctuation">,</span> <span class="token symbol">to</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'users#show'</span></span>
+<span class="token operator">/</span><span class="token operator">/</span> curl <span class="token operator">-</span><span class="token constant">X</span> <span class="token constant">POST</span> http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token number">127.0</span><span class="token number">.0</span><span class="token number">.1</span><span class="token operator">:</span><span class="token number">3000</span><span class="token operator">/</span>users，会调用 users 的 create 方法
+post <span class="token string-literal"><span class="token string">'/users'</span></span><span class="token punctuation">,</span> <span class="token symbol">to</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'users#create'</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="创建-controller"><a href="#创建-controller" class="headerlink" title="创建 controller"></a>创建 controller</h2><p>控制器生成器：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># bin/rails generate controller NAME [action action] [options]</span>
 bin/rails g controller <span class="token function">users</span> create show<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>会创建一个实现方法的文件</p>
-<pre class="line-numbers language-none"><code class="language-none">app/controllers/users_controller.rb
-class UsersController &lt; ApplicationController
-  def create
-  end
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># app/controllers/users_controller.rb</span>
+<span class="token keyword">class</span> <span class="token class-name">UsersController</span> <span class="token operator">&lt;</span> ApplicationController
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">create</span></span>
+  <span class="token keyword">end</span>
 
-  def show
-  end
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">show</span></span>
+  <span class="token keyword">end</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -617,7 +616,7 @@ end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span>
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 

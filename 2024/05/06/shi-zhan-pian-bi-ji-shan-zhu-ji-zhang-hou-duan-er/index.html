@@ -426,7 +426,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-06
+                    2024-05-07
                 </div>
                 
 
@@ -475,50 +475,50 @@
 <h1 id="API概要设计"><a href="#API概要设计" class="headerlink" title="API概要设计"></a>API概要设计</h1><p>见课件</p>
 <h1 id="路由与分页"><a href="#路由与分页" class="headerlink" title="路由与分页"></a>路由与分页</h1><h2 id="生成路由"><a href="#生成路由" class="headerlink" title="生成路由"></a>生成路由</h2><p><a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-4">回顾一下</a>，前面是手写创建路由，现在来使用 Rails 提供的<a target="_blank" rel="noopener" href="https://ruby-china.github.io/rails-guides/v4.1/routing.html">路由</a>功能，Rails 路由能识别 URL，将其分发给控制器的动作进行处理，还能生成路径和 URL，无需直接在视图中硬编码字符串。</p>
 <p><a target="_blank" rel="noopener" href="https://ruby-china.github.io/rails-guides/v4.1/routing.html#%E6%8E%A7%E5%88%B6%E5%99%A8%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E5%92%8C%E8%B7%AF%E7%94%B1">控制器命名空间和路由</a></p>
-<pre class="line-numbers language-none"><code class="language-none"># config/routes.rb
-Rails.application.routes.draw do
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># config/routes.rb</span>
+Rails<span class="token punctuation">.</span>application<span class="token punctuation">.</span>routes<span class="token punctuation">.</span>draw <span class="token keyword">do</span>
 
-  namespace :api do
-    namespace :v1 do
-      # /api/v1/xxx
-      resources :validation_codes, only: [:create]
-      # only: [:create] 只生成 create 接口
-      resources :session, only: [:create, :destory]
-      # 啊啊啊做笔记才发现这里 destroy 拼写错了所以没生成 🤦🏻‍♀
-      resources :me, only: [:show]
-      resources :items
-      resources :tags
-      end
-    end
-end<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  namespace <span class="token symbol">:api</span> <span class="token keyword">do</span>
+    namespace <span class="token symbol">:v1</span> <span class="token keyword">do</span>
+      <span class="token comment"># /api/v1/xxx</span>
+      resources <span class="token symbol">:validation_codes</span><span class="token punctuation">,</span> <span class="token symbol">only</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token symbol">:create</span><span class="token punctuation">]</span>
+      <span class="token comment"># only: [:create] 只生成 create 接口</span>
+      resources <span class="token symbol">:session</span><span class="token punctuation">,</span> <span class="token symbol">only</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token symbol">:create</span><span class="token punctuation">,</span> <span class="token symbol">:destory</span><span class="token punctuation">]</span>
+      <span class="token comment"># 啊啊啊做笔记才发现这里 destroy 拼写错了所以没生成 🤦🏻‍♀</span>
+      resources <span class="token symbol">:me</span><span class="token punctuation">,</span> <span class="token symbol">only</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token symbol">:show</span><span class="token punctuation">]</span>
+      resources <span class="token symbol">:items</span>
+      resources <span class="token symbol">:tags</span>
+      <span class="token keyword">end</span>
+    <span class="token keyword">end</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>执行命令 <code>bin/rails routes</code></p>
 <p>会生成</p>
-<pre class="line-numbers language-none"><code class="language-none">POST   /api/v1/validation_codes(.:format)   api/v1/validation_codes#create
-POST   /api/v1/session(.:format)            api/v1/session#create
-GET    /api/v1/me/:id(.:format)             api/v1/me#show
-GET    /api/v1/items(.:format)              api/v1/items#index
-POST   /api/v1/items(.:format)              api/v1/items#create
-GET    /api/v1/items/:id(.:format)          api/v1/items#show
-PATCH  /api/v1/items/:id(.:format)          api/v1/items#update
-PUT    /api/v1/items/:id(.:format)          api/v1/items#update
-DELETE /api/v1/items/:id(.:format)          api/v1/items#destroy
-GET    /api/v1/tags(.:format)               api/v1/tags#index
-POST   /api/v1/tags(.:format)               api/v1/tags#create
-GET    /api/v1/tags/:id(.:format)           api/v1/tags#show
-PATCH  /api/v1/tags/:id(.:format)           api/v1/tags#update
-PUT    /api/v1/tags/:id(.:format)           api/v1/tags#update
-DELETE /api/v1/tags/:id(.:format)           api/v1/tags#destroy<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token constant">POST</span>   <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>validation_codes<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>   api<span class="token operator">/</span>v1<span class="token operator">/</span>validation_codes<span class="token comment">#create</span>
+<span class="token constant">POST</span>   <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>session<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>            api<span class="token operator">/</span>v1<span class="token operator">/</span>session<span class="token comment">#create</span>
+<span class="token constant">GET</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>me<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>             api<span class="token regex-literal"><span class="token regex">/v1/me</span></span><span class="token comment">#show</span>
+<span class="token constant">GET</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>              api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#index</span>
+<span class="token constant">POST</span>   <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>              api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#create</span>
+<span class="token constant">GET</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>          api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#show</span>
+<span class="token constant">PATCH</span>  <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>          api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#update</span>
+<span class="token constant">PUT</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>          api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#update</span>
+<span class="token constant">DELETE</span> <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>          api<span class="token operator">/</span>v1<span class="token operator">/</span>items<span class="token comment">#destroy</span>
+<span class="token constant">GET</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>               api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#index</span>
+<span class="token constant">POST</span>   <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>               api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#create</span>
+<span class="token constant">GET</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>           api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#show</span>
+<span class="token constant">PATCH</span>  <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>           api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#update</span>
+<span class="token constant">PUT</span>    <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>           api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#update</span>
+<span class="token constant">DELETE</span> <span class="token operator">/</span>api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token operator">/</span><span class="token symbol">:id</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token symbol">:format</span><span class="token punctuation">)</span>           api<span class="token operator">/</span>v1<span class="token operator">/</span>tags<span class="token comment">#destroy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h2><p>参照前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-3">数据库建模</a></p>
-<pre class="line-numbers language-none"><code class="language-none"># 创建 ValidationCode 数据表
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建 ValidationCode 数据表</span>
 bin/rails g model ValidationCode email:string kind:string used_at:datetime
-# 创建 item 数据表
+<span class="token comment"># 创建 item 数据表</span>
 bin/rails g model item iser_id:integer amount:integer notes:text tags_id:integer happen_at:datetime<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>同步到数据库 <code>bin/rails db:migrate</code></p>
 <h2 id="创建-controller"><a href="#创建-controller" class="headerlink" title="创建 controller"></a>创建 controller</h2><p>参照前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/#toc-heading-5">创建 controller</a></p>
-<pre class="line-numbers language-none"><code class="language-none">bin/rails g controller Api::V1::Validation_codes create
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bin/rails g controller Api::V1::Validation_codes create
 bin/rails g controller Api::V1::Items<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h2 id="安装-kaminari"><a href="#安装-kaminari" class="headerlink" title="安装 kaminari"></a>安装 kaminari</h2><p><a target="_blank" rel="noopener" href="https://github.com/kaminari/kaminari">kaminari github</a></p>
@@ -606,7 +606,7 @@ bin/rails g controller Api::V1::Items<span aria-hidden="true" class="line-number
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
