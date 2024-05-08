@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账后端（三）, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账后端（四）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账后端（三） | April-cl</title>
+    <title>实战篇笔记-山竹记账后端（四） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（三）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（四）</h1>
                 </div>
             </div>
         </div>
@@ -422,14 +422,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-07
+                    2024-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    296
+                    680
                 </div>
                 
 
@@ -449,93 +449,137 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装-RSpec"><a href="#安装-RSpec" class="headerlink" title="安装 RSpec"></a>安装 RSpec</h1><p><a target="_blank" rel="noopener" href="https://github.com/rspec/rpec-rails">看文档</a></p>
-<ol>
-<li>Gemfile 文件</li>
-</ol>
-<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby">group <span class="token symbol">:development</span><span class="token punctuation">,</span> <span class="token symbol">:test</span> <span class="token keyword">do</span>
-  gem <span class="token string-literal"><span class="token string">"debug"</span></span><span class="token punctuation">,</span> <span class="token symbol">platforms</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">%i[ mri mingw x64_mingw ]</span></span>
-  gem <span class="token string-literal"><span class="token string">'rspec-rails'</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">'~&gt; 6.0.0'</span></span> <span class="token comment">#新增</span>
-<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="购买便宜的云服务器"><a href="#购买便宜的云服务器" class="headerlink" title="购买便宜的云服务器"></a>购买便宜的云服务器</h1><p>需要购买服务器实际操作</p>
+<h1 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h1><h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
+<li><p>不推荐使用「用户名 + 密码」登录，容易忘，且不安全</p>
+</li>
+<li><p>推荐使用 ssh-copy-id 上传公钥，使用 ssh 登录</p>
+</li>
+<li><p>具体教程请自己搜索（不同系统命令不同）</p>
+</li>
+</ul>
+<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><ul>
+<li><p>推荐开启测试端口，如 3000、3001、5000、8000、8080</p>
+</li>
+<li><p>自行选择是否开启重要端口，因为需要备案，如 80、443</p>
+</li>
+</ul>
+<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><ul>
+<li><p>推荐只在 root 用户里安装 Docker 即可</p>
+</li>
+<li><p>每个应用创建一个独立用户，并加入 docker 用户组</p>
+</li>
+<li><p>切忌用 root 管理所有应用</p>
+</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建独立用户 ubuntu add user to group</span>
+adduser mangosteen
+<span class="token comment"># ubuntu install docker</span>
+<span class="token function">apt-get</span> update
+<span class="token comment"># 用户授权</span>
+<span class="token comment"># 登录 root 账号</span>
+<span class="token function">ssh</span> root@服务器ip
+<span class="token comment"># 创建 /home/mangosteen/.ssh 目录</span>
+<span class="token function">mkdir</span> /home/mangosteen/.ssh
+<span class="token comment"># 复制 authorized_keys 文件到刚创建的目录</span>
+<span class="token function">cp</span> ~/.ssh/authorized_keys /home/mangosteen/.ssh
+<span class="token builtin class-name">cd</span> /home/mangosteen
+<span class="token function">chown</span> <span class="token parameter variable">-R</span> mangosteen:mangosteen .ssh
+<span class="token comment"># 登录成功</span>
+<span class="token function">ssh</span> mangosteen@服务器ip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol start="2">
-<li>终端运行</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Download and install</span>
-$ bundle <span class="token function">install</span>
+<h1 id="部署思路"><a href="#部署思路" class="headerlink" title="部署思路"></a>部署思路</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li><p>准备一个新用户（看上文）</p>
+</li>
+<li><p>准备好 Docker（看上文）</p>
+</li>
+<li><p>上传 Dockerfile</p>
+</li>
+<li><p>上传源代码</p>
+</li>
+<li><p>用 Dockerfile 构建运行环境</p>
+</li>
+<li><p>在运行环境里运行源代码</p>
+</li>
+<li><p>使用 Nginx 做转发</p>
+</li>
+</ul>
+<h2 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h2><ul>
+<li><p>上传新 Dockerfile</p>
+</li>
+<li><p>上传新源代码</p>
+</li>
+<li><p>用 Dockerfile 构建新运行环境</p>
+</li>
+<li><p>在新环境运行新代码</p>
+</li>
+<li><p>使用 Nginx 做转发</p>
+</li>
+</ul>
+<h2 id="配置前端生产环境"><a href="#配置前端生产环境" class="headerlink" title="配置前端生产环境"></a>配置前端生产环境</h2><ul>
+<li><p>将代码中的路径替换成 CDN 路径</p>
+</li>
+<li><p>上传打包好的 CSS 和 JS 代码到 CDN</p>
+</li>
+<li><p>将 html 文件上传到后端服务器</p>
+</li>
+<li><p>使用 Nginx 处理 html 文件请求</p>
+</li>
+</ul>
+<h1 id="在宿主机里部署"><a href="#在宿主机里部署" class="headerlink" title="在宿主机里部署"></a>在宿主机里部署</h1><p>bin 目录新建 pack_for_host.sh, setup_host.sh</p>
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># pack_for_host.sh</span>
+dir<span class="token operator">=</span>oh<span class="token operator">-</span>my<span class="token operator">-</span>env
+time<span class="token operator">=</span>$<span class="token punctuation">(</span>date <span class="token operator">+</span><span class="token string-literal"><span class="token string">'%Y%m%d-%H%M%S'</span></span><span class="token punctuation">)</span>
+dist<span class="token operator">=</span>tmp<span class="token operator">/</span>mangosteen<span class="token operator">-</span><span class="token variable">$time</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz
+current_dir<span class="token operator">=</span>$<span class="token punctuation">(</span>dirname $<span class="token number">0</span><span class="token punctuation">)</span>
+deploy_dir<span class="token operator">=</span><span class="token operator">/</span>workspaces<span class="token operator">/</span><span class="token variable">$dir</span><span class="token operator">/</span>mangosteen_deploy
+yes <span class="token operator">|</span> rm tmp<span class="token operator">/</span>mangosteen<span class="token operator">-</span><span class="token operator">*</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span class="token punctuation">;</span> 
+yes <span class="token operator">|</span> rm <span class="token variable">$deploy_dir</span><span class="token operator">/</span>mangosteen<span class="token operator">-</span><span class="token operator">*</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span class="token punctuation">;</span> 
+tar <span class="token operator">-</span><span class="token operator">-</span>exclude<span class="token operator">=</span><span class="token string-literal"><span class="token string">"tmp/cache/*"</span></span> <span class="token operator">-</span>czv <span class="token operator">-</span>f <span class="token variable">$dist</span> <span class="token operator">*</span>
+mkdir <span class="token operator">-</span>p <span class="token variable">$deploy_dir</span>
+cp <span class="token variable">$current_dir</span><span class="token operator">/</span><span class="token operator">..</span><span class="token operator">/</span>config<span class="token operator">/</span>host<span class="token punctuation">.</span>Dockerfile <span class="token variable">$deploy_dir</span><span class="token operator">/</span>Dockerfile
+cp <span class="token variable">$current_dir</span><span class="token regex-literal"><span class="token regex">/setup_host.sh $deploy_dir/</span></span>
+mv <span class="token variable">$dist</span> <span class="token variable">$deploy_dir</span>
+echo <span class="token variable">$time</span> <span class="token operator">&gt;</span> <span class="token variable">$deploy_dir</span><span class="token operator">/</span>version
+echo <span class="token string-literal"><span class="token string">'DONE!'</span></span>
 
-<span class="token comment"># Generate boilerplate configuration files</span>
-<span class="token comment"># (check the comments in each generated file for more information)</span>
-$ bin/rails generate rspec:install
-    create  .rspec
-    create  spec
-    create  spec/spec_helper.rb
-    create  spec/rails_helper.rb
+<span class="token comment"># setup_host.sh</span>
+<span class="token constant">DB_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span>
+container_name<span class="token operator">=</span>mangosteen<span class="token operator">-</span>prod<span class="token operator">-</span><span class="token number">1</span>
+version<span class="token operator">=</span>$<span class="token punctuation">(</span>cat mangosteen_deploy<span class="token operator">/</span>version<span class="token punctuation">)</span>
+echo <span class="token string-literal"><span class="token string">'docker build ...'</span></span>
+docker build mangosteen_deploy <span class="token operator">-</span>t mangosteen<span class="token symbol">:$v</span>ersion
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string-literal"><span class="token string">"$(docker ps -aq -f name=^mangosteen-prod-1$)"</span></span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  echo <span class="token string-literal"><span class="token string">'docker rm ...'</span></span>
+  docker rm <span class="token operator">-</span>f <span class="token variable">$container_name</span>
+fi
+echo <span class="token string-literal"><span class="token string">'docker run ...'</span></span>
+docker run <span class="token operator">-</span>d <span class="token operator">-</span>p <span class="token number">3000</span><span class="token operator">:</span><span class="token number">3000</span> <span class="token operator">-</span><span class="token operator">-</span>network<span class="token operator">=</span>network1 <span class="token operator">-</span>e <span class="token constant">DB_PASSWORD</span><span class="token operator">=</span><span class="token variable">$DB_PASSWORD</span> <span class="token operator">-</span><span class="token operator">-</span>name<span class="token operator">=</span><span class="token variable">$container_name</span> mangosteen<span class="token symbol">:$v</span>ersion
+echo <span class="token string-literal"><span class="token string">'DONE!'</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment"># 创建测试 model 文件</span>
-$ bin/rails generate rspec:model user
-    create  spec/models/user_spec.rb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>config 目录新建 host.Dockerfile</p>
+<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token constant">FROM</span> ruby<span class="token operator">:</span><span class="token number">3.0</span><span class="token number">.0</span>
+<span class="token constant">ENV</span> <span class="token constant">RAILS_ENV</span> production
+<span class="token constant">RUN</span> mkdir <span class="token operator">/</span>mangosteen
+<span class="token constant">RUN</span> bundle config mirror<span class="token punctuation">.</span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>rubygems<span class="token punctuation">.</span>org https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>gems<span class="token punctuation">.</span>ruby<span class="token operator">-</span>china<span class="token punctuation">.</span>com
+<span class="token constant">WORKDIR</span> <span class="token operator">/</span>mangosteen
+<span class="token constant">ADD</span> mangosteen<span class="token operator">-</span><span class="token operator">*</span><span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token punctuation">.</span><span class="token operator">/</span>
+<span class="token constant">RUN</span> bundle config set <span class="token operator">-</span><span class="token operator">-</span>local without <span class="token string-literal"><span class="token string">'development test'</span></span>
+<span class="token constant">RUN</span> bundle install
+<span class="token constant">ENTRYPOINT</span> bundle exec puma<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol start="3">
-<li>配置测试数据库</li>
-</ol>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># config/database.yml </span>
-<span class="token key atrule">test</span><span class="token punctuation">:</span>
-  <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*default</span>
-  <span class="token key atrule">database</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">username</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">password</span><span class="token punctuation">:</span> 
-  <span class="token key atrule">host</span><span class="token punctuation">:</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>开发容器终端运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chmod</span> +x bin/*.sh
+bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<ol start="4">
-<li> 在测试环境创建数据库</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 测试环境 创建数据库</span>
-<span class="token assign-left variable">RAILS_ENV</span><span class="token operator">=</span>test bin/rails db:create
-<span class="token comment"># 测试环境 迁移数据库</span>
-<span class="token assign-left variable">RAILS_ENV</span><span class="token operator">=</span>test bin/rails db:migrate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>回到 windows oh-my-env 目录，会看到打包好的 mangosteen_deploy，使用 cmder 或 git bash 运行</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mangosteen_deploy/setup_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<ol start="5">
-<li>启动测试用例</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">bundle <span class="token builtin class-name">exec</span> rspec<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这个时候 <code>docker ps -a</code> 发现启动失败了</p>
+<p>使用 <code>docker logs [CONTAINER ID]</code> 查看原因</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span> Unable to load application: ArgumentError: Missing <span class="token variable"><span class="token variable">`</span>secret_key_base<span class="token variable">`</span></span> <span class="token keyword">for</span> <span class="token string">'production'</span> environment, <span class="token builtin class-name">set</span> this string with <span class="token variable"><span class="token variable">`</span>bin/rails credentials:edit<span class="token variable">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h1 id="如何测试请求"><a href="#如何测试请求" class="headerlink" title="如何测试请求"></a>如何测试请求</h1><p>创建测试请求文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ bin/rails generate rspec:request items
-    create  spec/requests/items_spec.rb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>具体测试用例看项目代码</p>
-<h1 id="如何使用-SecureRandom"><a href="#如何使用-SecureRandom" class="headerlink" title="如何使用 SecureRandom"></a>如何使用 SecureRandom</h1><ol>
-<li>创建测试请求文件</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ bin/rails generate rspec:request validation_codes
-    create  spec/requests/validation_codes_spec.rb<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<ol start="2">
-<li>完善 controller</li>
-</ol>
-<p><a target="_blank" rel="noopener" href="https://api.rubyonrails.org/classes/ActiveRecord/SecureToken/ClassMethods.html">ActiveRecord::SecureToken::ClassMethods</a></p>
-<pre class="line-numbers language-ruby" data-language="ruby"><code class="language-ruby"><span class="token comment"># app/controllers/api/v1/validation_codes_controller.rb</span>
-<span class="token keyword">class</span> <span class="token class-name">Api</span><span class="token double-colon punctuation">::</span><span class="token constant">V1</span><span class="token double-colon punctuation">::</span>ValidationCodesController <span class="token operator">&lt;</span> ApplicationController
-  <span class="token keyword">def</span> <span class="token method-definition"><span class="token function">create</span></span>
-    code <span class="token operator">=</span> SecureRandom<span class="token punctuation">.</span>random_number<span class="token punctuation">.</span>to_s<span class="token punctuation">[</span><span class="token number">2.</span><span class="token number">.7</span><span class="token punctuation">]</span>
-    validation_code <span class="token operator">=</span> <span class="token class-name">ValidationCode</span><span class="token punctuation">.</span><span class="token keyword">new</span> email<span class="token operator">:</span> params<span class="token punctuation">[</span><span class="token symbol">:email</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token symbol">kind</span><span class="token operator">:</span> <span class="token string-literal"><span class="token string">'sign_in'</span></span><span class="token punctuation">,</span> <span class="token symbol">code</span><span class="token operator">:</span> code
-    <span class="token keyword">if</span> validation_code<span class="token punctuation">.</span>save
-      head <span class="token number">200</span>
-    <span class="token keyword">else</span>
-      reder json<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token symbol">errors</span><span class="token operator">:</span> validation_code<span class="token punctuation">.</span>errors<span class="token punctuation">}</span>
-    <span class="token keyword">end</span>
-  <span class="token keyword">end</span>
-<span class="token keyword">end</span>
-
-<span class="token comment"># app/models/validation_code.rb</span>
-<span class="token keyword">class</span> <span class="token class-name">ValidationCode</span> <span class="token operator">&lt;</span> ApplicationRecord
-    has_secure_token <span class="token symbol">:code</span><span class="token punctuation">,</span> <span class="token symbol">length</span><span class="token operator">:</span> <span class="token number">24</span>
-<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<blockquote>
-<p><code>Ctrl + P</code> 搜索 <code>schema.rb</code> 可以查看有数据表哪些字段</p>
-</blockquote>
+<p>解决见下篇</p>
 
                 
             </div>
@@ -562,7 +606,7 @@ $ bin/rails generate rspec:model user
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/">http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/</a>
+                    <a href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/">http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -645,9 +689,10 @@ $ bin/rails generate rspec:model user
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/">
                     <div class="card-image">
@@ -665,9 +710,9 @@ $ bin/rails generate rspec:model user
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -680,6 +725,7 @@ $ bin/rails generate rspec:model user
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -698,13 +744,13 @@ $ bin/rails generate rspec:model user
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/06/git-la-qu-zhi-ding-ban-ben/">
+                <a href="/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git 拉取指定版本">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="实战篇笔记-山竹记账后端（三）">
                         
-                        <span class="card-title">git 拉取指定版本</span>
+                        <span class="card-title">实战篇笔记-山竹记账后端（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -715,14 +761,14 @@ $ bin/rails generate rspec:model user
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
                                 </a>
                             
                             
@@ -732,12 +778,8 @@ $ bin/rails generate rspec:model user
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
-                        <span class="chip bg-color">命令行</span>
-                    </a>
-                    
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Rails/">
+                        <span class="chip bg-color">Rails</span>
                     </a>
                     
                 </div>

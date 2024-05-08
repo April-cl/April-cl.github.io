@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-07T04:33:15.085Z</updated>
+  <updated>2024-05-08T06:32:07.063Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账后端（四）</title>
+    <link href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/"/>
+    <id>http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/</id>
+    <published>2024-05-07T04:50:44.000Z</published>
+    <updated>2024-05-08T06:32:07.063Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;购买便宜的云服务器&quot;&gt;&lt;a href=&quot;#购买便宜的云服务器&quot; class=&quot;headerlink&quot; title=&quot;购买便宜的云服务器&quot;&gt;&lt;/a&gt;购买便宜的云服务器&lt;/h1&gt;&lt;p&gt;需要购买服务器实际操作&lt;/p&gt;
+&lt;h1 id=&quot;配置服务器&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账后端（三）</title>
@@ -523,31 +549,6 @@
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>less 中使用 url 设置问题</title>
-    <link href="http://example.com/2023/02/28/less-zhong-shi-yong-url-she-zhi-wen-ti/"/>
-    <id>http://example.com/2023/02/28/less-zhong-shi-yong-url-she-zhi-wen-ti/</id>
-    <published>2023-02-28T01:45:31.000Z</published>
-    <updated>2023-02-28T02:01:18.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;pre class=&quot;line-numbers language-less&quot; data-language=&quot;less&quot;&gt;&lt;code class=&quot;language-less&quot;&gt;&lt;span class=&quot;token selector&quot;&gt;.content&lt;/span&gt; &lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="LESS" scheme="http://example.com/tags/LESS/"/>
     
   </entry>
   
