@@ -426,14 +426,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-04-03
+                    2024-05-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    408
+                    143
                 </div>
                 
 
@@ -453,48 +453,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="配合-Cmder"><a href="#配合-Cmder" class="headerlink" title="配合 Cmder"></a>配合 Cmder</h2><p>在之前的一篇文章【<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/08/16/xin-shou-qian-duan-de-zhuang-ji-gong-lue-na-lai-ba-ni/">新手前端的装机攻略，拿来吧你</a>】里面其实已经写过了，不过引用的文档是英文的，这里就挂一下翻译吧</p>
-<ol>
-<li><p><code>Ctrl</code> + <code>,</code> 或者 <code>Ctrl</code> + <code>Shift</code> + <code>P</code> 打开命令面板，输入 <code>settings.json</code> 回车，会打开一个配置文件</p>
+                <h1 id="配合-Cmder"><a href="#配合-Cmder" class="headerlink" title="配合 Cmder"></a>配合 Cmder</h1><ol>
+<li><p><code>Ctrl + Shift + P</code> 打开命令面板，输入 <code>settings.json</code> 回车，会打开一个配置文件</p>
 </li>
-<li><p>修改以下地方</p>
+<li><p>修改 git.path 和 path，这里地址要设置成自己的安装路径，用搜索神器 everything 输入 git.exe</p>
 </li>
 </ol>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"terminal.integrated.defaultProfile.windows"</span><span class="token operator">:</span> <span class="token string">"Cmder"</span><span class="token punctuation">,</span>  <span class="token comment">// 这里原来是 bash，改成 Cmder</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ol start="3">
-<li>粘贴以下代码</li>
-</ol>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"terminal.integrated.profiles.windows"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token comment">// 添加这段 start---</span>
-    <span class="token property">"Cmder"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"Cmder"</span><span class="token punctuation">,</span>
-        <span class="token property">"path"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-            <span class="token string">"${env:windir}\\Sysnative\\cmd.exe"</span><span class="token punctuation">,</span>
-            <span class="token string">"${env:windir}\\System32\\cmd.exe"</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-            <span class="token string">"/k"</span><span class="token punctuation">,</span>
-            <span class="token string">"D:\\cmder\\vendor\\bin\\vscode_init.cmd"</span>   <span class="token comment">// 这里地址要设置成自己的安装路径，用搜索神器 everything 输入 vscode_init.cmd</span>
-        <span class="token punctuation">]</span><span class="token punctuation">,</span>
-        <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"terminal-cmd"</span><span class="token punctuation">,</span>
-        <span class="token property">"color"</span><span class="token operator">:</span> <span class="token string">"terminal.ansiGreen"</span>
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token comment">// ---end</span>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"git.path"</span><span class="token operator">:</span> <span class="token string">"D:\\cmder\\vendor\\git-for-windows\\bin\\bash.exe"</span><span class="token punctuation">,</span>
+<span class="token property">"terminal.integrated.profiles.windows"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"bash"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"E:\\cmder\\vendor\\git-for-windows\\bin\\bash.exe"</span><span class="token punctuation">,</span>
+        <span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"D:\\cmder\\vendor\\git-for-windows\\bin\\bash.exe"</span><span class="token punctuation">,</span>
         <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<ol start="4">
-<li>重启下 VSCode ，新建终端可以看到 <code>Applying Cmder VSCode settings is complete!</code> 就欧拉</li>
+<ol start="3">
+<li>重启下 VSCode </li>
 </ol>
-<h2 id="配置-git-path"><a href="#配置-git-path" class="headerlink" title="配置 git path"></a>配置 git path</h2><p>打开源代码管理（编辑器侧边栏那个长得像分支的图标），显示 <code>安装 Git (一种流行的源代码管理系统)，以跟踪代码更改并与他人协作。在我们的 Git 指南中了解详细信息。</code>，但其实是有安装 Git 的，只是 VSCode 没检测到</p>
-<p>依旧是<code>Ctrl</code> + <code>,</code> 或者 <code>Ctrl</code> + <code>Shift</code> + <code>P</code> 打开命令面板，输入 <code>settings.json</code> 回车，打开配置文件，添加</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"git.path"</span><span class="token operator">:</span> <span class="token string">"D:/cmder/vendor/git-for-windows/cmd/git.exe"</span><span class="token punctuation">,</span>  <span class="token comment">// 这里地址要设置成自己的安装路径，用搜索神器 everything 输入 git.exe</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
 <blockquote>
 <p>一点碎碎念<br>    托’大姨妈’的福，病了一个星期，床上躺了两天，今天勉强能起来码码字了，不过这几天倒是得了空看完一本《金粉世家》，嘿嘿~~~</p>
 </blockquote>
