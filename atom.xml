@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-09T08:15:03.028Z</updated>
+  <updated>2024-05-09T08:43:12.696Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git 撤销修改</title>
+    <link href="http://example.com/2024/05/09/git-che-xiao-xiu-gai/"/>
+    <id>http://example.com/2024/05/09/git-che-xiao-xiu-gai/</id>
+    <published>2024-05-09T08:25:22.000Z</published>
+    <updated>2024-05-09T08:43:12.696Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;未使用-git-add-缓存代码&quot;&gt;&lt;a href=&quot;#未使用-git-add-缓存代码&quot; class=&quot;headerlink&quot; title=&quot;未使用 git add 缓存代码&quot;&gt;&lt;/a&gt;未使用 &lt;code&gt;git add&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账后端（五）</title>
@@ -521,33 +548,6 @@
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
     <category term="APP" scheme="http://example.com/tags/APP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>zb-table 动态显示操作按钮</title>
-    <link href="http://example.com/2024/03/14/zb-table-dong-tai-xian-shi-cao-zuo-an-niu/"/>
-    <id>http://example.com/2024/03/14/zb-table-dong-tai-xian-shi-cao-zuo-an-niu/</id>
-    <published>2024-03-14T02:55:00.000Z</published>
-    <updated>2024-03-14T08:03:34.490Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在uni-app开发时遇到一个需求，需要用表格显示内容，有一列操作列要求根据某列内容显示对应操作&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;例子：有完成时间的行操作列不能显示【删除】、【完成】按钮&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在 DCLOUD 插件市场下载安装 &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
     
   </entry>
   

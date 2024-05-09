@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>git 撤销修改</title>
+      <link href="/2024/05/09/git-che-xiao-xiu-gai/"/>
+      <url>/2024/05/09/git-che-xiao-xiu-gai/</url>
+      
+        <content type="html"><![CDATA[<h1 id="未使用-git-add-缓存代码"><a href="#未使用-git-add-缓存代码" class="headerlink" title="未使用 git add 缓存代码"></a>未使用 <code>git add</code> 缓存代码</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 撤销指定文件，--很重要，没有--，就变成了“切换到另一个分支”的命令</span><span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span><span class="token comment"># 撤销所有文件</span><span class="token function">git</span> checkout <span class="token builtin class-name">.</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>相当于 SVN 的 <code>revert</code></p><h1 id="已使用-git-add-缓存代码未使用-git-commit-提交代码"><a href="#已使用-git-add-缓存代码未使用-git-commit-提交代码" class="headerlink" title="已使用 git add 缓存代码未使用 git commit 提交代码"></a>已使用 <code>git add</code> 缓存代码未使用 <code>git commit</code> 提交代码</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 撤销指定文件</span><span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span><span class="token comment"># 撤销所有文件</span><span class="token function">git</span> reset HEAD <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h1 id="已使用-git-commit-提交代码"><a href="#已使用-git-commit-提交代码" class="headerlink" title="已使用 git commit 提交代码"></a>已使用 <code>git commit</code> 提交代码</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 回退到当前版本的上一版本</span><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> HEAD^<span class="token comment"># 回退到指定版本</span><span class="token function">git</span> reset <span class="token parameter variable">--hard</span> commit_id<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>传送门：<a href="https://april-cl.github.io/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/#toc-heading-20">git 命令训练营 learngitbranching</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记-山竹记账后端（五）</title>
       <link href="/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/"/>
       <url>/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/</url>
