@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -422,14 +422,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-03-19
+                    2024-05-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    307
+                    341
                 </div>
                 
 
@@ -471,6 +471,10 @@ added <span class="token number">1560</span> packages <span class="token keyword
 <p>不过 <code>npm config set strict-ssl false</code> 是什么意思呢</p>
 <p>查了一下，<code>strict-ssl</code> 是 <code>npm</code> 中用于控制 <code>SSL</code> 证书校验的选项，当其为 <code>true</code> 时，<code>npm</code> 会对连接的服务器的 <code>SSL</code> 证书进行严格的校验，并要求它是由可信的认证机构颁发的。如果校验失败，<code>npm</code> 将无法连接到服务器并会报错；当其为 <code>false</code> 时，则 <code>npm</code> 将不会对服务器的 <code>SSL</code> 证书进行校验，并且即使证书是由不可信的认证机构颁发的也不会报错，这就存在一定的安全风险，所以问题解决完了还是赶紧设置回去吧</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">&gt;</span> <span class="token function">npm</span> config <span class="token builtin class-name">set</span> strict-ssl <span class="token boolean">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>2024.05.09 更新<br>    这次是用 yarn 遇到这个问题啦，把项目中的 <code>yarn.lock</code> 文件删掉再 <code>yarn install</code> 就好了</p>
+</blockquote>
 
                 
             </div>
