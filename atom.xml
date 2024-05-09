@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-08T06:32:07.063Z</updated>
+  <updated>2024-05-09T08:15:03.028Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>实战篇笔记-山竹记账后端（五）</title>
+    <link href="http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/"/>
+    <id>http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/</id>
+    <published>2024-05-09T02:19:38.000Z</published>
+    <updated>2024-05-09T08:15:03.028Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="后端" scheme="http://example.com/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+    <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实战篇笔记-山竹记账后端（四）</title>
     <link href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/"/>
     <id>http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/</id>
     <published>2024-05-07T04:50:44.000Z</published>
-    <updated>2024-05-08T06:32:07.063Z</updated>
+    <updated>2024-05-09T07:40:34.427Z</updated>
     
     
       
@@ -523,33 +548,6 @@
     
     
     <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2024/03/08/hello-world/"/>
-    <id>http://example.com/2024/03/08/hello-world/</id>
-    <published>2024-03-08T05:05:45.140Z</published>
-    <updated>2024-03-14T08:35:41.309Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
     
   </entry>
   

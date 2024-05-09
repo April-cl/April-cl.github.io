@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账后端（四）, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账后端（五）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账后端（四） | April-cl</title>
+    <title>实战篇笔记-山竹记账后端（五） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（四）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账后端（五）</h1>
                 </div>
             </div>
         </div>
@@ -415,7 +415,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-07
+                    2024-05-09
                 </div>
                 
 
@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    680
+                    873
                 </div>
                 
 
@@ -449,137 +449,100 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="购买便宜的云服务器"><a href="#购买便宜的云服务器" class="headerlink" title="购买便宜的云服务器"></a>购买便宜的云服务器</h1><p>需要购买服务器实际操作</p>
-<h1 id="配置服务器"><a href="#配置服务器" class="headerlink" title="配置服务器"></a>配置服务器</h1><h2 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h2><ul>
-<li><p>不推荐使用「用户名 + 密码」登录，容易忘，且不安全</p>
-</li>
-<li><p>推荐使用 ssh-copy-id 上传公钥，使用 ssh 登录</p>
-</li>
-<li><p>具体教程请自己搜索（不同系统命令不同）</p>
-</li>
-</ul>
-<h2 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h2><ul>
-<li><p>推荐开启测试端口，如 3000、3001、5000、8000、8080</p>
-</li>
-<li><p>自行选择是否开启重要端口，因为需要备案，如 80、443</p>
-</li>
-</ul>
-<h2 id="用户权限"><a href="#用户权限" class="headerlink" title="用户权限"></a>用户权限</h2><ul>
-<li><p>推荐只在 root 用户里安装 Docker 即可</p>
-</li>
-<li><p>每个应用创建一个独立用户，并加入 docker 用户组</p>
-</li>
-<li><p>切忌用 root 管理所有应用</p>
-</li>
-</ul>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 创建独立用户 ubuntu add user to group</span>
-adduser mangosteen
-<span class="token comment"># ubuntu install docker</span>
-<span class="token function">apt-get</span> update
-<span class="token comment"># 用户授权</span>
-<span class="token comment"># 登录 root 账号</span>
-<span class="token function">ssh</span> root@服务器ip
-<span class="token comment"># 创建 /home/mangosteen/.ssh 目录</span>
-<span class="token function">mkdir</span> /home/mangosteen/.ssh
-<span class="token comment"># 复制 authorized_keys 文件到刚创建的目录</span>
-<span class="token function">cp</span> ~/.ssh/authorized_keys /home/mangosteen/.ssh
-<span class="token builtin class-name">cd</span> /home/mangosteen
-<span class="token function">chown</span> <span class="token parameter variable">-R</span> mangosteen:mangosteen .ssh
-<span class="token comment"># 登录成功</span>
-<span class="token function">ssh</span> mangosteen@服务器ip<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <p><a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/#toc-heading-10">书接上回</a>，报错翻译过来就是</p>
+<blockquote>
+<p>!无法加载应用程序： 参数错误： 生产环境缺少 secret_key_base，请使用 “bin/rails credentials:edit “设置该字符串。</p>
+</blockquote>
+<h1 id="如何管理密钥"><a href="#如何管理密钥" class="headerlink" title="如何管理密钥"></a>如何管理密钥</h1><h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>master.key + keys =&gt; encrypted<br>密钥 + 加密内容 =&gt; 密文</p>
+<p>encrypted + master.key =&gt; keys<br>密文 + 密钥 =&gt; 解密内容</p>
+<h2 id="Rails-读取-keys"><a href="#Rails-读取-keys" class="headerlink" title="Rails 读取 keys"></a>Rails 读取 keys</h2><p>打开控制台 <code>bin/rails console</code></p>
+<p>输入 <code>Rails.application.credentials.config</code></p>
+<p>可以查看到 keys （这些 keys 即加密内容，不能泄露）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">~/r/mangosteen-rails <span class="token comment"># ❯❯❯ bin/rails console</span>
+irb<span class="token punctuation">(</span>main<span class="token punctuation">)</span>:001:<span class="token operator"><span class="token file-descriptor important">0</span>&gt;</span> Rails.application.credentials.config
+<span class="token operator">=</span><span class="token operator">&gt;</span> 
+<span class="token punctuation">{</span>:secret_key_base<span class="token operator">=</span><span class="token operator">&gt;</span>                                                                                     
+  <span class="token string">"0b20f2b6b8dc0f440f4b0f22ebc74aec8c9156276728d5bcd2e96c3625aaeb4346ed94e6b507f647462cca583009e656e5486ece31d0f405506bec3af02605c"</span><span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h1 id="部署思路"><a href="#部署思路" class="headerlink" title="部署思路"></a>部署思路</h1><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
-<li><p>准备一个新用户（看上文）</p>
+<h2 id="Rails-写入-keys"><a href="#Rails-写入-keys" class="headerlink" title="Rails 写入 keys"></a>Rails 写入 keys</h2><ol>
+<li><p>删除 config 目录下 的 credentials.yml.enc 和 master.key 文件（如果之前执行过下面操作就会生成这两个文件）</p>
 </li>
-<li><p>准备好 Docker（看上文）</p>
+<li><p>输入命令 <code>EDITOR="code --wait" bin/rails credentials:edit</code>，会生成一个 master.key 文件 和 xxxxx.credentials.yml 文件，将 keys 记录在 xxxxx.credentials.yml 文件，保存关闭编辑器，这个 xxxxx.credentials.yml 文件会自动销毁，可以通过前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/#toc-heading-3">Rails 读取 keys</a>的方法来读取</p>
 </li>
-<li><p>上传 Dockerfile</p>
-</li>
-<li><p>上传源代码</p>
-</li>
-<li><p>用 Dockerfile 构建运行环境</p>
-</li>
-<li><p>在运行环境里运行源代码</p>
-</li>
-<li><p>使用 Nginx 做转发</p>
-</li>
-</ul>
-<h2 id="版本更新"><a href="#版本更新" class="headerlink" title="版本更新"></a>版本更新</h2><ul>
-<li><p>上传新 Dockerfile</p>
-</li>
-<li><p>上传新源代码</p>
-</li>
-<li><p>用 Dockerfile 构建新运行环境</p>
-</li>
-<li><p>在新环境运行新代码</p>
-</li>
-<li><p>使用 Nginx 做转发</p>
-</li>
-</ul>
-<h2 id="配置前端生产环境"><a href="#配置前端生产环境" class="headerlink" title="配置前端生产环境"></a>配置前端生产环境</h2><ul>
-<li><p>将代码中的路径替换成 CDN 路径</p>
-</li>
-<li><p>上传打包好的 CSS 和 JS 代码到 CDN</p>
-</li>
-<li><p>将 html 文件上传到后端服务器</p>
-</li>
-<li><p>使用 Nginx 处理 html 文件请求</p>
-</li>
-</ul>
-<h1 id="在宿主机里部署"><a href="#在宿主机里部署" class="headerlink" title="在宿主机里部署"></a>在宿主机里部署</h1><p>bin 目录新建 pack_for_host.sh, setup_host.sh</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># pack_for_host.sh</span>
-<span class="token assign-left variable">dir</span><span class="token operator">=</span>oh-my-env
-<span class="token assign-left variable">time</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +<span class="token string">'%Y%m%d-%H%M%S'</span><span class="token variable">)</span></span>
-<span class="token assign-left variable">dist</span><span class="token operator">=</span>tmp/mangosteen-<span class="token variable">$time</span>.tar.gz
-<span class="token assign-left variable">current_dir</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">dirname</span> $0<span class="token variable">)</span></span>
-<span class="token assign-left variable">deploy_dir</span><span class="token operator">=</span>/workspaces/<span class="token variable">$dir</span>/mangosteen_deploy
-<span class="token function">yes</span> <span class="token operator">|</span> <span class="token function">rm</span> tmp/mangosteen-*.tar.gz<span class="token punctuation">;</span> 
-<span class="token function">yes</span> <span class="token operator">|</span> <span class="token function">rm</span> <span class="token variable">$deploy_dir</span>/mangosteen-*.tar.gz<span class="token punctuation">;</span> 
-<span class="token function">tar</span> <span class="token parameter variable">--exclude</span><span class="token operator">=</span><span class="token string">"tmp/cache/*"</span> <span class="token parameter variable">-czv</span> <span class="token parameter variable">-f</span> <span class="token variable">$dist</span> *
-<span class="token function">mkdir</span> <span class="token parameter variable">-p</span> <span class="token variable">$deploy_dir</span>
-<span class="token function">cp</span> <span class="token variable">$current_dir</span>/<span class="token punctuation">..</span>/config/host.Dockerfile <span class="token variable">$deploy_dir</span>/Dockerfile
-<span class="token function">cp</span> <span class="token variable">$current_dir</span>/setup_host.sh <span class="token variable">$deploy_dir</span>/
-<span class="token function">mv</span> <span class="token variable">$dist</span> <span class="token variable">$deploy_dir</span>
-<span class="token builtin class-name">echo</span> <span class="token variable">$time</span> <span class="token operator">&gt;</span> <span class="token variable">$deploy_dir</span>/version
-<span class="token builtin class-name">echo</span> <span class="token string">'DONE!'</span>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Adding config/master.key to store the encryption key: abf694bcb7a2f9973efbab9b0ebfe409
 
-<span class="token comment"># setup_host.sh</span>
-<span class="token assign-left variable">DB_PASSWORD</span><span class="token operator">=</span><span class="token number">123456</span>
-<span class="token assign-left variable">container_name</span><span class="token operator">=</span>mangosteen-prod-1
-<span class="token assign-left variable">version</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> mangosteen_deploy/version<span class="token variable">)</span></span>
-<span class="token builtin class-name">echo</span> <span class="token string">'docker build ...'</span>
-<span class="token function">docker</span> build mangosteen_deploy <span class="token parameter variable">-t</span> mangosteen:<span class="token variable">$version</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">docker</span> <span class="token function">ps</span> <span class="token parameter variable">-aq</span> <span class="token parameter variable">-f</span> <span class="token assign-left variable">name</span><span class="token operator">=</span>^mangosteen-prod-1$<span class="token variable">)</span></span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-  <span class="token builtin class-name">echo</span> <span class="token string">'docker rm ...'</span>
-  <span class="token function">docker</span> <span class="token function">rm</span> <span class="token parameter variable">-f</span> <span class="token variable">$container_name</span>
-<span class="token keyword">fi</span>
-<span class="token builtin class-name">echo</span> <span class="token string">'docker run ...'</span>
-<span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">--network</span><span class="token operator">=</span>network1 <span class="token parameter variable">-e</span> <span class="token assign-left variable">DB_PASSWORD</span><span class="token operator">=</span><span class="token variable">$DB_PASSWORD</span> <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token variable">$container_name</span> mangosteen:<span class="token variable">$version</span>
-<span class="token builtin class-name">echo</span> <span class="token string">'DONE!'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Save this <span class="token keyword">in</span> a password manager your team can access.
 
-<p>config 目录新建 host.Dockerfile</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">FROM ruby:3.0.0
-ENV RAILS_ENV production
-RUN <span class="token function">mkdir</span> /mangosteen
-RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.com
-WORKDIR /mangosteen
-ADD mangosteen-*.tar.gz ./
-RUN bundle config <span class="token builtin class-name">set</span> <span class="token parameter variable">--local</span> without <span class="token string">'development test'</span>
-RUN bundle <span class="token function">install</span>
-ENTRYPOINT bundle <span class="token builtin class-name">exec</span> puma<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+If you lose the key, no one, including you, can access anything encrypted with it.
 
-<p>开发容器终端运行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">chmod</span> +x bin/*.sh
-bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+      create  config/master.key
 
-<p>回到 windows oh-my-env 目录，会看到打包好的 mangosteen_deploy，使用 cmder 或 git bash 运行</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mangosteen_deploy/setup_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+File encrypted and saved.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>这个时候 <code>docker ps -a</code> 发现启动失败了</p>
-<p>使用 <code>docker logs [CONTAINER ID]</code> 查看原因</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span> Unable to load application: ArgumentError: Missing <span class="token variable"><span class="token variable">`</span>secret_key_base<span class="token variable">`</span></span> <span class="token keyword">for</span> <span class="token string">'production'</span> environment, <span class="token builtin class-name">set</span> this string with <span class="token variable"><span class="token variable">`</span>bin/rails credentials:edit<span class="token variable">`</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="Rails-多环境密钥"><a href="#Rails-多环境密钥" class="headerlink" title="Rails 多环境密钥"></a>Rails 多环境密钥</h2><p>开发环境密钥</p>
+<p>命令：<code>EDITOR="code --wait" bin/rails credentials:edit</code></p>
+<p>产物：config/master.key、config/credentials.yml.enc</p>
+<p>生产环境密钥</p>
+<p>命令：<code>EDITOR="code --wait" rails credentials:edit --environment production</code></p>
+<p>产物：config/credentials/production.key、config/credentials/production.yml.enc</p>
+<h2 id="解决-Missing-secret-key-base-for-‘production’-environment"><a href="#解决-Missing-secret-key-base-for-‘production’-environment" class="headerlink" title="解决 Missing secret_key_base for ‘production’ environment"></a>解决 Missing <code>secret_key_base</code> for ‘production’ environment</h2><ol>
+<li>修改 bin/setup_post.host，把 <code>secret_key_base</code> 写到环境变量</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 添加了这个 -e RAILS_MASTER_KEY=$RAILS_MASTER_KEY</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-e</span> <span class="token assign-left variable">RAILS_MASTER_KEY</span><span class="token operator">=</span><span class="token variable">$RAILS_MASTER_KEY</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">--network</span><span class="token operator">=</span>network1  <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token variable">$container_name</span> mangosteen:<span class="token variable">$version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>解决见<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/">下篇</a></p>
+<ol start="2">
+<li><p>读取开发环境的 <code>secret_key_base</code>，可以通过前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/#toc-heading-3">Rails 读取 keys</a>的方法来读取，也可以通过前面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/#toc-heading-4">Rails 写入 keys</a>的方法来重新获取一个，把这个 <code>secret_key_base</code> 的值复制下来</p>
+</li>
+<li><p>设置生产环境的 <code>secret_key_base</code></p>
+<ol>
+<li><p>输入命令：<code>EDITOR="code --wait" rails credentials:edit --environment production</code></p>
+</li>
+<li><p>在生成的 xxxxx.production.yml 写入 <code>secret_key_base: 刚刚复制的开发环境secret_key_base</code>，关闭编辑页会自动销毁这个文件</p>
+</li>
+</ol>
+</li>
+<li><p>重新生成开发环境的 <code>secret_key_base</code>，防止生产环境 <code>secret_key_base</code> 泄露</p>
+</li>
+<li><p>输入命令 <code>bin/pack_for_host.sh</code> 重新打包</p>
+</li>
+<li><p>复制 config/credentials/production.key 内容</p>
+</li>
+<li><p>宿主机执行 <code>RAILS_MASTER_KEY=xxxxxxxxxxxxxxx mangosteen_deploy/setup_host.sh</code>（这里 RAILS_MASTER_KEY 是步骤 1 命名的，xxxxxxxxxxxxxxx 就是上面步骤 6 复制的内容）</p>
+</li>
+<li><p>浏览器访问 <code>http://localhost:3000/</code>，页面出现 <code>{"message":"Welcome!"}</code> 即部署成功了</p>
+</li>
+</ol>
+<p>但是访问 <code>http://localhost:3000/api/v1/items</code> 还是失败，原因是还没有配置生产环境数据库</p>
+<h1 id="配置生产环境数据库"><a href="#配置生产环境数据库" class="headerlink" title="配置生产环境数据库"></a>配置生产环境数据库</h1><ol>
+<li>修改 config/database.yml</li>
+</ol>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">production</span><span class="token punctuation">:</span>
+  <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*default</span>
+  <span class="token key atrule">database</span><span class="token punctuation">:</span> mangosteen_production
+  <span class="token key atrule">username</span><span class="token punctuation">:</span> mangosteen
+  <span class="token key atrule">password</span><span class="token punctuation">:</span> &lt;%= ENV<span class="token punctuation">[</span><span class="token string">"DB_PASSWORD"</span><span class="token punctuation">]</span> %<span class="token punctuation">&gt;</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> &lt;%= ENV<span class="token punctuation">[</span><span class="token string">"DB_HOST"</span><span class="token punctuation">]</span> %<span class="token punctuation">&gt;</span>
+  <span class="token comment"># &lt;%= ENV["DB_PASSWORD"] %&gt; &lt;%= ENV["DB_HOST"] %&gt; 使用环境变量</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ol start="2">
+<li>修改 bin/setup_host.sh</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 添加了 -e DB_HOST=$DB_HOST -e DB_PASSWORD=$DB_PASSWORD</span>
+<span class="token function">docker</span> run <span class="token parameter variable">-e</span> <span class="token assign-left variable">DB_HOST</span><span class="token operator">=</span><span class="token variable">$DB_HOST</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">DB_PASSWORD</span><span class="token operator">=</span><span class="token variable">$DB_PASSWORD</span> <span class="token parameter variable">-e</span> <span class="token assign-left variable">RAILS_MASTER_KEY</span><span class="token operator">=</span><span class="token variable">$RAILS_MASTER_KEY</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">-p</span> <span class="token number">3000</span>:3000 <span class="token parameter variable">--network</span><span class="token operator">=</span>network1 <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token variable">$container_name</span> mangosteen:<span class="token variable">$version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<ol start="3">
+<li><p>执行上面<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/#toc-heading-6">解决 Missing <code>secret_key_base</code> for ‘production’ environment</a> 的步骤2/3/4/5/6</p>
+</li>
+<li><p>宿主机执行 <code>DB_HOST=db-for-mangosteen DB_PASSWORD=123456 RAILS_MASTER_KEY=xxxxxxxxxxxxxxx mangosteen_deploy/setup_host.sh</code>（举一反三理解DB_HOST、DB_PASSWORD）</p>
+</li>
+<li><p>浏览器访问 <code>http://localhost:3000/api/v1/items</code>，页面出现 <code>"resources":[],"pager":{"page":null,"per_page":100,"count":0}}</code> 即访问接口成功了</p>
+</li>
+</ol>
+<blockquote>
+<p>为什么不用 <code>curl http://localhost:3000/ -v</code> 和 <code>curl http://localhost:3000/api/v1/items -v</code><br>    这里其实正常是可以 curl 出来的，就很奇怪我的出不来，一直卡在返回那里，尝试 curl 百度和本地的其它端口也是成功的，说明 curl 没问题，但是浏览器访问也是成功的，说明接口也没问题，so I don’t understand why …</p>
+</blockquote>
 
                 
             </div>
@@ -606,7 +569,7 @@ bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></s
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/">http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/</a>
+                    <a href="http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/">http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -689,9 +652,10 @@ bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/">
                     <div class="card-image">
@@ -709,9 +673,9 @@ bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></s
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -724,6 +688,7 @@ bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></s
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -742,13 +707,13 @@ bin/pack_for_host.sh<span aria-hidden="true" class="line-numbers-rows"><span></s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/">
+                <a href="/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="实战篇笔记-山竹记账后端（三）">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="实战篇笔记-山竹记账后端（四）">
                         
-                        <span class="card-title">实战篇笔记-山竹记账后端（三）</span>
+                        <span class="card-title">实战篇笔记-山竹记账后端（四）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
