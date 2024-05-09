@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    873
+                    950
                 </div>
                 
 
@@ -537,12 +537,22 @@ File encrypted and saved.<span aria-hidden="true" class="line-numbers-rows"><spa
 </li>
 <li><p>宿主机执行 <code>DB_HOST=db-for-mangosteen DB_PASSWORD=123456 RAILS_MASTER_KEY=xxxxxxxxxxxxxxx mangosteen_deploy/setup_host.sh</code>（举一反三理解DB_HOST、DB_PASSWORD）</p>
 </li>
+<li><p>宿主机执行 <code>docker exec -it mangosteen-prod-1 bin/rails db:create db:migrate</code> 创建和迁移数据库（mangosteen-prod-1 也可以改成容器 id）</p>
+</li>
 <li><p>浏览器访问 <code>http://localhost:3000/api/v1/items</code>，页面出现 <code>"resources":[],"pager":{"page":null,"per_page":100,"count":0}}</code> 即访问接口成功了</p>
 </li>
 </ol>
 <blockquote>
 <p>为什么不用 <code>curl http://localhost:3000/ -v</code> 和 <code>curl http://localhost:3000/api/v1/items -v</code><br>    这里其实正常是可以 curl 出来的，就很奇怪我的出不来，一直卡在返回那里，尝试 curl 百度和本地的其它端口也是成功的，说明 curl 没问题，但是浏览器访问也是成功的，说明接口也没问题，so I don’t understand why …</p>
 </blockquote>
+<hr>
+<p><strong>谨慎操作：如何删除生产环境数据库</strong></p>
+<ol>
+<li><p>宿主机执行 <code>docker exec -it mangosteen-prod-1 bash</code> 进入容器内部</p>
+</li>
+<li><p>输入 <code>DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bin/rails db:drop</code></p>
+</li>
+</ol>
 
                 
             </div>
