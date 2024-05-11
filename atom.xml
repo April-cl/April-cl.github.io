@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-09T08:43:12.696Z</updated>
+  <updated>2024-05-11T02:36:19.022Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决：Error: error:0308010C:digital envelope routines::unsupported</title>
+    <link href="http://example.com/2024/05/11/jie-jue-error-error-0308010c-digital-envelope-routines-unsupported/"/>
+    <id>http://example.com/2024/05/11/jie-jue-error-error-0308010c-digital-envelope-routines-unsupported/</id>
+    <published>2024-05-11T02:07:55.000Z</published>
+    <updated>2024-05-11T02:36:19.022Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h1&gt;&lt;p&gt;&lt;code&gt;yarn start&lt;/code&gt; 启动一个以前的 React 项目，报错&lt;/p&gt;
+&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
+    
+    
+    <category term="webpack" scheme="http://example.com/tags/webpack/"/>
+    
+    <category term="node" scheme="http://example.com/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title>git 撤销修改</title>
@@ -507,36 +535,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-    <category term="APP" scheme="http://example.com/tags/APP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记录 APP 扫描一维码不准确的原因</title>
-    <link href="http://example.com/2024/03/15/ji-lu-app-sao-miao-yi-wei-ma-bu-zhun-que-de-yuan-yin/"/>
-    <id>http://example.com/2024/03/15/ji-lu-app-sao-miao-yi-wei-ma-bu-zhun-que-de-yuan-yin/</id>
-    <published>2024-03-15T05:30:33.000Z</published>
-    <updated>2024-03-15T08:22:33.200Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;code&gt;plus.barcode.Barcode(domId, filters, styles, autoDecodeCharset)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;参数：&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;domId: (</summary>
         
       
     

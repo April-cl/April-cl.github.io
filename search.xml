@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>解决：Error: error:0308010C:digital envelope routines::unsupported</title>
+      <link href="/2024/05/11/jie-jue-error-error-0308010c-digital-envelope-routines-unsupported/"/>
+      <url>/2024/05/11/jie-jue-error-error-0308010c-digital-envelope-routines-unsupported/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p><code>yarn start</code> 启动一个以前的 React 项目，报错</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Error: error:0308010C:digital envelope routines::unsupported<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>Webpack 在构建过程中使用了 MD4 算法，而最新版本的 Node.js 默认不再支持该算法</p><h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><ol><li>升级 Webpack ，新版本实现了自己的 MD4 算法，而不依赖于 Node 的实现</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> webpack@latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>添加 <code>--openssl-legacy-provider</code> 标志</li></ol><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token comment">// package.json</span><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"react-scripts start --openssl-legacy-provider"</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><ol start="3"><li>使用 Node v16</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电脑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> webpack </tag>
+            
+            <tag> node </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git 撤销修改</title>
       <link href="/2024/05/09/git-che-xiao-xiu-gai/"/>
       <url>/2024/05/09/git-che-xiao-xiu-gai/</url>
