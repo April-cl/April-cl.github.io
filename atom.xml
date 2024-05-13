@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-11T02:36:19.022Z</updated>
+  <updated>2024-05-13T08:15:16.945Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账前端（一）</title>
+    <link href="http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/"/>
+    <id>http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/</id>
+    <published>2024-05-13T01:57:02.000Z</published>
+    <updated>2024-05-13T08:15:16.945Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;使用-oh-my-env-开发环境&quot;&gt;&lt;a href=&quot;#使用-oh-my-env-开发环境&quot; class=&quot;headerlink&quot; title=&quot;使用 oh-my-env 开发环境&quot;&gt;&lt;/a&gt;使用 oh-my-env 开发环境&lt;/h1&gt;&lt;p&gt;锁死 npm</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+    <category term="Vue3" scheme="http://example.com/tags/Vue3/"/>
+    
+    <category term="TSX" scheme="http://example.com/tags/TSX/"/>
+    
+  </entry>
   
   <entry>
     <title>解决：Error: error:0308010C:digital envelope routines::unsupported</title>
@@ -519,33 +548,6 @@
     
     
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于web-view组件层级过高导致其它视图组件不可视的解决办法</title>
-    <link href="http://example.com/2024/03/15/guan-yu-web-view-zu-jian-ceng-ji-guo-gao-dao-zhi-qi-ta-shi-tu-zu-jian-bu-ke-shi-de-jie-jue-ban-fa/"/>
-    <id>http://example.com/2024/03/15/guan-yu-web-view-zu-jian-ceng-ji-guo-gao-dao-zhi-qi-ta-shi-tu-zu-jian-bu-ke-shi-de-jie-jue-ban-fa/</id>
-    <published>2024-03-15T05:47:42.000Z</published>
-    <updated>2024-03-15T08:01:46.850Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="uni-app" scheme="http://example.com/tags/uni-app/"/>
-    
-    <category term="APP" scheme="http://example.com/tags/APP/"/>
     
   </entry>
   
