@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-14T03:55:31.715Z</updated>
+  <updated>2024-05-14T09:34:19.319Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账前端（四）</title>
+    <link href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/"/>
+    <id>http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/</id>
+    <published>2024-05-14T04:37:36.000Z</published>
+    <updated>2024-05-14T09:34:19.319Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;多重-RouterView-与-Transition&quot;&gt;&lt;a href=&quot;#多重-RouterView-与-Transition&quot; class=&quot;headerlink&quot; title=&quot;多重 RouterView 与 Transition&quot;&gt;&lt;/a&gt;多重</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue3" scheme="http://example.com/tags/Vue3/"/>
+    
+    <category term="TSX" scheme="http://example.com/tags/TSX/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账前端（三）</title>
@@ -522,32 +549,6 @@
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     <category term="git" scheme="http://example.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决npm设置registry.npmmirror.com仍报错registry.npm.taobao.org的问题</title>
-    <link href="http://example.com/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/"/>
-    <id>http://example.com/2024/03/19/jie-jue-npm-she-zhi-registry-npmmirror-com-reng-bao-cuo-registry-npm-taobao-org-de-wen-ti/</id>
-    <published>2024-03-19T02:04:31.000Z</published>
-    <updated>2024-05-09T09:58:06.528Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;早上打算运行电脑里面一个许久没动过的项目，在输入 &lt;code&gt;npm install&lt;/code&gt; 时报了一个错&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
   </entry>
   

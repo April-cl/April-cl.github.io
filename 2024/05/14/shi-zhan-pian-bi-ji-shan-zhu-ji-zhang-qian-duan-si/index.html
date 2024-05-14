@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账前端（三）, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账前端（四）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账前端（三） | April-cl</title>
+    <title>实战篇笔记-山竹记账前端（四） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（三）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（四）</h1>
                 </div>
             </div>
         </div>
@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    595
+                    386
                 </div>
                 
 
@@ -453,122 +453,92 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="封装-WelcomeLayout-组件"><a href="#封装-WelcomeLayout-组件" class="headerlink" title="封装 WelcomeLayout 组件"></a>封装 WelcomeLayout 组件</h1><p>目的：消除重复</p>
-<p>四个页面只有图片、文字不同，布局结构是一致的</p>
-<p>重构前</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/components/welcome/First.tsx</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> defineComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> s <span class="token keyword">from</span> <span class="token string">'./First.module.scss'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> pig <span class="token keyword">from</span> <span class="token string">'../../assets/icons/pig.svg'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> RouterLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> First <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                <h1 id="多重-RouterView-与-Transition"><a href="#多重-RouterView-与-Transition" class="headerlink" title="多重 RouterView 与 Transition"></a>多重 RouterView 与 Transition</h1><p>WelcomeLayout 组件功能迁移到 Welcome 组件，重构 Welcome 组件</p>
+<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/views/Welcome.tsx</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> defineComponent<span class="token punctuation">,</span> h<span class="token punctuation">,</span> Transition<span class="token punctuation">,</span> VNode <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> RouteLocationNormalizedLoaded<span class="token punctuation">,</span> RouterView <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> s <span class="token keyword">from</span> <span class="token string">'./Welcome.module.scss'</span>
+<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">'../assets/icons/mangosteen.svg'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> Welcome <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
   <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>wrapper<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>card<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>pig<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">会挣钱</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">/&gt;</span></span><span class="token plain-text">还要会省钱</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>actions<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>fake<span class="token punctuation">}</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/start<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">跳过</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/welcome/2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">下一页</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/start<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">跳过</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>wrapper<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>logo<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">山竹记账</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>main<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+          </span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Component<span class="token operator">:</span> <span class="token constant">X</span><span class="token punctuation">,</span> route<span class="token operator">:</span> <span class="token constant">R</span> <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> Component<span class="token operator">:</span> VNode<span class="token punctuation">,</span> route<span class="token operator">:</span> RouteLocationNormalizedLoaded <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token attr-name">enterFromClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_from<span class="token punctuation">}</span></span> <span class="token attr-name">enterActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_active<span class="token punctuation">}</span></span>
+              <span class="token attr-name">leaveToClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_to<span class="token punctuation">}</span></span> <span class="token attr-name">leaveActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_active<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+              </span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token plain-text">
+            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span>
+          <span class="token punctuation">}</span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterView</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>重构后</p>
-<p>将布局封装为一个组件，内容通过插槽来传入</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/components/welcome/WelcomeLayout.tsx</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> defineComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> s <span class="token keyword">from</span> <span class="token string">'./First.module.scss'</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> WelcomeLayout <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token punctuation">{</span>slots<span class="token punctuation">}</span> <span class="token operator">=</span> context
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>wrapper<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>card<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token punctuation">{</span>slots<span class="token punctuation">.</span>icon<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text"> 
-          </span><span class="token punctuation">{</span>slots<span class="token punctuation">.</span>title<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>actions<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token punctuation">{</span>slots<span class="token punctuation">.</span>buttons<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
+<h2 id="多重-RouterView"><a href="#多重-RouterView" class="headerlink" title="多重 RouterView"></a>多重 RouterView</h2><p><a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/guide/essentials/named-views.html#%E5%B5%8C%E5%A5%97%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE">命名视图</a></p>
+<p>用法：</p>
+<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/config/routes.tsx</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> routes<span class="token operator">:</span> RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/welcome'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    path<span class="token operator">:</span> <span class="token string">'/welcome'</span><span class="token punctuation">,</span>
+    component<span class="token operator">:</span> Welcome<span class="token punctuation">,</span>
+    children<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/welcome/1'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> components<span class="token operator">:</span> <span class="token punctuation">{</span> main<span class="token operator">:</span> First<span class="token punctuation">,</span> footer<span class="token operator">:</span> FirstActions <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token comment">// 使用 components 配置</span>
+    <span class="token punctuation">]</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token comment">/* 还可以写成函数组件形式
-import { FunctionalComponent } from 'vue';
-import s from './WelcomeLayout.module.scss';
-export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
-  const { slots: { icon, title, buttons } } = context
-  return (
-    &lt;div class={s.wrapper}&gt;
-      &lt;div class={s.card}&gt;
-        {icon?.()}
-        {title?.()}
-      &lt;/div&gt;
-      &lt;div class={s.actions}&gt;
-        {buttons?.()}
-      &lt;/div&gt;
-    &lt;/div&gt;
-  )
-}
-*/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">]</span>
 
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/components/welcome/First.tsx</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> defineComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> s <span class="token keyword">from</span> <span class="token string">'./First.module.scss'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> pig <span class="token keyword">from</span> <span class="token string">'../../assets/icons/pig.svg'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> WelcomeLayout <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./WelcomeLayout'</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> RouterLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> First <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> slots <span class="token operator">=</span> <span class="token punctuation">{</span>
-      <span class="token function-variable function">icon</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>pig<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token punctuation">,</span>
-      <span class="token function-variable function">title</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">会挣钱</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">还会省钱</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">,</span>
-      <span class="token function-variable function">buttons</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>fake<span class="token punctuation">}</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/start<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">跳过</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/welcome/2<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">下一页</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterLink</span></span> <span class="token attr-name">to</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/start<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">跳过</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterLink</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">WelcomeLayout</span></span> <span class="token attr-name">v-slots</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>slots<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">WelcomeLayout</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token comment">/* 也可以不用 v-slot 这样写
-      &lt;WelcomeLayout&gt;
-      {{
-        icon: () =&gt; &lt;img src={pig} /&gt;,
-        title: () =&gt; &lt;h2&gt;会挣钱&lt;br /&gt;还会省钱&lt;/h2&gt;,
-        buttons: () =&gt; &lt;&gt;
-            &lt;RouterLink class={s.fake} to="/start" &gt;跳过&lt;/RouterLink&gt;
-            &lt;RouterLink to="/welcome/2" &gt;下一页&lt;/RouterLink&gt;
-            &lt;RouterLink to="/start" &gt;跳过&lt;/RouterLink&gt;
-        &lt;/&gt;
-      }}
-      &lt;/WelcomeLayout&gt;
-      */</span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
+<span class="token comment">// src/views/Welcome.tsx</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>main<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">  // 如果没有指定 name，则为默认 default
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-  <span class="token comment">/* 还可以写成函数组件形式
-  export const First: FunctionalComponent = () =&gt; {
-    return &lt;WelcomeLayout&gt;{{
-        icon: () =&gt; &lt;img src={pig} /&gt;,
-        title: () =&gt; &lt;h2&gt;会挣钱&lt;br /&gt;还会省钱&lt;/h2&gt;,
-        buttons: () =&gt; &lt;&gt;
-        &lt;RouterLink class={s.fake} to="/start" &gt;跳过&lt;/RouterLink&gt;
-        &lt;RouterLink to="/welcome/2" &gt;下一页&lt;/RouterLink&gt;
-        &lt;RouterLink to="/start" &gt;跳过&lt;/RouterLink&gt;
-        &lt;/&gt;
-    }}&lt;/WelcomeLayout&gt;
-    }
-    First.displayName = 'First'
-  */</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="自定义过渡-class​"><a href="#自定义过渡-class​" class="headerlink" title="自定义过渡 class​"></a>自定义过渡 class​</h3><p>向 <code>&lt;Transition&gt;</code> 传递以下的 props 来指定自定义的过渡 class：    </p>
+<ul>
+<li>enter-active-class</li>
+<li>enter-active-class</li>
+<li>enter-to-class</li>
+<li>leave-from-class</li>
+<li>leave-active-class</li>
+<li>leave-to-class</li>
+</ul>
+<p>传入的这些 class 会覆盖相应阶段的默认 class 名</p>
+<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token attr-name">enterFromClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_from<span class="token punctuation">}</span></span> <span class="token attr-name">enterActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_active<span class="token punctuation">}</span></span> <span class="token attr-name">leaveToClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_to<span class="token punctuation">}</span></span> <span class="token attr-name">leaveActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_active<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="是怎么知道-RouterView-插槽的参数的"><a href="#是怎么知道-RouterView-插槽的参数的" class="headerlink" title="是怎么知道 RouterView 插槽的参数的"></a>是怎么知道 RouterView 插槽的参数的</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token punctuation">(</span><span class="token punctuation">{</span> Component<span class="token operator">:</span> <span class="token constant">X</span><span class="token punctuation">,</span> route<span class="token operator">:</span> <span class="token constant">R</span> <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> Component<span class="token operator">:</span> VNode<span class="token punctuation">,</span> route<span class="token operator">:</span> RouteLocationNormalizedLoaded <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">
+    </span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token plain-text">
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>根据 IDE 提示（TS 的好处）查看 RouterView 定义</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">declare</span> <span class="token keyword">const</span> RouterView<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    $props<span class="token operator">:</span> AllowedComponentProps <span class="token operator">&amp;</span> ComponentCustomProps <span class="token operator">&amp;</span> VNodeProps <span class="token operator">&amp;</span> RouterViewProps<span class="token punctuation">;</span>
+    $slots<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token function-variable function">default</span><span class="token operator">:</span> <span class="token punctuation">(</span>arg<span class="token operator">:</span> <span class="token punctuation">{</span>
+            Component<span class="token operator">:</span> VNode<span class="token punctuation">;</span>
+            route<span class="token operator">:</span> RouteLocationNormalizedLoaded<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> VNode<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<blockquote>
+<p><strong>学习方法重于学习结果</strong></p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -594,7 +564,7 @@ export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/">http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/</a>
+                    <a href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/">http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -681,9 +651,10 @@ export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/">
                     <div class="card-image">
@@ -701,9 +672,9 @@ export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -716,6 +687,7 @@ export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -738,13 +710,13 @@ export const WelcomeLayout: FunctionalComponent = (props, context) =&gt; {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/">
+                <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（二）">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（三）">
                         
-                        <span class="card-title">实战篇笔记-山竹记账前端（二）</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（三）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
