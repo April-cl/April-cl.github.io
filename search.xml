@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>实战篇笔记-山竹记账前端（二）</title>
+      <link href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/"/>
+      <url>/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/</url>
+      
+        <content type="html"><![CDATA[<h1 id="使用-CSS-Modules"><a href="#使用-CSS-Modules" class="headerlink" title="使用 CSS Modules"></a>使用 CSS Modules</h1><p>任何以 .module.css 为后缀名的 CSS 文件都被认为是一个 CSS modules 文件。导入这样的文件会返回一个相应的模块对象：</p><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* example.module.css */</span><span class="token selector">.red</span> <span class="token punctuation">{</span>  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> classes <span class="token keyword">from</span> <span class="token string">'./example.module.css'</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>className <span class="token operator">=</span> classes<span class="token punctuation">.</span>red<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>本项目用的是 scss ，需要安装预处理器依赖</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">pnpm</span> i <span class="token parameter variable">-D</span> sass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="完成第一个页面"><a href="#完成第一个页面" class="headerlink" title="完成第一个页面"></a>完成第一个页面</h1><p>拷贝 windows 系统文件：<code>mv /workspaces/oh-my-env/temp//*.svg src/assets/icons</code></p><p>css 自定义全局变量</p><pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span>  <span class="token property">--main-color</span><span class="token punctuation">:</span> hotpink<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--main-color<span class="token punctuation">)</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue3 </tag>
+            
+            <tag> TSX </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记-山竹记账前端（一）</title>
       <link href="/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/"/>
       <url>/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/</url>
@@ -19,8 +46,6 @@
       
       
         <tags>
-            
-            <tag> Vue </tag>
             
             <tag> Vue3 </tag>
             

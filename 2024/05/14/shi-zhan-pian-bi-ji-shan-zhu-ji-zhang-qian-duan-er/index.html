@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账前端（一）, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账前端（二）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账前端（一） | April-cl</title>
+    <title>实战篇笔记-山竹记账前端（二） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（一）</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（二）</h1>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-13
+                    2024-05-14
                 </div>
                 
 
@@ -433,7 +433,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    456
+                    127
                 </div>
                 
 
@@ -453,77 +453,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="使用-oh-my-env-开发环境"><a href="#使用-oh-my-env-开发环境" class="headerlink" title="使用 oh-my-env 开发环境"></a>使用 oh-my-env 开发环境</h1><p>锁死 npm 版本号 <code>npm config set save-prefix=''</code></p>
-<h1 id="dev、build-和-preview"><a href="#dev、build-和-preview" class="headerlink" title="dev、build 和 preview"></a>dev、build 和 preview</h1><p>创建项目 <code>pnpm create vite@2.9.0 projectName -- --template vue-ts</code>，<code>-- </code> 表示后面是 <code>vite</code> 构建工具的参数，<code>vue-ts</code> 使用 vue 和 ts</p>
-<p>使用 <code>pnpm run build</code> 时报错：<code>Cannot access ambient const enums when the '--isolatedModules' flag is provided.</code></p>
-<p>解决：tsconfig.json -&gt; compilerOptions -&gt; 设置 “skipLibCheck”: true</p>
-<h1 id="修改-build-path-部署到-GitHub"><a href="#修改-build-path-部署到-GitHub" class="headerlink" title="修改 build path 部署到 GitHub"></a>修改 build path 部署到 GitHub</h1><p>在 vite.config.js 中设置正确的 base。</p>
-<ul>
-<li><p>base 设置为 <code>'/'</code>：部署到 <code>https://&lt;USERNAME&gt;.github.io/</code>，或者通过 GitHub Pages 部署到一个自定义域名（例如 <a target="_blank" rel="noopener" href="http://www.example.com)/">www.example.com）</a></p>
-</li>
-<li><p>base 设置为 <code>'/&lt;REPO&gt;/'</code>：部署到 <code>https://&lt;USERNAME&gt;.github.io/&lt;REPO&gt;/</code></p>
-</li>
-</ul>
-<p>删除远程仓库 dist 文件，保留本地文件：<code>git rm -r --cached dist</code></p>
-<h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><p>env.d.ts 是 typescript 的声明文件，主要用来给编辑器做代码提示用（<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133344957">typescript 声明文件加载机制以及在不同场景下的正确使用方式</a>）</p>
-<h1 id="Template-VS-TSX"><a href="#Template-VS-TSX" class="headerlink" title="Template VS TSX"></a>Template VS TSX</h1><h2 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h2><p><code>&lt;script setup&gt;</code> 是在单文件组件 (SFC) 中使用组合式 API 的编译时语法糖。</p>
-<pre class="line-numbers language-Vue" data-language="Vue"><code class="language-Vue">&lt;script setup&gt;
-import { ref } from 'vue'
+                <h1 id="使用-CSS-Modules"><a href="#使用-CSS-Modules" class="headerlink" title="使用 CSS Modules"></a>使用 CSS Modules</h1><p>任何以 .module.css 为后缀名的 CSS 文件都被认为是一个 CSS modules 文件。导入这样的文件会返回一个相应的模块对象：</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* example.module.css */</span>
+<span class="token selector">.red</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-// 顶层的绑定会被暴露给模板
-const count = ref(0)
-console.log(count.value)
-&lt;/script&gt;
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> classes <span class="token keyword">from</span> <span class="token string">'./example.module.css'</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>className <span class="token operator">=</span> classes<span class="token punctuation">.</span>red<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-&lt;template&gt;
-&lt;!-- ref 在模板中使用的时候会自动解包 --&gt;
-  &lt;button @click="count++"&gt;{{ count }}&lt;/button&gt;
-&lt;/template&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>本项目用的是 scss ，需要安装预处理器依赖</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">pnpm</span> i <span class="token parameter variable">-D</span> sass<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="TSX"><a href="#TSX" class="headerlink" title="TSX"></a>TSX</h2><ol>
-<li>安装插件</li>
-</ol>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">pnpm</span> <span class="token function">install</span> @vitejs/plugin-vue-jsx <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="完成第一个页面"><a href="#完成第一个页面" class="headerlink" title="完成第一个页面"></a>完成第一个页面</h1><p>拷贝 windows 系统文件：<code>mv /workspaces/oh-my-env/temp//*.svg src/assets/icons</code></p>
+<p>css 自定义全局变量</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--main-color</span><span class="token punctuation">:</span> hotpink<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<ol start="2">
-<li>修改配置</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vite.config.js</span>
-<span class="token keyword">import</span> vueJsx <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue-jsx'</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
-  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token function">vueJsx</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-      <span class="token comment">// options are passed on to @vue/babel-plugin-jsx</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>上面的例子</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">import</span> <span class="token punctuation">{</span> ref <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
-
-<span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function">setup</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> count <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">.</span>value<span class="token punctuation">)</span>
-
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    // 注意这里需要.value
-    &lt;button @click="count++"&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span> count<span class="token punctuation">.</span>value <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h1 id="引入-Vue-Router-4"><a href="#引入-Vue-Router-4" class="headerlink" title="引入 Vue Router 4"></a>引入 Vue Router 4</h1><p>get some tips :</p>
-<ol>
-<li><p>给包管理工具起别名</p>
-<p> 终端输入 <code>code ~/.bashrc</code> 打开 <code>.bashrc</code> 文件，添加 <code>alias npm='pnpm'</code>，终端输入 <code>source ~/.bashrc</code></p>
-</li>
-<li><p>git 修改最近提交</p>
-<p> <code>git commit --amend</code></p>
-</li>
-</ol>
-
+<span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span>--main-color<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -549,7 +499,7 @@ console.log(count.value)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/">http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/</a>
+                    <a href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/">http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -636,9 +586,10 @@ console.log(count.value)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/">
                     <div class="card-image">
@@ -656,9 +607,9 @@ console.log(count.value)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -671,6 +622,7 @@ console.log(count.value)
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -693,13 +645,13 @@ console.log(count.value)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/11/jie-jue-error-error-0308010c-digital-envelope-routines-unsupported/">
+                <a href="/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="解决：Error: error:0308010C:digital envelope routines::unsupported">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（一）">
                         
-                        <span class="card-title">解决：Error: error:0308010C:digital envelope routines::unsupported</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -710,14 +662,14 @@ console.log(count.value)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E8%84%91/" class="post-category">
-                                    电脑
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -727,12 +679,12 @@ console.log(count.value)
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/Vue3/">
+                        <span class="chip bg-color">Vue3</span>
                     </a>
                     
-                    <a href="/tags/node/">
-                        <span class="chip bg-color">node</span>
+                    <a href="/tags/TSX/">
+                        <span class="chip bg-color">TSX</span>
                     </a>
                     
                 </div>
