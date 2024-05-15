@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账前端（四）, April-cl">
+    <meta name="keywords" content="Webpack 读书笔记, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账前端（四） | April-cl</title>
+    <title>Webpack 读书笔记 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（四）</h1>
+                    <h1 class="description center-align post-title">Webpack 读书笔记</h1>
                 </div>
             </div>
         </div>
@@ -390,12 +390,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue3/">
-                                <span class="chip bg-color">Vue3</span>
-                            </a>
-                        
-                            <a href="/tags/TSX/">
-                                <span class="chip bg-color">TSX</span>
+                            <a href="/tags/Webpack/">
+                                <span class="chip bg-color">Webpack</span>
                             </a>
                         
                     </div>
@@ -419,21 +415,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-14
+                    2024-05-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-14
+                    2024-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    386
+                    1.1k
                 </div>
                 
 
@@ -453,91 +449,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="多重-RouterView-与-Transition"><a href="#多重-RouterView-与-Transition" class="headerlink" title="多重 RouterView 与 Transition"></a>多重 RouterView 与 Transition</h1><p>WelcomeLayout 组件功能迁移到 Welcome 组件，重构 Welcome 组件</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/views/Welcome.tsx</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> defineComponent<span class="token punctuation">,</span> h<span class="token punctuation">,</span> Transition<span class="token punctuation">,</span> VNode <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token punctuation">{</span> RouteLocationNormalizedLoaded<span class="token punctuation">,</span> RouterView <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> s <span class="token keyword">from</span> <span class="token string">'./Welcome.module.scss'</span>
-<span class="token keyword">import</span> logo <span class="token keyword">from</span> <span class="token string">'../assets/icons/mangosteen.svg'</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> Welcome <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>wrapper<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>logo<span class="token punctuation">}</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">山竹记账</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>main<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-          </span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Component<span class="token operator">:</span> <span class="token constant">X</span><span class="token punctuation">,</span> route<span class="token operator">:</span> <span class="token constant">R</span> <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> Component<span class="token operator">:</span> VNode<span class="token punctuation">,</span> route<span class="token operator">:</span> RouteLocationNormalizedLoaded <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
-            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token attr-name">enterFromClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_from<span class="token punctuation">}</span></span> <span class="token attr-name">enterActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_active<span class="token punctuation">}</span></span>
-              <span class="token attr-name">leaveToClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_to<span class="token punctuation">}</span></span> <span class="token attr-name">leaveActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_active<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-              </span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token plain-text">
-            </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span>
-          <span class="token punctuation">}</span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">RouterView</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="多重-RouterView"><a href="#多重-RouterView" class="headerlink" title="多重 RouterView"></a>多重 RouterView</h2><p><a target="_blank" rel="noopener" href="https://v3.router.vuejs.org/zh/guide/essentials/named-views.html#%E5%B5%8C%E5%A5%97%E5%91%BD%E5%90%8D%E8%A7%86%E5%9B%BE">命名视图</a></p>
-<p>用法：</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/config/routes.tsx</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> routes<span class="token operator">:</span> RouteRecordRaw<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/welcome'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/welcome'</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> Welcome<span class="token punctuation">,</span>
-    children<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> redirect<span class="token operator">:</span> <span class="token string">'/welcome/1'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span> components<span class="token operator">:</span> <span class="token punctuation">{</span> main<span class="token operator">:</span> First<span class="token punctuation">,</span> footer<span class="token operator">:</span> FirstActions <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>    <span class="token comment">// 使用 components 配置</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-
-<span class="token comment">// src/views/Welcome.tsx</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>main<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">  // 如果没有指定 name，则为默认 default
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">RouterView</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><h3 id="自定义过渡-class​"><a href="#自定义过渡-class​" class="headerlink" title="自定义过渡 class​"></a>自定义过渡 class​</h3><p>向 <code>&lt;Transition&gt;</code> 传递以下的 props 来指定自定义的过渡 class：    </p>
+                <p>初读《Webpack实战：入门、进阶与调优（第2版）》后记录</p>
+<h1 id="何为-Webpack"><a href="#何为-Webpack" class="headerlink" title="何为 Webpack"></a>何为 Webpack</h1><p>Webpack 是一个开源的 JaveScript 模块打包工具，其核心的功能是解决模块之间的依赖，把各个模块按照特定的规则和顺序组织在一起，最终合并为一个 JS 文件（有时会有多个）</p>
+<p>记住上面这句话，后面要考~</p>
+<h1 id="为什么需要-Webpack"><a href="#为什么需要-Webpack" class="headerlink" title="为什么需要 Webpack"></a>为什么需要 Webpack</h1><p>之前工作开发维护的旧框架用的是前端石器时代的 JQuery 框架，没有模块打包的概念，用的是最原始的 <code>&lt;script&gt;</code>、<code>&lt;style&gt;</code> 手动引入文件的方式，每次版本迭代更新需要手动清除浏览器缓存（<code>Ctrl + F5</code> 强制刷新）或者页面设置不缓存，不管哪个做法都是不合理的而且显得很 stupid。另外，该项目是混合开发项目，经常在打包成 APP 后遇到一些机器不能兼容 ES6 写法而导致程序无法正常运行，恼人的是这样的错误还不容易排查，因为一般发生在用户的 APP 载体需要真机调试。</p>
+<p>初读完这本书如获至宝，倒不完全是因为读完之后感觉对 Webpack 的认知更深了，更多是因为有切身经历的参考，更加明白那断崖式的前端巨变历史。</p>
+<p>说回 Webpack…</p>
+<p>前面说到 Webpack 是模块打包工具，模块打包工具（module bundler）的任务就是解决模块间的依赖，使其打包后的结果能运行在浏览器上。它的工作方式主要分为两种：</p>
 <ul>
-<li>enter-active-class</li>
-<li>enter-active-class</li>
-<li>enter-to-class</li>
-<li>leave-from-class</li>
-<li>leave-active-class</li>
-<li>leave-to-class</li>
+<li><p>将存在依赖关系的模块按照特定规则合并为单个JS文件，一次全部加载进页面中。</p>
+</li>
+<li><p>将存在依赖关系的模块按照特定规则合并为单个JS文件，一次全部加载进页面中。</p>
+</li>
 </ul>
-<p>传入的这些 class 会覆盖相应阶段的默认 class 名</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token attr-name">enterFromClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_from<span class="token punctuation">}</span></span> <span class="token attr-name">enterActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_enter_active<span class="token punctuation">}</span></span> <span class="token attr-name">leaveToClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_to<span class="token punctuation">}</span></span> <span class="token attr-name">leaveActiveClass</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>slide_fade_leave_active<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="是怎么知道-RouterView-插槽的参数的"><a href="#是怎么知道-RouterView-插槽的参数的" class="headerlink" title="是怎么知道 RouterView 插槽的参数的"></a>是怎么知道 RouterView 插槽的参数的</h3><pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token punctuation">(</span><span class="token punctuation">{</span> Component<span class="token operator">:</span> <span class="token constant">X</span><span class="token punctuation">,</span> route<span class="token operator">:</span> <span class="token constant">R</span> <span class="token punctuation">}</span><span class="token operator">:</span> <span class="token punctuation">{</span> Component<span class="token operator">:</span> VNode<span class="token punctuation">,</span> route<span class="token operator">:</span> RouteLocationNormalizedLoaded <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Transition</span></span> <span class="token punctuation">&gt;</span></span><span class="token plain-text">
-    </span><span class="token punctuation">{</span><span class="token constant">X</span><span class="token punctuation">}</span><span class="token plain-text">
-</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">Transition</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>根据 IDE 提示（TS 的好处）查看 RouterView 定义</p>
-<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">declare</span> <span class="token keyword">const</span> RouterView<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    $props<span class="token operator">:</span> AllowedComponentProps <span class="token operator">&amp;</span> ComponentCustomProps <span class="token operator">&amp;</span> VNodeProps <span class="token operator">&amp;</span> RouterViewProps<span class="token punctuation">;</span>
-    $slots<span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token function-variable function">default</span><span class="token operator">:</span> <span class="token punctuation">(</span>arg<span class="token operator">:</span> <span class="token punctuation">{</span>
-            Component<span class="token operator">:</span> VNode<span class="token punctuation">;</span>
-            route<span class="token operator">:</span> RouteLocationNormalizedLoaded<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> VNode<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<p>目前社区中比较流行的模块打包工具有Webpack、Vite、Parcel、Rollup等。</p>
+<p>Webpack具备以下几点优势：</p>
+<ul>
+<li><p>Webpack 默认支持多种模块标准，包括 AMD、CommonJS 以及最新的 ES6 模块</p>
+</li>
+<li><p>Webpack 有完备的代码分片解决方案。从字面意思去理解，它可以分割打包后的资源，在首屏只加载必要的部分，将不太重要的功能放到后面动态加载。这对于资源体积较大的应用来说尤为重要，可以有效地减小资源体积，提升首页渲染速度</p>
+</li>
+<li><p>Webpack 可以处理各种类型的资源。除了 JavaScript 以外，Webpack 还可以处理样式、模板，甚至图片等，而开发者需要做的仅仅是导入它们，比如可以从 JavaScript 文件导入一个 CSS 或者 PNG</p>
+</li>
+<li><p>Webpack 社区庞大，更新速度快，轮子丰富</p>
+</li>
+</ul>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><a target="_blank" rel="noopener" href="https://www.webpackjs.com/guides/getting-started/">官网</a></p>
+<p>需先安装 Node.js</p>
+<p>全局安装 Webpack 的好处是 npm 会帮我们绑定一个命令行环境变量，一次安装、处处运行；本地安装 Webpack 则会添加其为项目中的依赖，只能在项目内部使用。</p>
+<ul>
+<li><p>如果选择全局安装，那么在与他人进行项目协作的时候，由于每个人系统中的 Webpack 版本不同，可能会导致输出结果不一致。</p>
+</li>
+<li><p>部分依赖于 Webpack 的插件会调用项目中 Webpack 的内部模块，这种情况下仍然需要在项目本地安装 Webpack，而如果全局和本地都有，则容易造成混淆。</p>
+</li>
+</ul>
+<p>基于以上两点，我们一般选择在工程内部安装 Webpack</p>
+<p>首先创建进入一个目录并初始化 npm，然后在本地安装 webpack，接着安装 webpack-cli（webpack 是核心模块，webpack-cli 则是命令行工具）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> webpack-demo
+<span class="token builtin class-name">cd</span> webpack-demo
+<span class="token function">npm</span> init <span class="token parameter variable">-y</span>
+<span class="token function">npm</span> <span class="token function">install</span> webpack webpack-cli --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
-<p><strong>学习方法重于学习结果</strong></p>
+<p>提示<br>    是否使用 –save-dev 取决于你的应用场景。假设你仅使用 webpack 进行构建操作，那么建议你在安装时使用 –save-dev 选项，因为可能你不需要在生产环境上使用 webpack。如果需要应用于生产环境，请忽略 –save-dev 选项</p>
 </blockquote>
+<p>现在创建以下目录结构、文件和内容：</p>
+<pre class="line-numbers language-none"><code class="language-none">webpack-demo
+ |- package.json
+ |- package-lock.json
+|- index.html
+|- /src
+  |- index.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
                 
             </div>
@@ -564,7 +529,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/">http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/</a>
+                    <a href="http://example.com/2024/05/15/webpack-du-shu-bi-ji/">http://example.com/2024/05/15/webpack-du-shu-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -602,12 +567,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vue3/">
-                                    <span class="chip bg-color">Vue3</span>
-                                </a>
-                            
-                                <a href="/tags/TSX/">
-                                    <span class="chip bg-color">TSX</span>
+                                <a href="/tags/Webpack/">
+                                    <span class="chip bg-color">Webpack</span>
                                 </a>
                             
                         </div>
@@ -651,9 +612,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2024/05/15/webpack-du-shu-bi-ji/">
                     <div class="card-image">
@@ -671,9 +633,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -686,6 +648,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -704,13 +667,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/">
+                <a href="/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（三）">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（四）">
                         
-                        <span class="card-title">实战篇笔记-山竹记账前端（三）</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（四）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

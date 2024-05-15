@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-14T09:34:19.319Z</updated>
+  <updated>2024-05-15T10:40:29.275Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Webpack 读书笔记</title>
+    <link href="http://example.com/2024/05/15/webpack-du-shu-bi-ji/"/>
+    <id>http://example.com/2024/05/15/webpack-du-shu-bi-ji/</id>
+    <published>2024-05-15T07:28:03.000Z</published>
+    <updated>2024-05-15T10:40:29.275Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;初读《Webpack实战：入门、进阶与调优（第2版）》后记录&lt;/p&gt;
+&lt;h1 id=&quot;何为-Webpack&quot;&gt;&lt;a href=&quot;#何为-Webpack&quot; class=&quot;headerlink&quot; title=&quot;何为 Webpack&quot;&gt;&lt;/a&gt;何为</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Webpack" scheme="http://example.com/tags/Webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账前端（四）</title>
@@ -511,33 +537,6 @@
         
         
     <summary type="html">&lt;h2 id=&quot;git-rebase-参数1-参数2&quot;&gt;&lt;a href=&quot;#git-rebase-参数1-参数2&quot; class=&quot;headerlink&quot; title=&quot;git rebase 参数1 参数2&quot;&gt;&lt;/a&gt;git rebase 参数1</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="git" scheme="http://example.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 命令之 git branch -f</title>
-    <link href="http://example.com/2024/03/20/git-ming-ling-zhi-git-branch-f/"/>
-    <id>http://example.com/2024/03/20/git-ming-ling-zhi-git-branch-f/</id>
-    <published>2024-03-20T09:48:47.000Z</published>
-    <updated>2024-03-21T01:56:24.973Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;git-branch-f-参数1-参数2&quot;&gt;&lt;a href=&quot;#git-branch-f-参数1-参数2&quot; class=&quot;headerlink&quot; title=&quot;git branch -f 参数1 参数2&quot;&gt;&lt;/a&gt;git branch -f 参数1</summary>
         
       
     
