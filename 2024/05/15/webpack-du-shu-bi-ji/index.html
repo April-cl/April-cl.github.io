@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -422,14 +422,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-15
+                    2024-05-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    2.7k
                 </div>
                 
 
@@ -452,8 +452,8 @@
                 <p>初读《Webpack实战：入门、进阶与调优（第2版）》后记录</p>
 <h1 id="何为-Webpack"><a href="#何为-Webpack" class="headerlink" title="何为 Webpack"></a>何为 Webpack</h1><p>Webpack 是一个开源的 JaveScript 模块打包工具，其核心的功能是解决模块之间的依赖，把各个模块按照特定的规则和顺序组织在一起，最终合并为一个 JS 文件（有时会有多个）</p>
 <p>记住上面这句话，后面要考~</p>
-<h1 id="为什么需要-Webpack"><a href="#为什么需要-Webpack" class="headerlink" title="为什么需要 Webpack"></a>为什么需要 Webpack</h1><p>之前工作开发维护的旧框架用的是前端石器时代的 JQuery 框架，没有模块打包的概念，用的是最原始的 <code>&lt;script&gt;</code>、<code>&lt;style&gt;</code> 手动引入文件的方式，每次版本迭代更新需要手动清除浏览器缓存（<code>Ctrl + F5</code> 强制刷新）或者页面设置不缓存，不管哪个做法都是不合理的而且显得很 stupid。另外，该项目是混合开发项目，经常在打包成 APP 后遇到一些机器不能兼容 ES6 写法而导致程序无法正常运行，恼人的是这样的错误还不容易排查，因为一般发生在用户的 APP 载体需要真机调试。</p>
-<p>初读完这本书如获至宝，倒不完全是因为读完之后感觉对 Webpack 的认知更深了，更多是因为有切身经历的参考，更加明白那断崖式的前端巨变历史。</p>
+<h1 id="为什么需要-Webpack"><a href="#为什么需要-Webpack" class="headerlink" title="为什么需要 Webpack"></a>为什么需要 Webpack</h1><p>之前工作开发维护的旧框架用的是前端石器时代的 JQuery 框架，没有模块打包的概念，用的是最原始的 <code>&lt;script&gt;</code>、<code>&lt;link&gt;</code> 手动引入文件的方式，每次版本迭代更新需要手动清除浏览器缓存（<code>Ctrl + F5</code> 强制刷新）或者页面设置不缓存，不管哪个做法都是不合理的而且显得很 stupid。另外，该项目是混合开发项目，经常在打包成 APP 后遇到一些机器不能兼容 ES6 写法而导致程序无法正常运行，恼人的是这样的错误还不容易排查，因为一般发生在用户的 APP 载体需要真机调试。</p>
+<p>初读完这本书如获至宝，倒不完全是因为读完之后感觉对 Webpack 的认知更深了，更多是因为有切身经历的参考，更加明白那段前端巨变历史的成因。</p>
 <p>说回 Webpack…</p>
 <p>前面说到 Webpack 是模块打包工具，模块打包工具（module bundler）的任务就是解决模块间的依赖，使其打包后的结果能运行在浏览器上。它的工作方式主要分为两种：</p>
 <ul>
@@ -490,19 +490,274 @@
 <span class="token function">npm</span> init <span class="token parameter variable">-y</span>
 <span class="token function">npm</span> <span class="token function">install</span> webpack webpack-cli --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>提示<br>    是否使用 –save-dev 取决于你的应用场景。假设你仅使用 webpack 进行构建操作，那么建议你在安装时使用 –save-dev 选项，因为可能你不需要在生产环境上使用 webpack。如果需要应用于生产环境，请忽略 –save-dev 选项</p>
-</blockquote>
-<p>现在创建以下目录结构、文件和内容：</p>
+<p><code>ls</code> 查看 webpack-demo 可以看到</p>
+<pre class="line-numbers language-none"><code class="language-none">node_modules/  package.json  package-lock.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li><p>node_modules 是用来存放包管理工具下载安装的包的文件夹</p>
+</li>
+<li><p>package.json 是用于工具的配置，存储所有已安装软件包的名称和版本信息</p>
+</li>
+<li><p>package-lock.json 会固化当前安装的每个软件包的版本，当运行 npm install时，npm 会使用这些确切的版本</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_73531461/article/details/136399322">深入理解 package.json 文件与 package-lock.json 文件</a></p>
+<h1 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h1><p>创建以下目录结构、文件和内容（示例摘抄自文档）</p>
 <pre class="line-numbers language-none"><code class="language-none">webpack-demo
- |- package.json
- |- package-lock.json
-|- index.html
-|- /src
-  |- index.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  |- package.json
+  |- package-lock.json
++ |- index.html
++ |- index.js
++ |- add-content.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>index.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> addContent <span class="token keyword">from</span> <span class="token string">'./add-content.js'</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'My first Webpack app.&lt;br /&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">addContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<p>add-content.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'Hello world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<p>index.html</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>起步<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!-- 留意下这里的 src --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>终端输入打包命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx webpack <span class="token parameter variable">--entry</span><span class="token operator">=</span>./index.js <span class="token parameter variable">--mode</span><span class="token operator">=</span>development<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以看到项目新生成 dist/main.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */</span>
+<span class="token comment">/******/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// webpackBootstrap</span>
+<span class="token comment">/******/</span> 	<span class="token string">"use strict"</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	<span class="token keyword">var</span> __webpack_modules__ <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+
+<span class="token comment">/***/</span> <span class="token string">"./add-content.js"</span><span class="token operator">:</span>
+<span class="token comment">/*!************************!*\
+  !*** ./add-content.js ***!
+  \************************/</span>
+<span class="token comment">/***/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">__unused_webpack_module<span class="token punctuation">,</span> __webpack_exports__<span class="token punctuation">,</span> __webpack_require__</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+<span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">"__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () =&gt; (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {\r\n    document.write('Hello world!');\r\n}\n\n//# sourceURL=webpack://webpack-demo/./add-content.js?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/***/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+
+<span class="token comment">/***/</span> <span class="token string">"./index.js"</span><span class="token operator">:</span>
+<span class="token comment">/*!******************!*\
+  !*** ./index.js ***!
+  \******************/</span>
+<span class="token comment">/***/</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">__unused_webpack_module<span class="token punctuation">,</span> __webpack_exports__<span class="token punctuation">,</span> __webpack_require__</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+<span class="token function">eval</span><span class="token punctuation">(</span><span class="token string">"__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _add_content_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./add-content.js */ \"./add-content.js\");\n\r\ndocument.write('My first Webpack app.&lt;br /&gt;');\r\n(0,_add_content_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n\n//# sourceURL=webpack://webpack-demo/./index.js?"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/***/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">/******/</span> 	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/************************************************************************/</span>
+<span class="token comment">/******/</span> 	<span class="token comment">// The module cache</span>
+<span class="token comment">/******/</span> 	<span class="token keyword">var</span> __webpack_module_cache__ <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 	<span class="token comment">// The require function</span>
+<span class="token comment">/******/</span> 	<span class="token keyword">function</span> <span class="token function">__webpack_require__</span><span class="token punctuation">(</span><span class="token parameter">moduleId</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 		<span class="token comment">// Check if module is in cache</span>
+<span class="token comment">/******/</span> 		<span class="token keyword">var</span> cachedModule <span class="token operator">=</span> __webpack_module_cache__<span class="token punctuation">[</span>moduleId<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 		<span class="token keyword">if</span> <span class="token punctuation">(</span>cachedModule <span class="token operator">!==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 			<span class="token keyword">return</span> cachedModule<span class="token punctuation">.</span>exports<span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 		<span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 		<span class="token comment">// Create a new module (and put it into the cache)</span>
+<span class="token comment">/******/</span> 		<span class="token keyword">var</span> module <span class="token operator">=</span> __webpack_module_cache__<span class="token punctuation">[</span>moduleId<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 			<span class="token comment">// no module.id needed</span>
+<span class="token comment">/******/</span> 			<span class="token comment">// no module.loaded needed</span>
+<span class="token comment">/******/</span> 			<span class="token literal-property property">exports</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 		<span class="token comment">// Execute the module function</span>
+<span class="token comment">/******/</span> 		__webpack_modules__<span class="token punctuation">[</span>moduleId<span class="token punctuation">]</span><span class="token punctuation">(</span>module<span class="token punctuation">,</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">,</span> __webpack_require__<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 		<span class="token comment">// Return the exports of the module</span>
+<span class="token comment">/******/</span> 		<span class="token keyword">return</span> module<span class="token punctuation">.</span>exports<span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/************************************************************************/</span>
+<span class="token comment">/******/</span> 	<span class="token comment">/* webpack/runtime/define property getters */</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 		<span class="token comment">// define getter functions for harmony exports</span>
+<span class="token comment">/******/</span> 		__webpack_require__<span class="token punctuation">.</span><span class="token function-variable function">d</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">exports<span class="token punctuation">,</span> definition</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> key <span class="token keyword">in</span> definition<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 				<span class="token keyword">if</span><span class="token punctuation">(</span>__webpack_require__<span class="token punctuation">.</span><span class="token function">o</span><span class="token punctuation">(</span>definition<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>__webpack_require__<span class="token punctuation">.</span><span class="token function">o</span><span class="token punctuation">(</span>exports<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 					Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>exports<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">enumerable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">get</span><span class="token operator">:</span> definition<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 				<span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 			<span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 	<span class="token comment">/* webpack/runtime/hasOwnProperty shorthand */</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 		__webpack_require__<span class="token punctuation">.</span><span class="token function-variable function">o</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> prop</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 	<span class="token comment">/* webpack/runtime/make namespace object */</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 		<span class="token comment">// define __esModule on exports</span>
+<span class="token comment">/******/</span> 		__webpack_require__<span class="token punctuation">.</span><span class="token function-variable function">r</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">exports</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 			<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> Symbol <span class="token operator">!==</span> <span class="token string">'undefined'</span> <span class="token operator">&amp;&amp;</span> Symbol<span class="token punctuation">.</span>toStringTag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">/******/</span> 				Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>exports<span class="token punctuation">,</span> Symbol<span class="token punctuation">.</span>toStringTag<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Module'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 			<span class="token punctuation">}</span>
+<span class="token comment">/******/</span> 			Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>exports<span class="token punctuation">,</span> <span class="token string">'__esModule'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 		<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/************************************************************************/</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> 	<span class="token comment">// startup</span>
+<span class="token comment">/******/</span> 	<span class="token comment">// Load entry module and return exports</span>
+<span class="token comment">/******/</span> 	<span class="token comment">// This entry module can't be inlined because the eval devtool is used.</span>
+<span class="token comment">/******/</span> 	<span class="token keyword">var</span> __webpack_exports__ <span class="token operator">=</span> <span class="token function">__webpack_require__</span><span class="token punctuation">(</span><span class="token string">"./index.js"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/******/</span> 	
+<span class="token comment">/******/</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>本地打开 index.html 文件（浏览器地址是这样显示的：file:///E:/WEB/webpack-demo/index.html），会看到页面内容</p>
+<pre class="line-numbers language-none"><code class="language-none">My first Webpack app.
+Hello world!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>js 文件成功引入</p>
+<p>再次执行打包命令（这里修改了 mode 的值）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">npx webpack <span class="token parameter variable">--entry</span><span class="token operator">=</span>./index.js <span class="token parameter variable">--mode</span><span class="token operator">=</span>production<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以看到 dist/main.js 文件内容变化了 ⬇</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token string">"use strict"</span><span class="token punctuation">;</span>document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"My first Webpack app.&lt;br /&gt;"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"Hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可以看见 dist/main.js 内容精简了，再刷新 index.html 页面，网页并没有变化。</p>
+<p>上面在终端输入命令的行为就叫做打包。那么，是否每次打包都要如此繁琐的输入参数指令呢？</p>
+<h1 id="使用-npm-scripts"><a href="#使用-npm-scripts" class="headerlink" title="使用 npm scripts"></a>使用 npm scripts</h1><p>注意到 <code>package.json</code>，默认内容类似下面</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"webpack-demo"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"index.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"keywords"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"webpack"</span><span class="token operator">:</span> <span class="token string">"^5.91.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"webpack-cli"</span><span class="token operator">:</span> <span class="token string">"^5.1.4"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>scripts 是 npm 供的脚本命令功能，在这里我们可以直接使用由模块添加的指令（比如用webpack取代之前的 npx webpack ）</p>
+<p>编辑 package.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">……
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --entry=./index.js --mode=development"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在终端输入</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> run build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>可见打包结果与前面一致</p>
+<h1 id="使用配置文件"><a href="#使用配置文件" class="headerlink" title="使用配置文件"></a>使用配置文件</h1><p>前面用到了 <code>--entry</code> 和 <code>--mode</code> 参数，除此之外，Webpack 拥有非常多的配置项以及相对应的命令行参数，可以通过 <code>npx webpack -h</code> 查看。</p>
+<p>当项目需要越来越多的配置时，就要往命令中添加更多的参数，那么到后期维护起来就会相当困难。为了解决这个问题，可以把这些参数改为对象的形式专门放在一个配置文件里，在 Webpack 每次打包的时候读取该配置文件即可。</p>
+<p>Webpack 的默认配置文件为 webpack.config.js（也可以使用其他文件名，需要使用命令行参数指定）。</p>
+<p>在工程目录下创建 webpack.config.js，并添加如下代码：</p>
+<pre class="line-numbers language-none"><code class="language-none">webpack-demo
+  |- package.json
+  |- package-lock.json
+  |- index.html
+  |- index.js
+  |- add-content.js
++ |- webpack.config.js<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>webpack.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">'./index.js'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>现在我们可以去掉 package.json 中配置的打包参数了：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">……
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>为了验证最终效果，我们再对 add-content.js 的内容稍加修改：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">'I\'m using a config file!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>执行 <code>npm run build</code> 命令，Webpack 就会预先读取 webpack.config.js，然后打包。完成之后我们刷新 index.html 进行验证</p>
+<pre class="line-numbers language-none"><code class="language-none">My first Webpack app.
+I'm using a config file!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可见打包生效</p>
+<h1 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h1><p>归纳前面的操作</p>
+<p>编写代码 =&gt; 执行 build 命令 -&gt; 刷新页面</p>
+<p>这样的效率并不高，还好 Webpack 社区已经为我们提供了一个便捷的本地开发工具 —— <code>webpack-dev-server</code></p>
+<p>安装 </p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> webpack-dev-server <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>安装指令中的-D参数是将webpack-dev-server作为工程的devDependencies（开发环境依赖）记录在package.json中。这样做是因为webpack-dev-server仅仅在本地开发时才会用到，在生产环境中并不需要它，所以放在devDependencies中是比较恰当的。</p>
+</blockquote>
+<p>在package.json中添加一个dev指令：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json">……
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>编辑webpack.config.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">entry</span><span class="token operator">:</span> <span class="token string">'./index.js'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'development'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            <span class="token literal-property property">template</span><span class="token operator">:</span> <span class="token string">'index.html'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">devServer</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token keyword">static</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">directory</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">port</span><span class="token operator">:</span> <span class="token number">9000</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>devServer 对象是专门用来放 webpack-dev-server 配置的。webpack-dev-server 可以看作一个服务者，它的主要工作就是接收浏览器的请求，然后将资源返回。当服务启动时，它会先让 Webpack 进行模块打包并将资源准备好（在示例中就是 dist/main.js）。当 webpack-dev-server 接收到浏览器的资源请求时，它会首先进行 URL 地址校验。如果该地址是资源服务地址（上面配置的 publicPath），webpack-dev-server 就会从 Webpack 的打包结果中寻找该资源并返回给浏览器。反之，如果请求地址不属于资源服务地址，则直接读取硬盘中的源文件并将其返回。</p>
+<p>这里要动手实践一下，因为版本不同有些地方用法也改了，以上示例与原文示例是有偏差的，应当参照官网写法。另外这里用了 <code>HtmlWebpackPlugin</code> 插件还修改了一些代码以在浏览器能实时预览。</p>
+<p>终端执行 <code>npm run dev</code>，可以发现开启 9000 端口</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">……
+<span class="token operator">&lt;</span>i<span class="token operator">&gt;</span> <span class="token punctuation">[</span>webpack-dev-server<span class="token punctuation">]</span> Loopback: http://localhost:9000/
+……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>浏览器打开 <code>http://localhost:9000/</code>，再修改代码保存可以看到浏览器会自动更新。</p>
+<p>（未完待续）</p>
 
                 
             </div>
