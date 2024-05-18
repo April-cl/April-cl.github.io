@@ -426,14 +426,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-14
+                    2024-05-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    386
+                    688
                 </div>
                 
 
@@ -534,11 +534,96 @@
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
 <blockquote>
 <p><strong>学习方法重于学习结果</strong></p>
 </blockquote>
+<h1 id="自制-Vite-SVG-Sprites-插件"><a href="#自制-Vite-SVG-Sprites-插件" class="headerlink" title="自制 Vite SVG Sprites 插件"></a>自制 Vite SVG Sprites 插件</h1><p><a target="_blank" rel="noopener" href="https://vitejs.cn/guide/api-plugin.html">插件 API</a></p>
+<p>新建 src/vite_plugins/svgstore.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* eslint-disable */</span>
+<span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
+<span class="token keyword">import</span> fs <span class="token keyword">from</span> <span class="token string">'fs'</span>
+<span class="token keyword">import</span> store <span class="token keyword">from</span> <span class="token string">'svgstore'</span> <span class="token comment">// 用于制作 SVG Sprites</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> optimize <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'svgo'</span> <span class="token comment">// 用于优化 SVG 文件</span>
 
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">svgstore</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 文件路径</span>
+    <span class="token keyword">const</span> inputFolder <span class="token operator">=</span> options<span class="token punctuation">.</span>inputFolder <span class="token operator">||</span> <span class="token string">'src/assets/icons'</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'svgstore'</span><span class="token punctuation">,</span>
+        <span class="token function">resolveId</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 传入模块请求时被调用，如果请求的是 @svgstore，则返回 svg_bundle.js，svg_bundle.js 是一个虚拟文件，实际并不存在，直接请求不存在的路径 IDE 会报错</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token string">'@svgstore'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token string">'svg_bundle.js'</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">load</span><span class="token punctuation">(</span><span class="token parameter">id</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 加载函数，返回自定义内容</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>id <span class="token operator">===</span> <span class="token string">'svg_bundle.js'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">const</span> sprites <span class="token operator">=</span> <span class="token function">store</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+                <span class="token keyword">const</span> iconsDir <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>inputFolder<span class="token punctuation">)</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> file <span class="token keyword">of</span> fs<span class="token punctuation">.</span><span class="token function">readdirSync</span><span class="token punctuation">(</span>iconsDir<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">const</span> filepath <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>iconsDir<span class="token punctuation">,</span> file<span class="token punctuation">)</span>
+                    <span class="token keyword">const</span> svgid <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">.</span>name
+                    <span class="token keyword">let</span> code <span class="token operator">=</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">encoding</span><span class="token operator">:</span> <span class="token string">'utf-8'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                    sprites<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>svgid<span class="token punctuation">,</span> code<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token literal-property property">data</span><span class="token operator">:</span> code <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">optimize</span><span class="token punctuation">(</span>sprites<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">inline</span><span class="token operator">:</span> options<span class="token punctuation">.</span>inline <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                    <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">'cleanupAttrs'</span><span class="token punctuation">,</span> <span class="token string">'removeDoctype'</span><span class="token punctuation">,</span> <span class="token string">'removeComments'</span><span class="token punctuation">,</span> <span class="token string">'removeTitle'</span><span class="token punctuation">,</span> <span class="token string">'removeDesc'</span><span class="token punctuation">,</span> <span class="token string">'removeEmptyAttrs'</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">{</span>
+                            <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'removeAttrs'</span><span class="token punctuation">,</span>
+                            <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                                <span class="token literal-property property">attrs</span><span class="token operator">:</span> <span class="token string">'(data-name|data-xxx)'</span>
+                            <span class="token punctuation">}</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">const div = document.createElement('div')
+                document.createElement('div')
+                div.innerHTML = \`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>code<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">\`
+                const svg = div.getElementsByTagName('svg')[0]
+                if (svg) {
+                    svg.style.position = 'absolute'
+                    svg.style.width = 0
+                    svg.style.height = 0
+                    svg.style.overflow = 'hidden'
+                    svg.setAttribute("aria-hidden", "true")
+                }
+                // listen dom ready event
+                document.addEventListener('DOMContentLoaded', () =&gt; {
+                    if (document.body.firstChild) {
+                        document.body.insertBefore(div, document.body.firstChild)
+                    } else {
+                        document.body.appendChild(div)
+                    }
+                })
+                </span><span class="token template-punctuation string">`</span></span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>tsconfig.node.json</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"include"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"vite.config.ts"</span><span class="token punctuation">,</span>
++ <span class="token string">"src/vite_plugins/**/*"</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>vite.config.ts</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// @ts-nocheck</span>
+<span class="token operator">+</span> <span class="token keyword">import</span> <span class="token punctuation">{</span> svgstore <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./src/vite_plugins/svgstore'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">vueJsx</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      transformOn<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      mergeProps<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token operator">+</span>   <span class="token function">svgstore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
