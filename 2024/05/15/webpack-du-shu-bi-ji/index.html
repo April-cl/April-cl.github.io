@@ -422,14 +422,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-18
+                    2024-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.5k
+                    3.7k
                 </div>
                 
 
@@ -882,6 +882,18 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li>UMD</li>
 </ul>
 <p>严格来说，UMD 并不是一种模块标准，而是一组模块形式的集合。UMD 的全称是 Universal Module Definition，也就是通用模块标准，它的目标是使一个模块能运行在各种环境下，不论是 CommonJS、AMD，还是非模块化的环境（当时 ES6 Module 还未被提出）</p>
+<ul>
+<li>npm 模块</li>
+</ul>
+<p>包管理工具：npm、yarn、pnpm</p>
+<p>在使用时，加载一个npm模块的方式很简单，只需要引入包的名字即可。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// index.js</span>
+<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">'lodash'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>除了直接加载模块以外，我们也可以通过 <code>&lt;package_name&gt;/&lt;path&gt;</code> 的形式单独加载模块内部的某个JS文件。如：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> all <span class="token keyword">from</span> <span class="token string">'lodash/fp/all.js'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样，Webpack最终只会打包 node_modules/lodash/fp/all.js 这个文件，而不会打包全部的 lodash 库，进而减小打包资源的体积。</p>
 
                 
             </div>
