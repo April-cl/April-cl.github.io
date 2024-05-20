@@ -426,14 +426,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-18
+                    2024-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    688
+                    1k
                 </div>
                 
 
@@ -537,7 +537,7 @@
 <blockquote>
 <p><strong>学习方法重于学习结果</strong></p>
 </blockquote>
-<h1 id="自制-Vite-SVG-Sprites-插件"><a href="#自制-Vite-SVG-Sprites-插件" class="headerlink" title="自制 Vite SVG Sprites 插件"></a>自制 Vite SVG Sprites 插件</h1><p><a target="_blank" rel="noopener" href="https://vitejs.cn/guide/api-plugin.html">插件 API</a></p>
+<h1 id="自制-Vite-SVG-Sprites-插件"><a href="#自制-Vite-SVG-Sprites-插件" class="headerlink" title="自制 Vite SVG Sprites 插件"></a>自制 Vite SVG Sprites 插件</h1><p><a target="_blank" rel="noopener" href="https://cn.vitejs.dev/guide/api-plugin">插件 API</a></p>
 <p>新建 src/vite_plugins/svgstore.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* eslint-disable */</span>
 <span class="token keyword">import</span> path <span class="token keyword">from</span> <span class="token string">'path'</span>
@@ -624,6 +624,20 @@
 <span class="token operator">+</span>   <span class="token function">svgstore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="封装-useSwipe-Hook"><a href="#封装-useSwipe-Hook" class="headerlink" title="封装 useSwipe Hook"></a>封装 useSwipe Hook</h1><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/reusability/composables.html">组合式函数</a></p>
+<p>这里就不写项目代码示例了，文档很容易看懂的 ~</p>
+<h2 id="约定和最佳实践​"><a href="#约定和最佳实践​" class="headerlink" title="约定和最佳实践​"></a>约定和最佳实践​</h2><h3 id="命名​"><a href="#命名​" class="headerlink" title="命名​"></a>命名​</h3><p>组合式函数约定用驼峰命名法命名，并以“use”作为开头。</p>
+<h3 id="输入参数​"><a href="#输入参数​" class="headerlink" title="输入参数​"></a>输入参数​</h3><p>即便不依赖于 ref 或 getter 的响应性，组合式函数也可以接收它们作为参数。如果你正在编写一个可能被其他开发者使用的组合式函数，最好处理一下输入参数是 ref 或 getter 而非原始值的情况。可以利用 toValue() 工具函数来实现</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>推荐的约定是组合式函数始终返回一个包含多个 ref 的普通的非响应式对象，这样该对象在组件中被解构为 ref 之后仍可以保持响应性</p>
+<h3 id="副作用"><a href="#副作用" class="headerlink" title="副作用"></a>副作用</h3><ul>
+<li><p>确保在组件挂载后才调用的生命周期钩子中执行 DOM 相关的副作用，例如：onMounted()</p>
+</li>
+<li><p>确保在 onUnmounted() 时清理副作用</p>
+</li>
+</ul>
+<h3 id="使用限制"><a href="#使用限制" class="headerlink" title="使用限制"></a>使用限制</h3><p>组合式函数只能在 <code>&lt;script setup&gt;</code> 或 setup() 钩子中被调用。在这些上下文中，它们也只能被同步调用。在某些情况下，你也可以在像 onMounted() 这样的生命周期钩子中调用它们</p>
+
                 
             </div>
             <hr/>
