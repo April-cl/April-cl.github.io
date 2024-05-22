@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-20T04:12:20.058Z</updated>
+  <updated>2024-05-22T16:53:26.419Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账前端（五）</title>
+    <link href="http://example.com/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/"/>
+    <id>http://example.com/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/</id>
+    <published>2024-05-22T15:21:16.000Z</published>
+    <updated>2024-05-22T16:53:26.419Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;滑动切换路由-重构&quot;&gt;&lt;a href=&quot;#滑动切换路由-重构&quot; class=&quot;headerlink&quot; title=&quot;滑动切换路由 + 重构&quot;&gt;&lt;/a&gt;滑动切换路由 + 重构&lt;/h1&gt;&lt;h2 id=&quot;编码规范&quot;&gt;&lt;a href=&quot;#编码规范&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue3" scheme="http://example.com/tags/Vue3/"/>
+    
+    <category term="TSX" scheme="http://example.com/tags/TSX/"/>
+    
+  </entry>
   
   <entry>
     <title>Webpack 读书笔记</title>
@@ -510,33 +537,6 @@
         
         
     <summary type="html">&lt;p&gt;目前公司用的代码管理工具是 &lt;code&gt;SVN&lt;/code&gt;，用久了倒是有点记不清 &lt;code&gt;git&lt;/code&gt; 的用法了，趁着这几日空了回顾回顾，果真发现了个好玩的网站 &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="git" scheme="http://example.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 命令之 git rebase</title>
-    <link href="http://example.com/2024/03/21/git-ming-ling-zhi-git-rebase/"/>
-    <id>http://example.com/2024/03/21/git-ming-ling-zhi-git-rebase/</id>
-    <published>2024-03-21T01:28:42.000Z</published>
-    <updated>2024-03-21T01:58:59.858Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;git-rebase-参数1-参数2&quot;&gt;&lt;a href=&quot;#git-rebase-参数1-参数2&quot; class=&quot;headerlink&quot; title=&quot;git rebase 参数1 参数2&quot;&gt;&lt;/a&gt;git rebase 参数1</summary>
         
       
     
