@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="小白菜笔记 Vue （一）基础篇, April-cl">
+    <meta name="keywords" content="实战篇笔记-山竹记账前端（六）, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小白菜笔记 Vue （一）基础篇 | April-cl</title>
+    <title>实战篇笔记-山竹记账前端（六） | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -274,7 +274,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小白菜笔记 Vue （一）基础篇</h1>
+                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（六）</h1>
                 </div>
             </div>
         </div>
@@ -390,8 +390,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/tags/Vue3/">
+                                <span class="chip bg-color">Vue3</span>
+                            </a>
+                        
+                            <a href="/tags/TSX/">
+                                <span class="chip bg-color">TSX</span>
                             </a>
                         
                     </div>
@@ -415,21 +419,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-25
+                    2024-05-25
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-31
+                    2024-05-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    474
+                    239
                 </div>
                 
 
@@ -449,62 +453,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>写在前面：</p>
-<p><strong>学习Vue要转化思想</strong>：不要想着怎么操作 DOM，而是想着如何操作数据！</p>
-<p>Vue 的文档很通俗易懂，学习细节移步<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/">官网</a></p>
-<h1 id="关于-Vue"><a href="#关于-Vue" class="headerlink" title="关于 Vue"></a>关于 Vue</h1><p>Vue 是一套用于构建用户界面的渐进式（由浅入深）框架。</p>
-<p>使用方式</p>
-<ul>
-<li>使用 <code>&lt;script&gt;</code> 引入，可以到 <a target="_blank" rel="noopener" href="https://www.bootcdn.cn/">BootCDN</a> 搜索 <code>Vue</code></li>
-<li>使用 NPM 安装</li>
-<li>使用 <a target="_blank" rel="noopener" href="https://cli.vuejs.org/zh/guide/"><code>vue-cli</code></a> 创建 Vue 应用</li>
-</ul>
-<h1 id="Vue-的两个构建版本"><a href="#Vue-的两个构建版本" class="headerlink" title="Vue 的两个构建版本"></a>Vue 的两个构建版本</h1><ul>
-<li><p>完整版：同时包含编译器和运行时的版本。</p>
-<p>对应文件名：vue.js/vue.min.js</p>
-</li>
-<li><p>运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。</p>
-<p>对应文件名：vue.runtime.js/vue.runtime.min.js</p>
-</li>
-</ul>
-<p>PS：.min.js 文件为无注释无格式被压缩的 js 文件</p>
-<p>两个版本的区别：</p>
-<p>完整版能够编译 <code>template</code>，比如传入一个字符串给 template 选项（<code>.vue</code>文件/单文件组件），或挂载到一个元素上并以其 DOM 内部的 HTML 作为模板。</p>
-<p>使用 webpack 或 @vue/cli 引入时需额外设置</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 单文件组件</span>
-<span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
-  <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token punctuation">{</span>greeting<span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
-  module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token function-variable function">data</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token punctuation">{</span>
-        <span class="token literal-property property">greeting</span><span class="token operator">:</span> <span class="token string">"Hello World!"</span>
-      <span class="token punctuation">}</span>
+                <h1 id="创建-Button-组件"><a href="#创建-Button-组件" class="headerlink" title="创建 Button 组件"></a>创建 Button 组件</h1><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/attrs.html">透传 Attributes</a></p>
+<blockquote>
+<p>“透传 attribute”指的是传递给一个组件，却没有被该组件声明为 props 或 emits 的 attribute 或者 v-on 事件监听器。最常见的例子就是 class、style 和 id。</p>
+</blockquote>
+<p><strong>当一个组件以单个元素为根作渲染时，透传的 attribute 会自动被添加到根元素上。</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/shared/Button.tsx</span>
+<span class="token operator">...</span>
+<span class="token comment">// 这里定义接口是因为 TS 错误提示</span>
+<span class="token keyword">interface</span> <span class="token class-name">Props</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">e</span><span class="token operator">:</span> MouseEvent</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> Button <span class="token operator">=</span> defineComponent<span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>context<span class="token punctuation">.</span>slots<span class="token punctuation">.</span>default<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// src/views/StartPage.tsx</span>
+<span class="token operator">...</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> StartPage <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button_wrapper<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span>Button <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button<span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>测试<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>  <span class="token comment">// Button 组件并没有声明 props，点击按钮也可以执行 onClick 事件</span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
-<span class="token operator">&lt;</span>style scoped<span class="token operator">&gt;</span>
-<span class="token comment">/* 一些样式 */</span>
-<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行时版本不能编译 <code>template</code> ，它通过 <code>render(createElement)</code> 渲染节点。</p>
-<p>使用 webpack 或 @vue/cli 引入时默认使用此版</p>
-<p>上面的例子用 <code>render</code> 渲染</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function">render</span><span class="token punctuation">(</span><span class="token parameter">createElement</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> <span class="token string">'Hello World!'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>最佳实践：总是使用运行时版本，配合使用 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/#vue-loader-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><code>vue-loader</code></a> 在构建时把 <code>.vue</code> 文件内部的模板预编译成 JavaScript </p>
-<h1 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h1><p>每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token comment">// 选项</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><a target="_blank" rel="noopener" href="https://codesandbox.io/s/vue">开始使用 Vue 吧 🌝</a></p>
-<p>🤫 可以康康 public/index.html、src/main.js 和 src/App.vue 先熟悉下 Vue 是怎么用的</p>
+<h1 id="创建-FloatButton-和-Icon-组件"><a href="#创建-FloatButton-和-Icon-组件" class="headerlink" title="创建 FloatButton 和 Icon 组件"></a>创建 FloatButton 和 Icon 组件</h1><p>Icon 组件需要透传的 attribute 不在根节点，设置 <code>inheritAttrs: false</code> 可以禁用 Attributes 继承。</p>
 
                 
             </div>
@@ -531,7 +519,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/">http://example.com/2021/08/25/xiao-bai-cai-bi-ji-vue-yi-ji-chu-pian/</a>
+                    <a href="http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/">http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -569,8 +557,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/tags/Vue3/">
+                                    <span class="chip bg-color">Vue3</span>
+                                </a>
+                            
+                                <a href="/tags/TSX/">
+                                    <span class="chip bg-color">TSX</span>
                                 </a>
                             
                         </div>
@@ -614,17 +606,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/26/xiao-bai-cai-bi-ji-vue-er-zhi-ling/">
+                <a href="/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="小白菜笔记 Vue （二）指令">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（六）">
                         
-                        <span class="card-title">小白菜笔记 Vue （二）指令</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（六）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -634,9 +627,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-26
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -649,11 +642,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/Vue3/">
+                        <span class="chip bg-color">Vue3</span>
+                    </a>
+                    
+                    <a href="/tags/TSX/">
+                        <span class="chip bg-color">TSX</span>
                     </a>
                     
                 </div>
@@ -667,13 +665,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/23/xiao-bai-cai-bi-ji-react-wu-shou-kong-zu-jian-yu-fei-shou-kong-zu-jian/">
+                <a href="/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="小白菜笔记--React（五）受控组件与非受控组件">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（五）">
                         
-                        <span class="card-title">小白菜笔记--React（五）受控组件与非受控组件</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（五）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -684,7 +682,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
                             </span>
                         <span class="publish-author">
                             
@@ -701,8 +699,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/React/">
-                        <span class="chip bg-color">React</span>
+                    <a href="/tags/Vue3/">
+                        <span class="chip bg-color">Vue3</span>
+                    </a>
+                    
+                    <a href="/tags/TSX/">
+                        <span class="chip bg-color">TSX</span>
                     </a>
                     
                 </div>

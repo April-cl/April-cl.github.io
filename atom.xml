@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-22T16:53:26.419Z</updated>
+  <updated>2024-05-25T15:47:01.613Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实战篇笔记-山竹记账前端（六）</title>
+    <link href="http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/"/>
+    <id>http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/</id>
+    <published>2024-05-25T15:00:07.000Z</published>
+    <updated>2024-05-25T15:47:01.613Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;创建-Button-组件&quot;&gt;&lt;a href=&quot;#创建-Button-组件&quot; class=&quot;headerlink&quot; title=&quot;创建 Button 组件&quot;&gt;&lt;/a&gt;创建 Button 组件&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="Vue3" scheme="http://example.com/tags/Vue3/"/>
+    
+    <category term="TSX" scheme="http://example.com/tags/TSX/"/>
+    
+  </entry>
   
   <entry>
     <title>实战篇笔记-山竹记账前端（五）</title>
@@ -521,33 +548,6 @@
     
     
     <category term="ECharts" scheme="http://example.com/tags/ECharts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git 命令训练营 learngitbranching</title>
-    <link href="http://example.com/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/"/>
-    <id>http://example.com/2024/03/21/git-ming-ling-xun-lian-ying-learngitbranching/</id>
-    <published>2024-03-21T02:50:31.000Z</published>
-    <updated>2024-03-28T00:50:52.704Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;目前公司用的代码管理工具是 &lt;code&gt;SVN&lt;/code&gt;，用久了倒是有点记不清 &lt;code&gt;git&lt;/code&gt; 的用法了，趁着这几日空了回顾回顾，果真发现了个好玩的网站 &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="电脑" scheme="http://example.com/categories/%E7%94%B5%E8%84%91/"/>
-    
-    
-    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    
-    <category term="git" scheme="http://example.com/tags/git/"/>
     
   </entry>
   
