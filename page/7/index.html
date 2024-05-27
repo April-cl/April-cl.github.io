@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="April-cl" type="application/atom+xml">
 </head>
 
 
@@ -320,39 +320,39 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/10/19/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-si/">
+                    <a href="/2021/12/09/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-si/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（四）">
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（四）">
                             
-                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发（四）</span>
+                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（四）</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                操作数据库记录在 databaseapi.js 文件中进行数据记录增删改查
-思路：
+                                菜单左右联动需求：
 
-定义一个变量存储云环境 ID
+滚动右边菜品栏时，当该分类详情模块顶部接触到滚动区域的顶部，左边对应的分类栏高亮，并且显示在可视区域
 
-定义一个变量存储对应操作的请求 URL
+点击左边分类栏高亮显示，右边菜品栏滚动到该分类顶部菜品所在位置（类似于 HTML 里的锚点功能）
 
-通过 axios.post() 方法向指定 URL 发送请求，请求数据为 env
+
+滚动右边菜品
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -363,12 +363,12 @@
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Node-js/">
-                            <span class="chip bg-color">Node.js</span>
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
                         </a>
                         
-                        <a href="/tags/koa/">
-                            <span class="chip bg-color">koa</span>
+                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                            <span class="chip bg-color">小程序</span>
                         </a>
                         
                     </div>
@@ -378,41 +378,33 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/10/17/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-san/">
+                    <a href="/2021/12/07/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-san/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（三）">
+                            <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（三）">
                             
-                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发（三）</span>
+                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（三）</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                获取云开发调用凭证微信官方文档
-auth.getAccessToken
-
-安装 axios
-
-npm install axios --save        // Ajax请求模块
-
-
-创建数据库操作接口文件 databaseapi.js
-
+                                创建云函数创建uniapp项目时， 如果勾选了 启用uniCloud ，会创建一个uniCloud云开发环境，因为前面在创建项目的时候没有勾选 启用uniCloud 选项，所以这里需要自己创建云服务空间。
+在 HBuilderX 编辑器打开
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -423,12 +415,12 @@ npm install axios --save        // Ajax请求模块
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Node-js/">
-                            <span class="chip bg-color">Node.js</span>
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
                         </a>
                         
-                        <a href="/tags/koa/">
-                            <span class="chip bg-color">koa</span>
+                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                            <span class="chip bg-color">小程序</span>
                         </a>
                         
                     </div>
@@ -438,35 +430,33 @@ npm install axios --save        // Ajax请求模块
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/10/16/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-er/">
+                    <a href="/2021/12/06/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-er/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（二）">
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（二）">
                             
-                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发（二）</span>
+                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（二）</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                设置全局异常处理中间件
-在开发中，为了及时的反馈信息，与前端对接好，异常处理，是后端必须去做的一种事情，反馈正确的信息，可以加快bug的解决
-
-在 node中，由于基本都是异步方法，所以，为了能够处理好异步的异常，我们需要使用 async/
+                                根据设计稿在 pages\页面.vue 文件中写好页面布局和样式，此处不述
+pages.json 文件pages.json 文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等。官
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-06
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -477,12 +467,82 @@ npm install axios --save        // Ajax请求模块
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Node-js/">
-                            <span class="chip bg-color">Node.js</span>
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
                         </a>
                         
-                        <a href="/tags/koa/">
-                            <span class="chip bg-color">koa</span>
+                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                            <span class="chip bg-color">小程序</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/12/03/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-xiao-cheng-xu-duan-yi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发小程序端（一）">
+                            
+                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发小程序端（一）</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                页面设计
+欢迎页
+
+选桌页
+
+点餐页
+
+菜品详情页
+
+订单详情页
+
+我的订单页
+
+
+创建步骤
+打开 HBuilderX 创建一个默认模板的 uni-app 项目
+
+在 manifest.json 文件配置 appid
+
+在 pages 目录
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-03
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/uni-app/">
+                            <span class="chip bg-color">uni-app</span>
+                        </a>
+                        
+                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+                            <span class="chip bg-color">小程序</span>
                         </a>
                         
                     </div>
@@ -552,33 +612,35 @@ npm install axios --save        // Ajax请求模块
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2021/10/15/shi-zhan-pian-bi-ji-sao-ma-dian-can-xiao-cheng-xu-yun-kai-fa-yi/">
+                    <a href="/2021/08/22/js-de-san-zuo-da-shan-zhi-ajax/">
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="实战篇笔记 扫码点餐小程序云开发（一）">
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="那些年，被 AJAX 折磨的前端小白">
                             
-                            <span class="card-title">实战篇笔记 扫码点餐小程序云开发（一）</span>
+                            <span class="card-title">那些年，被 AJAX 折磨的前端小白</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                
-依旧是写在前面的碎碎念：💭    学习编程我觉得最好的方式就是动手写代码⌨️    相对于阅读文档，在提出需求解决需求的过程中以主动探索为驱动对于我来说能够更快速掌握技巧并加深印象🧠    之前做过的项目也都会在笔记本上作记录，但后来
+                                在刚开始学 JavaScript 时，最深恶痛绝的三个 JS怪👹：this妖、原型精和 AJAX魔
+最近在写总结回顾时竟意外发现这三大怪早已在不知不觉中被我消化吸收了，趁着热乎记下来✍~~~
+有请今天的出场嘉宾🎤：AJAX魔
+什么是 A
                             
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-22
                             </span>
                             <span class="publish-author">
                                 
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
-                                <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
-                                    后端
+                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                                 
                                 
@@ -589,12 +651,8 @@ npm install axios --save        // Ajax请求模块
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Node-js/">
-                            <span class="chip bg-color">Node.js</span>
-                        </a>
-                        
-                        <a href="/tags/koa/">
-                            <span class="chip bg-color">koa</span>
+                        <a href="/tags/JavaScript/">
+                            <span class="chip bg-color">JavaScript</span>
                         </a>
                         
                     </div>
@@ -807,58 +865,6 @@ hello();
                         
                         <a href="/tags/JavaScript/">
                             <span class="chip bg-color">JavaScript</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/28/xiao-bai-cai-bi-ji-uni-app-si-lu-you/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="小白菜笔记 uni-app（四）路由">
-                            
-                            <span class="card-title">小白菜笔记 uni-app（四）路由</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                路由框架统一管理，需要在 pages.json 里配置每个路由页面的路径及页面样式。
-路由跳转使用 navigator 组件跳转类似 HTML 中的 &lt;a&gt; 组件，但只能跳转本地页面。目标页面必须在 pages.json 中注册
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/uni-app/">
-                            <span class="chip bg-color">uni-app</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                            <span class="chip bg-color">小程序</span>
                         </a>
                         
                     </div>
