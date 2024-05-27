@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.3k
+                    4.6k
                 </div>
                 
 
@@ -1009,9 +1009,14 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </li>
 <li><p>加载入口模块。每个 bundle 都有且只有一个入口模块，在上面示例中，index.js 是入口模块，在浏览器中会从他开始执行</p>
 </li>
-<li><p>执行模块代码（未完待续）</p>
+<li><p>执行模块代码。在 <code>__webpack_require__</code> 中判断即将加载的模块是否存在于 <code>__webpack_module_cache__</code> 中。如果存在则返回缓存模块的 exports 对象，否则进行下一步</p>
+</li>
+<li><p>新建一个模块 module 放入缓存对象 <code>__webpack_module_cache__</code>，执行文件路径对应的模块函数，执行完模块后返回该模块 exports 对象（这里其实是一个递归过程，以上面为例，假设现在执行权在 index.js，index.js ‘require’ add-content.js 即把执行权交由 add-content.js，这时对于 add-content.js 又重新执行第3步，由于第一次引用并不存在于缓存模块，因此接着执行第4步，add-content.js 没有 require 文件，所以返回该模块 exports 对象交出执行权）</p>
+</li>
+<li><p>所有依赖的模块都执行完毕，说明递归调用完成，整个 bundle 运行结束</p>
 </li>
 </ol>
+<p>Webpack为每个模块创造了一个可以导出和导入模块的环境，但本质上并没有修改代码的执行逻辑，因此代码执行的顺序与模块加载的顺序是完全一致的，这也是Webpack模块打包的奥秘</p>
 
                 
             </div>
