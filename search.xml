@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Hexo 命令备忘录</title>
+      <link href="/2024/05/28/hexo-ming-ling-bei-wang-lu/"/>
+      <url>/2024/05/28/hexo-ming-ling-bei-wang-lu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>会建立在 _posts 目录下</p><h1 id="新建草稿"><a href="#新建草稿" class="headerlink" title="新建草稿"></a>新建草稿</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new draft <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>会建立在 _drafts 目录下</p><h1 id="预览"><a href="#预览" class="headerlink" title="预览"></a>预览</h1><ol><li>不能预览草稿</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>可以预览草稿</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo s <span class="token parameter variable">--draft</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="文章与草稿转换"><a href="#文章与草稿转换" class="headerlink" title="文章与草稿转换"></a>文章与草稿转换</h1><ol><li>草稿发布为文章</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo p <span class="token operator">&lt;</span>title<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="2"><li>文章转为草稿</li></ol><p>手动将文章从 _posts 目录移动到 _drafts 目录</p><h1 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo g<span class="token comment"># 或者加上 -d，让 Hexo 在生成完毕后自动部署网站，作用同下文部署</span>hexo g <span class="token parameter variable">-d</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span class="token comment"># 或者加上 -g，让 Hexo 在生成完毕后自动部署网站， 作用同上文生成静态文件</span>hexo d <span class="token parameter variable">-g</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h1 id="清除缓存和已生成的静态文件"><a href="#清除缓存和已生成的静态文件" class="headerlink" title="清除缓存和已生成的静态文件"></a>清除缓存和已生成的静态文件</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h1 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h1><p>手动删除 _posts 目录下文件即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 命令行 </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>实战篇笔记-山竹记账前端（六）</title>
       <link href="/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/"/>
       <url>/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/</url>
@@ -23,6 +50,10 @@
             <tag> Vue3 </tag>
             
             <tag> TSX </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -51,6 +82,10 @@
             
             <tag> TSX </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -75,6 +110,10 @@
         <tags>
             
             <tag> Webpack </tag>
+            
+            <tag> 笔记 </tag>
+            
+            <tag> 书籍 </tag>
             
         </tags>
       
@@ -103,6 +142,10 @@
             
             <tag> TSX </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -129,6 +172,10 @@
             <tag> Vue3 </tag>
             
             <tag> TSX </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -157,6 +204,10 @@
             
             <tag> TSX </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -183,6 +234,10 @@
             <tag> Vue3 </tag>
             
             <tag> TSX </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -263,6 +318,10 @@
             
             <tag> Rails </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -288,6 +347,10 @@
             
             <tag> Rails </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -312,6 +375,10 @@
         <tags>
             
             <tag> Rails </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -367,6 +434,10 @@
             
             <tag> Rails </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -391,6 +462,10 @@
         <tags>
             
             <tag> Rails </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -420,6 +495,10 @@
             <tag> git </tag>
             
             <tag> Docker </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1043,6 +1122,10 @@
             
             <tag> 小程序 </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1070,6 +1153,10 @@
             
             <tag> 小程序 </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1096,6 +1183,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1149,6 +1240,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1175,6 +1270,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1203,6 +1302,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1229,6 +1332,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1257,6 +1364,10 @@
             
             <tag> 小程序 </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1283,6 +1394,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1336,6 +1451,10 @@
             
             <tag> 小程序 </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1362,6 +1481,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1390,6 +1513,10 @@
             
             <tag> 小程序 </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1416,6 +1543,10 @@
             <tag> uni-app </tag>
             
             <tag> 小程序 </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1444,6 +1575,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1470,6 +1605,10 @@
             <tag> Node.js </tag>
             
             <tag> koa </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1498,6 +1637,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1524,6 +1667,10 @@
             <tag> Node.js </tag>
             
             <tag> koa </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1552,6 +1699,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1578,6 +1729,10 @@
             <tag> Node.js </tag>
             
             <tag> koa </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1606,6 +1761,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1633,6 +1792,10 @@
             
             <tag> koa </tag>
             
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
+            
         </tags>
       
     </entry>
@@ -1659,6 +1822,10 @@
             <tag> Node.js </tag>
             
             <tag> koa </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       
@@ -1711,6 +1878,10 @@
             <tag> Node.js </tag>
             
             <tag> koa </tag>
+            
+            <tag> ‘笔记&#39; </tag>
+            
+            <tag> 实战 </tag>
             
         </tags>
       

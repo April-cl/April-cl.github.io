@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-26T15:28:00.575Z</updated>
+  <updated>2024-05-28T15:32:59.486Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo 命令备忘录</title>
+    <link href="http://example.com/2024/05/28/hexo-ming-ling-bei-wang-lu/"/>
+    <id>http://example.com/2024/05/28/hexo-ming-ling-bei-wang-lu/</id>
+    <published>2024-05-28T15:02:36.000Z</published>
+    <updated>2024-05-28T15:32:59.486Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;新建文章&quot;&gt;&lt;a href=&quot;#新建文章&quot; class=&quot;headerlink&quot; title=&quot;新建文章&quot;&gt;&lt;/a&gt;新建文章&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/categories/Hexo/"/>
+    
+    
+    <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>实战篇笔记-山竹记账前端（六）</title>
     <link href="http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/"/>
     <id>http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/</id>
     <published>2024-05-25T15:00:07.000Z</published>
-    <updated>2024-05-26T15:28:00.575Z</updated>
+    <updated>2024-05-28T14:32:58.750Z</updated>
     
     
       
@@ -41,6 +68,10 @@
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -48,7 +79,7 @@
     <link href="http://example.com/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/"/>
     <id>http://example.com/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/</id>
     <published>2024-05-22T15:21:16.000Z</published>
-    <updated>2024-05-22T16:53:26.419Z</updated>
+    <updated>2024-05-28T14:32:58.732Z</updated>
     
     
       
@@ -68,6 +99,10 @@
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -75,7 +110,7 @@
     <link href="http://example.com/2024/05/15/webpack-du-shu-bi-ji/"/>
     <id>http://example.com/2024/05/15/webpack-du-shu-bi-ji/</id>
     <published>2024-05-15T07:28:03.000Z</published>
-    <updated>2024-05-27T13:39:58.345Z</updated>
+    <updated>2024-05-28T14:21:42.445Z</updated>
     
     
       
@@ -94,6 +129,10 @@
     
     <category term="Webpack" scheme="http://example.com/tags/Webpack/"/>
     
+    <category term="笔记" scheme="http://example.com/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="书籍" scheme="http://example.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
   </entry>
   
   <entry>
@@ -101,7 +140,7 @@
     <link href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/"/>
     <id>http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-si/</id>
     <published>2024-05-14T04:37:36.000Z</published>
-    <updated>2024-05-20T04:04:17.538Z</updated>
+    <updated>2024-05-28T14:32:58.737Z</updated>
     
     
       
@@ -121,6 +160,10 @@
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -128,7 +171,7 @@
     <link href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/"/>
     <id>http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-san/</id>
     <published>2024-05-14T03:30:44.000Z</published>
-    <updated>2024-05-14T03:55:31.715Z</updated>
+    <updated>2024-05-28T14:32:58.796Z</updated>
     
     
       
@@ -148,6 +191,10 @@
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -155,7 +202,7 @@
     <link href="http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/"/>
     <id>http://example.com/2024/05/14/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-er/</id>
     <published>2024-05-14T02:36:20.000Z</published>
-    <updated>2024-05-14T03:29:27.691Z</updated>
+    <updated>2024-05-28T14:32:58.754Z</updated>
     
     
       
@@ -175,6 +222,10 @@
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -182,7 +233,7 @@
     <link href="http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/"/>
     <id>http://example.com/2024/05/13/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-yi/</id>
     <published>2024-05-13T01:57:02.000Z</published>
-    <updated>2024-05-14T02:39:02.794Z</updated>
+    <updated>2024-05-28T14:32:58.706Z</updated>
     
     
       
@@ -201,6 +252,10 @@
     <category term="Vue3" scheme="http://example.com/tags/Vue3/"/>
     
     <category term="TSX" scheme="http://example.com/tags/TSX/"/>
+    
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
@@ -264,7 +319,7 @@
     <link href="http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/"/>
     <id>http://example.com/2024/05/09/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-wu/</id>
     <published>2024-05-09T02:19:38.000Z</published>
-    <updated>2024-05-09T09:02:59.353Z</updated>
+    <updated>2024-05-28T14:32:58.746Z</updated>
     
     
       
@@ -282,6 +337,10 @@
     
     <category term="Rails" scheme="http://example.com/tags/Rails/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -289,7 +348,7 @@
     <link href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/"/>
     <id>http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-si/</id>
     <published>2024-05-07T04:50:44.000Z</published>
-    <updated>2024-05-09T07:40:34.427Z</updated>
+    <updated>2024-05-28T14:32:58.785Z</updated>
     
     
       
@@ -308,6 +367,10 @@
     
     <category term="Rails" scheme="http://example.com/tags/Rails/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -315,7 +378,7 @@
     <link href="http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/"/>
     <id>http://example.com/2024/05/07/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-san/</id>
     <published>2024-05-07T02:22:08.000Z</published>
-    <updated>2024-05-07T04:33:15.085Z</updated>
+    <updated>2024-05-28T14:32:58.740Z</updated>
     
     
       
@@ -332,6 +395,10 @@
     
     
     <category term="Rails" scheme="http://example.com/tags/Rails/"/>
+    
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
@@ -367,7 +434,7 @@
     <link href="http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/"/>
     <id>http://example.com/2024/05/06/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-er/</id>
     <published>2024-05-06T03:24:06.000Z</published>
-    <updated>2024-05-07T02:57:06.554Z</updated>
+    <updated>2024-05-28T14:32:58.749Z</updated>
     
     
       
@@ -387,6 +454,10 @@
     
     <category term="Rails" scheme="http://example.com/tags/Rails/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -394,7 +465,7 @@
     <link href="http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/"/>
     <id>http://example.com/2024/04/30/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-hou-duan-yi/</id>
     <published>2024-04-30T07:41:14.000Z</published>
-    <updated>2024-05-07T02:55:15.697Z</updated>
+    <updated>2024-05-28T14:32:58.745Z</updated>
     
     
       
@@ -412,6 +483,10 @@
     
     <category term="Rails" scheme="http://example.com/tags/Rails/"/>
     
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
+    
   </entry>
   
   <entry>
@@ -419,7 +494,7 @@
     <link href="http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang/"/>
     <id>http://example.com/2024/04/29/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang/</id>
     <published>2024-04-29T09:04:56.000Z</published>
-    <updated>2024-04-30T08:31:53.993Z</updated>
+    <updated>2024-05-28T14:32:58.797Z</updated>
     
     
       
@@ -441,6 +516,10 @@
     <category term="git" scheme="http://example.com/tags/git/"/>
     
     <category term="Docker" scheme="http://example.com/tags/Docker/"/>
+    
+    <category term="‘笔记&#39;" scheme="http://example.com/tags/%E2%80%98%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="实战" scheme="http://example.com/tags/%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
@@ -522,32 +601,6 @@
     <category term="命令行" scheme="http://example.com/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
     
     <category term="软件" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义ECharts图表-设备运行状态图</title>
-    <link href="http://example.com/2024/03/22/zi-ding-yi-echarts-tu-biao-she-bei-yun-xing-zhuang-tai-tu/"/>
-    <id>http://example.com/2024/03/22/zi-ding-yi-echarts-tu-biao-she-bei-yun-xing-zhuang-tai-tu/</id>
-    <published>2024-03-22T01:25:18.000Z</published>
-    <updated>2024-03-22T07:01:58.262Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;翻笔记看到两年前一个当时耗费挺长时间的看板页面，现在看来写的有些弱智，不过也侧面说明相较于之前有所成长吧（至少我觉得🤭）&lt;/p&gt;
-&lt;h2 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="http://example.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="ECharts" scheme="http://example.com/tags/ECharts/"/>
     
   </entry>
   
