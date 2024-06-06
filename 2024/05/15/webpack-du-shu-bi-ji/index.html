@@ -430,14 +430,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-28
+                    2024-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.6k
+                    4.7k
                 </div>
                 
 
@@ -459,7 +459,6 @@
             <div id="articleContent">
                 <p>初读《Webpack实战：入门、进阶与调优（第2版）》后记录</p>
 <h1 id="何为-Webpack"><a href="#何为-Webpack" class="headerlink" title="何为 Webpack"></a>何为 Webpack</h1><p>Webpack 是一个开源的 JaveScript 模块打包工具，其核心的功能是解决模块之间的依赖，把各个模块按照特定的规则和顺序组织在一起，最终合并为一个 JS 文件（有时会有多个）</p>
-<p>记住上面这句话，后面要考~</p>
 <h1 id="为什么需要-Webpack"><a href="#为什么需要-Webpack" class="headerlink" title="为什么需要 Webpack"></a>为什么需要 Webpack</h1><p>之前工作开发维护的旧框架用的是前端石器时代的 JQuery 框架，没有模块打包的概念，用的是最原始的 <code>&lt;script&gt;</code>、<code>&lt;link&gt;</code> 手动引入文件的方式，每次版本迭代更新需要手动清除浏览器缓存（<code>Ctrl + F5</code> 强制刷新）或者页面设置不缓存，不管哪个做法都是不合理的而且显得很 stupid。另外，该项目是混合开发项目，经常在打包成 APP 后遇到一些机器不能兼容 ES6 写法而导致程序无法正常运行，恼人的是这样的错误还不容易排查，因为一般发生在用户的 APP 载体需要真机调试。</p>
 <p>初读完这本书如获至宝，倒不完全是因为读完之后感觉对 Webpack 的认知更深了，更多是因为有切身经历的参考，更加明白那段前端巨变历史的成因。</p>
 <p>说回 Webpack…</p>
@@ -723,13 +722,12 @@ I'm using a config file!<span aria-hidden="true" class="line-numbers-rows"><span
 <h1 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h1><p>归纳前面的操作</p>
 <p>编写代码 =&gt; 执行 build 命令 -&gt; 刷新页面</p>
 <p>这样的效率并不高，还好 Webpack 社区已经为我们提供了一个便捷的本地开发工具 —— <code>webpack-dev-server</code></p>
-<p>安装 </p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> webpack-dev-server <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="安装-webpack-dev-server"><a href="#安装-webpack-dev-server" class="headerlink" title="安装 webpack-dev-server"></a>安装 webpack-dev-server</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> webpack-dev-server <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
 <p>安装指令中的-D参数是将webpack-dev-server作为工程的devDependencies（开发环境依赖）记录在package.json中。这样做是因为webpack-dev-server仅仅在本地开发时才会用到，在生产环境中并不需要它，所以放在devDependencies中是比较恰当的。</p>
 </blockquote>
-<p>在package.json中添加一个dev指令：</p>
+<h2 id="启动-webpack-dev-server"><a href="#启动-webpack-dev-server" class="headerlink" title="启动 webpack-dev-server"></a>启动 webpack-dev-server</h2><p>在package.json中添加一个dev指令：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json">……
   <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack"</span><span class="token punctuation">,</span>
@@ -737,7 +735,7 @@ I'm using a config file!<span aria-hidden="true" class="line-numbers-rows"><span
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
 ……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>编辑webpack.config.js</p>
+<h2 id="配置-webpack-dev-server"><a href="#配置-webpack-dev-server" class="headerlink" title="配置 webpack-dev-server"></a>配置 webpack-dev-server</h2><p>编辑webpack.config.js</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -809,7 +807,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <li><p>该模块已经被加载过。这时该模块的代码不会再次执行，而是直接获取该模块上一次导出的内容。</p>
 </li>
 </ul>
-<h2 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h2><h3 id="导出-1"><a href="#导出-1" class="headerlink" title="导出"></a>导出</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 写法1</span>
+<h2 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h2><h3 id="导出-1"><a href="#导出-1" class="headerlink" title="导出"></a>导出</h3><h4 id="命名导出"><a href="#命名导出" class="headerlink" title="命名导出"></a>命名导出</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 写法1</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'calculator'</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
@@ -818,17 +816,24 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> add <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>注意</strong></p>
-<ul>
-<li>使用命名导出时，可以通过 as 关键字对变量重命名</li>
-</ul>
+<p><strong>注意</strong>：使用命名导出时，可以通过 <code>as</code> 关键字对变量重命名</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'calculator'</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">export</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> add <span class="token keyword">as</span> getSum <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 在导入时即为 name 和 getSum</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<ul>
-<li>模块的默认导出只能有一个</li>
-</ul>
+<h4 id="默认导出"><a href="#默认导出" class="headerlink" title="默认导出"></a>默认导出</h4><p>模块的默认导出只能有一个</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'calculator'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">add</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 下面如果在同一个文件导出会报错</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">otherInfo</span><span class="token operator">:</span> <span class="token string">''</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="导入-1"><a href="#导入-1" class="headerlink" title="导入"></a>导入</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 具名导出的导入</span>
 <span class="token keyword">import</span> <span class="token punctuation">{</span> name<span class="token punctuation">,</span> add <span class="token keyword">as</span> calculateSum <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./calculator.js'</span><span class="token punctuation">;</span>
 
