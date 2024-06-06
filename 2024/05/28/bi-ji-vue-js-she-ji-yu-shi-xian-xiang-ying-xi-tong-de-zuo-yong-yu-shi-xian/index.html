@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实战篇笔记-山竹记账前端（六）, April-cl">
+    <meta name="keywords" content="笔记：《Vue.js设计与实现》—— 响应系统的作用与实现, April-cl">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实战篇笔记-山竹记账前端（六） | April-cl</title>
+    <title>笔记：《Vue.js设计与实现》—— 响应系统的作用与实现 | April-cl</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -269,12 +269,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实战篇笔记-山竹记账前端（六）</h1>
+                    <h1 class="description center-align post-title">笔记：《Vue.js设计与实现》—— 响应系统的作用与实现</h1>
                 </div>
             </div>
         </div>
@@ -398,12 +398,8 @@
                                 <span class="chip bg-color">笔记</span>
                             </a>
                         
-                            <a href="/tags/%E5%AE%9E%E6%88%98/">
-                                <span class="chip bg-color">实战</span>
-                            </a>
-                        
-                            <a href="/tags/TSX/">
-                                <span class="chip bg-color">TSX</span>
+                            <a href="/tags/%E4%B9%A6%E7%B1%8D/">
+                                <span class="chip bg-color">书籍</span>
                             </a>
                         
                     </div>
@@ -427,21 +423,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-05-25
+                    2024-05-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-28
+                    2024-06-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    575
+                    1.7k
                 </div>
                 
 
@@ -461,127 +457,185 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="创建-Button-组件"><a href="#创建-Button-组件" class="headerlink" title="创建 Button 组件"></a>创建 Button 组件</h1><p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/components/attrs.html">透传 Attributes</a></p>
-<blockquote>
-<p>“透传 attribute”指的是传递给一个组件，却没有被该组件声明为 props 或 emits 的 attribute 或者 v-on 事件监听器。最常见的例子就是 class、style 和 id。</p>
-</blockquote>
-<p><strong>当一个组件以单个元素为根作渲染时，透传的 attribute 会自动被添加到根元素上。</strong></p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// src/shared/Button.tsx</span>
-<span class="token operator">...</span>
-<span class="token comment">// 这里定义接口是因为 TS 错误提示</span>
-<span class="token keyword">interface</span> <span class="token class-name">Props</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">onClick</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">e</span><span class="token operator">:</span> MouseEvent</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span>
+                <p>最近在看《Vue.js设计与实现》这本书，第四章响应系统的作用与实现真是干货满满，反反复复看了好几遍才看得明白，记录一下~</p>
+<h1 id="响应式数据与副作用函数"><a href="#响应式数据与副作用函数" class="headerlink" title="响应式数据与副作用函数"></a>响应式数据与副作用函数</h1><h2 id="副作用函数"><a href="#副作用函数" class="headerlink" title="副作用函数"></a>副作用函数</h2><p>在系统开发和设计中，一般函数设计的时候都是内部执行，并不会影响外部的执行，但是如果一个内部函数影响了外部的执行，这个就叫做副作用，基于这个特性对于这些函数都被称为具有副作用的函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> <span class="token string">'hello vue3'</span>
 <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">getText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token keyword">export</span> <span class="token keyword">const</span> Button <span class="token operator">=</span> defineComponent<span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token operator">&lt;</span>button <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button<span class="token punctuation">}</span><span class="token operator">&gt;</span>
-        <span class="token punctuation">{</span>context<span class="token punctuation">.</span>slots<span class="token punctuation">.</span>default<span class="token operator">?.</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
-    <span class="token punctuation">)</span>
+<p>上面示例中 effect 函数执行时会设置 body 的文本内容，getText 函数读取 body 的文本内容，effect 函数的执行会影响 getText 函数的执行结果，也就是说 effect 函数产生了副作用</p>
+<h2 id="响应式数据"><a href="#响应式数据" class="headerlink" title="响应式数据"></a>响应式数据</h2><p>当数据发生变化时，与之相关联的副作用函数能够自动重新执行</p>
+<p>如下面示例中的 obj，我们希望在 obj.text 的值变化时能够自动重新执行 effect 函数（这里还没有实现响应式~）</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="响应式数据的基本实现"><a href="#响应式数据的基本实现" class="headerlink" title="响应式数据的基本实现"></a>响应式数据的基本实现</h1><h2 id="实现响应式数据的核心逻辑"><a href="#实现响应式数据的核心逻辑" class="headerlink" title="实现响应式数据的核心逻辑"></a>实现响应式数据的核心逻辑</h2><ul>
+<li><p><em><strong>getter</strong></em>，即数据读取：当副作用函数 effect 执行时，会触发字段 obj.text 的<strong>读取</strong>操作</p>
+</li>
+<li><p><em><strong>setter</strong></em>，即数据修改：当修改 obj.text 的值时，会触发字段 obj.text 的<strong>设置</strong>操作</p>
+</li>
+</ul>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><p>当读取操作发生时，将当前执行的副作用函数存储到“桶”中，当设置操作发生时，再将副作用函数从“桶”里取出并执行</p>
+<h2 id="如何才能拦截一个对象属性的读取和设置操作"><a href="#如何才能拦截一个对象属性的读取和设置操作" class="headerlink" title="如何才能拦截一个对象属性的读取和设置操作"></a>如何才能拦截一个对象属性的读取和设置操作</h2><ul>
+<li>Vue 2 通过 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">Object.defineProperty</a> 函数实现</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> descriptor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>obj</code> 要定义属性的对象。</p>
+<p><code>prop</code> 一个字符串或 Symbol，指定了要定义或修改的属性键。</p>
+<p><code>descriptor</code> 要定义或修改的属性的描述符。</p>
+<ul>
+<li>Vue 3 通过代理对象 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a> 实现</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> handler<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>target</code> 要使用 Proxy 包装的目标对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。</p>
+<p><code>handler</code> 一个通常以函数作为属性的对象，各属性中的函数分别定义了在执行各种操作时代理 p 的行为。</p>
+<p>根据以上，完成一个响应系统的简单实现 <a id="code1">code 1</a></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 以下技术代码</span>
+
+<span class="token comment">// 存储副作用函数的桶</span>
+<span class="token keyword">const</span> bucket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 原始数据</span>
+<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token comment">// 对原始数据的代理</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 拦截读取操作</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将副作用函数 effect 添加到存储副作用函数的桶中</span>
+    bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>effect<span class="token punctuation">)</span>
+    <span class="token comment">// 返回属性值</span>
+    <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 拦截设置操作</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 设置属性值</span>
+    target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> newVal
+    <span class="token comment">// 把副作用函数从桶里取出并执行</span>
+    bucket<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token comment">// src/views/StartPage.tsx</span>
-<span class="token operator">...</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> StartPage <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">props<span class="token punctuation">,</span> context</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> <span class="token function-variable function">onClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hi'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
-        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button_wrapper<span class="token punctuation">}</span><span class="token operator">&gt;</span>
-          <span class="token operator">&lt;</span>Button <span class="token keyword">class</span><span class="token operator">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>button<span class="token punctuation">}</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>测试<span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">&gt;</span>  <span class="token comment">// Button 组件并没有声明 props，点击按钮也可以执行 onClick 事件</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 技术代码结束</span>
 
-<h1 id="创建-FloatButton-和-Icon-组件"><a href="#创建-FloatButton-和-Icon-组件" class="headerlink" title="创建 FloatButton 和 Icon 组件"></a>创建 FloatButton 和 Icon 组件</h1><p>FloatButton 组件调用 Icon 组件</p>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/shared/FloatButton.tsx</span>
-<span class="token operator">...</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> FloatButton <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>floatButton<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Icon</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>add<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>icon<span class="token punctuation">}</span></span><span class="token punctuation">/&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 以下业务代码</span>
 
-<p>封装 Icon 组件</p>
-<ol>
-<li>虽然声明了 Props，TypeScript 转译成 JavaScript 后声明信息就消失了</li>
-</ol>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token comment">// src/shared/Icon.tsx</span>
-<span class="token operator">...</span>
-<span class="token keyword">interface</span> <span class="token class-name">Props</span><span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'chart'</span> <span class="token operator">|</span> <span class="token string">'clock'</span> <span class="token operator">|</span> <span class="token string">'cloud'</span> <span class="token operator">|</span> <span class="token string">'mangosteen'</span> <span class="token operator">|</span> <span class="token string">'pig'</span>
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
 <span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> Icon <span class="token operator">=</span> <span class="token generic-function"><span class="token function">defineComponent</span><span class="token generic class-name"><span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>icon<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>use</span> <span class="token attr-name">xlinkHref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">'#'</span> <span class="token operator">+</span> props<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>use</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<ol start="2">
-<li>声明运行时的 props，会提示 <code>没有与此调用匹配的重载</code>，查看 defineComponent 声明可知 <code>&lt;Props&gt;</code> 和 <code>props</code> 不能共存</li>
-</ol>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token keyword">interface</span> <span class="token class-name">Props</span><span class="token punctuation">{</span>
-  name<span class="token operator">:</span> <span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'chart'</span> <span class="token operator">|</span> <span class="token string">'clock'</span> <span class="token operator">|</span> <span class="token string">'cloud'</span> <span class="token operator">|</span> <span class="token string">'mangosteen'</span> <span class="token operator">|</span> <span class="token string">'pig'</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> Icon <span class="token operator">=</span> <span class="token generic-function"><span class="token function">defineComponent</span><span class="token generic class-name"><span class="token operator">&lt;</span>Props<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  props<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>  <span class="token comment">// 这里会有错误提示</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>icon<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>use</span> <span class="token attr-name">xlinkHref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">'#'</span> <span class="token operator">+</span> props<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>use</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 1 秒后修改 text</span>
+  obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'123'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
 
-<ol start="3">
-<li><p>考虑用 defineProps，结果不行，会有警告 defineProps 是一个仅 <code>&lt;script setup&gt;</code> 中可用的编译宏命令 ，而且 name 是 null 的报错</p>
-</li>
-<li><p>最后选择的是不用 <code>&lt;Props&gt;</code>，使用 PropType 这个工具类型来标记 props 类型</p>
-</li>
-</ol>
-<pre class="line-numbers language-tsx" data-language="tsx"><code class="language-tsx"><span class="token operator">...</span>
-<span class="token keyword">export</span> <span class="token keyword">const</span> Icon <span class="token operator">=</span> <span class="token function">defineComponent</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  props<span class="token operator">:</span> <span class="token punctuation">{</span>
-    name<span class="token operator">:</span> <span class="token punctuation">{</span>
-      type<span class="token operator">:</span> String <span class="token keyword">as</span> PropType<span class="token operator">&lt;</span><span class="token string">'add'</span> <span class="token operator">|</span> <span class="token string">'chart'</span> <span class="token operator">|</span> <span class="token string">'clock'</span> <span class="token operator">|</span> <span class="token string">'cloud'</span> <span class="token operator">|</span> <span class="token string">'mangosteen'</span> <span class="token operator">|</span> <span class="token string">'pig'</span><span class="token operator">&gt;</span>
+<span class="token comment">// 业务代码结束</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行可以看见 1 秒后文本内容变成 123</p>
+<p>注：技术代码为方便开发者开发使用，业务代码与业务逻辑相关，两者应当是分离的，书中并没有提及技术代码和业务代码，这里只是为了方便自己理解 ~~~</p>
+<h1 id="设计一个完善的响应系统"><a href="#设计一个完善的响应系统" class="headerlink" title="设计一个完善的响应系统"></a>设计一个完善的响应系统</h1><h2 id="问题1：消除硬编码副作用函数名"><a href="#问题1：消除硬编码副作用函数名" class="headerlink" title="问题1：消除硬编码副作用函数名"></a>问题1：消除硬编码副作用函数名</h2><p>观察 <a href="#code1">code 1</a>，技术代码中直接使用业务代码的 <code>effect</code> 副作用函数名，一般来说，技术代码和业务代码应该是分离的。另外，即使副作用函数是匿名函数也应当能被收集到“桶”中。这里给出的解决方法是：用一个全局变量存储被注册的副作用函数，从业务代码中抽离出一个副作用函数注册函数到技术代码中，业务代码调用注册函数，将副作用函数参数的形式传入赋值给全局变量，原先技术代码内调用业务代码中副作用函数的地方修改为调用全局变量存储的副作用函数</p>
+<p><a id="code2">code 2</a></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 以下技术代码</span>
+
+<span class="token comment">// 存储副作用函数的桶</span>
+<span class="token keyword">const</span> bucket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 原始数据</span>
+<span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token string">'hello world'</span> <span class="token punctuation">}</span>
+<span class="token comment">// 对原始数据的代理</span>
+<span class="token keyword">const</span> obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 拦截读取操作</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将 activeEffect 中存储的副作用函数添加到存储副作用函数的桶中</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>activeEffect<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      bucket<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>activeEffect<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
+    <span class="token comment">// 返回属性值</span>
+    <span class="token keyword">return</span> target<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">setup</span><span class="token operator">:</span> <span class="token punctuation">(</span>props<span class="token punctuation">,</span> context<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span> <span class="token attr-name">class</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span>s<span class="token punctuation">.</span>icon<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-        </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>use</span> <span class="token attr-name">xlinkHref</span><span class="token script language-javascript"><span class="token script-punctuation punctuation">=</span><span class="token punctuation">{</span><span class="token string">'#'</span> <span class="token operator">+</span> props<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>use</span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
-      </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span>
-    <span class="token punctuation">)</span>
+  <span class="token comment">// 拦截设置操作</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> newVal<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 设置属性值</span>
+    target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> newVal
+    <span class="token comment">// 把副作用函数从桶里取出并执行</span>
+    bucket<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">fn</span> <span class="token operator">=&gt;</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<p>组件需要透传的 attribute 不在根节点，设置 <code>inheritAttrs: false</code> 可以禁用 Attributes 继承。</p>
-<p>sass 内置模块用法</p>
-<pre class="line-numbers language-scss" data-language="scss"><code class="language-scss"><span class="token keyword">@use</span> <span class="token string">"sass:color"</span><span class="token punctuation">;</span>
+<span class="token comment">// 用一个全局变量存储当前被注册的 effect 函数</span>
+<span class="token keyword">let</span> activeEffect
+<span class="token keyword">function</span> <span class="token function">effect</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 当调用 effect 注册副作用函数时，将副作用函数复制给 activeEffect</span>
+  activeEffect <span class="token operator">=</span> fn
+  <span class="token comment">// 执行副作用函数</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-<span class="token selector">.button </span><span class="token punctuation">{</span>
-  <span class="token property"><span class="token variable">$primary-color</span></span><span class="token punctuation">:</span> #6b717f<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$primary-color</span><span class="token punctuation">;</span>
-  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid color.<span class="token function">scale</span><span class="token punctuation">(</span><span class="token variable">$primary-color</span><span class="token punctuation">,</span> <span class="token property"><span class="token variable">$lightness</span></span><span class="token punctuation">:</span> 20%<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment">// 技术代码结束</span>
+
+<span class="token comment">// 以下业务代码</span>
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 1 秒后修改 text</span>
+  obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'123'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 业务代码结束</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="问题2：响应式数据上设置不存在的属性时不应该执行副作用函数"><a href="#问题2：响应式数据上设置不存在的属性时不应该执行副作用函数" class="headerlink" title="问题2：响应式数据上设置不存在的属性时不应该执行副作用函数"></a>问题2：响应式数据上设置不存在的属性时不应该执行副作用函数</h2><p>观察 <a href="#code2">code 2</a>，代理对象拦截读取、设置操作时并没有对 key 做判断，这就存在一个问题：在响应式数据 obj 上设置任何属性时，都能触发收集在桶里的副作用函数</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 以下业务代码</span>
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>innerText <span class="token operator">=</span> obj<span class="token punctuation">.</span>text
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'执行了'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 1 秒后修改 text</span>
+  obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'123'</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 业务代码结束</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>稍微修改下业务代码，可以看见虽然 1 秒后修改的是 obj.name 而不是 obj.text，effect 函数仍然会执行。导致问题的根本原因是：没有在副作用函数与被操作的目标字段之间建立明确的联系</p>
+<p>此外，可以想到，一个副作用函数可能读取多个对象属性，一个对象属性可能同时存在多个副作用函数，多个对象亦关联多个相同或不同的副作用函数</p>
+<p>用树型结构表示如下</p>
+<pre class="line-numbers language-none"><code class="language-none">一个副作用函数中读取了同一个对象的两个不同属性
+01 target
+02     └── text1
+03         └── effectFn
+04     └── text2
+05         └── effectFn
+
+在不同的副作用函数中读取了两个不同对象的不同属性
+01 target
+02     └── text
+03         └── effectFn1
+04         └── effectFn2
+
+在不同的副作用函数中读取了两个不同对象的不同属性
+01 target1
+02     └── text1
+03         └── effectFn1
+04 target2
+05     └── text2
+06         └── effectFn2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<p>下面重头戏开始啦（🤯要长脑子啦~</p>
+<hr>
+<h1 id="分支切换与-cleanup"><a href="#分支切换与-cleanup" class="headerlink" title="分支切换与 cleanup"></a>分支切换与 cleanup</h1><h1 id="嵌套的-effect-与-effect-栈"><a href="#嵌套的-effect-与-effect-栈" class="headerlink" title="嵌套的 effect 与 effect 栈"></a>嵌套的 effect 与 effect 栈</h1><h1 id="避免无限递归循环"><a href="#避免无限递归循环" class="headerlink" title="避免无限递归循环"></a>避免无限递归循环</h1><h1 id="调度执行"><a href="#调度执行" class="headerlink" title="调度执行"></a>调度执行</h1><h1 id="计算属性-computed-与-lazy"><a href="#计算属性-computed-与-lazy" class="headerlink" title="计算属性 computed 与 lazy"></a>计算属性 computed 与 lazy</h1><h1 id="watch-的实现原来"><a href="#watch-的实现原来" class="headerlink" title="watch 的实现原来"></a>watch 的实现原来</h1><h1 id="立即执行的-watch-与回调执行时机"><a href="#立即执行的-watch-与回调执行时机" class="headerlink" title="立即执行的 watch 与回调执行时机"></a>立即执行的 watch 与回调执行时机</h1><h1 id="过期的副作用"><a href="#过期的副作用" class="headerlink" title="过期的副作用"></a>过期的副作用</h1>
                 
             </div>
             <hr/>
@@ -607,7 +661,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/">http://example.com/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/</a>
+                    <a href="http://example.com/2024/05/28/bi-ji-vue-js-she-ji-yu-shi-xian-xiang-ying-xi-tong-de-zuo-yong-yu-shi-xian/">http://example.com/2024/05/28/bi-ji-vue-js-she-ji-yu-shi-xian-xiang-ying-xi-tong-de-zuo-yong-yu-shi-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -653,12 +707,8 @@
                                     <span class="chip bg-color">笔记</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AE%9E%E6%88%98/">
-                                    <span class="chip bg-color">实战</span>
-                                </a>
-                            
-                                <a href="/tags/TSX/">
-                                    <span class="chip bg-color">TSX</span>
+                                <a href="/tags/%E4%B9%A6%E7%B1%8D/">
+                                    <span class="chip bg-color">书籍</span>
                                 </a>
                             
                         </div>
@@ -706,13 +756,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/05/28/bi-ji-vue-js-she-ji-yu-shi-xian-xiang-ying-xi-tong-de-zuo-yong-yu-shi-xian/">
+                <a href="/2024/05/28/hexo-ming-ling-bei-wang-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="笔记：《Vue.js设计与实现》—— 响应系统的作用与实现">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Hexo 命令备忘录">
                         
-                        <span class="card-title">笔记：《Vue.js设计与实现》—— 响应系统的作用与实现</span>
+                        <span class="card-title">Hexo 命令备忘录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -729,8 +779,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
@@ -740,16 +790,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue3/">
-                        <span class="chip bg-color">Vue3</span>
+                    <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/">
+                        <span class="chip bg-color">命令行</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B9%A6%E7%B1%8D/">
-                        <span class="chip bg-color">书籍</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -763,13 +809,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/05/22/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-wu/">
+                <a href="/2024/05/25/shi-zhan-pian-bi-ji-shan-zhu-ji-zhang-qian-duan-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（五）">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="实战篇笔记-山竹记账前端（六）">
                         
-                        <span class="card-title">实战篇笔记-山竹记账前端（五）</span>
+                        <span class="card-title">实战篇笔记-山竹记账前端（六）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,7 +826,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-25
                             </span>
                         <span class="publish-author">
                             
