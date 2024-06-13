@@ -437,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    3.2k
                 </div>
                 
 
@@ -846,6 +846,63 @@
 <span class="token keyword">ALTER</span> <span class="token keyword">TABLE</span> 表名 <span class="token keyword">DROP</span> <span class="token keyword">COLUMN</span> 列<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> 表名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>视图本身是一个虚拟表，它的数据来自于表，通过执行时动态生成</p>
+<p>好处：</p>
+<ol>
+<li><p>简化 sql 语句</p>
+</li>
+<li><p>提高 sql 重用性</p>
+</li>
+<li><p>保护基表数据，提高安全性</p>
+</li>
+</ol>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 创建视图</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">VIEW</span> 视图名 <span class="token keyword">AS</span> 查询语句<span class="token punctuation">;</span>
+
+<span class="token comment">-- 删除视图</span>
+<span class="token keyword">DROP</span> <span class="token keyword">VIEW</span> 视图名<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h1><p>存储过程是为了完成特定功能的 SQL 语句集，经编译创建并保存在数据库中，用户可通过指定存储过程的名字并给定参数来调用执行（理解为函数？）</p>
+<p>不同 DBMS 中的存储过程语法有所不同。事实上，编写真正的可移植存储过程几乎是不可能的。不过，存储过程的自我调用（名字以及数据如何传递）可以相对保持可移植</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 创建存储过程</span>
+<span class="token keyword">CREATE</span> <span class="token keyword">PROCEDURE</span> 存储过程名<span class="token punctuation">(</span>参数模式 参数名 参数类型<span class="token punctuation">)</span>
+<span class="token keyword">BEGIN</span>
+存储过程体
+<span class="token keyword">END</span>
+
+<span class="token comment">-- 调用存储过程</span>
+<span class="token keyword">CALL</span> 存储过程名<span class="token punctuation">(</span>实参<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>参数模式： IN | OUT | INOUT，IN 可以省略</p>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>事务处理是一种机制，用来管理必须成批执行的 SQL 操作，保证数据库不包含不完整的操作结果。利用事务处理，可以保证一组操作不会中途停止，它们要么完全执行，要么完全不执行（除非明确指示）。如果没有错误发生，整组语句提交给（写到）数据库表；如果发生错误，则进行回退（撤销），将数据库恢复到某个已知且安全的状态</p>
+<p>事务处理用来管理 INSERT、UPDATE 和 DELETE 语句。不能回退 SELECT 语句（回退 SELECT 语句也没有必要），也不能回退 CREATE 或 DROP 操作。事务处理中可以使用这些语句，但进行回退时，这些操作也不撤销。</p>
+<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 开始事务</span>
+<span class="token keyword">START</span> <span class="token keyword">TRANSACTION</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 事务回滚</span>
+<span class="token keyword">ROLLBACK</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 提交事务</span>
+<span class="token keyword">COMMIT</span><span class="token punctuation">;</span>
+
+<span class="token comment">-- 用于在事务中设置保存点，以便稍后能够回滚到该点</span>
+<span class="token keyword">SAVEPOINT</span> 保存点<span class="token punctuation">;</span>
+
+<span class="token comment">-- 用于回滚到之前设置的保存点</span>
+<span class="token keyword">ROLLBACK</span> <span class="token keyword">TO</span> <span class="token keyword">SAVEPOINT</span> 保存点<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h1><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 创建游标</span>
+<span class="token keyword">DECLARE</span> 游标名 <span class="token keyword">CURSOR</span> <span class="token keyword">FOR</span> 查询语句<span class="token punctuation">;</span>
+
+<span class="token comment">-- 打开游标</span>
+<span class="token keyword">OPEN</span> <span class="token keyword">CURSOR</span> 游标名
+
+<span class="token comment">-- 访问游标数据</span>
+<span class="token keyword">FETCH</span> 游标名 <span class="token keyword">INTO</span>  变量<span class="token punctuation">;</span>
+
+<span class="token comment">-- 关闭游标</span>
+<span class="token keyword">CLOSE</span> 游标名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
