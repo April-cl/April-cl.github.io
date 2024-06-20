@@ -430,14 +430,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-15
+                    2024-06-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.6k
+                    6.1k
                 </div>
                 
 
@@ -1261,6 +1261,76 @@ obj<span class="token punctuation">.</span>text <span class="token operator">=</
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">)</span>
 <span class="token comment">// 业务代码结束</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Vue 文档在介绍 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/api/general.html#nexttick">nextTick</a> 时提及：</p>
+<blockquote>
+<p>当你在 Vue 中更改响应式状态时，最终的 DOM 更新并不是同步生效的，而是由 Vue 将它们缓存在一个队列中，直到下一个“tick”才一起执行。这样是为了确保每个组件无论发生多少状态改变，都仅执行一次更新。</p>
+</blockquote>
+<p>🫷 这里不讨论 nextTick，只解释 Vue 异步更新响应式状态的思路</p>
+<p><a href="#code7">code 7</a> 业务代码替换如下</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 定义一个任务队列</span>
+<span class="token keyword">const</span> jobQueue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 使用 Promise.resolve() 创建一个 promise 实例，我们用它将一个任务添加到微任务队列</span>
+<span class="token keyword">const</span> p <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 一个标志代表是否正在刷新队列</span>
+<span class="token keyword">let</span> isFlushing <span class="token operator">=</span> <span class="token boolean">false</span>
+<span class="token keyword">function</span> <span class="token function">flushJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果队列正在刷新，则什么都不做</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isFlushing<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  <span class="token comment">// 设置为 true，代表正在刷新</span>
+  isFlushing <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token comment">// 在微任务队列中刷新 jobQueue 队列</span>
+  p<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    jobQueue<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">job</span> <span class="token operator">=&gt;</span> <span class="token function">job</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">finally</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 结束后重置 isFlushing</span>
+    isFlushing <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function">effect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>oobj<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function">scheduler</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 每次调度时，将副作用函数添加到 jobQueue 队列中</span>
+    jobQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span>
+    <span class="token comment">// 调用 flushJob 刷新队列</span>
+    <span class="token function">flushJob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'111'</span>
+obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'222'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>先了解一下<a target="_blank" rel="noopener" href="https://april-cl.github.io/2021/10/02/tan-tan-event-loop/#toc-heading-5">宏任务和微任务</a>大致有：</p>
+<ul>
+<li><p>宏任务</p>
+<ul>
+<li>script全部代码</li>
+<li>setTimeout</li>
+<li>setInterval</li>
+<li>I/O</li>
+<li>mouseover(之类的事件)</li>
+<li>Web API大部分异步返回方法(XHR,fetch)</li>
+</ul>
+</li>
+<li><p>微任务</p>
+<ul>
+<li>Promise.then catch finally</li>
+<li>MutationObserver</li>
+<li>queueMicrotask</li>
+</ul>
+</li>
+</ul>
+<p>上面代码中 </p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'111'</span>
+obj<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string">'222'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在同一个宏任务中，当执行 <code>obj.text = '111'</code> 完毕，副作用函数添加到任务队列中，promise.then 注册的回到函数是微任务，在当前宏任务完成后的下一个微任务队列中执行，接下来执行的是 <strong>宏任务中的<code>obj.text = '222'</code></strong> ，由于任务队列是 Set 对象，所以执行完毕不会重复添加副作用函数，这时候宏任务结束，开始执行微任务，此时 obj.text 是 ‘222’，所以控制台输出</p>
+<pre class="line-numbers language-none"><code class="language-none">hello world
+222<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <h1 id="计算属性-computed-与-lazy"><a href="#计算属性-computed-与-lazy" class="headerlink" title="计算属性 computed 与 lazy"></a>计算属性 computed 与 lazy</h1><h1 id="watch-的实现原来"><a href="#watch-的实现原来" class="headerlink" title="watch 的实现原来"></a>watch 的实现原来</h1><h1 id="立即执行的-watch-与回调执行时机"><a href="#立即执行的-watch-与回调执行时机" class="headerlink" title="立即执行的 watch 与回调执行时机"></a>立即执行的 watch 与回调执行时机</h1><h1 id="过期的副作用"><a href="#过期的副作用" class="headerlink" title="过期的副作用"></a>过期的副作用</h1>
                 
