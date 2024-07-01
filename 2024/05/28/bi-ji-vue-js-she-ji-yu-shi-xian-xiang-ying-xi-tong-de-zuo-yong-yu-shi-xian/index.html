@@ -1535,13 +1535,13 @@ obj<span class="token punctuation">.</span>foo<span class="token operator">++</s
 <li>由以上类型的值组成的数组</li>
 </ul>
 <p>第二个参数是在发生变化时要调用的回调函数。这个回调函数接受三个参数：新值、旧值，以及一个用于注册副作用清理的回调函数。该回调函数会在副作用下一次重新执行前调用，可以用来清除无效的副作用，例如等待中的异步请求。当侦听多个来源时，回调函数接受两个数组，分别对应来源数组中的新值和旧值。</p>
-<p>第三个可选的参数是一个对象，支持以下这些选项：</p>
+<p>第三个可选的参数是一个对象（<a target="_blank" rel="noopener" href="https://april-cl.github.io/2024/05/28/bi-ji-vue-js-she-ji-yu-shi-xian-xiang-ying-xi-tong-de-zuo-yong-yu-shi-xian/#toc-heading-28">下一节</a>讨论），支持以下这些选项：</p>
 <ul>
 <li>immediate：在侦听器创建时立即触发回调。第一次调用时旧值是 undefined。</li>
 <li>deep：如果源是对象，强制深度遍历，以便在深层级变更时触发回调。参考深层侦听器。</li>
 <li>flush：调整回调函数的刷新时机。参考回调的刷新时机及 watchEffect()。</li>
 <li>onTrack / onTrigger：调试侦听器的依赖。参考调试侦听器。</li>
-<li>once：回调函数只会运行一次。侦听器将在回调函数首次运行后自动停止。、</li>
+<li>once：回调函数只会运行一次。侦听器将在回调函数首次运行后自动停止。</li>
 </ul>
 <p>实现原理 <a id="code9">code 9</a></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 以下技术代码</span>
